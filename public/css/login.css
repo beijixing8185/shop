@@ -1,0 +1,287 @@
+﻿/* 登录 */
+.footer {min-width:1170px;margin-top:0px;!importent}
+.container-fluid {padding-left:0;padding-right:0;}
+#login_wrapper{
+	background: url("../images/bg-login13.png") no-repeat center center;
+	background-size:cover;
+	background-color:#232323;
+	height:498px;
+	width:100%;
+	padding-left:0;
+	min-width:1170px;
+
+}
+.regist {background:#f7f7f7;}
+#regist_wrapper {
+	background:#f7f7f7;
+	height:657px;
+	width:100%;
+	padding-left:0;
+}
+#login_logo{
+	display: inline-block;
+    width: 238px;
+    height:93px;
+    background: url(../images/logo.png) no-repeat;
+}
+.login-top {padding:20px 0;}
+.welcome {font-size:16px;color:#888;padding:8px 15px;border-left:1px solid #888;margin:27px;}
+.regist-inner {
+	background:#fff;
+	 width: 320px;
+	 margin:0px auto;
+	padding:90px 162px;
+	border-radius:4px;
+	box-shadow:0 1px 1px rgba(0, 0, 0, .05);
+	-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, .05)
+}
+
+.regist_contains {
+	float:right;
+	margin-top:35px;
+    margin-right:20px;
+    width: 320px;
+     border-radius:2px;
+    padding: 10px 44px 20px;
+    background:#fff;
+    	box-shadow:0 1px 1px rgba(0, 0, 0, .05);
+	-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, .05)
+}
+.login_contains{
+	float:right;
+	margin-top:50px;
+    margin-right:20px;
+    width: 320px;
+     border-radius:2px;
+    padding: 20px 44px;
+    background:#fff;
+    	box-shadow:0 1px 1px rgba(0, 0, 0, .05);
+	-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, .05)
+}
+.top-img {display:block;text-align:center;}
+.switcher{
+	border-bottom: 1px solid #c9c9c9;
+	height: 37px;
+	margin-bottom:27px;
+	margin-top:10px;
+}
+.switcher>li{
+	width: 50%;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.cur{
+	height: 37px;
+	border-bottom: 4px solid #ffda44;
+}
+#account_login{
+	display: none;
+	position:relative;
+}
+.prompt{
+	color: #f44336;
+	position: absolute;
+	top: 34px;
+	left:15px;
+    font-size: 13px;
+    display: none;
+}
+.form-list {position:relative;}
+.regist-list {position:relative;}
+ .reg-prompt {position:absolute;bottom:0px;left:0px;width:200px;display:block;	color: #f44336;font-size:13px;}
+.regist-list > input {
+	width: 99.99%;
+	border: 1px solid #e1e1e1;
+	border-radius: 6px;
+	height: 32px;
+	color: #666;
+	margin-bottom: 20px;
+	font-size:13px;
+	line-height:32px;
+	padding-left: 15px;
+}
+.regist-list > input.rg-error {border: 1px solid #ff3f3f;}
+#account_login .form-list>input,#login_fast .form-list>input{
+	width: 99.99%;
+	border: 1px solid #e1e1e1;
+	border-radius: 6px;
+	height: 32px;
+	color: #666;
+	margin-bottom: 20px;
+	font-size:13px;
+	line-height:32px;
+	padding-left: 15px;
+}
+.shuju{
+	width:56%;
+	border: 1px solid #e1e1e1;
+	border-radius: 6px;
+	height: 32px;
+	line-height: 32px;
+	color: #666;
+	margin-bottom:20px;
+	font-size:13px;
+	float: left;
+	padding-left: 15px;
+
+}
+#verify_code {position:relative;}
+.shuju.getCode {width:100%;}
+#o-authcode {position:relative;}
+#o-authcode>img{
+	display: inline-block;
+	vertical-align: middle;
+	border: 1px solid #e1e1e1;
+	width: 28%;
+	height: 32px;
+	float: left;
+	margin-left: 14px;
+	border-radius: 6px;
+	text-align: center;
+	line-height: 43px;
+}
+#o-authcode>a{
+	float: right;
+	width:14px;height:14px;
+   background:url("../images/login06.png");
+       margin-top: 9px;
+}
+.clearfix:after{
+	content:'';
+	display:block;
+	height:0;
+	clear:fix;
+}
+.btn-phonecode {
+	position:absolute;
+	top:1px;right:10px;
+    height:30px;
+    background: #fff;
+    font-size:12px;
+    color: #1183f7;
+    cursor:pointer;
+    border:none;
+}
+ .btn-login,.btn-register,.btn-refer {
+    width: 100%;
+    padding:10px;
+    color: black;
+    background: #ffda44;
+    border: 0;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: 5px;
+    cursor:pointer;
+ }
+ .free{
+ 	color: #a4a4a4;
+ 	text-align: center;
+ 	display: block;
+ 	margin-top: 20px;
+ 	
+ font: normal 12px 'hiragino sans gb', 'Microsoft YaHei';
+ }
+ .copyright{
+ 	text-align: center;
+ 	 font-size:13px;
+ 	color: #727272;
+ }
+/*  注册 */
+.headline{
+	text-align:center;margin-top:20px;
+}
+.headline>a{
+	float:right;
+	color:#a4a4a4;
+	 font-size:12px;
+}
+.headline>a>span{
+	color: #fe5453;
+}
+.login_contains p{
+	 font-size:13px;
+}
+.login_contains p em{
+	color: #fe5453;
+
+}
+.register-top {margin-bottom:10px;}
+.register-top >p{font-size:16px;color:#333;text-align:center;border-bottom:2px solid #e5e5e5;}
+.register-top >p span {display:block;position:relative;top:2px;padding:10px 0px;width:116px;text-align:center;border-bottom:2px solid #ffda44;margin:0 auto;}
+/* 快速登录 */
+#login_fast{
+	position:relative;
+}
+#errorTip {
+	position:absolute;top:-16px;left:14px;
+}
+/* 修改密码成功 */
+.xiugai_wrapper{
+	width: 786px;
+	
+	margin: 0 auto;
+}
+.xiugai_success{
+	width: 290px;
+	height: 657px;
+	margin: 0 auto;
+	padding-top: 168px;
+
+}
+.xiugai{
+	 float: left;
+    width: 65px;
+    height: 66px;
+}
+.word{
+	font-size: 30px;
+	float: right;
+	margin-right: 15px;
+	line-height: 62px;
+}
+.back{
+	width: 160px;
+	height: 46px;
+	background: #ffda44;
+	text-align: center;
+	line-height: 46px;
+	border-radius: 5px;
+	font-size: 15px;
+	margin: 37px 0 0 60px;
+	cursor:pointer;
+}
+.xieyi {float:left;font-size:12px;}
+.xieyi a {color:#333;}
+
+.linkMask{
+	display: inline-block;
+	height: 498px;
+}
+.linkMask a{
+	display: inline-block;
+	width: 820px;
+	height: 100%;
+	background-color: transparent;
+}
+#login_logo{
+	width: 236px;
+	height: 44px;
+	background: url(/images/logo03.png) no-repeat;
+	background-size: 236px 44px;
+}
+#login_wrapper .container{
+	position: relative;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
+.regist_contains{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	margin-top: 0;
+}

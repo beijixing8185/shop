@@ -1,0 +1,13 @@
+﻿.pagination{ text-align: center;position: relative;display:block;overflow: hidden;}
+.pagination >ul{text-align: center;position: relative;left: 50%;}
+.pagination >ul li{ display: inline-block;position: relative;right: 50%;color: #999999;}
+.pagination >ul li a{ font-size: 14px;line-height:60px; color: #333333; text-align: center; border: 1px solid #D0D0D0;  padding: 7px 7px;}
+.bj{ background: #fff;}
+.pagination >ul li span{ color: #999999;}
+.pagination >ul li .yeshu{ border: 1px #E0E0E0 solid; margin:0 5px; width: 35px;}
+.prev{ margin:0 5px;}
+.nextpage{ margin: 0 35px 0 5px;}
+.fir-page,.prev,.nextpage,.yeshu,.ensure{ background: #fff;}
+.pagination >ul li .ensure{padding: 3px 7px;}
+.ensure{ margin-left: 5px;}
+.pagination >ul li a.cur{background: #ffd601; height: 100%}

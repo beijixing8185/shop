@@ -1,0 +1,398 @@
+﻿body{
+    background-color: #f6f6f6;
+}
+.content{
+    width: 1170px;
+    margin:0 auto;
+}
+.integralTitle{
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #999;
+}
+.integralTitle span{
+    font-size: 18px;
+    margin-right: 15px;
+    color: #333;
+}
+.integralContent{
+    padding: 30px 25px;
+    background-color: #fff;
+}
+.groupBox > div{
+    width: 42%;
+    height: 60px;
+    float: left;
+    margin-bottom: 10px;
+}
+.groupBox > div > span{
+    display: inline-block;
+    width: 125px;
+    margin-right: 20px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+}
+.groupBox > div > span > i{
+    color: #ff4400;
+    margin-right: 5px;
+}
+.groupBox > div input{
+    border: none;
+    outline: none;
+    width: 300px;
+    height: 36px;
+    padding-left: 15px;
+    background-color: #f6f6f6;
+}
+.groupBox > div input::-webkit-input-placeholder{
+    font-size: 12px;
+    color: #999;
+}
+.groupBox > div > p{
+    margin-left: 150px;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ff4400;
+    display: none;
+}
+.groupItem > div{
+    width: 300px;
+    background-color: #f6f6f6;
+    padding-left: 15px;
+    float: right;
+    margin-right: 20px;
+    position: relative;
+}
+.groupItem > div:after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border:5px solid transparent;
+    border-top-color: #333;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+}
+.groupItem > div > p{
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    cursor: pointer;
+}
+.groupItem > div > ul{
+    width: 300px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    position: absolute;
+    top: 36px;
+    left: 0;
+    display: none;
+    background-color: #f6f6f6;
+}
+.groupItem > div > ul > li{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.integralTextarea {
+    margin-bottom: 30px;
+}
+.integralTextarea > span{
+    display: inline-block;
+    width: 125px;
+    margin-right: 20px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    vertical-align: top;
+}
+.integralTextarea > div{
+    display: inline-block;
+    width: 771px;
+    height: 170px;
+    padding: 15px;
+    background-color: #f6f6f6;
+    border-radius: 4px;
+}
+.integralTextarea > div > textarea{
+    width: 100%;
+    height: 124px;
+    border: none;
+    outline: none;
+    background-color: #f6f6f6;
+}
+.integralTextarea > div > textarea:focus{
+	box-shadow: none;
+}
+.integralTextarea > div > p{
+    text-align: right;
+}
+.integralSubmit{
+    width: 140px;
+    height: 36px;
+    text-align: center;
+    line-height: 36px;
+    background-color: #ffd101;
+    color: #171717;
+    font-size: 14px;
+    margin:0 auto;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.integralBanner{
+    height: 200px;
+    background: url(../images/banner_1.png) no-repeat center 0;
+    -webkit-background-size:1920px 420px;
+    background-size:1920px 420px;
+    overflow: hidden;
+}
+.integralBannerMain .integralBannerButton{
+    position: relative;
+    height: 30px;
+    text-align: right;
+    margin-top: 10px;
+}
+.integralBannerMain .integralBannerButton span{
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    border:1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    width: 105px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 15px;
+    position: relative;
+}
+.integralBannerMain .integralBannerButton span:nth-of-type(2){
+    width: 130px;
+}
+.integralBannerMain .integralBannerButton span:nth-of-type(2):after{
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    border:1px solid #fff;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 12px;
+    right: 10px;
+}
+.integralBannerMain .integralBannerButton span:hover{
+    background-color: #fff;
+    color: #fc8e35;
+}
+.integralBannerMain .integralBannerButton span:nth-of-type(2):hover:after{
+    border-color: #fc8e35;
+}
+.integralBannerMain>h1{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 30px;
+    color: #fff;
+}
+.integralBannerMain>p{
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+}
+.integralBannerMain .integralBannerButton > div{
+    position: absolute;
+    width: 400px;
+    padding: 10px;
+    background-color: #fff;
+    top: 46px;
+    right: 15px;
+    border-radius: 5px;
+    text-align: left;
+    display: none;
+}
+.integralBannerMain .integralBannerButton > div:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    right: 48%;
+    border:5px solid transparent;
+    border-bottom-color: #fff;
+}
+.integralBanner{
+    margin-bottom: 20px;
+}
+#showtap02 {background-color:#F6F6F6;padding:30px 0;}
+#showtap02 .ensure {margin-left:-12.5px;padding:0;}
+#showtap02 li{position:relative;float:left;width:224px;background:#fff;margin-left:12.5px;text-align: center;}
+#showtap02 .bz-con {position:absolute;top:30px;left:20px;width:184px;font-size:14px;color:#666;line-height:23px;}
+#showtap02 .bz-con p {font-size:18px;color:#333;margin-bottom:15px;overflow: hidden}
+#showtap02 li:hover{box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.1);}
+
+.dfMask{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: rgba(0,0,0,.6);
+    z-index: 999;
+    display: none;
+}
+.dfMask .dfMain{
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 3px;
+}
+.dfMask .dfMain>p{
+    font-size: 22px;
+}
+.dfMask .dfMain > div{
+    background: #ffda44;
+    margin:0 auto;
+    margin-top: 20px;
+    font-size: 14px;
+    border: 1px solid #ffda44;
+    width: 120px;
+    height: 30px;
+    line-height: 28px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.dfMask .dfMain > img{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.zbBottom{
+    background-color: #3c3c3c;
+    padding: 30px 0 40px;
+}
+.zbBottom .contentBox{
+    width: 1170px;
+    margin:0 auto;
+}
+.zbBottom .zbBottomContent .zbBottomTop span{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #2d2d2d;
+    color: #afafaf;
+    cursor: pointer;
+    padding: 7px 12px;
+}
+.zbBottom .zbBottomContent .zbBottomTop span.current,.zbBottom .zbBottomContent .zbBottomTop span:hover{
+    position: relative;
+    color: #fff;
+    background-color: #495059;
+}
+.zbBottomTop .TABbox{
+    margin-top: 20px;
+}
+.zbBottomTop .TABbox ul{
+    overflow: hidden;
+}
+.zbBottomTop .TABbox ul li{
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 10px;
+}
+.zbBottomTop .TABbox ul li a{
+    font-size: 12px;
+    color: #ccc;
+}
+.zbBottomTop .TABbox ul li a:hover{
+    color: #fff;
+}
+.zbBottomTop .TABbox.TABbox1{
+    display: none;
+}
+.zbBottom .zbBottomContent .lineBorder{
+    border-top:1px solid #666;
+    opacity: 0.6;
+    margin: 10px 0 30px;
+}
+.zbBottom .zbBottomContent .zbtabList{
+    margin-bottom: 20px;
+}
+.zbBottom .zbBottomContent .zbtabList ul{
+    overflow: hidden;
+}
+.zbBottom .zbBottomContent .zbtabList ul li{
+    float: left;
+}
+.zbBottom .zbBottomContent .zbtabList ul a{
+    height: 16px;
+    color: #fff;
+    font-size: 14px;
+}
+.zbBottom .zbBottomContent .zbtabList ul a:hover{
+    color: #fff;
+}
+.zbBottom .zbBottomContent .zbtabList ul li i {
+    display: inline-block;
+    margin: 0 19px;
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    position: relative;
+    top: 2px;
+}
+.phoneCode p{
+    font-size: 24px;
+    color: #ccc;
+}
+.phoneCode p img{
+    width: 30px;
+    height: 24px;
+    margin-right: 10px;
+    position: relative;
+    top: -4px;
+}
+.phoneCode p span{
+    font-size: 12px;
+    margin-left: 8px;
+}
+.phoneCode div{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+.zbBottomContent .poi{
+    position: relative;
+}
+.qcodeBTM{
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+.qcodeBTM dl{
+    float: left;
+    margin-left: 30px;
+}
+.qcodeBTM dl dt{
+    width: 102px;
+    height: 102px;
+    margin-bottom: 9px;
+}
+.qcodeBTM dl dd{
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}

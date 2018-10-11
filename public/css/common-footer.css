@@ -1,0 +1,33 @@
+﻿/*尾巴*/
+.footer {background: #3c3c3c}
+.footer-top{border-bottom:1px solid #646363}
+.foot-con {padding:20px 0;}
+.footer-nav {margin-top:10px;}
+.footer-nav > ul {float:left;width:105px;}
+.footer-nav > ul li {margin-bottom:15px;font-size:12px;color:#999;}
+.footer-nav > ul li > a {color:#999;}
+.footer-nav > ul li.leader {font-size:14px;cursor:default;color:#999;}
+.xiaz{padding:10px 10px 0 58px;border-left:1px solid #646363;border-right:1px solid #646363;text-align: center}
+.xiaz > dl {margin-right:48px;}
+.xiaz > dl dt {width:102px;}
+.xiaz > dl dd {color:#999;margin-top:10px;font-size:12px;}
+.footer-phone {padding:20px 45px;}
+.footer-phone >p{font-size:28px;color:#999;}
+.footer-phone >p > b {margin-right:12px;position:relative;top:-2px;}
+.footer-phone >div {font-size:12px;color:#999;margin-left:45px;margin-top:5px;}
+
+.foot-link {padding:25px 0 30px;}
+.foot-link a {color:#999;}
+.yqlj {width:72px;font-size:14px;color:#999;float:left;}
+.ljDetails li {margin-bottom:5px;}
+.ljDetails li a {display:block;float:left;width:10%;}
+.foot-link > p {color:#999;text-align: center;margin-top:20px;font-size:14px;}
+.slide-list {    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    position: relative;}
+    .slide-list .abtn {display:none;}
+#footer-slides {position:relative;width:1098px;    float: left;}
+.ljDetails {width:1098px;position: absolute;
+    left: 0px;
+    top: 0px;font-size:12px;}

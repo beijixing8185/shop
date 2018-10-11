@@ -1,0 +1,202 @@
+﻿.pop-wrap {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10000000;
+    display: none;
+    margin-left: -40%;
+    width: 80%;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center
+}
+
+.pop-wrap .pop-content {
+    margin: 20px 20px 0;
+    border-bottom: 1px solid #ccc
+}
+
+.pop-wrap .pop-content .pop-title {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 15px
+}
+
+.pop-wrap .pop-content .pop-describe {
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 13px
+}
+
+.pop-wrap .pop-content .pop-describe b {
+    color: #f90
+}
+
+.pop-wrap .pop-button-box {
+    overflow: hidden
+}
+
+.pop-wrap .pop-button-box .pop-button {
+    float: left;
+    margin: 10px 0;
+    color: #808;
+    font-size: 17px
+}
+
+.pop-wrap .pop-button-box .pop-button-single {
+    width: 100%
+}
+
+.pop-wrap .pop-button-box .pop-button-double {
+    margin-left: -1px;
+    width: 50%;
+    border-left: 1px solid #ccc
+}
+
+.pop-wrap-error {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    z-index: 10000000;
+    display: none;
+    padding: 10px 15px;
+    /*height: 12px;*/
+    border-radius: 5px;
+    background: rgba(0,0,0,.5);
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 12px
+}
+
+.pop-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 10000000;
+    z-index: 10000000;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background: rgba(0,0,0,.8);
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 14px
+}
+
+.pop-loading p {
+    height: 30px;
+    line-height: 30px
+}
+
+.pop-loading .pop-loading-effect {
+    margin: 0 auto;
+    width: 90px
+}
+
+.pop-loading .pop-loading-effect>i {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #fff;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+    animation: bouncedelay 1.4s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both
+}
+
+.pop-loading .pop-loading-effect .bounce1 {
+    -webkit-animation-delay: -.6s;
+    animation-delay: -.6s
+}
+
+.pop-loading .pop-loading-effect .bounce2 {
+    -webkit-animation-delay: -.5s;
+    animation-delay: -.5s
+}
+
+.pop-loading .pop-loading-effect .bounce3 {
+    -webkit-animation-delay: -.4s;
+    animation-delay: -.4s
+}
+
+.pop-loading .pop-loading-effect .bounce4 {
+    -webkit-animation-delay: -.3s;
+    animation-delay: -.3s
+}
+
+.pop-loading .pop-loading-effect .bounce5 {
+    -webkit-animation-delay: -.2s;
+    animation-delay: -.2s
+}
+
+.pop-loading .pop-loading-effect .bounce6 {
+    -webkit-animation-delay: -.1s;
+    animation-delay: -.1s
+}
+
+@-webkit-keyframes bouncedelay {
+    0%,100%,80% {
+        -webkit-transform: scale(0)
+    }
+
+    40% {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes bouncedelay {
+    0%,100%,80% {
+        -webkit-transform: scale(0);
+        transform: scale(0)
+    }
+
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1)
+    }
+}
+
+.pop-tips {
+    position: absolute;
+    z-index: 10000000;
+    display: inline-block;
+    border: 1px solid #f90;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 9px;
+    opacity: 0
+}
+
+.pop-tips p {
+    position: relative;
+    padding: 10px
+}
+
+.pop-tips p i {
+    position: absolute;
+    bottom: -7px;
+    left: 50%;
+    margin-left: -7px;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid #f90;
+    border-bottom: 1px solid #f90;
+    background: #fff;
+    content: "";
+    font-size: 20px;
+    -webkit-transform: rotate(45deg)
+}
+
+.pop-tips span {
+    display: inline-block;
+    height: 13px;
+    white-space: nowrap;
+    line-height: 13px
+}
+
+.pop-tips b {
+    color: #f90
+}

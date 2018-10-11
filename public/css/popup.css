@@ -1,0 +1,82 @@
+﻿.shader {position:fixed;top:0px;left:0px;bottom:0px;right:0px;background: rgba(0,0,0,.6);z-index:99;}
+#shader .modal-pro {position:absolute;width:1000px;background:#fff;border-radius:4px;top:20px;top:calc(50% - 270px);top:-webkit-calc(50% - 270px);top:-moz-calc(50% - 270px);left:calc(50% - 500px);left:-webkit-calc(50% - 500px);left:-moz-calc(50% - 500px);padding:40px 40px 25px;}
+.shader-closed {position:absolute;top:20px;right:20px;cursor:pointer;}
+.topSha {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    background:rgba(0,0,0,.5);
+    display:none;
+
+}
+.topSha .modal-yzm {position:absolute;width:416px;background:#fff;border-radius:4px;top:20px;top:calc(50% - 92px);top:-webkit-calc(50% - 92px);top:-moz-calc(50% - 92px);left:calc(50% - 208px);left:-webkit-calc(50% - 208px);left:-moz-calc(50% - 208px);padding:30px 40px 20px}
+#shader .proSh-title {position:relative;font-size:20px;}
+#shader .proSh-title span {font-size:14px;color:#999;    margin-left: 22px;}
+.topSha .proSh-title {position:relative;font-size:20px;}
+#shader .proSh-title > b {position:absolute;top: 3px;left: -40px;display:block;width:3px;height:20px;background:#ffda44;}
+#shader .proSh-list {margin-top:20px;font-size:14px;}
+#shader .proSh-list > p {float:left;width:102px;color:#333;line-height: 31px;}
+#shader .proSh-list > div {position:relative;float:left;width: 389px;;color:#666;font-size:12px;}
+#shader  .proSh-list > div > b {display:block;position:absolute;bottom:-19px;left:14px;font-size:12px;color:#ff4400;font-weight: normal;}
+#shader .proSh-list input {height:31px;line-height:31px;}
+#shader .proYCode {width:182px;float:left;}
+#shader .proYBtn {width:110px;float:right;font-size:12px;padding:0;height:31px;line-height:31px;text-align:center;}
+#shader .ysInt {width:162px;float:left;}
+#shader .ysDw {float:left;height:31px;line-height:31px;margin-left:20px;}
+#shader .proShA {display: block;width:140px;margin: 38px auto 10px;background:#ffda44;color:#333;font-size:14px;padding:10px 0;border-radius:4px;text-align: center}
+#shader .proSh-left {border-right:1px solid #e6e6e6;}
+#shader .proSh-right {padding-left:30px;border:none;margin-top: 15px;}
+#shader .proSh-right >p {font-size:16px;color:#333;padding:15px 0 20px;}
+#shader .proSh-right dl {margin-top:39px;}
+#shader .proSh-right dt {margin-right:15px;}
+#shader .proSh-right dd {font-size:12px;color:#666;}
+#shader .proSh-right dd > p {font-size:14px;color:#333;margin-bottom:3px;}
+.topSha .yzmInt {width:130px;}
+.topSha .yzmList {margin-top:20px;font-size:14px;}
+.topSha .yzmList > p {float:left;width:80px;color:#333;line-height: 31px;}
+.topSha .yzmAnswer {position:relative;width:130px;float:left;font-size:12px;}
+.topSha .yzmAnswer input{height:30px;line-height:30px;padding:0 10px;}
+.topSha .yzmAnswer b {display:none;position:absolute;bottom:-18px;left:0;font-size:12px;color:#ff4400;}
+.topSha .yzmImg {float:left;width:60px;height:30px;margin:0 15px;}
+.topSha .yzmImg img {width:60px;height:30px;}
+.topSha .changeOne {line-height:30px;color:#ff4400;font-size:14px;cursor:pointer;}
+.topSha .yzmSure {display:block;width:100px;text-align: center;padding:8px 0;margin:18px auto 0;cursor:pointer;background:#ffda44;color:#333;font-size:14px;border-radius:4px;}
+.topSha  .promitb {position:relative;margin:30px auto 0;width:335px;padding-left:40px;font-size:14px;color:#333;}
+.topSha  .promitb  > b {display: block;position: absolute;top:-9px;left:0;}
+#shader .diqu {margin-top:10px;}
+#shader .chose-dq {float:left;position:relative;margin-left:102px;line-height:31px;padding-left:20px;}
+#shader .chose-dq > b {display: block;position:absolute;top:8px;left:0;width:14px;height:14px;border:1px solid #e6e6e6;cursor:pointer;}
+#shader .chose-dq > b.selected-pop {border-color:#ff4400;}
+#shader .chose-dq > b > i {position:absolute;top:1px;left:1px;width:10px;height:10px;}
+#shader .chose-dq > b > i img {position:absolute;top:0px;left:0px;}
+#shader .chose-dq > b .areaClosed{display:none;}
+#shader .top-area {position:relative;width:80px;float:left;margin-left:10px;}
+#shader .area-chose {position:absolute;top:0px;left:80px;width:320px;border:1px solid #e6e6e6;background:#fff;padding:6px;border-radius: 4px;}
+#shader .areaClosed {display:none;}
+#shader .area-chose li {float:left;width:16%;text-align: center;line-height: 22px;cursor:pointer}
+#shader .top-area > p {position:relative;padding:5px 8px;border:1px solid #e6e6e6;border-radius: 4px;}
+#shader .top-area > p > b {position:absolute;top: 10px;
+    right: 8px;display:block;border:5px solid transparent;border-top:5px solid #333;}
+#shader .proShbottom {margin-left: 57px;
+    font-size: 12px;
+    color: #666;padding-bottom: 15px;}
+ #shader    .proSh-list input {height:36px;line-height:36px;padding:0 12px;}
+ #shader .proSh-list input.error {border:1px solid #ff4400;}
+#shader .shaderSer-list {float:left;width:425px;margin-top:-20px;}
+#shader  .shaderSer-list li {position:relative;float:left;font-size:14px;color:#666;border:1px solid #e6e6e6;padding:7px 12px 7px 46px;margin-right:20px;border-radius: 20px;margin-top:15px;cursor: pointer;}
+#shader .shaderSer-list li > b {position: absolute;top:7px;left:12px;}
+#shader .shaderSer-list li.clicked {background: #ff4400;border-color:#ff4400;color:#fff;}
+#shader .shaderSer-list li.mouseMove {background: #ff4400;border-color:#ff4400;color:#fff;}
+.form-control {border:1px solid #e6e6e6;box-shadow:none;}
+.p-ta {position:relative;}
+.p-ta > a {position:absolute;bottom:5px;right:5px;font-size:12px;color:#ff4400;cursor:pointer;}
+#shader textarea.form-control {padding-bottom:22px;}
+.prosh-right-timg {position:relative;}
+.timg-ab {position:absolute;top:0;left:0;padding-left:20px;}
+.timg-ab p {font-size:18px;color:#1494e4;margin-top:50px;}
+.timg-ab ul {font-size:14px;color:#55b5f1;margin-top:10px;}
+.timg-ab ul li {float:left;position:relative;padding-left:11px;margin-right:5px;}
+.timg-ab ul li b {position:absolute;top:8px;left:0;width:3px;height:3px;background:#55b5f1;border-radius:50%;}

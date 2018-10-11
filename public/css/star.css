@@ -1,0 +1,9 @@
+﻿.assess_full{
+	background: url(../images/assess_bar_full.png) no-repeat center center;
+}
+.assess_half{
+	background: url(../images/assess_bar_half.png) no-repeat center center;
+}
+.assess_non{
+	background: url(../images/assess_bar_non.png) no-repeat center center;
+}
