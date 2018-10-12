@@ -1,0 +1,117 @@
+﻿.zbBottom{
+    background-color: #3c3c3c;
+    padding: 30px 0 40px;
+}
+.zbBottom .contentBox{
+    width: 1170px;
+    margin:0 auto;
+}
+.zbBottom .zbBottomContent .zbBottomTop span{
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #2d2d2d;
+    color: #afafaf;
+    cursor: pointer;
+    padding: 7px 12px;
+}
+.zbBottom .zbBottomContent .zbBottomTop span.current,.zbBottom .zbBottomContent .zbBottomTop span:hover{
+    position: relative;
+    color: #fff;
+    background-color: #495059;
+}
+.zbBottomTop .TABbox{
+    margin-top: 20px;
+}
+.zbBottomTop .TABbox ul{
+    overflow: hidden;
+}
+.zbBottomTop .TABbox ul li{
+    float: left;
+    margin-right: 14px;
+    margin-bottom: 10px;
+}
+.zbBottomTop .TABbox ul li a{
+    font-size: 12px;
+    color: #ccc;
+}
+.zbBottomTop .TABbox ul li a:hover{
+    color: #fff;
+}
+.zbBottomTop .TABbox.TABbox1{
+    display: none;
+}
+.zbBottom .zbBottomContent .lineBorder{
+    border-top:1px solid #666;
+    opacity: 0.6;
+    margin: 10px 0 30px;
+}
+.zbBottom .zbBottomContent .zbtabList{
+    margin-bottom: 20px;
+}
+.zbBottom .zbBottomContent .zbtabList ul{
+    overflow: hidden;
+}
+.zbBottom .zbBottomContent .zbtabList ul li{
+    float: left;
+}
+.zbBottom .zbBottomContent .zbtabList ul a{
+    height: 16px;
+    color: #fff;
+    font-size: 14px;
+}
+.zbBottom .zbBottomContent .zbtabList ul a:hover{
+    color: #fff;
+}
+.zbBottom .zbBottomContent .zbtabList ul li i {
+    display: inline-block;
+    margin: 0 19px;
+    width: 1px;
+    height: 12px;
+    background-color: #666;
+    position: relative;
+    top: 2px;
+}
+.phoneCode p{
+    font-size: 24px;
+    color: #ccc;
+}
+.phoneCode p img{
+    width: 30px;
+    height: 24px;
+    margin-right: 10px;
+    position: relative;
+    top: -4px;
+}
+.phoneCode p span{
+    font-size: 12px;
+    margin-left: 8px;
+}
+.phoneCode div{
+    margin-top: 20px;
+    font-size: 12px;
+    color: #ccc;
+}
+.zbBottomContent .poi{
+    position: relative;
+}
+.qcodeBTM{
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+.qcodeBTM dl{
+    float: left;
+    margin-left: 30px;
+}
+.qcodeBTM dl dt{
+    width: 102px;
+    height: 102px;
+    margin-bottom: 9px;
+}
+.qcodeBTM dl dd{
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+}
