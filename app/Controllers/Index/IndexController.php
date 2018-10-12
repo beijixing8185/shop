@@ -10,13 +10,17 @@ namespace app\Controllers\Index;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 
 class IndexController extends Controller
 {
 
     public function index()
     {
-        return view('index.index');
+        //banner图
+        $banner = Banner::getList(1,1,4); //状态为1的，并且type值为1的。
+
+        return view('index.index',compact('banner'));
     }
 
 }

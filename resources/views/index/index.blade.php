@@ -6,76 +6,15 @@
 
 @section('css')
 	<link rel="stylesheet" href="{{asset('css/index.css')}}">
+	<link rel="stylesheet" href="{{asset('css/modular.css')}}">
 @endsection
 
 
 @section('content')
 
-	<style>
-		.nav-list li{
-			display: inline-block;
-		    padding: 0 5px;
-		    height: 40px;
-		    line-height: 40px;
-		    margin-top: 18px;
-		}
-		.nav-list li a{
-			font-size: 16px;
-		}
-		.logo-title{
-			font-size: 14px;
-			padding-left: 10px;
-			padding-right: 20px;
-		}
-		.nav-list-new li a{
-			font-size: 16px;
-		}
-		.res-input > input{
-			width: 225px;
-		}
-		#goTop{
-			display: none;
-		}
-		#_submit_error02,#_submit_success02{
-			display: none;
-		}
-	</style>
-    <!--头部1 begin-->
 
-	<!--头部1 end-->
-	
-	<!--冻结提示 begin-->
-	<div id="indexbeactive" class="freeze modal fade">
-		<div class="freeze-inner">
-			<b  data-dismiss="modal"><img src="/picture/shader-closed.png" /></b>
-			<div><img src="/picture/sure-img.png" />您的账号已冻结</div>
-			<p>如有疑问，请联系客服4000-581-581</p>
-			<a data-dismiss="modal">确定</a>
-		</div>
-	</div>
-	<!--冻结提示 end-->
-	<style>
-		.nav-list-new li{
-			width: 115px;
-			text-align: center;
-		}
-		.hotImg{
-			position: relative;
-		}
-		.hotImg img{
-			position: absolute;
-			top: 0px;
-			right: 5px;
-		}
-		.logo-img a{
-			margin:5px 0;
-			display: inline-block;
-			width: 155px;
-			height: 54px;
-			background: url(/images/logo02.png) no-repeat center;
-			background-size: 155px 54px;
-		}
-	</style>
+
+
 	<!--头部2 begin-->
     <div class="container-fluid header-md">
         <div class="container">
@@ -99,14 +38,14 @@
 						<dt class="pull-left"><img src="/picture/p-icon01.png" alt=""/></dt>
 						<dd class="pull-left">
 							<p>一键发布 </p>
-							不需花时间选服务商  
+							不需花时间选服务商
 						</dd>
 					</dl>
 					<dl class="p-con">
 						<dt class="pull-left"><img src="/picture/p-icon02.png" alt=""/></dt>
 						<dd class="pull-left">
 							<p>快速响应 </p>
-							需求发布后，15分钟快速响应 
+							需求发布后，15分钟快速响应
 						</dd>
 					</dl>
 					<dl class="p-con">
@@ -141,275 +80,99 @@
 			</div>
         </div>
     </div>
+
 	<!--头部2 end-->
-	
-	<!--固定滚动头部 begin-->
-	<style>
-		.tabList1{
-			position: relative;
-			text-align: center;
-			cursor: pointer;
-		}
-		.nav-list1 li{
-			margin-top: 0;
-		}
-		.tabInfo2{
-			top: 52px;
-			left: 0;
-			box-shadow: 0 0 8px rgba(0, 36, 100, 0.3);
-		}
-		.tabList1 .rotate{
-			display: inline-block;
-		    width: 0;
-		    height: 0;
-		    border: 5px solid transparent;
-		    border-top: 5px solid #3c404c;
-		    background-color: #ffda44;
-		    position: relative;
-		    top: 2px;
-		    left: 3px;
-		}
-		.tabInfo2 p{
-			height: 40px;
-		    line-height: 40px;
-		    text-align: center;
-		    background-color: #fff;
-		    width: 110px;
-		    cursor: pointer;
-		}
-		.header-fix{
-			height: 52px;
-		}
-		.header-fix .nav-list li:hover a{
-			border-radius: 4px;
-		}
-	</style>
-    <div class="container-fluid header-md header-fix" style="display:none">
-        <div class="container">
-            <!--<div class="pull-left logoImgTitle">
-                <p class="pull-left logo-img"><img src="/picture/fixed-logo01.png" alt=""/></p>
-            </div>-->
-            <ul class="pull-left nav-list nav-list1">
-            	<li><a href="/" class="active">首页</a></li>
-            	<li><a href="/jhs/page1.htm">聚划算</a></li>
-            	<li><a rel="nofollow" href="/aboutus.htm?tab=3">效果保障</a></li>
-            	<li><a rel="nofollow" href="/cmslist/cl0-pg1.htm">营销攻略</a></li>
-            </ul>
-            <div class="pull-right fix-publish"><a href="javascript:void(0)" class="caClass" onclick="javascript:tofb('','');" id="toLeadsButton1" traceflag="fixbar_pop_我要发需求" >我要发需求</a></div>
-            <div class="fix-input pull-right">
-                <input type="text" id="fixed-searchFile" name="searchFile_f" placeholder="搜索您感兴趣的服务/案例"/>
-				<div class="fixed-color-theme glyphicon glyphicon-search" onclick="searchWord()"></div>
-            </div>
-			<script>
-				$('.tabList1').hover(function(){
-					$(this).find('.tabInfo').fadeIn(200);
-					$('.tabList1 .rotate').css('background-color', '#fff');
-				},function(){
-					$(this).find('.tabInfo').fadeOut(200);
-					$('.tabList1 .rotate').css('background-color', '#ffda44');
-				});
-				$('.tabInfo p').hover(function(){
-					$(this).parents('li').addClass('active');
-				},function(){
-					$(this).parents('li').removeClass('active');
-				})
-			</script>
-        </div>
-    </div>
+
+	@include('./common/search')
 	<!--固定滚动头部 end-->
    
 	<!--头部 banner begin-->
 	@include('./common/index_nav')
 	<!--头部 banner end-->
-   	
-	<!--showtype begin-->
-    <!--遍历判断数据对应的showtype-->
-					    			<style>
-	#showtap07 {background:;}
-    #showtap07 .itembg {width:100%;height:504px;background:url("/images/bannerimg01-v1.1.png") no-repeat center center;background-size:cover;-webkit-background-size:cover;-moz-background-size:cover;}
-    /*头部*/
-	#showtap07 #carousel-banner {cursor:pointer;position:relative;}
-	#showtap07 #carousel-banner .banner-indicator {position:absolute;top:0;left:20%;left:calc(50% - 585px);left:-webkit-calc(50% - 585px);left:-moz-calc(50% - 585px);width:1170px;height:504px;}
-	#showtap07 #carousel-banner .carousel-indicators{width: 20%;left: 80%; text-align: right;margin-left:0;}
-	#showtap07 #carousel-banner .carousel-indicators li {background:rgba(255,255,255,0.68);box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);width:12px;height:12px;border:none}
-	#showtap07 #carousel-banner .carousel-indicators .active{background:rgba(255,218,68,1);border:none;width:14px;height:14px;}
-	#showtap07 .banner-ji.carousel-control {margin-top: 210px;width: 60px;opacity: 0.6;} 
-	#showtap07 .banner-ji.carousel-control:hover { opacity: 1;}
-	#showtap07 .carousel-control {width:28px;}
-	#showtap07 .carousel-control.left, .carousel-control.right{background-image:none !important;}
-	#showtap07 .banner-l-span {display:block;opacity:0.6;width:60px;height:80px;background:transparent;padding-top: 24px;}
-</style>
 <!--服务流程-->
-<div id="showtap07" class="container-fluid">
-        <div id="carousel-banner" class="carousel slide" data-ride="carousel">
-         	<div class="container banner-indicator">
-         		<ol class="carousel-indicators">
-        	            	<li id="bannerNum1" class="caClass" traceflag="content_tab_banner切换1" data-target="#carousel-banner" data-slide-to="0" class="active" ></li>
-        	            	<li id="bannerNum2" class="caClass" traceflag="content_tab_banner切换2" data-target="#carousel-banner" data-slide-to="1" ></li>
-        	            	<li id="bannerNum3" class="caClass" traceflag="content_tab_banner切换3" data-target="#carousel-banner" data-slide-to="2" ></li>
-        	            	<li id="bannerNum4" class="caClass" traceflag="content_tab_banner切换4" data-target="#carousel-banner" data-slide-to="3" ></li>
-        					</ol>
-         	</div>
-            <div class="carousel-inner" role="listbox">
-                        	<div class="item  active " onclick="window.open('http://www.51biaoshi.com/activity/906.htm?tab=0&_pb=slb001')">
-					<!--div class="itembg" style="background:url('http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/ec1dd631-e0eb-4b41-be76-b1d57e120340_cubead.jpg') no-repeat center center;"></div-->
-                    <div class="itembg" style="background:url('/images/loadimage.htm') no-repeat center center;"></div>
-                </div>
-                        	<div class="item " onclick="window.open('http://www.51biaoshi.com/activity/379.htm?_pb=slb002')">
-					<!--div class="itembg" style="background:url('http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/24a41163-4e01-4086-a733-2e12c5d576ad_cubead.jpg') no-repeat center center;"></div-->
-                    <div class="itembg" style="background:url('/images/loadimage.htm') no-repeat center center;"></div>
-                </div>
-                        	<div class="item " onclick="window.open('http://www.51biaoshi.com/product/419.htm?_pb=slb003')">
-					<!--div class="itembg" style="background:url('http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/037c1383-5a27-4904-93c0-c62a43f7cb12_cubead.jpg') no-repeat center center;"></div-->
-                    <div class="itembg" style="background:url('/images/loadimage.htm') no-repeat center center;"></div>
-                </div>
-                        	<div class="item " onclick="window.open('http://www.51biaoshi.com/aboutus.htm?tab=0&_pb=slb004')">
-					<!--div class="itembg" style="background:url('http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/3a4f2092-fbe9-4718-85b3-a31115067502_cubead.jpg') no-repeat center center;"></div-->
-                    <div class="itembg" style="background:url('/images/loadimage.htm') no-repeat center center;"></div>
-                </div>
-                        </div>
-				 <a class="left banner-ji carousel-control" href="#carousel-banner" role="button" data-slide="prev">
-                    <span class="banner-l-span"><img src="/picture/banner-l01.png" /></span>
-                </a>
-                <a class="right banner-ji carousel-control" href="#carousel-banner" role="button" data-slide="next">
-                    <span class="banner-l-span"><img src="/picture/banner-r01.png" /></span>
-                </a>  
-        </div>
-</div>
-<script src="/js/bootstrap.min.js"></script>
-<script>
+	@include('./common/index_banner')
+{{--<script>
 	$('#carousel-hotSp').carousel({
         pause: true,
         interval: false
     });
-</script>											<style>
-	#showtap01 {background-color:;}
-    #showtap01 .showtap-inner {}
-    #showtap01 li {float:left;width:234px;padding:12px 0;padding-left:20px;}
-    #showtap01 a {display:block;overflow: hidden;}
-    #showtap01 .media-img {width:58px;float:left;}
-    #showtap01 .media-title {width:141px;float:left;line-height:16px;font-size:14px;color:#999;margin-left:10px;margin-top:5px;border-right:1px solid #e6e6e6;padding-right:10px;}
-    #showtap01  li:last-child .media-title {border-right:none}
-</style>
+</script>--}}
 <div id="showtap01" class="container-fluid">
     <ul class="showtap-inner container">
     	    		<li>
 	            <a href="http://www.51biaoshi.com/cms/cl82-cm56498-at668.htm" target="view_window">
 	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮获央视关注，多次报道"></p>
-	                <div class="media-title" style="color:">镖狮获央视关注，多次报道</div>
+	                <div class="media-title" >镖狮获央视关注，多次报道</div>
 	            </a>
 	        </li>
     	    		<li>
 	            <a href="http://www.51biaoshi.com/cms/cl82-cm56494-at664.htm" target="view_window">
 	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网助力大学生创业"></p>
-	                <div class="media-title" style="color:">镖狮网助力大学生创业</div>
+	                <div class="media-title">镖狮网助力大学生创业</div>
 	            </a>
 	        </li>
     	    		<li>
 	            <a href="http://www.51biaoshi.com/cms/cl82-cm56496-at666.htm" target="view_window">
 	                <p class="media-img"><img src="/picture/loadimage.htm" alt="中国互联网大会开幕，镖狮网获关注"></p>
-	                <div class="media-title" style="color:">中国互联网大会开幕，镖狮网获关注</div>
+	                <div class="media-title">中国互联网大会开幕，镖狮网获关注</div>
 	            </a>
 	        </li>
     	    		<li>
 	            <a href="http://www.51biaoshi.com/cms/cl82-cm56495-at665.htm" target="view_window">
 	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网受邀参加世界互联网大会"></p>
-	                <div class="media-title" style="color:">镖狮网受邀参加世界互联网大会</div>
+	                <div class="media-title">镖狮网受邀参加世界互联网大会</div>
 	            </a>
 	        </li>
     	    		<li>
 	            <a href="http://www.51biaoshi.com/cms/cl82-cm56497-at667.htm" target="view_window">
 	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网的创业成功之路"></p>
-	                <div class="media-title" style="color:">镖狮网的创业成功之路</div>
+	                <div class="media-title">镖狮网的创业成功之路</div>
 	            </a>
 	        </li>
     	    </ul>
-</div>											<style>
-    #showtap02 {background-color:#F6F6F6;padding:30px 0;}
-    #showtap02 .ensure {margin-left:-12.5px;padding:0;}
-    #showtap02 li{position:relative;float:left;width:224px;background:#fff;margin-left:12.5px;text-align: center;}
-    #showtap02 .bz-con {position:absolute;top:30px;left:20px;width:184px;font-size:14px;color:#666;line-height:23px;}
-    #showtap02 .bz-con p {font-size:18px;color:#333;margin-bottom:15px;overflow: hidden}
-    #showtap02 li:hover{box-shadow: 0px 15px 30px 0px rgba(0, 0, 0, 0.1);}
-</style>
+</div>
 <!--保障 -->
 <div id="showtap02" class="container-fluid">
     <div class="container">
         <ul class=" ensure">
         		    		<li>
-	                <img src="/picture/loadimage.htm" alt="严选服务商">
+	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="严选服务商">
 	                <div class="bz-con" style="color:">
 	                    <p style="color:">严选服务商</p>
 			            录取率16%，100%缴纳保证金，5年服务经验
-	                </div>	
+	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="/picture/loadimage.htm" alt="效果数据监理">
+	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="效果数据监理">
 	                <div class="bz-con" style="color:">
 	                    <p style="color:">效果数据监理</p>
 			            真实数据跟踪，效果数据监理，24小时快速维权
-	                </div>	
+	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="/picture/loadimage.htm" alt="资金担保">
+	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="资金担保">
 	                <div class="bz-con" style="color:">
 	                    <p style="color:">资金担保</p>
 			            交易资金平台托管，像淘宝一样，服务满意再付款
-	                </div>	
+	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="/picture/loadimage.htm" alt="专注营销10年">
+	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="专注营销10年">
 	                <div class="bz-con" style="color:">
 	                    <p style="color:">专注营销10年</p>
 			            专业团队，服务20万+企业，拥有丰富的成功案例
-	                </div>	
+	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="/picture/loadimage.htm" alt="量身定制营销方案">
+	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="量身定制营销方案">
 	                <div class="bz-con" style="color:">
 	                    <p style="color:">量身定制营销方案</p>
 			            智能问诊系统，快速定位营销问题，量身定制解决方案
-	                </div>	
+	                </div>
 	            </li>
 	    	        </ul>
     </div>
-</div>							    			<style>
-    #showtype12 {background:#ffffff;}
-    #showtype12 .hotb-list {padding:40px 0;}
-    #showtype12 .hotb-list > li {float:left;width:276px;margin-right:22px;-webkit-transition: all .3s ease;transition: all .3s ease;box-sizing: border-box;margin-bottom: 15px;}
-    #showtype12 .hotb-list > li:hover {-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        -webkit-transform: translate3d(0,-2px,0);
-        transform: translate3d(0,-2px,0);
-        border-radius: 2px;
-        border-color: transparent;}
-    #showtype12 .hotb-list > li:nth-child(4n){
-        margin-right: 0;
-    }
-    #showtype12 .hot-bb {padding-top:60px;text-align: center;}
-    #showtype12 .hot-bb span {display:block;position:relative;top:-10px;font-size:16px;color:#666;}
-    #showtype12 .hot-bb span a{position:absolute;top:0;right:0; color: #666;font-size: 12px;}
-    #showtype12 .hot-bb span a:hover{color: #ff4400;}
-    #showtype12 .title-warp {position:relative;float:left;left:50%}
-    #showtype12 .title-inner {position:relative;float:left;right:50%;padding:0 40px;border-top:1px solid #ccc;}
-    #showtype12 .title-inner > b {background-color: #ffffff;display: block;position:relative;top:-20px;padding:0 15px;font-size:28px;color:#333;}
-    #showtype12 .hotb-list li{
-        width: 276px;
-        height: 186px;
-        background: url(/images/jhs-01.png) no-repeat center center;
-        background-size: 276px 186px;
-        cursor: pointer;
-        position: relative;
-    }
-    #showtype12 .hotb-list li a{display:block;width:100%;height:100%;}
-    #showtype12 .hotb-list li div.topText{position: absolute; top: 25px; left: 20px; font-size: 20px; color: #fff; }
-    #showtype12 .hotb-list li div.topText p{overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    #showtype12 .hotb-list li div.topText p:nth-of-type(1){width: 255px; }
-    #showtype12 .hotb-list li div.topText p:nth-of-type(2){font-size: 14px; width: 180px; }
-    #showtype12 .hotb-list li div.bottomPrice{position: absolute; bottom: 10px; left: 12px; font-size: 20px; color: #fff; }
-    #showtype12 .hotb-list li div.bottomPrice b,#showtype12 .hotb-list li div.bottomPrice span{font-size: 14px; }
-    #showtype12 .hotb-list li div.bottomPrice span{text-decoration: line-through; }
-</style>
+</div>
 <div  id="showtype12" class="container-fluid">
     <div class="container">
         <div class="hot-bb">
@@ -422,7 +185,7 @@
         	                        	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
                 <a href="http://www.51biaoshi.com/product/376.htm?_pb=yxjhs2"  target="_blank">
                 	<div class="topText">
-                        <p>公众号代运营</p>   
+                        <p>公众号代运营</p>
                         <p>微信运营整包方案</p>
                     </div>
                     <div class="bottomPrice">
@@ -433,7 +196,7 @@
                         	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
                 <a href="http://www.51biaoshi.com/product/457.htm?_pb=yxjhs3"  target="_blank">
                 	<div class="topText">
-                        <p>订阅号搭建</p>   
+                        <p>订阅号搭建</p>
                         <p>低成本从零打造宣传阵地</p>
                     </div>
                     <div class="bottomPrice">
@@ -444,7 +207,7 @@
                         	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
                 <a href="http://www.51biaoshi.com/product/427.htm?_pb=yxjhs4"  target="_blank">
                 	<div class="topText">
-                        <p>百度百科</p>   
+                        <p>百度百科</p>
                         <p>百科词条创建修改</p>
                     </div>
                     <div class="bottomPrice">
@@ -455,7 +218,7 @@
                         	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
                 <a href="http://www.51biaoshi.com/product/370.htm?_pb=yxjhs5"  target="_blank">
                 	<div class="topText">
-                        <p>网站定制开发</p>   
+                        <p>网站定制开发</p>
                         <p>量身定制网站</p>
                     </div>
                     <div class="bottomPrice">
@@ -466,37 +229,7 @@
                         	        </ul>
     </div>
 </div>
-											<style>
-    #showtap03 {background:#ffffff;}
-    #showtap03 .hotb-list {padding:30px 0 50px;margin-left:-16.5px;}
-    #showtap03 .hotb-list li {float:left;width:280px;margin-left:16.5px;border:1px solid #e6e6e6;box-shadow: 0 0 0 #fff;
-        -webkit-transition: all .3s ease;
-        transition: all .3s ease;cursor:pointer;}
-    #showtap03 .hotb-list li:hover {-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        -webkit-transform: translate3d(0,-2px,0);
-        transform: translate3d(0,-2px,0);
-        border-radius: 2px;
-        border-color: transparent;}
-    #showtap03 .hotb-list li .list-img {width:278px;height:190px;overflow: hidden;}
-    #showtap03 .hotb-list li .list-img img{   -webkit-transition: all .7s;
-        -moz-transition: all .7s;
-        -ms-transition: all .7s;
-        -o-transition: all .7s;
-        transition: all .7s;}
-    #showtap03 .hotb-list li:hover  .list-img img{    -webkit-transform: scale(1.03);
-        -moz-transform: scale(1.03);
-        transform: scale(1.03);}
-    #showtap03 .hotb-con {height:72px;overflow: hidden;padding:15px 10px;background-color: #fff;}
-    #showtap03 .hotb-con > p {font-size:16px;color:#333;}
-    #showtap03 .hotb-con > div {position:relative;font-size:14px;color:#999;margin-top: 2px;}
-    #showtap03 .hotb-con > div b {position:absolute;bottom:0;right:0;font-size:14px;color:#ff4400}
-    #showtap03 .hot-bb {padding-top:70px;text-align: center;}
-    #showtap03 .hot-bb span {display:block;position:relative;top:-10px;font-size:16px;color:#666;}
-    #showtap03 .title-warp {position:relative;float:left;left:50%}
-    #showtap03 .title-inner {position:relative;float:left;right:50%;padding:0 40px;border-top:1px solid #ccc;}
-    #showtap03 .title-inner > b {display: block;position:relative;top:-20px;padding:0 15px;background-color: #ffffff;font-size:28px;color:#333;}
-</style>
+
 <!--热门宝贝-->
 <div  id="showtap03" class="container-fluid">
     <div class="container">
@@ -543,27 +276,7 @@
             </li>
     	    	</ul>
     </div>
-</div>											<style>
-    #showtap04 {background:#F6F6F6;}
-    #showtap04 .service {padding-top:70px;}
-    #showtap04 .title-warp {position:relative;float:left;left:50%}
-    #showtap04 .title-inner {position:relative;float:left;right:50%;padding:0 40px;border-top:1px solid #ccc;}
-    #showtap04 .title-inner > b {display: block;position:relative;top:-20px;padding:0 15px;background:#f6f6f6;font-size:28px;color:#333;}
-    #showtap04 .lc-list {position:relative;overflow: hidden;padding:30px 0 50px;}
-    #showtap04 .lc-list dl {float:left;width:195px;text-align: center}
-    #showtap04 .lc-list dl:hover dd b {background:#ffe000;color:#333;}
-    #showtap04 .lc-list dd {margin-top:25px;font-size:14px;color:#333;}
-    #showtap04 .lc-list dd b {position:relative;display: block;z-index:99;margin:15px auto 0;width:32px;height:32px;line-height:32px;text-align: center;font-size:14px;color:#999;border-radius:50%;background:#fff;}
-    #showtap04 .lc-list > i {display: block;position:absolute;width:975px;bottom:66px;left:97px;z-index:9;border-top:1px solid #e6e6e6;}
-    #showtap04 .lc-list  dt img{   -webkit-transition: all .5s;
-        -moz-transition: all .5s;
-        -ms-transition: all .5s;
-        -o-transition: all .5s;
-        transition: all .5s;}
-    #showtap04 .lc-list dl:hover dt img{    -webkit-transform: translateY(-5px);
-        -moz-transform: translateY(-5px);
-        transform: translateY(-5px);}
-</style>
+</div>
 <!--服务流程-->
 <div id="showtap04" class="container-fluid">
     <div class="container">
@@ -598,58 +311,19 @@
         	            <i></i>
         </div>
     </div>
-</div>											<style>
-    #showtap05 {background:;}
-    #showtap05 .jingx-bb {padding-top:70px;padding-bottom:40px;text-align: center}
-    #showtap05 .jingx-bb span {display:block;position:relative;top:-10px;font-size:16px;color:#666;}
-    #showtap05 .title-warp {position:relative;float:left;left:50%}
-    #showtap05 .title-inner {position:relative;float:left;right:50%;padding:0 40px;border-top:1px solid #ccc;}
-    #showtap05 .title-inner > b {display: block;position:relative;top:-20px;padding:0 15px;background-color:#fff;font-size:28px;color:;}
-</style>
+</div>
 <!--精选产品title-->
 <div id="showtap05" class="container-fluid">
     <div class="container">
         <div class="jingx-bb">
         	<div><div class="title-warp"><p class="title-inner"><b>精选产品与服务</b></p></div></div>
-            <span>已为上百万企业提供满意的企业营销服务</span>          
+            <span>已为上百万企业提供满意的企业营销服务</span>
         </div>
 
     </div>
 </div>											<!--拆分标题-->
 				<!--拆分背景色-->
-						<style>
-    #showtap06 {background:#FFF;}
-    #showtap06 .jingx-list {padding-bottom:30px;}
-    #showtap06 .jingx-div {width:575px;}
-    #showtap06 .list-left {float:left;width:125px;height:380px;overflow: hidden;background-color: #55a3f2;}
-    #showtap06 .jingx-title {font-size: 24px;color:#fff;padding:35px;}
-    #showtap06 .list-right {float:left;width:450px;height:380px;}
-    #showtap06 .jptab-list {padding-left:20px;text-align: right}
-    #showtap06 .jptab-list li {color:#fff;font-size:14px;padding:8px 10px;}
-    #showtap06 .jingx-div .jptab-list .active {background:#fff;color:#55a3f2}
-    #showtap06 .jingx-right-div .jptab-list .active {background:#fff;color:#24a4f5}
-    #showtap06 .list-right > a {}
-    #showtap06 .list-right dl{position:relative;z-index:5;float:left;width: 225px;height: 190px;background-color: #fff;padding:25px 0 25px 20px;box-shadow: 0 0 0 #fff; -webkit-transition: all .3s ease;
-        transition: all .3s ease;cursor:pointer;    border-top: 1px solid #e5e5e5;    border-right: 1px solid #e5e5e5;}
-    #showtap06 .list-right dl:hover {-webkit-box-shadow: 0 15px 30px 0px rgba(0,0,0,.1);
-        box-shadow: 0 15px 30px 0px rgba(0,0,0,.1);border-color:transparent;z-index: 99;}
-    #showtap06 .list-right dl:hover dd {border-color:transparent;}
-     #showtap06 .list-right  > div a:nth-child(3) dl{border-bottom: 1px solid #e5e5e5;}
-     #showtap06 .list-right  > div a:last-child dl{border-bottom: 1px solid #e5e5e5;}
-    #showtap06 .list-right dt{position:absolute;bottom:1px;right:1px;z-index:9;}
-    #showtap06 .list-right dd {position:absolute;top:25px;left:20px;bottom:20px;right:0;z-index:99;}
-    #showtap06 .list-right dd >p {font-size:16px;color:#333;width:100%;overflow:hidden;text-overflow:ellipsis;white-space: nowrap}
-    #showtap06 .list-right dd >span {display:block;font-size:14px;color:#999;margin:5px 0 10px;}
-    #showtap06 .list-right dd >b {font-size:14px;color:#ff4400;}
-    #showtap06 .list-right dt img{   -webkit-transition: all .7s;
-        -moz-transition: all .7s;
-        -ms-transition: all .7s;
-        -o-transition: all .7s;
-        transition: all .7s;}
-    #showtap06 .list-right dl:hover dt img{    -webkit-transform: scale(1.03);
-        -moz-transform: scale(1.03);
-        transform: scale(1.03);}
-</style>
+
 <!--精选产品列表-->
 <div id="showtap06" class="container-fluid">
     <div class="container jingx-list">
@@ -658,10 +332,10 @@
                 <p class="jingx-title">营销套餐</p>
                 <ul class="jptab-list" data-id="changeTab">
                 	<!--左侧导航栏 start-->
-                	                		                			                				<li data-id="tab1" class="active">微信套餐</li>
-                				                			                		                                    		                                    		                                    		                                    		                                    		                			                				<li data-id="tab6">百度搜索营销</li>
-                				                			                		                                    		                                    		                                    		                                    		                                    		                			                				<li data-id="tab11">小程序开发</li>
-                				                			                		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                    		                                        <!--左侧导航栏 end-->
+					<li data-id="tab1" class="active">微信套餐</li>
+					<li data-id="tab6">百度搜索营销</li>
+                	<li data-id="tab11">小程序开发</li>
+					<!--左侧导航栏 end-->
                 </ul>
             </div>
             <div class="list-right">
@@ -977,8 +651,8 @@
 </div>
 
 <script>
-    $(function(){    	
-    	
+    $(function(){
+
         $('[data-id="changeTab"]').on("mouseover","li",function(){
             $(this).addClass("active").siblings().removeClass("active");
             $(this).parent().parent().next().find("[data-tab='"+$(this).attr("data-id")+"']").show();
@@ -986,71 +660,9 @@
         })
     })
 </script>				<!--showtype end-->
-    
-	<!--营销攻略 begin-->
-	<style>
-    #stratrgy08 {background:#F6F6F6;}
-    #stratrgy08 .hotb-list {padding:40px 0;}
-    #stratrgy08 .hotb-list > li {float:left;width:376px;margin-right:21px;border:1px solid #e6e6e6;box-shadow: 0 0 0 #fff;-webkit-transition: all .3s ease;transition: all .3s ease;box-sizing: border-box;margin-bottom: 15px;}
-    #stratrgy08 .hotb-list > li:hover {-webkit-box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        box-shadow: 0 15px 30px rgba(0,0,0,.1);
-        /*-webkit-transform: translateY(-2px);
-        transform: translateY(-2px);*/
-        border-radius: 2px;
-        border-color: transparent;}
-    #stratrgy08 .hotb-list > li:nth-child(3n){margin-right: 0; }
-    #stratrgy08 .hotb-list > li .list-img {width:278px;height:190px;overflow: hidden;}
-    #stratrgy08 .hotb-list > li .list-img img{   -webkit-transition: all .7s;
-        -moz-transition: all .7s;
-        -ms-transition: all .7s;
-        -o-transition: all .7s;
-        transition: all .7s;}
-    #stratrgy08 .hot-bb {padding-top:60px;text-align: center;}
-    #stratrgy08 .hot-bb span {display:block;position:relative;top:-10px;font-size:16px;color:#666;}
-    #stratrgy08 .title-warp {position:relative;float:left;left:50%}
-    #stratrgy08 .title-inner {position:relative;float:left;right:50%;padding:0 40px;border-top:1px solid #ccc;}
-    #stratrgy08 .title-inner > b {display: block;position:relative;top:-20px;padding:0 15px;background:#F6F6F6;font-size:28px;color:#333;}
-    #stratrgy08 .hotb-list .hot-head{padding: 20px; background-color: #3abc8f; color: #fff; font-size: 20px; }
-	
-			#stratrgy08 .hotb-list .hot-head.group01{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-			#stratrgy08 .hotb-list .hot-head.group02{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-			#stratrgy08 .hotb-list .hot-head.group03{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-			#stratrgy08 .hotb-list .hot-head.group04{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-			#stratrgy08 .hotb-list .hot-head.group05{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-			#stratrgy08 .hotb-list .hot-head.group06{
-			background-color: #f3c157;
-			background-image:url(/images/loadimage.htm);
-		}
-	    #stratrgy08 .hotb-list .hot-head.group02{background-color: #f3c157; }
-    #stratrgy08 .hotb-list .hot-head.group03{background-color: #828ad9; }
 
-    #stratrgy08 .hotb-list .hot-head p:nth-of-type(2){font-size: 14px; }
-    #stratrgy08 .hotb-list .hot-articalList{padding:15px 20px; padding-bottom: 5px; height: 110px;background-color:#fff; }
-    #stratrgy08 .hotb-list .hot-articalList ul li{
-    	padding-left: 10px; position: relative; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;margin-bottom: 10px;font-size: 14px;
-    }
-    #stratrgy08 .hotb-list .hot-articalList ul li a{color: #666; }
-    #stratrgy08 .hotb-list .hot-articalList ul li:before{
-		content: ""; width: 4px; height: 4px; background-color: #666; border-radius: 50%; position: absolute; top: 7px; left: 0px;
-    }
-    #stratrgy08 .hotb-list .hot-articalList ul li:hover a{color: #ff4400; cursor: pointer; }
-    #stratrgy08 .hotb-list .hot-articalList ul li:hover:before{background-color: #ff4400; }
-</style>
+	<!--营销攻略 begin-->
+
 <!--热门宝贝-->
 <div  id="stratrgy08" class="container-fluid">
     <div class="container">
@@ -1153,7 +765,7 @@
     </div>
 </div>
 	<!--营销攻略 end-->
-	
+
 	<!--真实案例begin-->
     <div class="jpal container">
     <div class="jpal-title">
@@ -1401,16 +1013,16 @@
                         </li>
 									</ul>
 					</div>
-       
+
     </div>
 	<!--真实案例end-->
-	
+
 	<!--了解镖狮网 begin-->
     <div class="about-index">
     	<div class="about-index-title">
     		<div><div class="title-warp"><p class="title-inner"><b>了解镖狮网</b></p></div></div>
     	</div>
-     
+
     	<div class="container cards-wrap">
     		<div class="good-service-card card">
     			<div class="card-title-wrap bg1">服务保障</div>
@@ -1476,7 +1088,7 @@
     				</a>
     				<div>
     					<a target="_blank" href="http://tv.cctv.com/2016/11/20/VIDEOfYLqYSBfkUI9XajjphP161120.shtml" class="normal-link text-overflow">
-    						<b style="background:transparent"></b><span class="tag">[朝闻天下]</span>镖狮网受邀世界互联网大会 
+    						<b style="background:transparent"></b><span class="tag">[朝闻天下]</span>镖狮网受邀世界互联网大会
     					</a>
     					<a target="_blank" href="http://www.iqiyi.com/w_19ruhbnuu5.html" class="normal-link text-overflow">
     						<b style="background:transparent"></b><span class="tag">[发现者说]</span>不断的归零，复盘，镖狮网的创业成功之路
@@ -1550,7 +1162,7 @@
 		$(this).addClass('current');
 		$('.zbBottomContentLeft .TABbox').hide();
 		$('.zbBottomContentLeft .TABbox' + idx).show();
- 
+
 	});
 	// 滚动
 	var awardsList = $('#sep2016fList');
@@ -1561,11 +1173,14 @@
 	    var oul=awardsList;
 	    function c(){
 	        oul.animate({marginTop:'-26px'},800,'',function(){
-	            $(this).css({marginTop:'0px'}).find('li:first').appendTo(this); 
+	            $(this).css({marginTop:'0px'}).find('li:first').appendTo(this);
 	        });
 	    }
 	    var timer = setInterval(c,2000);
 	};
+
+	//轮播第一个加active
+	$('.carousel-inner').children().eq(1).addClass('active');
 </script>
 	
 <script type="text/javascript" src="{{asset('js/monitor.js')}}"></script>
