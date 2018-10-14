@@ -1,0 +1,132 @@
+.classify{
+	padding:10px;
+}
+
+.allclassify{
+	width:400px;
+}
+.yiji_ul{
+	width:412px;
+	display:none;
+}
+
+.all_lei i{
+	width:20px;
+	height:20px;
+	display:inline-block;
+	background: url('../images/jia.png') no-repeat left center;
+	/*border:1px solid #ddd;*/
+	margin-right:10px;
+	position:relative;
+	top:6px;
+	left:0;
+}
+.all_lei em{
+	margin-left:50px;
+	color:#367fa9;
+	margin-top: 5px
+
+
+}
+.all_lei input{
+	width:100px;
+	height:20px;
+	line-height:30px;
+	padding-left:8px;
+	margin-left:10px;
+	outline:none;
+
+}
+.all_lei i.on{
+	background: url('../images/jian.png') no-repeat;
+	cursor:pointer;
+}
+.classify ul li{
+	margin:10px;
+}
+.classify .yiji_yi {
+	margin-left:20px;
+}
+.classify .yiji_yi em{
+	margin-left:30px;
+	color:#367fa9;
+}
+.classify .yiji_yi strong{
+	margin-left:20px;
+	color:#367fa9;
+	font-weight:normal;
+}
+.classify ul li.on .yiji{
+
+	background: url('../images/jian.png') no-repeat;
+	cursor:pointer;
+}
+.classify ul li .yiji{
+	width:20px;
+	height:20px;
+	display:inline-block;
+	background: url('../images/jia.png') no-repeat left center;
+	/*border:1px solid #ddd;*/
+	margin-right:10px;
+	cursor:pointer;
+	position:relative;
+	top:6px;
+	left:0;
+}
+.classify ul li ol{
+	width:352px;
+	margin-left:50px;
+	display:none;
+}
+.addtianjia{
+	color:#f39c12;
+}
+.addtianjia i{
+	font-size:18px;
+	margin-right:10px;
+}
+.erji_er em{
+	margin-left:30px;
+	color:#367fa9;
+}
+.erji_er strong{
+	margin-left:20px;
+	color:#367fa9;
+	font-weight:normal;
+}
+.classify ol li.on .erji{
+	background: url('../images/jian.png') no-repeat;
+	cursor:pointer;
+}
+.classify ol li .erji{
+	width:20px;
+	height:20px;
+	display:inline-block;
+	cursor:pointer;
+	background: url('../images/jia.png') no-repeat left center;
+	/*border:1px solid #ddd;*/
+	margin-right:10px;
+	position:relative;
+	top:6px;
+	left:0;
+}
+.classify ul li.on ol{
+	display:block;
+}
+.classify ol li.on ul{
+	display:block;
+}
+.diceng_ul{
+	width:311px;
+	margin-left:30px;
+	display:none;
+}
+.diceng_ul li em{
+ color:#367fa9;
+}
+.diceng_ul li strong{
+	margin-left:22px;
+	color:#367fa9;
+	font-weight:normal;
+}
+
