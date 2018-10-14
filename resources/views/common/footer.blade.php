@@ -20,63 +20,11 @@
                 </p>
                 <div class="TABbox TABbox0">
                     <ul>
+                        @foreach($links as $val)
                         <li>
-                            <a href="http://dyy.ma.cn/" target="_blank">网店代运营</a>
+                            <a href="{{$val['link']}}" target="_blank">{{$val['name']}}</a>
                         </li>
-                        <li>
-                            <a href="http://bbs.chinaapp.org/" target="_blank">App推广 </a>
-                        </li>
-                        <li>
-                            <a href="http://tool.nfa5.com/" target="_blank">站长工具</a>
-                        </li>
-                        <li>
-                            <a href="http://www.keyhu.net" target="_blank">合肥建网站</a>
-                        </li>
-                        <li>
-                            <a href="http://www.seoshequ.cn" target="_blank">苏州SEO</a>
-                        </li>
-                        <li>
-                            <a href="http://www.keyhu.com" target="_blank">合肥企业建站</a>
-                        </li>
-                        <li>
-                            <a href="http://www.xiaoniuseo.com/" target="_blank">北京seo服务</a>
-                        </li>
-                        <li>
-                            <a href="http://www.1-du.net" target="_blank">宝安网站建设</a>
-                        </li>
-                        <li>
-                            <a href="http://www.ksttwl.com/" target="_blank">昆山网络公司</a>
-                        </li>
-                        <li>
-                            <a href="http://www.yanzipang.com" target="_blank">北京SEO营销外包</a>
-                        </li>
-                        <li>
-                            <a href="http://www.qidianla.com" target="_blank">起点学院</a>
-                        </li>
-                        <li>
-                            <a href="http://www.meijiexia.com/" target="_blank">媒介匣</a>
-                        </li>
-                        <li>
-                            <a href="http://www.iyunying.org" target="_blank">产品运营</a>
-                        </li>
-                        <li>
-                            <a href="http://www.huodonghezi.com" target="_blank">APP运营方案</a>
-                        </li>
-                        <li>
-                            <a href="http://www.jutuiedu.com" target="_blank">营销培训</a>
-                        </li>
-                        <li>
-                            <a href="http://www.bbs.we7.cc" target="_blank">微信开源系统</a>
-                        </li>
-                        <li>
-                            <a href="http://www.hmsem.com" target="_blank">sem</a>
-                        </li>
-                        <li>
-                            <a href="http://mj.yuzhua.com" target="_blank">微博推广</a>
-                        </li>
-                        <li>
-                            <a href="http://mayiin.com/" target="_blank">画册印刷</a>
-                        </li>
+                        @endforeach
                     </ul>
                 </div>
 

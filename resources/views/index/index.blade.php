@@ -774,246 +774,86 @@
         <div class="commen-title">
 			 <div class="anallList-wrap">
 			 		<ul id="anallList" class="pull-right anallList">
-																					<li class="hoverAl caClass" data-id="caseitem1" traceflag="content_tab_电子商务" id="case1">电子商务</li>
-																												<li data-id="caseitem2" traceflag="content_tab_生活服务" id="case2">生活服务</li>
-																												<li data-id="caseitem3" traceflag="content_tab_实体店" id="case3">实体店</li>
-																		 </ul>
+						<li class="hoverAl caClass" data-id="caseitem1" traceflag="content_tab_电子商务" id="case1">电子商务</li>
+						<li data-id="caseitem2" traceflag="content_tab_生活服务" id="case2">生活服务</li>
+						<li data-id="caseitem3" traceflag="content_tab_实体店" id="case3">实体店</li>
+					</ul>
 			 </div>
         </div>
 		<div class="alTabContain">
-												<ul class="al-list" id="caseitem1" >
-															<li onclick="window.open('http://www.51biaoshi.com/spcase/1302.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">巨梨公众号代运营</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>1999元</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>14天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">玩转社交类APP巨梨，建立公众号和小程序，通过优质内容和高可玩性活动策划引流，14天达到粉丝增长3500+</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1292.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">优惠券购物网站</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>15万</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>60天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">为美就购提供建站服务，为网友提供优质折扣商品和优惠折扣商品信息，也可与淘宝卖家沟通合作，内容每天更新</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1295.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">深圳嘉华利电子模版网站</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>6980元/首年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>30天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">量身打造的展示型网站，网站色彩饱满中和，排版富有吸引力，引导客户深层浏览网站，目的寻找客源和展示公司实力</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1291.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">博领科技电子模版网站</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>6980元/首年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>30天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">客户要求是展现产品和公司实力，网站首页满屏滚动banner 具有强烈的视觉冲击感。 设计上衬托出科技感，交互上便于用户操作</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1284.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">如何打造平台小程序</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>500元/年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>10天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">为掌上北京生活通提供互动平台型小程序，同城本地的分类导航服务、兴趣圈子的交流、行业化的专业平台等</div>
-                        </li>
-									</ul>
-												<ul class="al-list" id="caseitem2" style="display:none">
-															<li onclick="window.open('http://www.51biaoshi.com/spcase/1301.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">装修行业朋友圈广告</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>10000/月</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>6个月</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">保定业之峰装饰有限公司通过朋友圈广告，收集有效线索3000+，客户转化率高达30%</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1294.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">法律服务小程序</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>3.5万</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>40天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">页面设计简洁，短步骤找到专业律师，可在线咨询、预约。同时提供合同审查，股权咨询等为用户在线解决法律问题。</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1293.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">在线阅读小程序</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>3万</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>30天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">用户进入在线阅读小程序可在线选择书籍阅读，另外用户还可通过小游戏赚积分、解锁书籍，增加了用户的粘性。</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1296.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">乐在点点餐饮小程序模版</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>3980元/首年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>10天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">餐饮模版提供单店多店、配送系统、扫码点餐、预约桌位、扫码付款、支付收银、会员营销、优惠卡劵、打印系统等。</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1283.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">餐饮店的智慧运营</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>980元/年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>10天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">《罗大胡子》实现了线上点餐、线上预约及外送、到店一桌一码自助点餐、自助买单等，让繁忙变轻松！</div>
-                        </li>
-									</ul>
-												<ul class="al-list" id="caseitem3" style="display:none">
-															<li onclick="window.open('http://www.51biaoshi.com/spcase/1297.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">张一元公众号代运营</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>5000/月</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>12个月</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">茶叶零售行业，通过搭建商城，微信图文运营输入茶文化，达到有效曝光，粉丝增长1万，文章平均阅读达400</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1300.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">保定新天地百货朋友圈广告</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>10000/月</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>2个月</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">传统行业大型综合百货商场，通过朋友圈广告的原创文案、活动策划、设计等达到短期内曝光40+万，粉丝增长5+千</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1043.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">哈尔滨万达乐园代运营</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>20000元/月</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>12个月</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">订阅号运营，玩得转内容，抓得住群众，创造10万+，你的品牌也能成爆款</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1282.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">时装店如何线上引流</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>2500元/天</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>10天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">《米诺时装店》通过商城小程序实现打通线上线下，甚至把很多老客户都引流到了线下店</div>
-                        </li>
-											<li onclick="window.open('http://www.51biaoshi.com/spcase/1281.htm','_blank');">
-                            <div class="cgalNew">
-            					<p class="cgantit">鲜花店小程序</p>
-            					<div class="anlist">
-            					<ul>
-            						<li>项目金额</li>
-            						<li>3000元/年</li>
-                				</ul>
-                				<ul>
-                					<li>项目周期</li>
-                					<li>10天</li>
-                				</ul>
-            				</div>
-            				<div class="al-details">门店小程序上线后，鲜花店的日点击高达1563次，门店日营业额增长5倍</div>
-                        </li>
-									</ul>
-					</div>
-
+			<ul class="al-list" id="caseitem1" >
+                @if(!empty($customer))
+                    @foreach($customer as $val)
+                        @if($val['cid'] ==1)
+                            <li onclick="window.open('/customer/detail/{{$val->id}}');">
+                                <div class="cgalNew">
+                                    <p class="cgantit">{{$val['title']}}</p>
+                                    <div class="anlist">
+                                        <ul>
+                                            <li>项目金额</li>
+                                            <li>{{$val['money']}}</li>
+                                        </ul>
+                                        <ul>
+                                            <li>项目周期</li>
+                                            <li>{{$val['day']}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="al-details">{{$val['description']}}</div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
+			<ul class="al-list" id="caseitem2" style="display:none">
+                @if(!empty($customer))
+                    @foreach($customer as $val)
+                        @if($val['cid'] ==2)
+                            <li onclick="window.open('/customer/detail/{{$val->id}}');">
+                                <div class="cgalNew">
+                                    <p class="cgantit">{{$val['title']}}</p>
+                                    <div class="anlist">
+                                        <ul>
+                                            <li>项目金额</li>
+                                            <li>{{$val['money']}}</li>
+                                        </ul>
+                                        <ul>
+                                            <li>项目周期</li>
+                                            <li>{{$val['day']}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="al-details">{{$val['description']}}</div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
+			<ul class="al-list" id="caseitem3" style="display:none">
+                @if(!empty($customer))
+                    @foreach($customer as $val)
+                        @if($val['cid'] ==3)
+                            <li onclick="window.open('/customer/detail/{{$val->id}}');">
+                                <div class="cgalNew">
+                                    <p class="cgantit">{{$val['title']}}</p>
+                                    <div class="anlist">
+                                        <ul>
+                                            <li>项目金额</li>
+                                            <li>{{$val['money']}}</li>
+                                        </ul>
+                                        <ul>
+                                            <li>项目周期</li>
+                                            <li>{{$val['day']}}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="al-details">{{$val['description']}}</div>
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
+                @endif
+            </ul>
+		</div>
     </div>
 	<!--真实案例end-->
 

@@ -1,0 +1,73 @@
+﻿.case-banner {background:#fff;margin-top:10px;padding:25px 25px 20px;margin-bottom: 15px;}
+.case-banner > div.case-banner_left > h1 { font-size:28px;margin-bottom: 20px;font-weight: 700;}
+.case-banner > div.case-banner_left{float: left;width:828px;}
+.case-banner > div.case-banner_right{float: left;width: 224px; height: 40px; background-color: #ff4400; border-radius: 4px; font-size: 14px;color: #ffffff;text-align: center;line-height: 40px;margin-top: 15px;}
+.case-banner > div.case-banner_right a{color: #fff;}
+.case-session {background:#fff;overflow: hidden;}
+.case-mes {background: #fff;width:310px;padding-bottom:999px;margin-bottom:-999px}
+.case-mes > ul {padding:30px 20px 20px;border-bottom:1px solid #e5e5e5;}
+.case-mes .sp-des {color:#949494}
+.case-mes > ul > li {margin-bottom:10px;font-size:13px;position:relative;}
+.case-mes > ul > li .custom-name {white-space:nowrap; overflow:hidden; text-overflow:ellipsis;cursor:default;}
+.case-mes > ul > li.pro-cur {cursor:pointer;}
+.case-mes > ul > li > span {font-weight:600;}
+.publish {margin:20px 0;}
+.publish dt {width:84px;height:84px;border:1px solid #f6f6f6;cursor:pointer;}
+.publish dd  {    width: 147px;margin-left:10px;position:relative;}
+.publish dd > h6 {white-space:nowrap; overflow:hidden; text-overflow:ellipsis;margin-bottom:10px;cursor:pointer;}
+.title-details {width:243px;position:absolute;top:20px;left:-72px;background:#f9f9f9;padding:5px 10px;display:none;z-index: 999;text-align:right;border:1px solid #666;}
+.custom-details {width:243px;position:absolute;top:20px;right:0px;background:#f9f9f9;padding:5px 10px;display:none;z-index: 999;text-align:right;border:1px solid #666;}
+.title-details > b {display:block;position:absolute;top:-11px;right:6px;border:6px solid transparent;border-bottom:6px solid #f9f9f9;}
+.rz-img {position:relative;cursor:pointer;}
+.rz-img > b {display:block;position:absolute;top:30px;left:0px;width:80px;font-size:12px;background:#fff;padding:2px 0;text-align:center;display:none;z-index:9999;border:1px solid #666;border-radius:2px;}
+.rz-img img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+.publish dd > p {margin-top:15px}
+.publish dd > p > a {padding:5px 20px;color:#fff;background: #ff3f3f;border-radius: 4px;font-size:12px;}
+.pro-img {width:206px;height:124px;background:#f9f9f9;margin:20px 0;}
+.case-tags li {float:left;background:#f1f1f1;font-size:12px;color:#999;margin-right:12px;padding:2px 6px;border-radius:4px;margin-top:10px;}
+.case-con {padding:30px;width:850px;background: #fff;border-right: 11px solid rgb(245, 245, 245);padding-bottom:999px;margin-bottom:-999px}
+.case-con > img {width:100%;background:#eaeaea;margin-top:20px;}
+.xq-description ul > li {width:25%;}
+.company-mes {
+    background: #f6f6f6;
+    margin-top: 50px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #ff3f3f;
+    font-weight:600;
+}
+.xq-describe {margin-top:15px;}
+.xq-release {margin-bottom:15px;}
+.more-case {margin-top:20px;background:#fff;padding:20px 40px;}
+.more-case > p {padding-bottom:20px;position:relative;padding-left:14px;}
+.more-case > p > b {display:block;position:absolute;top:0px;left:0px;width:4px;height:18px;background:#ff3f3f}
+.more-case dl {margin-right:25px;}
+.more-case dt  {width:245px;height:135px;background:#f9f9f9;overflow:hidden;cursor:pointer;}
+.more-case dd {width: 245px;margin-top:5px;}
+.other-ser {padding:20px 0 0 20px;}
+.other-ser-t {width:100%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size:16px;color:#555;}
+.other-ser dl {border-bottom:1px dashed #e5e5e5;padding:5px 0;}
+.other-ser dl:last-child {border:none;}
+.other-ser  dt {float:left;width:78px;height:78px;text-align:center;cursor:pointer;overflow:hidden}
+.custom {display:table;}
+.custom > a {position: relative;top: 10px;width:78px;height:78px;}
+.custom > a img{width:100%;}
+.other-ser  dd {float:left;width:177px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;margin-left:10px;}
+.other-ser  dd p a {display:block;font-size:14px;color:#333;margin-top:15px;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;margin-bottom:10px;}
+.other-ser  dd span {font-size:12px;color:#ff4400;margin-right:5px;}
+.other-ser  dd {color:#333;font-size:12px;}
+.sp-zxcontent textarea{
+	width: 100%;
+}
+.titleInfo span{color: #999;font-size: 16px; padding: 0 15px;border-right: 1px solid #e5e5e5;}
+.titleInfo span:first-child{padding-left: 0;}
+.titleInfo span:last-child{border: none;}
+.titleInfo span strong{color: #333;font-weight: normal;}
+
+
+
+

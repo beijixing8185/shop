@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/reset.css')}}">
-    <link rel="stylesheet" href="{{asset('css/index.css')}}"/>
+ {{--   <link rel="stylesheet" href="{{asset('css/index.css')}}"/>--}}
+    <link rel="stylesheet" href="{{asset('css/pop.css')}}"/>
+    <link rel="stylesheet" href="{{asset('css/swiper.min.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/popup.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/propopup.css')}}"/>
     <link rel="stylesheet" href="{{asset('css/footer.css')}}"/>
@@ -18,6 +20,7 @@
     <script src="{{asset('js/demand-top.js')}}"></script>
     <script src="{{asset('js/xslider.js')}}"></script>
     <script src="{{asset('js/iconfont.js')}}"></script>
+    <script src="{{asset('js/swiper.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/common.js')}}"></script>
     @yield('css')
     <!--[if lt IE 9]>
