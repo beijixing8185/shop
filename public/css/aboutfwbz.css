@@ -1,0 +1,195 @@
+﻿.baozhang{
+    background-color: #f7f7f7;
+    box-shadow:0 3px 2px rgba(0,0,0,0.1);
+}
+.baozhang .BzBanner{
+    height: 320px;
+    width: 100%;
+    background: url('../images/fubz_banner.png') no-repeat center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.baozhang .BzBanner{
+    margin-bottom: 80px;
+}
+.BzBox{
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow:0 0px 4px rgba(0,0,0,0.1);
+}
+.BzTitle{
+    padding: 20px 0;
+    position: relative;
+}
+.BzTitle:before{
+    content: "";
+    display: block;
+    width: 493px;
+    border-top: 1px solid #f2f2f2;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.BzTitle p{
+    font-size: 24px;
+    color: #666;
+    z-index: 4;
+    width: 190px;
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+}
+.BzTitle img{
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+    position: relative;
+    top: -3px;
+}
+.BzTitle div{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #98c6fc;
+}
+.BzText{
+    padding: 15px 20px;
+    background-color: #eff4f9;
+    box-shadow:0 5px 4px rgba(0,0,0,0.1);
+}
+.BzText .BzTextTop {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow:0 5px 4px rgba(0,0,0,0.1);
+}
+.BzText .BzTextTitle{
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 22px;
+    color: #333;
+    position: relative;
+}
+.BzText .BzTextTitle:after{
+    content: "";
+    display: block;
+    width: 8px;
+    height: 24px;
+    background-color: #7bb5fb;
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+.BzText > div.BzTextMain{
+    font-size: 14px;
+    color: #666;
+}
+.BzText div.BzTextMain p {
+    margin-bottom: 10px;
+}
+.BzText div.BzTextMain p:last-child{
+    margin-bottom: 0;
+}
+.BzText .BzTextBottom > div{
+    float: left;
+    width: 49%;
+    height: 200px;
+    margin-right: 20px;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow:0 5px 4px rgba(0,0,0,0.1);
+}
+.BzText .BzTextBottom > div:nth-of-type(2){
+    float: right;
+    margin-right: 0;
+}
+/* 导航 */
+.BzBxo{
+    position: relative;
+}
+.BzNav{
+    width: 50px;
+    box-sizing: border-box;
+    position: absolute;
+    left: -51px;
+    top: 0;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.BzNav li{
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+    border-bottom: 1px solid #f2f2f2;
+    cursor: pointer;
+}
+.BzNav li b{
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+}
+.BzNav li.current{
+    background-color: #7ab5fb;
+}
+.BzNav li:nth-of-type(1) b{
+    background: url('../images/xg-11.png') no-repeat center;
+}
+.BzNav li.current:nth-of-type(1) b{
+    background: url('../images/xg-1.png') no-repeat center;
+}
+.BzNav li:nth-of-type(2) b{
+    background: url('../images/xg-22.png') no-repeat center;
+}
+.BzNav li.current:nth-of-type(2) b{
+    background: url('../images/xg-2.png') no-repeat center;
+}
+.BzNav li:nth-of-type(3) b{
+    background: url('../images/xg-33.png') no-repeat center;
+}
+.BzNav li.current:nth-of-type(3) b{
+    background: url('../images/xg-3.png') no-repeat center;
+}
+.BzNav li:nth-of-type(4) b{
+    background: url('../images/xg-44.png') no-repeat center;
+}
+.BzNav li.current:nth-of-type(4) b{
+    background: url('../images/xg-4.png') no-repeat center;
+}
+.BzNav li:nth-of-type(5) b{
+    background: url('../images/xg-55.png') no-repeat center;
+}
+.BzNav li.current:nth-of-type(5) b{
+    background: url('../images/xg-5.png') no-repeat center;
+}
+/* 底部保障 */
+.BzPro{
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.BzPro .BzProTitle{
+    padding: 15px 25px;
+    font-size: 18px;
+    color: #333;
+    background-color: #f9fcff;
+}
+.BzPro .BzProMain{
+    padding: 15px 25px;
+    font-size: 14px;
+    color: #333;
+}
+.BzPro .BzProMain p:not(last-child){
+    margin-bottom: 10px;
+}
+/**/
+.fixedNav{
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    transform: translateX(-635px);
+}

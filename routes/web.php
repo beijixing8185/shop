@@ -71,14 +71,26 @@ Route::group(['namespace' =>'News','prefix' => 'news'], function () {
 
     Route::get('list', 'NewsController@newsList');      //资讯栏目
 
-    Route::get('index', 'NewsController@index');        //新闻栏目
+    Route::get('index/{statusId?}', 'NewsController@index');        //新闻栏目
 
-    Route::get('detail', 'NewsController@detail');        //新闻详情
+    Route::get('detail/{id}', 'NewsController@detail');        //新闻详情
 
+});
+
+//案例
+Route::group(['namespace' =>'Customer','prefix' => 'customer'], function () {
+
+    Route::get('detail/{id}', 'CustomerController@detail');      //案例详情
 
 });
 
 
+//关于我们
+Route::group(['namespace' =>'About','prefix' => 'about'], function () {
+
+    Route::get('index/{id}', 'AboutController@index');      //案例详情
+
+});
 
 //留言
 Route::group(['namespace' =>'Message','prefix' => 'message'], function () {
