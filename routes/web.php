@@ -117,3 +117,18 @@ Route::group(['namespace' =>'Common','prefix' => 'common'], function () {
 
 
 });
+
+Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
+    Route::get('login', 'AuthController@login');       // 登录
+    Route::post('login', 'AuthController@postLogin');       //登录
+    Route::get('logout', 'AuthController@logout');       //退出登录
+
+    Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function () {
+        Route::get('/index', 'IndexController@index');       // 后台首页
+        Route::get('orderList', 'IndexController@platOrderList');       // 平台订单
+        Route::get('getAdminUserList', 'AuthController@getAdminUserList');    // 后台用户
+    });
+
+
+
+});
