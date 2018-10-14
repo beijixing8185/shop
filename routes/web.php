@@ -115,7 +115,10 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
         Route::get('/index', 'IndexController@index');       // 后台首页
         Route::get('orderList', 'IndexController@platOrderList');       // 平台订单
         Route::get('getAdminUserList', 'AuthController@getAdminUserList');    // 后台用户
+
     });
+    Route::get('addService', 'ServiceController@addService');    // 添加服务
+    Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
 
 
 
