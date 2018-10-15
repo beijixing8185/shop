@@ -34,6 +34,14 @@ class ServiceController extends Controller
 
     }
 
+    public function upload(Request $req){
+
+
+        return response()->json(['error' => 0, "url" => 123, 'thumb_url' => 456]);
+
+
+    }
+
 
 
 

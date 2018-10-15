@@ -123,4 +123,6 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
 
 
 
+
 });
+Route::post('/upload', 'Admin\ServiceController@upload');    // 上传
