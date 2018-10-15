@@ -23,4 +23,12 @@ class About extends Model{
     {
         return self::where('id',$id)->first();
     }
+
+    /**
+     * 查询栏目和id
+     */
+    public static function getList()
+    {
+        return self::select(['id','category'])->get();
+    }
 }

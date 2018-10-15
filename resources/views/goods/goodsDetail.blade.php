@@ -24,8 +24,7 @@
 
 
 @section('content')
-
-    @include('./common/demand')
+@include('./common/demand')
 @include('./common/nav')
 @include('./common/search')
 @include('./common/right')

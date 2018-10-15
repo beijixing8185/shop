@@ -12,15 +12,9 @@ namespace app\Controllers\Common;
 use App\Controllers\Functions\FunctionsController;
 use App\Http\Controllers\Controller;
 use App\Models\GoodsCate;
-use App\Models\Link;
 
 class BaseController extends Controller
 {
-    public $link;
-    public function __construct()
-    {
-        $this ->link = Link::getList(1);   //外链列表
-    }
     //无限极分类栏目
     public function getTree()
     {

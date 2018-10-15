@@ -16,11 +16,11 @@
             <div class="zbBottomTop contentBox">
                 <p class="tabspan">
                     <span class="current caClass" id="showfriendlink" traceflag="footer_tab_友情链接">友情链接</span>
-                    <span class="caClass" id="showbsservice" traceflag="footer_tab_镖狮服务">镖狮服务</span>
+                    <span class="caClass" id="showbsservice" traceflag="footer_tab_镖狮服务">萤火虫服务</span>
                 </p>
                 <div class="TABbox TABbox0">
                     <ul>
-                        @foreach($links as $val)
+                        @foreach(Cache('link') as $val)
                         <li>
                             <a href="{{$val['link']}}" target="_blank">{{$val['name']}}</a>
                         </li>
@@ -43,20 +43,19 @@
             <div class="poi contentBox">
                 <div class="zbtabList">
                     <ul>
-                        <li><a rel="nofollow" href="/aboutus.htm?tab=3" target="_blank">关于我们</a><i></i></li>
-                        <li><a rel="nofollow" href="/aboutus.htm" target="_blank">效果保障</a><i></i></li>
-                        <li><a rel="nofollow" href="/aboutus.htm?tab=1" target="_blank">服务保障</a><i></i></li>
-                        <li><a rel="nofollow" href="/aboutus.htm?tab=2" target="_blank">服务流程</a><i></i></li>
-                        <li><a rel="nofollow" href="/complain/suggest.htm" target="_blank">意见反馈</a><i></i></li>
-                        <li><a rel="nofollow" href="/websiteNav.htm" target="_blank">网站导航</a></li>
+                        @if(!empty(Cache('about_list')))
+                            @foreach(Cache('about_list') as $val)
+                        <li><a rel="nofollow" href="/about/index/{{$val['id']}}" target="_blank">{{$val['category']}}</a><i></i></li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
                 <div class="phoneCode">
                     <p>
-                        <img src="/picture/phone01.png" alt="phone">4000-581-581 <span>工作时间 9:30-18:30</span>
+                        <img src="/picture/phone01.png" alt="phone">010-53526642 <span>工作时间 9:30-18:30</span>
                     </p>
                     <div>
-                        ©Designed by @51biaoshi.com 北京发镖网络科技有限公司 京ICP备15062508-2
+                        © 2018 欢迎访问上海好歆信息科技有限公司萤火虫网 沪ICP备15050787号-16
                     </div>
                 </div>
                 <div class="qcodeBTM">
@@ -66,12 +65,12 @@
                         </dt>
                         <dd>微信公众号</dd>
                     </dl>
-                    <dl>
+                    {{--<dl>
                         <dt>
-                            <img src="/picture/lion-app-zhushou.jpg" alt="微信公众号">
+                            <img src="/picture/lion-weixin-new.png" alt="微信公众号">
                         </dt>
-                        <dd>镖狮助手（服务商）</dd>
-                    </dl>
+                        <dd>萤火虫网</dd>
+                    </dl>--}}
                 </div>
             </div>
         </div>
