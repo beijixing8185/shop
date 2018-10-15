@@ -10,6 +10,8 @@ namespace App\Controllers\Admin;
 
 use App\Facades\Api;
 use App\Http\Controllers\Controller;
+use App\Models\GoodsCate;
+use App\Models\GoodsSpu;
 use Illuminate\Http\Request;
 use App\Models\Admin\AdminUser;
 
@@ -17,9 +19,34 @@ use App\Models\Admin\AdminUser;
 class ServiceController extends Controller
 {
 
-    public function addService(){
+    /**
+     * 服务列表
+     */
+    public function serviceList(){
+        $goods = GoodsSpu::list();
+        return view('admin.goods.serviceList',compact('goods'));
+    }
 
-        return view('admin.serviceForm');
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * 添加以及修改
+     */
+    public function addService(Request $request){
+        $where = ' and pid = 0';
+        $cate =  GoodsCate::getList($where,1);
+        $cate_two  = '';
+        $cate_three = '';
+        if ($request->id){
+            $goods = GoodsSpu::find($request->id);
+        }else{
+            $goods =  new GoodsSpu;
+        }
+
+
+        //产品状态
+        $goods_status = config('constants.goods_status');
+        return view('admin.goods.serviceForm',compact('cate','goods','goods_status','cate_two','cate_three'));
     }
 
     /**
@@ -28,19 +55,16 @@ class ServiceController extends Controller
      * 登录
      */
     public function postAddService(Request $req){
-
-        dd($req->all());
-
-
-    }
-
-    public function upload(Request $req){
+//dd($req->all());
 
 
-        return response()->json(['error' => 0, "url" => 123, 'thumb_url' => 456]);
-
+        $result = GoodsSpu::add($req);
+        if($result)
+            return redirect('hx/admin/serviceList');
 
     }
+
+
 
 
 

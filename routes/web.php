@@ -63,6 +63,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('goodsDetail', 'GoodsController@goodsDetail');
 
         Route::get('/index', 'GoodsController@index');
+        Route::get('/cate', 'GoodsController@getGoodsCate');
     });
 
 //资讯
@@ -118,11 +119,12 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
         Route::get('getAdminUserList', 'AuthController@getAdminUserList');    // 后台用户
 
     });
-    Route::get('addService', 'ServiceController@addService');    // 添加服务
+    Route::get('serviceList', 'ServiceController@serviceList');    // 服务列表
+    Route::get('addService/{id?}', 'ServiceController@addService');    // 添加编辑服务
     Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
 
 
 
 
 });
-Route::post('/upload', 'Admin\ServiceController@upload');    // 上传
+Route::post('/upload', 'Common\UploadController@uploadImage');    // 上传图片
