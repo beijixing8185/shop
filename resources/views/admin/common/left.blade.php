@@ -8,7 +8,7 @@
       $menu[] = ['title' => '服务', 'icon' => 'fa-dashboard',
           'child' => [
               ['title' => '添加服务', 'url' => '/hx/admin/addService', 'icon' => 'fa-circle-o'],
-              ['title' => '查看服务', 'url' => '/hx/admin/showService', 'icon' => 'fa-circle-o'],
+              ['title' => '查看服务', 'url' => '/hx/admin/serviceList', 'icon' => 'fa-circle-o'],
           ],
       ];
 

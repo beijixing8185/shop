@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="{{asset('css/hotactive.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/news.css')}}"/>
 	<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}"/>
-	<script src="{{asset('js/swiper-4.2.6.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/common-header.js')}}"></script>
 	<script src="{{asset('js/popup.js')}}"></script>
 	<script src="{{asset('js/pop.js')}}"></script>
@@ -19,8 +18,6 @@
 	<script type="text/javascript" src="/js/common-auth.js"></script>
 	<script type="text/javascript" src="/js/jquery.jcarousel.min.js"></script>
 	<script type="text/javascript" src="/js/jcarousel.connected-carousels.js"></script>
-	<script type="text/javascript" src="/js/cmslist.js"></script>
-	<script type="text/javascript" src="/js/monitor.js"></script>
 
 @endsection
 
@@ -31,20 +28,30 @@
 	@include('./common/nav')
 	@include('./common/search')
 	@include('./common/right')
-	@include('./common/poper')
+{{--	@include('./common/poper')--}}
 
 
 	<!-- banner图 -->
+
 	<div class="strategyBannerBox content">
+		@if(isset($hot[0]))
 		<div class="strategyBannerLeft">
-			<a href="/cms/index.htm" target="_blank"><img src="/picture/banner01.png" alt="2018年微信朋友圈广告最新价格"></a>
+			<a href="{{$hot[0]['open_url']}}" target="_blank"><img src="{{$hot[0]['picture']}}"></a>
 		</div>
+		@endif
 		<div class="strategyBannerRight">
 			<div class="strategyBannerRightTop">
-				<a href="/cms/cl79-cm56594-at764.htm" target="_blank"><img src="/picture/banner2.png" alt="如何进行微信平台的高级排版"></a><a href="/cms/cl77-cm56611-at781.htm" target="_blank"><img src="/picture/banner3.png" alt="一个网站一年要花多少钱"></a>
+				@if(isset($hot[1]))
+				<a href="{{$hot[1]['open_url']}}" target="_blank"><img src="{{$hot[1]['picture']}}"></a>
+				@endif
+				@if(isset($hot[2]))
+					<a href="{{$hot[2]['open_url']}}" target="_blank"><img src="{{$hot[2]['picture']}}"></a>
+				@endif
 			</div>
 			<div class="strategyBannerRightBottom">
-				<a href="/cms/cl80-cm56430-at600.htm" target="_blank"><img src="/picture/banner4.png" alt="获取精准用户，达到最大转化"></a>
+				@if(isset($hot[3]))
+				<a href="{{$hot[3]['open_url']}}" target="_blank"><img src="{{$hot[3]['picture']}}"></a>
+				@endif
 			</div>
 		</div>
 	</div>
@@ -117,7 +124,7 @@
 		</ul>
         {{ $news->links() }}
 	</div>
-
+{{--
 
 	<script>
         $('.zbBottomTop .tabspan span').click(function(){
@@ -127,7 +134,7 @@
             $('.zbBottomTop .TABbox').hide();
             $('.zbBottomTop .TABbox' + idx).show();
         });
-	</script>
+	</script>--}}
 
 	<script>
         var len = $('.strategyListText').length;

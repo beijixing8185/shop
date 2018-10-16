@@ -49,7 +49,7 @@
         <div class="pull-right res-input">
             <input type="text" id="searchFile" name="searchFile" placeholder=""/>
             <div class="glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
-            <input type="hidden" id="searchStr" value='[{"searchName":"微信代运营","url":"http://www.51biaoshi.com/product/376.htm?_pb=search"},{"searchName":"朋友圈广告","url":"http://www.51biaoshi.com/product/428.htm?_pb=search"},{"searchName":"百度百科","url":"http://www.51biaoshi.com/product/427.htm?_pb=search"},{"searchName":"开发建站","url":"http://www.51biaoshi.com/product/370.htm?_pb=search"},{"searchName":"小程序定制","url":"http://www.51biaoshi.com/product/438.htm?_pb=search"},{"searchName":"整合营销","url":"http://www.51biaoshi.com/product/432.htm?_pb=search"}]'>
+            <input type="hidden" id="searchStr" value=''>
             <ul class="find-example" id="findExample">
                 <li><a href="/product/419.htm" target="_blank">媒体发稿</a></li>
             </ul>

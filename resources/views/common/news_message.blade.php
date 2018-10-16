@@ -1,4 +1,4 @@
-<div class="strategyCode" style="z-index: 9" id="myScrollspy">
+<div class="strategyCode" style="z-index: 9" id="">
     <div class="yxQuest">
         <img src="/picture/yx-bg.png" alt=""/>
         <div>

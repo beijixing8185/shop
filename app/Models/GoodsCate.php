@@ -25,4 +25,17 @@ class GoodsCate extends Model{
             return self::whereRaw($wheres) ->get();
         }
     }
+
+    /**
+     * 根据id查询名称
+     * $ids string 1,2,3
+     */
+    public static function  getNameById($ids){
+        $ids = explode(',',$ids);
+        $cate_name = Self::select('name')->whereIn('id',$ids)->get();
+        return $cate_name;
+    }
+
+
+
 }

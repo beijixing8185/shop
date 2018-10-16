@@ -12,6 +12,7 @@ namespace app\Controllers\News;
 use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\ArticleCate;
+use App\Models\Banner;
 
 class NewsController extends Controller
 {
@@ -27,8 +28,9 @@ class NewsController extends Controller
         foreach($news as &$val){
             $val['tags'] = explode('，',$val['tag']);
         }
-       //dd($news);
-        return view('news.index',compact('column','statusId','news'));
+       //推荐hot
+        $hot = Banner::getList(1,2,4);
+        return view('news.index',compact('column','statusId','news','hot'));
     }
 
 
