@@ -41,4 +41,6 @@ class GoodsController extends Controller
         return response()->json(['code'=>0,'msg'=>'查询成功','data'=>$cate]);
 
     }
+
+
 }

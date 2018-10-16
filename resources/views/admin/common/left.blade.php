@@ -5,10 +5,12 @@
                 ['title' => '查看订单', 'url' => '/hx/admin/m86OrderList', 'icon' => 'fa-circle-o'],
         ],
     ];
-      $menu[] = ['title' => '服务', 'icon' => 'fa-dashboard',
+      $menu[] = ['title' => '商品服务', 'icon' => 'fa-dashboard',
           'child' => [
-              ['title' => '添加服务', 'url' => '/hx/admin/addService', 'icon' => 'fa-circle-o'],
               ['title' => '查看服务', 'url' => '/hx/admin/serviceList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加服务', 'url' => '/hx/admin/addService', 'icon' => 'fa-circle-o'],
+              ['title' => '查看规格', 'url' => '/hx/admin/specList', 'icon' => 'fa-circle-o'],
+              ['title' => '查看栏目', 'url' => '/hx/admin/cateList', 'icon' => 'fa-circle-o'],
           ],
       ];
 

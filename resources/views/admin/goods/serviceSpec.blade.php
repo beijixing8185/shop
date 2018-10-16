@@ -1,40 +1,12 @@
 @extends('admin.common.index')
-<link rel="stylesheet" href="{{ asset('kindeditor/themes/default/default.css') }}" />
-<link rel="stylesheet" href="{{ asset('kindeditor/plugins/code/prettify.css') }}" />
-<script type="text/javascript" charset="utf-8" src="/uedit/ueditor.config.js"></script>
-<script type="text/javascript" charset="utf-8" src="/uedit/ueditor.all.min.js"> </script>
-<script type="text/javascript" charset="utf-8" src="/uedit/lang/zh-cn/zh-cn.js"></script>
 
-<style type="text/css">
-#uploader2 ul{
-  overflow: hidden;
-  padding-left: 0;
-}
-   #uploader2 ul li{
-    list-style: none;
-    float: left;
-    margin-right: 5px;
-    position: relative;
-    width: 100px;
-    height: 100px;
-  }
-  #uploader2 ul li>img{
-    width: 100%;
-      height:100%;
-  }
-.up span{
-    position: relative;
-    z-index:20;
-    margin-left:5px;
-    cursor: pointer;
-    }
-</style>
+
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        服务操作
+        添加规格
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -56,61 +28,28 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{url('hx/admin/serviceForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{url('hx/admin/serviceSpecForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
         {!!csrf_field()!!}
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">服务分类:</label>
-
+                    <label for="inputEmail3" class="col-sm-2 control-label">服务名称:</label>
                     <div class="col-sm-5">
-                        <select name="cate_one" class="cate_one" id="cate_one" >
-                            <option value="0">请选择一级分类</option>
-                            @foreach($cate as $c)
-                                <option value="{{$c->id}}">{{$c->name}}</option>
+                        <select name="spu_id" class="spu_id" id="spu_id" >
+                            <option value="0">请选择服务</option>
+                            @foreach($goodsSpu as $g)
+                                <option value="{{$g->id}}" @if($g->id ==$goods->spu_id ) selected @endif>{{$g->spu_name}}</option>
                             @endforeach
                         </select>
-
-                        <select name="cate_two" class="cate_two" id="cate_two" >
-                            <option value="0">请选择二级分类</option>
-                            @if($cate_two)
-                                @foreach($cate_two as $k)
-                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-
-                        <select name="cate_id" class="cate_id" id="cate_id" >
-                            <option value="0">请选择三级分类</option>
-                            @if($cate_three)
-                                @foreach($cate_three as $k)
-                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-
                         <span class="cate" style="color:red"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务名称:</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">规格名称:</label>
 
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="请填写服务名称" name="spu_name"  id="title" value="{{$goods->spu_name}}"  onchange="checkTitle();">
+                  <div class="col-sm-3">
+                    <input type="number" class="form-control" placeholder="请填写服务名称" name="spec_name"  id="title" value="{{$goods->spec_name}}">
                     <span class="title" style="color:red"></span>
                   </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">主图:</label>
-                    <div class="col-sm-10">
-                        <input type="hidden" name="first_img" id="first_img" class="first_img" readonly="readonly" value="{{$goods->main_image}}" />
-                        <span class="tpxs">
-                            @if($goods->main_image)
-                                <img src="{{ $goods->main_image }}" class="images lf" style="height:100px; width:100px;">
-                            @endif
-                    </span>
-                        <input type="button" id="browse" value="上传图片"/>
-                        <span class="first_img" style="color:red"></span>
-                    </div>
                 </div>
 
                 <div class="form-group">
@@ -121,41 +60,36 @@
                     </div>
                 </div>
               <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务价格:</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">零售价格:</label>
                   <div class="col-sm-2">
-                    <input type="number" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="{{$goods->price}}" >
+                    <input type="text" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="{{$goods->price}}" >
                     <span class="price" style="color:red"></span>
                   </div>
               </div>
               <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务库存:</label>
+                  <label for="inputPassword3" class="col-sm-2 control-label">库存:</label>
 
                   <div class="col-sm-2">
-                    <input type="number" class="form-control" name="num" id="num" min="0" value="" >
+                    <input type="number" class="form-control" name="num" id="num" min="0" value="{{$goods->num}}" >
                     <span class="num" style="color:red"></span>
                   </div>
               </div>
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">服务详情:</label>
-                    <div class="col-sm-5">
-                        <script id="editor" style="width: 668px;height: 600px;"></script>
-                    </div>
-                </div>
+
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">状态:</label>
                 <div class="col-sm-10">
                     <select name="status" id="status">
-                        @foreach($goods_status as $k => $v)
-                    <option value="{{$k}}"  >{{$v}}</option>
-                @endforeach
+
+                    <option value="0">失效</option>
+                    <option value="1">有效</option>
                 </select>
                 </div>
                 </div>
 
               <div class="box-footer" style="padding-left: 600px;">
-                <input type="hidden" name="id" id="id" value="{{$goods->status}}">
-                <input type="submit" class="btn btn-info" value="提交">
-                <a href="" class="btn btn-default">取消</a>
+                <input type="hidden" name="id" id="id" value="{{$goods->id}}">
+                  <a href="" class="btn btn-default">取消</a>
+                  <input type="submit" class="btn btn-info" value="提交">
               </div>
 
             </form>

@@ -57,14 +57,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('orderList', 'MemberController@orderList');  //会员订单
     });
 
-//商城
-    Route::group(['namespace' =>'Goods','prefix' => 'goods'], function () {
 
-        Route::get('goodsDetail', 'GoodsController@goodsDetail');
-
-        Route::get('/index', 'GoodsController@index');
-        Route::get('/cate', 'GoodsController@getGoodsCate');
-    });
 
 //资讯
     Route::group(['namespace' =>'News','prefix' => 'news'], function () {
@@ -108,6 +101,14 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 });
 
 
+Route::group(['namespace' =>'Goods','prefix' => 'goods'], function () {
+
+    Route::get('goodsDetail', 'GoodsController@goodsDetail');
+
+    Route::get('/index', 'GoodsController@index');
+    Route::get('/cate', 'GoodsController@getGoodsCate');
+});
+
 Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('login', 'AuthController@login');       // 登录
     Route::post('login', 'AuthController@postLogin');       //登录
@@ -122,6 +123,15 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('serviceList', 'ServiceController@serviceList');    // 服务列表
     Route::get('addService/{id?}', 'ServiceController@addService');    // 添加编辑服务
     Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
+
+    Route::get('specList', 'ServiceController@specList');    // 服务列表
+    Route::get('serviceSpecForm/{id?}', 'ServiceController@serviceSpecForm');    // 添加规格
+    Route::post('serviceSpecForm', 'ServiceController@postServiceSpecForm');    // 提交规格
+
+    Route::get('addCates', 'ServiceController@addCates');    //添加栏目
+    Route::get('cateList', 'ServiceController@cateList');    //栏目列表
+    Route::post('addCates', 'ServiceController@postAddCates');    //提交栏目
+
 
 
 
