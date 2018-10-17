@@ -16,8 +16,7 @@ class TestController
     public function index()
     {
 
-        $where = 'mobile = 15010321498 and password = 1';
-        $user = User::getWhere($where);
-        dd($user);
+        $save_path = '/uploads/goods';
+        dd(public_path($save_path));
     }
 }

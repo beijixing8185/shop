@@ -25,4 +25,32 @@ class GoodsCate extends Model{
             return self::whereRaw($wheres) ->get();
         }
     }
+
+    /**
+     * 根据id查询名称
+     * $ids string 1,2,3
+     */
+    public static function  getNameById($ids){
+        $ids = explode(',',$ids);
+        $cate_name = Self::select('name')->whereIn('id',$ids)->get();
+        return $cate_name;
+    }
+    /**
+     * 添加栏目
+     *
+     */
+    public static function  addCate(array $data){
+
+        $cate = Self::where('level',$data['level'])->where('name',$data['name'])->first();
+        if($cate) return false;
+
+        $cate = new Self;
+        $cate->name = $data['name'];
+        $cate->pid = $data['pid'];
+        $cate->level = $data['level'];
+        return $cate->save();
+    }
+
+
+
 }

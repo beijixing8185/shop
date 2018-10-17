@@ -10,6 +10,9 @@ namespace app\Controllers\Goods;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\GoodsCate;
+use Illuminate\Http\Request;
+
 
 class GoodsController extends Controller
 {
@@ -23,4 +26,21 @@ class GoodsController extends Controller
     {
         return view('goods.goodsDetail');
     }
+
+    /**
+     * 获取商品分类
+     */
+    public function getGoodsCate(Request $request){
+
+        $this->validate($request,['value'=>'required|integer']);
+
+        $value  = $request->value;
+
+        $where = ' and pid = '.$value;
+        $cate = GoodsCate::getList($where,1);
+        return response()->json(['code'=>0,'msg'=>'查询成功','data'=>$cate]);
+
+    }
+
+
 }

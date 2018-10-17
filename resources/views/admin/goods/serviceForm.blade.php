@@ -58,90 +58,110 @@
             <!-- form start -->
             <form action="{{url('hx/admin/serviceForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
         {!!csrf_field()!!}
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">服务分类:</label>
 
+                    <div class="col-sm-5">
+                        <select name="cate_one" class="cate_one" id="cate_one" >
+                            <option value="0">请选择一级分类</option>
+                            @foreach($cate as $c)
+                                <option value="{{$c->id}}">{{$c->name}}</option>
+                            @endforeach
+                        </select>
+
+                        <select name="cate_two" class="cate_two" id="cate_two" >
+                            <option value="0">请选择二级分类</option>
+                            @if($cate_two)
+                                @foreach($cate_two as $k)
+                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+
+                        <select name="cate_id" class="cate_id" id="cate_id" >
+                            <option value="0">请选择三级分类</option>
+                            @if($cate_three)
+                                @foreach($cate_three as $k)
+                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
+                                @endforeach
+                            @endif
+                        </select>
+
+                        <span class="cate" style="color:red"></span>
+                    </div>
+                </div>
 
                 <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">服务名称:</label>
 
                   <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="请填写服务名称" name="title"  id="title" value=""  onchange="checkTitle();">
+                    <input type="text" class="form-control" placeholder="请填写服务名称" name="spu_name"  id="title" value="{{$goods->spu_name}}"  onchange="checkTitle();">
                     <span class="title" style="color:red"></span>
                   </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">图集:</label>
-
-                    <div class="col-sm-5">
-                        <div class="shangchuan">
-                            <div id="uploader2">
-                                <ul class="filelist clearfix">
-                                </ul>
-                            </div>
-                            <button type="button" id="upload_now2" class='browseServer'}>上传图片</button>
-                        </div>
-                        <span class="img" style="color:red"></span>
+                    <label for="inputPassword3" class="col-sm-2 control-label">主图:</label>
+                    <div class="col-sm-10">
+                        <input type="hidden" name="first_img" id="first_img" class="first_img" readonly="readonly" value="{{$goods->main_image}}" />
+                        <span class="tpxs">
+                            @if($goods->main_image)
+                                <img src="{{ $goods->main_image }}" class="images lf" style="height:100px; width:100px;">
+                            @endif
+                    </span>
+                        <input type="button" id="browse" value="上传图片"/>
+                        <span class="first_img" style="color:red"></span>
                     </div>
                 </div>
 
-
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">市场价格:</label>
+                    <div class="col-sm-2">
+                        <input type="number" placeholder="市场价格(元)" class="form-control" name="market_price" id="price" value="{{$goods->market_price}}" >
+                        <span class="price" style="color:red"></span>
+                    </div>
+                </div>
               <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">服务价格:</label>
                   <div class="col-sm-2">
-                    <input type="text" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="" >
+                    <input type="number" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="{{$goods->price}}" >
                     <span class="price" style="color:red"></span>
                   </div>
               </div>
               <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">服务库存:</label>
 
-                  <div class="col-sm-5">
+                  <div class="col-sm-2">
                     <input type="number" class="form-control" name="num" id="num" min="0" value="" >
                     <span class="num" style="color:red"></span>
                   </div>
               </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">服务详情:</label>
-
                     <div class="col-sm-5">
                         <script id="editor" style="width: 668px;height: 600px;"></script>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">状态:</label>
+                <div class="col-sm-10">
+                    <select name="status" id="status">
+                        @foreach($goods_status as $k => $v)
+                    <option value="{{$k}}"  >{{$v}}</option>
+                @endforeach
+                </select>
+                </div>
+                </div>
 
-              <div class="form-group" style="display:none;">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务描述:</label>
-
-                  <div class="col-sm-5">
-                  <input type="text" placeholder="请填写商品描述" name="describe" id="describe" data-required value=""  />
-                  <!--   <textarea name="describe" id="describe" cols="30" rows="10" class="lf" style="width: 668px;" ></textarea> -->
-                    <span class="describe" style="color:red"></span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务介绍:</label>
-
-                  <div class="col-sm-5">
-                    <textarea name="introduce" id="introduce" cols="30" rows="10" class="lf" style="width: 668px;" ></textarea>
-                    <span class="introduce" style="color:red"></span>
-                  </div>
-              </div>
-
-
-
-              <!-- /.box-body -->
-
-              <!-- if(($check && $goodsDetail->status ==0) || empty($check)) -->
               <div class="box-footer" style="padding-left: 600px;">
-                <input type="hidden" name="id" id="id" value="">
+                <input type="hidden" name="id" id="id" value="{{$goods->status}}">
                 <input type="submit" class="btn btn-info" value="提交">
                 <a href="" class="btn btn-default">取消</a>
               </div>
-              <!-- endif -->
-              <!-- /.box-footer -->
+
             </form>
           </div>
-            <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+
         </div>
       </div>
 
@@ -163,23 +183,63 @@
             basePath : '/kindeditor/',
             uploadJson : '{{config('app.APP_URL')}}/upload'
         });
-        //图集
-        $('.shangchuan').on('click','.browseServer',function(){
-            editor.loadPlugin('multiimage', function() {
-                editor.plugin.multiImageDialog({
+        K('#browse').click(function() {
+            editor.loadPlugin('image', function() {
+                editor.plugin.imageDialog({
                     showRemote : false,
-                    // imageUrl : $(obj).prev('input').val(),
-                    clickFn : function(urlList) {
-                        K.each(urlList, function(i, data) {
-                            var tupian="<li><div class='up'><span class='tt'>设置头图</span><span class='sc'>删除</div><img src='"+data.url+"' alt=''>"
-                            tupian+="<input class='xFilePath' type='hidden'  name='imgs[]' value='"+data.url+"' readonly='readonly' />";
-                            $('.filelist').append(tupian);
-                        });
+                    imageUrl : K('.first_img').val(),
+                    clickFn : function(url, title, width, height, border, align) {
+                        K('.first_img').val(url);
+                        $(".tpxs").html('<img src="'+url+'" class="images lf" style="height:100px; width:100px;">');
                         editor.hideDialog();
                     }
                 });
             });
-        })
+        });
+    });
+
+    //二级分类
+    $('.cate_one').change(function(){
+        $(".cate_two").children().remove();
+        $(".cate_id").children().remove();
+        var value=this.value;
+        $.ajax({
+            url:'/goods/cate',
+            type:'get',
+            data:{
+                '_token':'{{csrf_token()}}',
+                'value':value
+            },
+            success:function (data) {
+                console.log(data);
+                var result = data['data'];
+                $(".cate_two").append("<option value='0'>请选择二级分类</option>");
+                for(var i = 0; i < result.length; i++){
+                    /*循环添加所有城市列表*/
+                    $(".cate_two").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
+                }
+            }
+        });
+    });
+    //三级分类
+    $(document).on('change', '.cate_two', function (){
+        $(".cate_id").children().remove();
+        var value=this.value;
+        $.ajax({
+            url:'/goods/cate',
+            type:'get',
+            data:{
+                '_token':'{{csrf_token()}}',
+                'value':value
+            },
+            success:function (data) {
+                var result = data['data'];
+                $(".cate_id").append("<option value='0'>请选择三级分类</option>");
+                for(var i = 0; i < result.length; i++){
+                    $(".cate_id").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
+                }
+            }
+        });
     });
 </script>
 <script>
