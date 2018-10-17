@@ -47,7 +47,7 @@
                   <label for="inputPassword3" class="col-sm-2 control-label">规格名称:</label>
 
                   <div class="col-sm-3">
-                    <input type="number" class="form-control" placeholder="请填写服务名称" name="spec_name"  id="title" value="{{$goods->spec_name}}">
+                    <input type="text" class="form-control" placeholder="请填写服务名称" name="spec_name"  id="title" value="{{$goods->spec_name}}">
                     <span class="title" style="color:red"></span>
                   </div>
                 </div>

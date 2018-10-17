@@ -63,7 +63,10 @@
                         更新时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        操作
+                        编辑
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                        删除
                     </th>
                 </tr>
             </thead>
@@ -77,10 +80,19 @@
                         <td>{{$g->market_price}}</td>
                         <td>{{$g->price}}</td>
                         <td>{{$g->gc_name}}</td>
-                        <td>{{$g->status}}</td>
+                        <td>
+                            @if($g->status==0)
+                                <span class="label label-warning">待上架</span>
+                            @elseif($g->status==1)
+                                <span class="label label-success">上架在售</span>
+                            @else
+                                <span class="label label-default">已下架</span>
+                            @endif
+                        </td>
                       <td>{{$g->created_at}}</td>
                       <td>{{$g->updated_at}}</td>
                       <td><a href="{{url('hx/admin/addService',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
+                      <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$g->id}}" style="margin-left: 10px; cursor: pointer;" ></a></td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -102,6 +114,23 @@
     </section>
     <!-- /.content -->
   </div>
+<script>
+    //重置密码
+    $('#example2').on('click','.delSpec',function(){
+        var Id = $(this).attr('data-Id');
+        var resultUrl = '/hx/admin/delService?id='+ Id;
+        if(confirm('确定要删除吗?')){
+            $.get(resultUrl,function(res){
+                if(res['code']){
+                    alert('删除失败')
+                }else{
+                    alert('删除成功')
+                    window.location.href=''
+                }
+            })
+        }
+    });
+</script>
 
   @stop
 

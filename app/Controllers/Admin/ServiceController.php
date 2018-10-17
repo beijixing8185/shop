@@ -15,6 +15,7 @@ use App\Models\GoodsSpu;
 use App\Models\GoodsSku;
 use Illuminate\Http\Request;
 use App\Models\Admin\AdminUser;
+use Illuminate\Support\Facades\DB;
 
 
 class ServiceController extends Controller
@@ -63,6 +64,20 @@ class ServiceController extends Controller
 
     }
     /**
+     * @param Request $request
+     * 删除服务
+     */
+    public function delService(Request $request){
+
+        $res = GoodsSpu::whereId($request->id)->update(['status'=>2]);
+        if($res)
+            return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
+        else
+            return response()->json(['code'=>1,'msg'=>'删除失败','data'=>'']);
+
+    }
+
+    /**
      * @param Request $req
      * @return \Illuminate\Http\RedirectResponse
      * 添加规格
@@ -79,6 +94,7 @@ class ServiceController extends Controller
         }else{
             $goods =  new GoodsSku;
         }
+        //dd($goods);
         return view('admin.goods.serviceSpec',compact('goods','goodsSpu'));
 
     }
@@ -92,7 +108,7 @@ class ServiceController extends Controller
         $request->offsetSet('spu_name',$spu_name);
         $result = GoodsSku::add($request);
         if($result)
-            return redirect('hx/admin/serviceList');
+            return redirect('hx/admin/specList');
 
     }
 
@@ -103,6 +119,16 @@ class ServiceController extends Controller
         $goods = GoodsSKu::list();
         return view('admin.goods.specList',compact('goods'));
     }
+    /**
+     * 删除规格
+     */
+    public function delSpec(Request $request){
+        $res = GoodsCate::whereId($request->id)->update(['status'=>0]);
+        if($res)
+            return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
+        else
+            return response()->json(['code'=>1,'msg'=>'删除失败','data'=>'']);
+    }
 
 
 
@@ -110,8 +136,9 @@ class ServiceController extends Controller
      * 分类列表
      */
     public function cateList(){
-
-        return view('admin.goods.cateList');
+        $where = ' and level = 1';
+        $cate =  GoodsCate::getList($where,1);
+        return view('admin.goods.cateList',compact('cate'));
     }
 
     /**
@@ -125,31 +152,72 @@ class ServiceController extends Controller
     /**
      * 添加分类
      */
-    public function postAddCates(Request $request){
-        $this->validate($request,['name'=>'required|string']);
+    public function postAddCates(Request $request)
+    {
+        $this->validate($request, ['name' => 'required|string']);
 
         $params = $request->all();
         $data['name'] = $params['name'];
         $data['pid'] = 0;
         $data['level'] = 1;
 
-        if (isset($params['cate_two']) && !empty($params['cate_two'])){//此处只添加了3级栏目
+        if (isset($params['cate_two']) && !empty($params['cate_two'])) {//此处只添加了3级栏目
             $data['pid'] = $params['cate_two'];
             $data['level'] = 3;
-        }else if($params['cate_one']){//此处只添加了2级栏目
+        } else if ($params['cate_one']) {//此处只添加了2级栏目
             $data['pid'] = $params['cate_one'];
             $data['level'] = 2;
         }
         $res = GoodsCate::addCate($data);
-        if($res){
+        if ($res) {
             echo '<script>alert("添加成功,可继续添加");window.location.href=""</script>';
             return;
-        }else{
+        } else {
             echo '<script>alert("添加失败,不能重复添加");window.location.href=""</script>';
             return;
         }
+    }
+    /**
+     * 修改分类
+     */
+    public function updateCate(Request $request){
+        $this->validate($request,[
+            'name'=>'required|string',
+            'cate_id'=>'required|integer',
+        ]);
+
+
+        $res = GoodsCate::whereId($request->cate_id)->update(['name'=>$request->name]);
+        if($res)
+            return response()->json(['code'=>0,'msg'=>'修改成功','data'=>'']);
+        else
+            return response()->json(['code'=>1,'msg'=>'修改失败','data'=>'']);
 
     }
+    /**
+     * 删除分类
+     */
+    public function delCate(Request $request){
+        $this->validate($request,[
+            'cate_id'=>'required|integer',
+        ]);
+
+        DB::beginTransaction();
+        try{
+            GoodsCate::whereId($request->cate_id)->update(['status'=>0]);
+            GoodsCate::where('pid',$request->cate_id)->update(['status'=>0]);
+        DB::commit();
+            return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
+
+        }catch(Exception $e){
+            DB::rollBack();
+            return response()->json(['code'=>1,'msg'=>'删除失败','data'=>'']);
+        }
+
+
+    }
+
+
 
 
 

@@ -123,14 +123,18 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('serviceList', 'ServiceController@serviceList');    // 服务列表
     Route::get('addService/{id?}', 'ServiceController@addService');    // 添加编辑服务
     Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
+    Route::get('delService', 'ServiceController@delService');    // 提交服务
 
     Route::get('specList', 'ServiceController@specList');    // 服务列表
     Route::get('serviceSpecForm/{id?}', 'ServiceController@serviceSpecForm');    // 添加规格
     Route::post('serviceSpecForm', 'ServiceController@postServiceSpecForm');    // 提交规格
+    Route::get('delSpec', 'ServiceController@delSpec');    // 删除规格
 
     Route::get('addCates', 'ServiceController@addCates');    //添加栏目
     Route::get('cateList', 'ServiceController@cateList');    //栏目列表
     Route::post('addCates', 'ServiceController@postAddCates');    //提交栏目
+    Route::post('updateCate', 'ServiceController@updateCate');    //修改栏目
+    Route::get('delCate', 'ServiceController@delCate');    //删除栏目
 
 
 
