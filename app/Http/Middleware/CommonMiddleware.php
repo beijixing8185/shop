@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Models\About;
+use App\Models\GoodsSpu;
 use App\Models\Link;
 use App\Controllers\Common\BaseController;
 use Closure;
@@ -19,7 +20,7 @@ class CommonMiddleware
      */
     public function handle($request, Closure $next)
     {
-
+        //Cache::forget('goods_list');
         $minutes = 2592000; //一个月的秒数
 
         //外链列表
@@ -41,6 +42,11 @@ class CommonMiddleware
             Cache::put('about_list', $about_list, $minutes);
         }
 
+        //底部萤火虫服务   hot
+        if(!Cache::get('goods_list')){
+            $goods_list = GoodsSpu::list(' and hot = 1 and status = 1')->toArray();
+            Cache::put('goods_list', $goods_list, $minutes);
+        }
         return $next($request);
     }
 }

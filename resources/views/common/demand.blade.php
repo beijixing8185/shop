@@ -1,7 +1,9 @@
 <div class="container-fluid header-d" style="background:#fff;min-width:1170px;">
     <div class="header-res container">
-        <div class="pull-left"><a href="/" class="logo"><img src="/picture/logo03.png" alt="镖狮网" title="镖狮网" style="width:236px;height:44px;margin:10px 0;"/></a></div>
-        <!--<p class="pull-left logoTitle">严选营销服务，保障营销效果</p>-->
+        <div class="pull-left"><a href="/" class="logo">
+                <img src="/picture/logo03.png" alt="萤火虫网" title="萤火虫网" style="width:236px;height:44px;margin:10px 0;"/></a>
+        </div>
+    {{--   <p class="pull-left logoTitle">严选营销服务，保障营销效果</p>--}}
         <div id="publish-hover" class="publish-hover pull-right">
             <b></b>
             <a class="publish-header pull-left color-theme caClass" traceflag="header_pop_发布需求" id="headerDemand" onclick="javascript:tofb('','');">发布需求</a>
@@ -26,7 +28,7 @@
                     <dt class="pull-left"><img src="/picture/p-icon03.png" alt=""/></dt>
                     <dd class="pull-left">
                         <p> 智能推荐</p>
-                        大数据智能推荐最优服务商
+                        大数据为您智能分析您的需要
                     </dd>
                 </dl>
                 <dl class="p-con">
@@ -46,23 +48,24 @@
 
             </div>
         </div>
-        {{--<div class="pull-right res-input">
-            <input type="text" id="searchFile" name="searchFile" placeholder=""/>
-            <div class="glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
-            <input type="hidden" id="searchStr" value=''>
-            <ul class="find-example" id="findExample">
-                <li><a href="/product/419.htm" target="_blank">媒体发稿</a></li>
-            </ul>
-        </div>--}}
         <div class="research pull-right">
             <div class="pull-left">
                 <div class="res-input">
                     <input type="text" value="" id="searchFile" name="searchFile" searchtype="" placeholder="搜搜您感兴趣的服务/案例">
-                    <div class="color-theme search glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
+                    <div class="color-theme search glyphicon glyphicon-search" id="searchBtn"></div>
                 </div>
-
             </div>
         </div>
         <div></div>
     </div>
 </div>
+<script>
+    $('#searchBtn').click(function () {
+        var content = $('#searchFile').val();
+        if(content == ''){
+            alert("请输入您要查询的服务/案例");
+        }else{
+            window.location.href='/search/index/'+content;
+        }
+    })
+</script>

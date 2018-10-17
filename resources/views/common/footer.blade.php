@@ -20,22 +20,25 @@
                 </p>
                 <div class="TABbox TABbox0">
                     <ul>
+                        @if(!empty(Cache('link')))
                         @foreach(Cache('link') as $val)
                         <li>
                             <a href="{{$val['link']}}" target="_blank">{{$val['name']}}</a>
                         </li>
                         @endforeach
+                        @endif
                     </ul>
                 </div>
 
                 <div class="TABbox TABbox1">
                     <ul>
-                        <li><a href="/product/376.htm?_pb=bsfw" target="_blank">微信代运营</a></li>
-                        <li><a href="/product/427.htm?_pb=bsfw" target="_blank">百度百科</a></li>
-                        <li><a href="/product/428.htm?_pb=bsfw" target="_blank">微信朋友圈广告</a></li>
-                        <li><a href="/product/370.htm?_pb=bsfw" target="_blank">网站定制开发</a></li>
-                        <li><a href="/product/379.htm?_pb=bsfw" target="_blank">微信小程序模版开发</a></li>
-                        <li><a href="/product/397.htm?_pb=bsfw" target="_blank">整合营销推广</a></li>
+                        @if(!empty(Cache('goods_list')))
+                        @foreach(Cache('goods_list') as $val)
+                            <li>
+                                <a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a>
+                            </li>
+                        @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -65,12 +68,7 @@
                         </dt>
                         <dd>微信公众号</dd>
                     </dl>
-                    {{--<dl>
-                        <dt>
-                            <img src="/picture/lion-weixin-new.png" alt="微信公众号">
-                        </dt>
-                        <dd>萤火虫网</dd>
-                    </dl>--}}
+
                 </div>
             </div>
         </div>
@@ -85,33 +83,6 @@
         $('.zbBottomTop .TABbox' + idx).show();
     });
 </script>
-
-<!--footer end-->
-<!--  发镖成功begin -->
-{{--<div class="sucEroShadow" id="_submit_success02">
-    <div class="inner" style="width: 400px;height:auto;padding-top: 20px;top:35%;left: calc(50% - 200px);">
-        <p class="closed" style="margin: -5px 15px 0px 0;"><img onclick="closeSuccess02()" src="/picture/des-closed.png" alt=""/></p>
-        <div class="time"><span id="sucinform02">镖狮管家将在15分钟内，用010-8992开头的电话与您联系。联系时间：（工作日: 9:30-18:30）</span></div>
-        <div class="anniu" style="width: 150px;">
-            <a class="rindex" onclick="closeSuccess02()" href="javascript:void(0);">关闭</a>
-        </div>
-    </div>
-</div>--}}
-<!--  发镖成功end -->
-<!--  发镖失败begin -->
-{{--<div class="sucEroShadow" id="_submit_error02">
-    <div class="inner" style="width: auto;height:auto;padding-top: 20px;top:35%;left:40%;">
-        <p class="closed" style="margin: -5px 15px 0px 0;"><img onclick="closeError02()" src="/picture/des-closed.png" alt=""/></p>
-        <div class="time">服务器开小差了，在提交一次吧。</div>
-        <!-- <p class="about-btn"><a href="">了解平台保障细节</a></p> -->
-        <div class="anniu" style="width: 150px;">
-            <a class="rindex" href="javascript:closeError02();">关闭</a>
-        </div>
-    </div>
-</div>--}}
-<!--  发镖失败end -->
-
-
 @include('./common/right')
 
 <script>

@@ -6,10 +6,10 @@
             </h1>
         </div>
         <ul class="pull-left nav-list nav-list-new">
-            <li class="hoverA" style="width: 60px;"><a href="" class='active'>首页</a></li>
-            <li class="hotImg"><a href="/jhs/page1.htm">聚划算 <!-- <img src="/picture/hot.gif" alt=""> --></a></li>
-            <li><a rel="nofollow" href="/aboutus.htm">效果保障</a></li>
-            <li><a href="/cmslist/cl0-pg1.htm">营销攻略</a></li>
+            <li class="hoverA" style="width: 60px;"><a href="/" class='active'>首页</a></li>
+            <li class="hotImg"><a href="/news/list">聚划算 <!-- <img src="/picture/hot.gif" alt=""> --></a></li>
+            <li><a rel="nofollow" href="/about/index/2">效果保障</a></li>
+            <li><a href="/news/index">营销攻略</a></li>
         </ul>
         <div id="publish-hover" class="publish-hover pull-right">
             <b></b>

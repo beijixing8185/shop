@@ -11,14 +11,12 @@
 
 
 @section('content')
-	<!--头部2 begin-->
+
 	@include('./common/index_search')
-	<!--头部2 end-->
-	<!--头部 banner begin-->
 	@include('./common/index_nav')
-	<!--头部 banner end-->
-<!--服务流程-->
 	@include('./common/index_banner')
+
+
 <div id="showtap01" class="container-fluid">
     <ul class="showtap-inner container">
     	    		<li>
@@ -95,110 +93,61 @@
 	    	        </ul>
     </div>
 </div>
+@if(!empty($goods[0]))
 <div  id="showtype12" class="container-fluid">
     <div class="container">
         <div class="hot-bb">
-            <div><div class="title-warp"><p class="title-inner"><b>优选聚划算</b></p></div></div>
-            <span>优选服务，引爆价格优惠
-                                        <a href="http://www.51biaoshi.com/jhs/page1.htm?_pb=yxjhs001" target="_blank">更多>></a>
-                                                                                                                                                        </span>
+            <div><div class="title-warp"><p class="title-inner"><b>{{$goods[0]['name']}}</b></p></div></div>
+            <span>{{$goods[0]['description']}}
+                  <a href="/news/list" target="_blank">更多>></a>
+			</span>
         </div>
-        <ul class="hotb-list">
-        	                        	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
-                <a href="http://www.51biaoshi.com/product/376.htm?_pb=yxjhs2"  target="_blank">
+        <ul class="hotb-list hotb-list-back-1">
+			@if(!empty($goods[0]['child']))
+				@foreach($goods[0]['child'] as $val)
+        	<li @if(!empty($val['main_image'])) style="background:url({{$val['main_image']}}) no-repeat center center;background-size: 276px 186px;" @endif >
+                <a href="/goods/goodsDetail/{{$val['id']}}"  target="_blank">
                 	<div class="topText">
-                        <p>公众号代运营</p>
-                        <p>微信运营整包方案</p>
+                        <p>{{$val['spu_name']}}</p>
+                        <p>{{$val['description']}}</p>
                     </div>
                     <div class="bottomPrice">
-                        <p><b>¥</b>2499起 <span>¥5000起</span></p>
+                        <p><b>¥</b>{{$val['price']}} <span>¥{{$val['market_price']}}</span></p>
                     </div>
                 </a>
             </li>
-                        	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
-                <a href="http://www.51biaoshi.com/product/457.htm?_pb=yxjhs3"  target="_blank">
-                	<div class="topText">
-                        <p>订阅号搭建</p>
-                        <p>低成本从零打造宣传阵地</p>
-                    </div>
-                    <div class="bottomPrice">
-                        <p><b>¥</b>1999起 <span>¥4200起</span></p>
-                    </div>
-                </a>
-            </li>
-                        	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
-                <a href="http://www.51biaoshi.com/product/427.htm?_pb=yxjhs4"  target="_blank">
-                	<div class="topText">
-                        <p>百度百科</p>
-                        <p>百科词条创建修改</p>
-                    </div>
-                    <div class="bottomPrice">
-                        <p><b>¥</b>1500起 <span>¥2500起</span></p>
-                    </div>
-                </a>
-            </li>
-                        	                            <li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 276px 186px;">
-                <a href="http://www.51biaoshi.com/product/370.htm?_pb=yxjhs5"  target="_blank">
-                	<div class="topText">
-                        <p>网站定制开发</p>
-                        <p>量身定制网站</p>
-                    </div>
-                    <div class="bottomPrice">
-                        <p><b>¥</b>2388起 <span>¥5000起</span></p>
-                    </div>
-                </a>
-            </li>
-                        	        </ul>
+				@endforeach
+				@endif
+		</ul>
     </div>
 </div>
-
+@endif
 <!--热门宝贝-->
+	@if(!empty($goods[1]))
 <div  id="showtap03" class="container-fluid">
     <div class="container">
     	<div class="hot-bb">
-            <div><div class="title-warp"><p class="title-inner"><b>最热门服务</b></p></div></div>
-            <span>行业热点，给您最快捷服务推荐</span>
+            <div><div class="title-warp"><p class="title-inner"><b>{{$goods[1]['name']}}</b></p></div></div>
+            <span>{{$goods[1]['description']}}</span>
         </div>
     	<ul class="hotb-list">
-    	    		<li>
-    			<a href="http://www.51biaoshi.com/product/379.htm?_pb=rmfw1" target="view_window">
-                <p class="list-img"><img src="/picture/loadimage.htm" alt="小程序模板开发"></p>
-                <div class="hotb-con">
-                    <p style="color:">小程序模板开发</p>
-                    <div style="color:">低成本，高效率<b style="color:">8800元起</b></div>
-                </div>
-                </a>
-            </li>
-    	    		<li>
-    			<a href="http://www.51biaoshi.com/product/428.htm?_pb=rmfw2" target="view_window">
-                <p class="list-img"><img src="/picture/loadimage.htm" alt="朋友圈广告"></p>
-                <div class="hotb-con">
-                    <p style="color:">朋友圈广告</p>
-                    <div style="color:">用最生活的方式接近客户<b style="color:">5000元起</b></div>
-                </div>
-                </a>
-            </li>
-    	    		<li>
-    			<a href="http://www.51biaoshi.com/product/429.htm?_pb=rmfw3" target="view_window">
-                <p class="list-img"><img src="/picture/loadimage.htm" alt="模版建站"></p>
-                <div class="hotb-con">
-                    <p style="color:">模版建站</p>
-                    <div style="color:">维护简单，节省成本<b style="color:">2000元起</b></div>
-                </div>
-                </a>
-            </li>
-    	    		<li>
-    			<a href="http://www.51biaoshi.com/product/432.htm?_pb=rmfw4" target="view_window">
-                <p class="list-img"><img src="/picture/loadimage.htm" alt="口碑营销"></p>
-                <div class="hotb-con">
-                    <p style="color:">口碑营销</p>
-                    <div style="color:">量身定制推广渠道<b style="color:">2800元起</b></div>
-                </div>
-                </a>
-            </li>
-    	    	</ul>
+			@if(!empty($goods[1]['child']))
+				@foreach($goods[1]['child'] as $val)
+				<li>
+					<a href="/goods/goodsDetail/{{$val['id']}}" target="view_window">
+					<p class="list-img"><img src="{{$val['main_image']}}" alt="小程序模板开发"></p>
+					<div class="hotb-con">
+						<p>{{$val['spu_name']}}</p>
+						<div style="">{{$val['description']}}<b style="">{{$val['price']}}</b></div>
+					</div>
+					</a>
+				</li>
+				@endforeach
+			@endif
+    	</ul>
     </div>
 </div>
+	@endif
 <!--服务流程-->
 <div id="showtap04" class="container-fluid">
     <div class="container">
