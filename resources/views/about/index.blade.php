@@ -2,9 +2,10 @@
 
 @section('title',"$about->title")
 @section('description',"$about->description")
-@section('keyword',"$about->keywords")
+@section('keywords',"$about->keywords")
 
 @section('css')
+    <link rel="stylesheet" href="{{asset('css/header-top.css')}}">
 	<link rel="stylesheet" href="{{asset('css/about.css')}}">
 	<link rel="stylesheet" href="{{asset('css/aboutfwbz.css')}}">
 	<link rel="stylesheet" href="{{asset('css/common-header.css')}}">

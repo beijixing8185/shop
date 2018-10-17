@@ -97,4 +97,22 @@ textarea {
 resize: none;
 }
 dt{font-weight:normal}
-button,select{outline:none};
+button,select{outline:none}
+.pagination{
+	text-align: center;
+	background-color: #fff;
+	margin-bottom: 20px;
+}
+.pagination li{
+	float:left;
+}
+.page_css{
+	margin: 20px 0;
+}
+.page_css .pagination{
+	width: 1000px;
+	padding-bottom:20px;
+	margin-left:50px;
+}
+
+

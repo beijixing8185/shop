@@ -45,9 +45,9 @@
 .more-case {margin-top:20px;background:#fff;padding:20px 40px;}
 .more-case > p {padding-bottom:20px;position:relative;padding-left:14px;}
 .more-case > p > b {display:block;position:absolute;top:0px;left:0px;width:4px;height:18px;background:#ff3f3f}
-.more-case dl {margin-right:25px;}
+.more-case dl {margin-right:25px;margin-bottom: 10px;}
 .more-case dt  {width:245px;height:135px;background:#f9f9f9;overflow:hidden;cursor:pointer;}
-.more-case dd {width: 245px;margin-top:5px;}
+.more-case dd {width: 245px;margin-top:5px;text-align: center}
 .other-ser {padding:20px 0 0 20px;}
 .other-ser-t {width:100%;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;font-size:16px;color:#555;}
 .other-ser dl {border-bottom:1px dashed #e5e5e5;padding:5px 0;}

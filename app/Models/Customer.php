@@ -17,16 +17,19 @@ class Customer extends Model
     /**
      * 根据状态查询
      */
-    public static function getList($wheres='',$status='',$limit='')
+    public static function getList($wheres='',$status='',$limit='',$link='')
     {
         $where = 'id > 0'.$wheres;
         if(!empty($status)){
             $where .= ' and status = '.$status;
         }
-        if(!empty($limit)){
-            return self::whereRaw($where)->orderByRaw('id DESC')->limit($limit)->get();
+        if(!empty($link)){
+            $where .= ' and title like  "%'.$link.'%"';
         }
-        return self::whereRaw($where)->orderByRaw('id DESC')->get();
+        if(!empty($limit)){
+            return self::whereRaw($where)->orderByRaw('sort ASC')->limit($limit)->get();
+        }
+        return self::whereRaw($where)->orderByRaw('sort ASC')->get();
     }
 
     /**
@@ -38,4 +41,6 @@ class Customer extends Model
     {
         return self::where('id',$id) -> first();
     }
+
+
 }
