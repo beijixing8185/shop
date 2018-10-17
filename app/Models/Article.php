@@ -38,9 +38,9 @@ class Article  extends Model{
             $where .= ' and tag like  "%'.$link.'%"';
         }
         if(!empty($limit)){
-            return self::whereRaw($where) -> limit($limit) -> get();
+            return self::whereRaw($where)->orderBy('id','desc')->limit($limit)->get();
         }
-        return self::whereRaw($where)->paginate(1);
+        return self::whereRaw($where)->orderBy('id','desc')->paginate(10);
     }
 
     /**
@@ -51,5 +51,31 @@ class Article  extends Model{
     public static function getFind($id)
     {
         return self::where('id',$id)->first();
+    }
+
+    /**
+     * 添加商品
+     */
+    public static function add($object){
+        if($object->id){
+            $goods = Self::find($object->id);
+        }else{
+            $goods = new Self;
+        }
+
+        $goods->title = $object->title;
+        $goods->article_cate_id = $object->cate_id;
+        $goods->picture = $object->first_img;
+        $goods->tag = $object->tag;
+        $goods->keywords = $object->keywords;
+        $goods->description = $object->description;
+        $goods->author = $object->author;
+        $goods->number = $object->number;
+        $goods->hot = $object->hot;
+        $goods->content = $object->editorValue;
+        $goods->status = $object->status;
+        $goods->add_time = time();
+
+        return $goods->save();
     }
 }

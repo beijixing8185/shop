@@ -13,6 +13,14 @@
               ['title' => '查看栏目', 'url' => '/hx/admin/cateList', 'icon' => 'fa-circle-o'],
           ],
       ];
+      $menu[] = ['title' => '发布文章', 'icon' => 'fa-dashboard',
+          'child' => [
+              ['title' => '文章列表', 'url' => '/hx/admin/articleList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加文章', 'url' => '/hx/admin/addArticle', 'icon' => 'fa-circle-o'],
+              ['title' => '栏目列表', 'url' => '/hx/admin/specArticleList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加栏目', 'url' => '/hx/admin/cateArticleList', 'icon' => 'fa-circle-o'],
+          ],
+      ];
 
     $menu[] = [
         'title' =>  '后台用户',
