@@ -1,13 +1,21 @@
-<div class="container-fluid header-d" style="background:#fff;min-width:1170px;">
-    <div class="header-res container">
-        <div class="pull-left"><a href="/" class="logo"><img src="/picture/logo03.png" alt="镖狮网" title="镖狮网" style="width:236px;height:44px;margin:10px 0;"/></a></div>
-        <!--<p class="pull-left logoTitle">严选营销服务，保障营销效果</p>-->
+<div class="container-fluid header-md">
+    <div class="container">
+        <div class="pull-left logoImgTitle" style="margin-right: 70px;">
+            <h1>
+                <p class="pull-left logo-img"><a href="/"></a></p>
+            </h1>
+        </div>
+        <ul class="pull-left nav-list nav-list-new">
+            <li class="hoverA" style="width: 60px;"><a href="" class='active'>首页</a></li>
+            <li class="hotImg"><a href="/jhs/page1.htm">聚划算 <!-- <img src="/picture/hot.gif" alt=""> --></a></li>
+            <li><a rel="nofollow" href="/aboutus.htm">效果保障</a></li>
+            <li><a href="/cmslist/cl0-pg1.htm">营销攻略</a></li>
+        </ul>
         <div id="publish-hover" class="publish-hover pull-right">
             <b></b>
             <a class="publish-header pull-left color-theme caClass" traceflag="header_pop_发布需求" id="headerDemand" onclick="javascript:tofb('','');">发布需求</a>
             <div class="p-list">
                 <p class="p-title">定制您的需求，坐等服务商上门</p>
-
                 <dl class="p-con">
                     <dt class="pull-left"><img src="/picture/p-icon01.png" alt=""/></dt>
                     <dd class="pull-left">
@@ -26,7 +34,7 @@
                     <dt class="pull-left"><img src="/picture/p-icon03.png" alt=""/></dt>
                     <dd class="pull-left">
                         <p> 智能推荐</p>
-                        大数据智能推荐最优服务商
+                        大数据给你最需要的数据
                     </dd>
                 </dl>
                 <dl class="p-con">
@@ -36,33 +44,31 @@
                         不向雇主收取任何形式费用
                     </dd>
                 </dl>
-
                 <div class="p-public">
                     <a onclick="javascript:tofb('','');" class="caClass" traceflag="floatbar_pop_发布需求" id="headerFlowDemand">发布需求</a>
                 </div>
                 <div class="watch-xqgl">
                     <a rel="nofollow" href="/aboutus.htm">查看需求攻略</a>
                 </div>
-
             </div>
         </div>
-        {{--<div class="pull-right res-input">
+        <div class="pull-right res-input">
             <input type="text" id="searchFile" name="searchFile" placeholder=""/>
-            <div class="glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
-            <input type="hidden" id="searchStr" value=''>
+            <div class="glyphicon glyphicon-search" id="searchBtn"></div>
+            <input type="hidden" id="searchStr" value='[{"searchName":"微信代运营","url":"http://www.51biaoshi.com/product/376.htm?_pb=search"},{"searchName":"朋友圈广告","url":"http://www.51biaoshi.com/product/428.htm?_pb=search"},{"searchName":"百度百科","url":"http://www.51biaoshi.com/product/427.htm?_pb=search"},{"searchName":"开发建站","url":"http://www.51biaoshi.com/product/370.htm?_pb=search"},{"searchName":"小程序定制","url":"http://www.51biaoshi.com/product/438.htm?_pb=search"},{"searchName":"整合营销","url":"http://www.51biaoshi.com/product/432.htm?_pb=search"}]'>
             <ul class="find-example" id="findExample">
-                <li><a href="/product/419.htm" target="_blank">媒体发稿</a></li>
+                <li><a href="/search/index/媒体发稿" target="_blank">媒体发稿</a></li>
             </ul>
-        </div>--}}
-        <div class="research pull-right">
-            <div class="pull-left">
-                <div class="res-input">
-                    <input type="text" value="" id="searchFile" name="searchFile" searchtype="" placeholder="搜搜您感兴趣的服务/案例">
-                    <div class="color-theme search glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
-                </div>
-
-            </div>
         </div>
-        <div></div>
     </div>
 </div>
+<script>
+    $('#searchBtn').click(function () {
+        var content = $('#searchFile').val();
+        if(content == ''){
+            alert("请输入您要查询的服务/案例");
+        }else{
+            window.location.href='/search/index/'+content;
+        }
+    })
+</script>

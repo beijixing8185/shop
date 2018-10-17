@@ -11,92 +11,14 @@
 
 
 @section('content')
-
-
-
-
 	<!--头部2 begin-->
-    <div class="container-fluid header-md">
-        <div class="container">
-            <div class="pull-left logoImgTitle" style="margin-right: 70px;">
-            	<h1>
-	                <p class="pull-left logo-img"><a href="/"></a></p>
-                </h1>
-            </div>
-            <ul class="pull-left nav-list nav-list-new">
-                <li class="hoverA" style="width: 60px;"><a href="" class='active'>首页</a></li>
-                <li class="hotImg"><a href="/jhs/page1.htm">聚划算 <!-- <img src="/picture/hot.gif" alt=""> --></a></li>
-                <li><a rel="nofollow" href="/aboutus.htm">效果保障</a></li>
-				<li><a href="/cmslist/cl0-pg1.htm">营销攻略</a></li>
-            </ul>
-            <div id="publish-hover" class="publish-hover pull-right">
-				<b></b>
-            	<a class="publish-header pull-left color-theme caClass" traceflag="header_pop_发布需求" id="headerDemand" onclick="javascript:tofb('','');">发布需求</a>
-				<div class="p-list">
-					<p class="p-title">定制您的需求，坐等服务商上门</p>
-					<dl class="p-con">
-						<dt class="pull-left"><img src="/picture/p-icon01.png" alt=""/></dt>
-						<dd class="pull-left">
-							<p>一键发布 </p>
-							不需花时间选服务商
-						</dd>
-					</dl>
-					<dl class="p-con">
-						<dt class="pull-left"><img src="/picture/p-icon02.png" alt=""/></dt>
-						<dd class="pull-left">
-							<p>快速响应 </p>
-							需求发布后，15分钟快速响应
-						</dd>
-					</dl>
-					<dl class="p-con">
-						<dt class="pull-left"><img src="/picture/p-icon03.png" alt=""/></dt>
-						<dd class="pull-left">
-							<p> 智能推荐</p>
-							大数据智能推荐最优服务商
-						</dd>
-					</dl>
-					<dl class="p-con">
-						<dt class="pull-left"><img src="/picture/p-icon04.png" alt=""/></dt>
-						<dd class="pull-left">
-							<p>完全免费</p>
-							不向雇主收取任何形式费用
-						</dd>
-					</dl>
-					<div class="p-public">
-						<a onclick="javascript:tofb('','');" class="caClass" traceflag="floatbar_pop_发布需求" id="headerFlowDemand">发布需求</a>
-					</div>
-					<div class="watch-xqgl">
-						<a rel="nofollow" href="/aboutus.htm">查看需求攻略</a>
-					</div>
-				</div>
-          	</div>
-			<div class="pull-right res-input">
-				 <input type="text" id="searchFile" name="searchFile" placeholder=""/>
-				 <div class="glyphicon glyphicon-search" onclick="searchWord()" id="searchBtn"></div>
-				 <input type="hidden" id="searchStr" value='[{"searchName":"微信代运营","url":"http://www.51biaoshi.com/product/376.htm?_pb=search"},{"searchName":"朋友圈广告","url":"http://www.51biaoshi.com/product/428.htm?_pb=search"},{"searchName":"百度百科","url":"http://www.51biaoshi.com/product/427.htm?_pb=search"},{"searchName":"开发建站","url":"http://www.51biaoshi.com/product/370.htm?_pb=search"},{"searchName":"小程序定制","url":"http://www.51biaoshi.com/product/438.htm?_pb=search"},{"searchName":"整合营销","url":"http://www.51biaoshi.com/product/432.htm?_pb=search"}]'>
-				 <ul class="find-example" id="findExample">
-                    <li><a href="/product/419.htm" target="_blank">媒体发稿</a></li>
-                </ul>
-			</div>
-        </div>
-    </div>
-
+	@include('./common/index_search')
 	<!--头部2 end-->
-
-	@include('./common/search')
-	<!--固定滚动头部 end-->
-   
 	<!--头部 banner begin-->
 	@include('./common/index_nav')
 	<!--头部 banner end-->
 <!--服务流程-->
 	@include('./common/index_banner')
-{{--<script>
-	$('#carousel-hotSp').carousel({
-        pause: true,
-        interval: false
-    });
-</script>--}}
 <div id="showtap01" class="container-fluid">
     <ul class="showtap-inner container">
     	    		<li>
@@ -671,96 +593,27 @@
             <span>精炼营销干货，分享营销方案，学习营销策略</span>
         </div>
         <ul class="hotb-list">
+			@if(!empty($newSite))
+				@foreach($newSite as $val)
 							<li>
-                	<a href="/cmslist/cl12-pg1.htm" target="_blank">
-    	                <div class="hot-head group01">
-    	                	<p>微信营销</p>
-    	                	<p>学习营销思路，掌握营销技巧</p>
-    	                </div>
-                	</a>
-                    <div class="hot-articalList">
-                    	<ul>
-															<li><a href="/cms/cl12-cm58391-at2464.htm" target="articleId">微信服务号运营方案解析</a></li>
-															<li><a href="/cms/cl12-cm58390-at2463.htm" target="articleId">微信公众平台运营地区是什么意思</a></li>
-															<li><a href="/cms/cl12-cm58389-at2462.htm" target="articleId">如何运营公众号订阅号并快速倍增粉丝？</a></li>
-							                    	</ul>
-                    </div>
-                </li>
-							<li>
-                	<a href="/cmslist/cl87-pg1.htm" target="_blank">
-    	                <div class="hot-head group02">
-    	                	<p>营销百科</p>
-    	                	<p>借助百科知识,传播企业价值</p>
-    	                </div>
-                	</a>
-                    <div class="hot-articalList">
-                    	<ul>
-															<li><a href="/cms/cl87-cm58326-at2400.htm" target="articleId">网络营销主要做些什么？</a></li>
-															<li><a href="/cms/cl87-cm58325-at2399.htm" target="articleId">网络营销的优势是什么？</a></li>
-															<li><a href="/cms/cl87-cm58324-at2398.htm" target="articleId">如何开展网络营销</a></li>
-							                    	</ul>
-                    </div>
-                </li>
-							<li>
-                	<a href="/cmslist/cl78-pg1.htm" target="_blank">
-    	                <div class="hot-head group03">
-    	                	<p>SEO优化</p>
-    	                	<p>关键词优化排名，小成本高转化</p>
-    	                </div>
-                	</a>
-                    <div class="hot-articalList">
-                    	<ul>
-															<li><a href="/cms/cl78-cm58101-at2200.htm" target="articleId">百度 SEO 是否已经名存实亡？</a></li>
-															<li><a href="/cms/cl78-cm58100-at2199.htm" target="articleId">SEO优化：3步轻松把高指数关键词优化到百度首页！</a></li>
-															<li><a href="/cms/cl78-cm58099-at2198.htm" target="articleId">SEO流量的三大核心影响因素，零预算增流量</a></li>
-							                    	</ul>
-                    </div>
-                </li>
-							<li>
-                	<a href="/cmslist/cl88-pg1.htm" target="_blank">
+                	<a href="/news/index/{{$val['id']}}" target="_blank">
     	                <div class="hot-head group04">
-    	                	<p>小程序</p>
-    	                	<p>如何让小程序，带来大流量？</p>
+    	                	<p>{{$val['cate_name']}}</p>
+    	                	<p>{{$val['description']}}</p>
     	                </div>
                 	</a>
                     <div class="hot-articalList">
                     	<ul>
-															<li><a href="/cms/cl88-cm58069-at2170.htm" target="articleId">为什么微信公众号阅读率低？教你4招公众号运营技巧</a></li>
-															<li><a href="/cms/cl88-cm58068-at2169.htm" target="articleId">开发及推广微信公众账号需要多少预算？</a></li>
-															<li><a href="/cms/cl88-cm58067-at2168.htm" target="articleId">如何获取微信公众号第一批粉丝？</a></li>
-							                    	</ul>
+							@if(!empty($val['child']))
+								@foreach($val['child'] as $child)
+							<li><a href="/news/detail/{{$child['id']}}" target="articleId">{{$child['title']}}</a></li>
+								@endforeach
+							@endif
+						</ul>
                     </div>
                 </li>
-							<li>
-                	<a href="/cmslist/cl77-pg1.htm" target="_blank">
-    	                <div class="hot-head group05">
-    	                	<p>APP推广</p>
-    	                	<p>掌握APP的运营之道</p>
-    	                </div>
-                	</a>
-                    <div class="hot-articalList">
-                    	<ul>
-															<li><a href="/cms/cl77-cm57755-at1902.htm" target="articleId">从APP应用运营的角度看，运营到底是干啥的？</a></li>
-															<li><a href="/cms/cl77-cm57753-at1900.htm" target="articleId">渠道运营是一个怎样的存在？</a></li>
-															<li><a href="/cms/cl77-cm57740-at1887.htm" target="articleId">渠道运营：经费有限的情况下，如何运营好一款产品</a></li>
-							                    	</ul>
-                    </div>
-                </li>
-							<li>
-                	<a href="/cmslist/cl95-pg1.htm" target="_blank">
-    	                <div class="hot-head group06">
-    	                	<p>镖狮原创</p>
-    	                	<p>营销不花冤枉钱</p>
-    	                </div>
-                	</a>
-                    <div class="hot-articalList">
-                    	<ul>
-															<li><a href="/cms/cl95-cm58072-at2173.htm" target="articleId">中小网站必看SEO九步曲</a></li>
-															<li><a href="/cms/cl95-cm57928-at2041.htm" target="articleId">营销干货-如何做一个好的朋友圈广告？</a></li>
-															<li><a href="/cms/cl95-cm57708-at1855.htm" target="articleId">怎么做好SEM推广计划方案？</a></li>
-							                    	</ul>
-                    </div>
-                </li>
+				@endforeach
+				@endif
 			        </ul>
     </div>
 </div>
@@ -860,40 +713,42 @@
 	<!--了解镖狮网 begin-->
     <div class="about-index">
     	<div class="about-index-title">
-    		<div><div class="title-warp"><p class="title-inner"><b>了解镖狮网</b></p></div></div>
+    		<div><div class="title-warp"><p class="title-inner"><b>了解萤火虫网</b></p></div></div>
     	</div>
 
     	<div class="container cards-wrap">
+			@if(!empty($newCategory[0]))
+				@if(!empty($newCategory[0]['child']))
     		<div class="good-service-card card">
-    			<div class="card-title-wrap bg1">服务保障</div>
+    			<div class="card-title-wrap bg1">{{$newCategory[0]['cate_name']}}</div>
     			<div class="card-content-wrap">
     				<div class="border-bottom gs-card-img-wrap">
     					<span class="gs-card-img-txt">
-    					<a rel="nofollow" href="/aboutus.htm" target="_blank" class="text-left">
+    					<a rel="nofollow" href="/about/index/1" target="_blank" class="text-left">
     						<div class="text-img">
     							<img src="/picture/biaoshilc1.png" />
     						</div>
     						<p>严选服务商</p>
     					</a>
-    					<a rel="nofollow" href="/aboutus.htm" target="_blank"  class="text-left">
+    					<a rel="nofollow" href="/about/index/1" target="_blank"  class="text-left">
     						<div class="text-img">
     							<img src="/picture/biaoshilc2.png" />
     						</div>
     						<p>效果监理</p>
     					</a>
-    					<a rel="nofollow" href="/aboutus.htm" target="_blank"  class="text-left">
+    					<a rel="nofollow" href="/about/index/1" target="_blank"  class="text-left">
     						<div class="text-img">
     							<img src="/picture/biaoshilc3.png" />
     						</div>
     						<p>资金担保</p>
     					</a>
-    					<a rel="nofollow" href="/aboutus.htm"  target="_blank" class="text-left">
+    					<a rel="nofollow" href="/about/index/1"  target="_blank" class="text-left">
     						<div class="text-img">
     							<img src="/picture/biaoshilc4.png" />
     						</div>
     						<p>专注营销</p>
     					</a>
-    					<a rel="nofollow" href="/aboutus.htm"  target="_blank" class="text-left">
+    					<a rel="nofollow" href="/about/index/1"  target="_blank" class="text-left">
     						<div class="text-img">
     							<img src="/picture/biaoshilc5.png" />
     						</div>
@@ -902,68 +757,70 @@
     				</span>
     				</div>
     				<div>
-    					<a rel="nofollow" href="/aboutus.htm"  target="_blank" class="normal-link text-overflow">
-    						<b></b>服务商入驻镖狮需要考核的72项指标
+						@foreach($newCategory[0]['child'] as $child)
+    					<a rel="nofollow" href="/news/detail/{{$child['id']}}"  target="_blank" class="normal-link text-overflow">
+    						<b></b>{{$child['title']}}
     					</a>
-    					<a rel="nofollow" href="/aboutus.htm"  target="_blank" class="normal-link text-overflow">
-    						<b></b>镖狮自主研发数据监控系统BA（Biaoshi Analytics）
-    					</a>
-    					<a rel="nofollow" href="/aboutus.htm?tab=1"  target="_blank" class="normal-link text-overflow">
-    						<b></b>镖狮网定制化服务与标准化服务的服务流程
-    					</a>
+						@endforeach
     				</div>
     			</div>
     		</div>
+				@endif
+			@endif
+				@if(!empty($newCategory[1]))
+					@if(!empty($newCategory[1]['child']))
     		<div class="about-card  card">
-    			<div class="card-title-wrap bg2">媒体报道</div>
+    			<div class="card-title-wrap bg2">{{$newCategory[1]['cate_name']}}</div>
     			<div class="card-content-wrap j-card-wrap">
-    				<a href="http://tv.cctv.com/2016/07/31/VIDEKgiGHR7tlrenAsdACgZl160731.shtml" class="first-link border-bottom" target="_blank">
+					@foreach($newCategory[1]['child'] as $child)
+						@if($loop->index == 0)
+    				<a href="/news/detail/{{$child['id']}}" class="first-link border-bottom" target="_blank">
     					<div class="card-img-wrap">
-    						<img src="/picture/news02.png" />
+    						<img src="{{$child['picture']}}" />
     					</div>
     					<div class="card-other-warp">
-    							<div class="text-overflow-two">[朝闻天下]大学毕业生创业比例持续攀升，镖狮网助力大学生创业</div>
-    							<div class="origin">cctv</div>
+    							<div class="text-overflow-two">[{{$child['author']}}]{{$child['title']}}</div>
+    							<div class="origin">{{date('Y-m-d',$child['add_time'])}}</div>
     					</div>
     				</a>
-    				<div>
-    					<a target="_blank" href="http://tv.cctv.com/2016/11/20/VIDEOfYLqYSBfkUI9XajjphP161120.shtml" class="normal-link text-overflow">
-    						<b style="background:transparent"></b><span class="tag">[朝闻天下]</span>镖狮网受邀世界互联网大会
-    					</a>
-    					<a target="_blank" href="http://www.iqiyi.com/w_19ruhbnuu5.html" class="normal-link text-overflow">
-    						<b style="background:transparent"></b><span class="tag">[发现者说]</span>不断的归零，复盘，镖狮网的创业成功之路
-    					</a>
-    					<a target="_blank" href="http://ln.ifeng.com/a/20160622/4673761_0.shtml" class="normal-link text-overflow">
-    						<b style="background:transparent"></b><span class="tag">[凤凰网]</span>中国互联网大会开幕，镖狮网获央视关注
-    					</a>
-    				</div>
+					@else
+						<a target="_blank" href="/news/detail/{{$child['id']}}" class="normal-link text-overflow">
+							<b style="background:transparent"></b><span class="tag">[{{$child['author']}}]</span>{{$child['title']}}
+						</a>
+					@endif
+					@endforeach
     			</div>
+
     		</div>
+					@endif
+				@endif
+			@if(!empty($newCategory[2]))
+				@if(!empty($newCategory[2]['child']))
     		<div class="sharing-card  card">
-    			<div class="card-title-wrap bg3">镖狮头条</div>
+    			<div class="card-title-wrap bg3">{{$newCategory[2]['cate_name']}}</div>
     			<div class="card-content-wrap j-card-wrap">
-    				<a target="_blank" href="https://36kr.com/p/5083717.html" class="first-link border-bottom">
-    					<div class="card-img-wrap">
-    						<img src="/picture/news01.png"/>
-    					</div>
-    					<div class="card-other-warp">
-    							<div class="text-overflow-two">打造三个标准化，镖狮网想要成为企业营销界的阿尔法Go</div>
-    							<div class="origin">36kr</div>
-    					</div>
-    				</a>
-    				<div>
-    					<a target="_blank" href="http://www.51biaoshi.com/cms/cl82-cm56341-at524.htm" class="normal-link text-overflow">
-    						<b></b>镖狮网入驻阿里云，助力企业获取更优质互联网营销服务
-    					</a>
-    					<a target="_blank" href="http://www.51biaoshi.com/cms/cl82-cm56314-at508.htm" class="normal-link text-overflow">
-    						<b></b>镖狮网获1500万天使轮融资，以“天猫”模式颠覆营销链
-    					</a>
-    					<a target="_blank" href="http://v.youku.com/v_show/id_XMzAzMjUzNTQzMg====.html?refer=pc-sns-1&source=&from=singlemessage&isappinstalled=0" class="normal-link text-overflow">
-    						<b></b>江小白从0到1营销哲学，镖狮网营销动物沙龙成功落幕
-    					</a>
+					@foreach($newCategory[2]['child'] as $child)
+						@if($loop->index == 0)
+							<a href="/news/detail/{{$child['id']}}" class="first-link border-bottom" target="_blank">
+								<div class="card-img-wrap">
+									<img src="{{$child['picture']}}" />
+								</div>
+								<div class="card-other-warp">
+									<div class="text-overflow-two">[{{$child['author']}}]{{$child['title']}}</div>
+									<div class="origin">{{date('Y-m-d',$child['add_time'])}}</div>
+								</div>
+							</a>
+						@else
+							<a target="_blank" href="/news/detail/{{$child['id']}}" class="normal-link text-overflow">
+								<b style="background:transparent"></b><span class="tag">[{{$child['author']}}]</span>{{$child['title']}}
+							</a>
+						@endif
+					@endforeach
     				</div>
     			</div>
     		</div>
+				@endif
+			@endif
     	</div>
     </div>
 	    <script src="{{asset('js/xslider.js')}}"></script>

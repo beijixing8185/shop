@@ -336,9 +336,9 @@
 
         <div class="adviceRight">
             <div class="adviceRightTitle">营销达人免费解答</div>
-            <div class="adviceRightInfo">镖狮今天已为<span> 322 </span>人提供营销咨询</div>
+            <div class="adviceRightInfo">萤火虫今天已为<span> 322 </span>人提供营销咨询</div>
             <div class="adviceRightSubmit">
-                <span id="bannerIM" class="caClass" traceflag="content_im_首页banner在线咨询" onclick="javascript:openBDBridge();">在线咨询</span>
+                <span id="bannerIM" class="caClass" traceflag="content_im_首页banner在线咨询" onclick="window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</span>
             </div>
         </div>
     </div>

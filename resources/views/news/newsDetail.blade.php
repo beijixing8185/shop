@@ -43,7 +43,7 @@
         @if(!empty($getdetail))
 		<script type="text/javascript" src="/js/cmsfb.js"></script>
         <div class="wxCode">
-			<h1>{{$getdetail['article_title']}}</h1>
+			<h1>{{$getdetail['title']}}</h1>
 			<div class="wxCodeMsg">
 				分享到 <img class="wxicon" onclick="generateCode('78','58427','2500','sharecode1','<?php echo url()->full();?>')" src="/picture/wxicon.png" alt="微信二维码">
 				<span><i class="closeCode"><img src='/picture/codeboxx.png'/></i><strong id="sharecode1"></strong></span>
@@ -66,7 +66,7 @@
 		<div class="strategyinfoDes">{{$getdetail['description']}}</div>
 		<div class="strategyinfoMain">
 			<h2 style="text-align: center;">
-				<img  alt='{{$getdetail['article_title']}}'src="{{$getdetail['picture']}}g" style="width: 319px; height: 240px;" /></h2>
+				<img  alt='{{$getdetail['title']}}'src="{{$getdetail['picture']}}g" style="width: 319px; height: 240px;" /></h2>
 			<h2>
 				<span style="font-size: 16px;"><span style="font-family: courier new,courier,monospace;">&nbsp;</span></span></h2>
             <div>{{$getdetail['content']}}</div>

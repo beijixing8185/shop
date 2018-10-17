@@ -22,15 +22,11 @@
 @endsection
 
 @section('content')
-
-
 	@include('./common/demand')
 	@include('./common/nav')
 	@include('./common/search')
 	@include('./common/right')
 {{--	@include('./common/poper')--}}
-
-
 	<!-- banner图 -->
 
 	<div class="strategyBannerBox content">
@@ -108,22 +104,13 @@
 		<div class="strategyCode01" style="z-index: 9">
 		</div>
         @include('./common/news_message')
+		<div class="page_css">
+			{{ $news->links() }}
+			<p style="clear: both"></p>
+		</div>
 	</div>
-	<div class="pagination">
-		<ul>
 
-			<li><a href="/cmslist/cl0-pg1.htm" class="fir-page">首页</a></li>
-			<li><a  class="prev"><上一页</a></li>
-			<li><a href="/cmslist/cl0-pg1.htm"  class="cur" >1</a></li>
-			<li><a href="/cmslist/cl0-pg2.htm" >2</a></li>
-			<li><a href="/cmslist/cl0-pg3.htm" >3</a></li>
-			<li><a href="/cmslist/cl0-pg4.htm" >4</a></li>
-			<li><a href="/cmslist/cl0-pg5.htm" >5</a></li>
-			<li><a   href="/cmslist/cl0-pg2.htm"   class="nextpage">下一页></a></li>
 
-		</ul>
-        {{ $news->links() }}
-	</div>
 {{--
 
 	<script>

@@ -266,27 +266,45 @@
 
 #stratrgy08 .hotb-list .hot-head.group01{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
 }
 #stratrgy08 .hotb-list .hot-head.group02{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
 }
 #stratrgy08 .hotb-list .hot-head.group03{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
 }
 #stratrgy08 .hotb-list .hot-head.group04{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
 }
 #stratrgy08 .hotb-list .hot-head.group05{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
 }
 #stratrgy08 .hotb-list .hot-head.group06{
     background-color: #f3c157;
-    background-image:url(/images/loadimage.htm);
+
+}
+.container .hotb-list li:nth-child(1) a div{
+    background-image: url('../picture/zixun1.png');
+}
+.container .hotb-list li:nth-child(2) a div{
+    background-image: url('../picture/zixun2.png');
+}
+.container .hotb-list li:nth-child(3) a div{
+    background-image: url('../picture/zixun3.png');
+}
+.container .hotb-list li:nth-child(4) a div{
+    background-image: url('../picture/zixun4.png');
+}
+.container .hotb-list li:nth-child(5) a div{
+    background-image: url('../picture/zixun5.png');
+}
+.container .hotb-list li:nth-child(6) a div{
+    background-image: url('../picture/zixun6.png');
 }
 #stratrgy08 .hotb-list .hot-head.group02{background-color: #f3c157; }
 #stratrgy08 .hotb-list .hot-head.group03{background-color: #828ad9; }

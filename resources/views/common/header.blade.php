@@ -1,4 +1,4 @@
-<div class="container-fluid header-top">
+<div class="container-fluid header-top" id="header_top">
     <div class="container ">
         <ul class="pull-left ">
             <li class="appIcon">
@@ -17,7 +17,7 @@
             @endif
             <li><a href="{{url('member/order')}}">我的订单</a></li>
             <li class="pull-right-kefu">
-                <a href="/cmstools.htm" target="_blank">
+                <a href="http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415" target="_blank">
                     <img src="/images/iconfont010_2.png" alt="在线客服" style="position: relative;top: -2px;right: 5px;"/>在线客服</a>
             </li>
             <li><a>热线电话：010-53526642</a></li>

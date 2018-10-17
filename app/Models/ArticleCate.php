@@ -16,11 +16,14 @@ class ArticleCate extends Model{
     /**
      * 根据状态查询
      */
-    public static function getList($where='',$status='')
+    public static function getList($where='',$status='',$limit='')
     {
         $wheres = 'id > 0'.$where;
         if(!empty($status)){
-                return self::whereRaw($wheres.' and status = '.$status) ->get();
+            $wheres .= ' and status = '.$status;
+        }
+        if(!empty($limit)){
+                return self::whereRaw($wheres) ->limit($limit)->get();
         }else{
             return self::whereRaw($wheres) ->get();
         }

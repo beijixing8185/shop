@@ -25,6 +25,14 @@ Route::group(['namespace' =>'Common','prefix' => 'common'], function () {
 
 });
 
+//留言
+Route::group(['namespace' =>'Message','prefix' => 'message'], function () {
+
+    Route::post('index', 'MessageController@addMessage');        //留言添加，适用多页面
+
+    Route::post('indexCode', 'MessageController@addCodeMessage');        //留言添加，适用与有短信验证码的
+
+});
 
 //前台路由
 Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function () {
@@ -82,12 +90,13 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('index/{id}', 'AboutController@index');      //案例详情
     });
 
-//留言
-    Route::group(['namespace' =>'Message','prefix' => 'message'], function () {
+    //搜索
+    Route::group(['namespace' =>'Search','prefix' => 'search'], function () {
 
-        Route::get('index', 'MessageController@index');        //留言首页
-
+        Route::get('index/{search?}', 'SearchController@index');
     });
+
+
 
 //支付
     Route::group(['namespace' =>'Pay','prefix' => 'pay'], function () {

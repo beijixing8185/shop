@@ -20,9 +20,9 @@
     <script src="{{asset('js/jquery.slides.min.js')}}"></script>
     <script src="{{asset('js/commonlogin.js')}}"></script>
     <script src="{{asset('js/commonfbb.js.js')}}"></script>
-<style>
-    body{background:#f5f5f5;min-width:1170px;"}
-</style>
+    <style>
+        body{background: #f5f5f5;min-width: 1170px;}
+    </style>
 @endsection
 
 

@@ -21,7 +21,7 @@ class Banner extends Model
     {
         $where = 'id > 0';
         if(!empty($state)){
-            $where .= ' and state = '.$state;
+            $where .= ' and status = '.$state;
         }
         if(!empty($type)) {
             $where .= ' and type = '.$type;
