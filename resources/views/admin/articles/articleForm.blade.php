@@ -34,7 +34,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        服务操作
+        添加文章
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -56,35 +56,17 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{url('hx/admin/serviceForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{url('hx/admin/articleForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
         {!!csrf_field()!!}
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">服务分类:</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">分类:</label>
 
                     <div class="col-sm-5">
-                        <select name="cate_one" class="cate_one" id="cate_one" >
-                            <option value="0">请选择一级分类</option>
-                            @foreach($cate as $c)
-                                <option value="{{$c->id}}">{{$c->name}}</option>
-                            @endforeach
-                        </select>
-
-                        <select name="cate_two" class="cate_two" id="cate_two" >
-                            <option value="0">请选择二级分类</option>
-                            @if($cate_two)
-                                @foreach($cate_two as $k)
-                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-
                         <select name="cate_id" class="cate_id" id="cate_id" >
-                            <option value="0">请选择三级分类</option>
-                            @if($cate_three)
-                                @foreach($cate_three as $k)
-                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
-                                @endforeach
-                            @endif
+                            <option value="0">请选择分类</option>
+                            @foreach($cate as $c)
+                                <option value="{{$c->id}}" @if($article->article_cate_id ==$c->id ) selected @endif>{{$c->name}}</option>
+                            @endforeach
                         </select>
 
                         <span class="cate" style="color:red"></span>
@@ -92,70 +74,93 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务名称:</label>
-
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="请填写服务名称" name="spu_name"  id="title" value="{{$goods->spu_name}}"  onchange="checkTitle();">
-                    <span class="title" style="color:red"></span>
-                  </div>
-                </div>
-                <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">主图:</label>
                     <div class="col-sm-10">
-                        <input type="hidden" name="first_img" id="first_img" class="first_img" readonly="readonly" value="{{$goods->main_image}}" />
+                        <input type="hidden" name="first_img" id="first_img" class="first_img" readonly="readonly" value="{{$article->picture}}" />
                         <span class="tpxs">
-                            @if($goods->main_image)
-                                <img src="{{ $goods->main_image }}" class="images lf" style="height:100px; width:100px;">
+                            @if($article->picture)
+                                <img src="{{ $article->picture }}" class="images lf" style="height:100px; width:100px;">
                             @endif
                     </span>
                         <input type="button" id="browse" value="上传图片"/>
                         <span class="first_img" style="color:red"></span>
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">市场价格:</label>
-                    <div class="col-sm-2">
-                        <input type="number" placeholder="市场价格(元)" class="form-control" name="market_price" id="price" value="{{$goods->market_price}}" >
+                    <label for="inputPassword3" class="col-sm-2 control-label">标题:</label>
+
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="请填写标题" name="title"  id="title" value="{{$article->title}}"  onchange="checkTitle();">
+                        <span class="title" style="color:red"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">标签:</label>
+                    <div class="col-sm-5">
+                        <input type="text" placeholder="标签填写,中间用逗号隔开 例如: 品牌，朋友圈" class="form-control" name="tag" id="tag" value="{{$article->tag}}" >
                         <span class="price" style="color:red"></span>
                     </div>
                 </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务价格:</label>
-                  <div class="col-sm-2">
-                    <input type="number" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="{{$goods->price}}" >
-                    <span class="price" style="color:red"></span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">服务库存:</label>
-
-                  <div class="col-sm-2">
-                    <input type="number" class="form-control" name="num" id="num" min="0" value="" >
-                    <span class="num" style="color:red"></span>
-                  </div>
-              </div>
                 <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">服务详情:</label>
+                    <label for="inputPassword3" class="col-sm-2 control-label">关键词:</label>
                     <div class="col-sm-5">
-                        <script id="editor" style="width: 668px;height: 600px;"></script>
+                        <input type="text" placeholder="可以和标签填写一样品牌 例如:朋友圈，" class="form-control" name="keywords" id="keywords" value="{{$article->keywords}}" >
+                        <span class="price" style="color:red"></span>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">内容详情:</label>
+                    <div class="col-sm-5">
+                        <script id="editor" style="width: 668px;height: 600px;">{!! $article->content !!}</script>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">描述:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="description" id="description" min="0" value="{{$article->description}}" >
+                        <span class="num" style="color:red"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">发布者:</label>
+                <div class="col-sm-2">
+                    <input type="text" placeholder="填写发布者" class="form-control" name="author" id="author" value="{{$article->author}}" >
+                    <span class="price" style="color:red"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">浏览基数:</label>
+                    <div class="col-sm-2">
+                        <input type="number"  placeholder="文章的基础浏览量" class="form-control" name="number" id="number" min="0" value="0" >
+                        <span class="num" style="color:red"></span>
+                    </div>
+                </div>
+
+
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">推荐:</label>
+                    <div class="col-sm-10">
+                        <select name="hot" id="hot">
+                        <option value="0" @if($article->hot == 0) selected @endif>否</option>
+                        <option value="1" @if($article->hot == 1) selected @endif>是</option>
+                        </select>
+                        </div>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">状态:</label>
                 <div class="col-sm-10">
                     <select name="status" id="status">
-                        @foreach($goods_status as $k => $v)
-                    <option value="{{$k}}"  >{{$v}}</option>
-                @endforeach
+                        <option value="0" @if($article->status == 0) selected @endif>无效</option>
+                        <option value="1" @if($article->status == 1) selected @endif>有效</option>n>
                 </select>
                 </div>
                 </div>
 
               <div class="box-footer" style="padding-left: 600px;">
-                <input type="hidden" name="id" id="id" value="{{$goods->id}}">
-                <input type="submit" class="btn btn-info" value="提交">
+                <input type="hidden" name="id" id="id" value="{{$article->id}}">
                 <a href="" class="btn btn-default">取消</a>
+                <input type="submit" class="btn btn-info" value="提交">
               </div>
 
             </form>
@@ -179,7 +184,7 @@
         var editor = K.editor({
             allowFileManager : true,
             imageTabIndex : 1,
-            extraFileUploadParams : {path:'goods'},
+            extraFileUploadParams : {path:'articles'},
             basePath : '/kindeditor/',
             uploadJson : '{{config('app.APP_URL')}}/upload'
         });
@@ -198,49 +203,6 @@
         });
     });
 
-    //二级分类
-    $('.cate_one').change(function(){
-        $(".cate_two").children().remove();
-        $(".cate_id").children().remove();
-        var value=this.value;
-        $.ajax({
-            url:'/goods/cate',
-            type:'get',
-            data:{
-                '_token':'{{csrf_token()}}',
-                'value':value
-            },
-            success:function (data) {
-                console.log(data);
-                var result = data['data'];
-                $(".cate_two").append("<option value='0'>请选择二级分类</option>");
-                for(var i = 0; i < result.length; i++){
-                    /*循环添加所有城市列表*/
-                    $(".cate_two").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
-                }
-            }
-        });
-    });
-    //三级分类
-    $(document).on('change', '.cate_two', function (){
-        $(".cate_id").children().remove();
-        var value=this.value;
-        $.ajax({
-            url:'/goods/cate',
-            type:'get',
-            data:{
-                '_token':'{{csrf_token()}}',
-                'value':value
-            },
-            success:function (data) {
-                var result = data['data'];
-                $(".cate_id").append("<option value='0'>请选择三级分类</option>");
-                for(var i = 0; i < result.length; i++){
-                    $(".cate_id").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
-                }
-            }
-        });
-    });
 </script>
 <script>
     var options = {

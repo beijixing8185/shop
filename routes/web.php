@@ -132,7 +132,7 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('serviceList', 'ServiceController@serviceList');    // 服务列表
     Route::get('addService/{id?}', 'ServiceController@addService');    // 添加编辑服务
     Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
-    Route::get('delService', 'ServiceController@delService');    // 提交服务
+    Route::get('delService', 'ServiceController@delService');    // 删除服务
 
     Route::get('specList', 'ServiceController@specList');    // 服务列表
     Route::get('serviceSpecForm/{id?}', 'ServiceController@serviceSpecForm');    // 添加规格
@@ -144,6 +144,11 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::post('addCates', 'ServiceController@postAddCates');    //提交栏目
     Route::post('updateCate', 'ServiceController@updateCate');    //修改栏目
     Route::get('delCate', 'ServiceController@delCate');    //删除栏目
+
+    Route::get('articleList', 'ArticleController@articleList');    // 文章列表
+    Route::get('addArticle/{id?}', 'ArticleController@addArticle');    // 添加编辑文章
+    Route::post('articleForm', 'ArticleController@postArticleForm');    // 提交文章
+    Route::get('delArticle', 'ArticleController@delArticle');    // 删除文章
 
 
 
