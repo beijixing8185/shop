@@ -17,7 +17,7 @@
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
-            <a href="/zs/admin/logout" title="">退出登录</a>
+            <a href="/hx/admin/logout" title="">退出登录</a>
           </li>
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -10,23 +10,37 @@
               ['title' => '查看服务', 'url' => '/hx/admin/serviceList', 'icon' => 'fa-circle-o'],
               ['title' => '添加服务', 'url' => '/hx/admin/addService', 'icon' => 'fa-circle-o'],
               ['title' => '查看规格', 'url' => '/hx/admin/specList', 'icon' => 'fa-circle-o'],
-              ['title' => '查看栏目', 'url' => '/hx/admin/cateList', 'icon' => 'fa-circle-o'],
+              ['title' => '查看分类', 'url' => '/hx/admin/cateList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加分类', 'url' => '/hx/admin/addCates', 'icon' => 'fa-circle-o'],
           ],
       ];
       $menu[] = ['title' => '发布文章', 'icon' => 'fa-dashboard',
           'child' => [
+              ['title' => '分类列表', 'url' => '/hx/admin/cateArticleList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加分类', 'url' => '/hx/admin/addArticleCates', 'icon' => 'fa-circle-o'],
               ['title' => '文章列表', 'url' => '/hx/admin/articleList', 'icon' => 'fa-circle-o'],
               ['title' => '添加文章', 'url' => '/hx/admin/addArticle', 'icon' => 'fa-circle-o'],
-              ['title' => '栏目列表', 'url' => '/hx/admin/specArticleList', 'icon' => 'fa-circle-o'],
-              ['title' => '添加栏目', 'url' => '/hx/admin/cateArticleList', 'icon' => 'fa-circle-o'],
           ],
+      ];
+      $menu[] = ['title' => 'banner图', 'icon' => 'fa-dashboard',
+          'child' => [
+              ['title' => '图库列表', 'url' => '/hx/admin/bannerList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加banner', 'url' => '/hx/admin/addBanner', 'icon' => 'fa-circle-o'],
+          ],
+      ];
+      $menu[] = [
+          'title' =>  '用户会员',
+          'icon'  =>  'fa-files-o',
+          'child' =>  [
+              ['title' => '用户列表', 'url' => '/hx/admin/getUserList', 'icon' => 'fa-circle-o']
+          ]
       ];
 
     $menu[] = [
-        'title' =>  '后台用户',
+        'title' =>  '后台管理员',
         'icon'  =>  'fa-files-o',
         'child' =>  [
-            ['title' => '用户', 'url' => '/hx/admin/getAdminUserList', 'icon' => 'fa-circle-o']
+            ['title' => '管理员', 'url' => '/hx/admin/getAdminUserList', 'icon' => 'fa-circle-o']
         ]
     ];
 

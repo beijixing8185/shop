@@ -10,6 +10,7 @@ namespace App\Controllers\Admin;
 
 use App\Facades\Api;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Admin\AdminUser;
 
@@ -69,11 +70,30 @@ class AuthController extends Controller
     }
 
     /**
-     * 后台用户
+     * 后台管理员
      */
     public function getAdminUserList(){
         $list  =  AdminUser::get();
         return view('admin.adminUserList',compact('list'));
+    }
+
+    /**
+     * 前台用户
+     */
+    public function getUserList(){
+        $user  =  User::getList();
+
+        return view('admin.userList',compact('user'));
+    }
+    /**
+     * 冻结用户
+     */
+    public function delUser(Request $req){
+        $res  =  User::whereId($req->id)->update(['status'=>0]);
+        if($res)
+            return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
+        else
+            return response()->json(['code'=>1,'msg'=>'删除失败','data'=>'']);
     }
 
 

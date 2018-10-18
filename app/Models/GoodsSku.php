@@ -13,7 +13,7 @@ class GoodsSku extends Model
      * 查询列表
      */
     public static function list($where = ''){
-       $goods = Self::whereRaw('id >= 1'.$where)->get();
+       $goods = Self::whereRaw('id >= 1'.$where)->orderBy('id','desc')->paginate(10);
        return $goods;
     }
 

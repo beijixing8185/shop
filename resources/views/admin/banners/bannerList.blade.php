@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        规格列表
+        banner图列表
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -23,7 +23,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">
-              <a href="{{url('hx/admin/serviceSpecForm')}}" class="label label-primary">添加</a>
+              <a href="{{url('hx/admin/addBanner')}}" class="label label-primary">添加</a>
               </h3>
 
 
@@ -39,28 +39,22 @@
                         标识id
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        规格名称
+                        类型
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        服务名称
+                        主图
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        市场价格
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        零售价格
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        库存
+                        链接地址
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
                         状态
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
-                        注册时间
+                        添加时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        更新时间
+                        修改时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
                         编辑
@@ -72,36 +66,39 @@
             </thead>
 
                 <tbody>
-                @foreach($goods as $g)
-                    <tr role="row" class="odd">
-                        <td class="sorting_1">{{$g->id}}</td>
-                        <td>{{$g->spec_name}}</td>
-                        <td>{{$g->spec_name}}</td>
+                @foreach($banner as $g)
+                <tr role="row" class="odd">
+                      <td class="sorting_1">{{$g->id}}</td>
+                      <td>
+                          @if($g->type==1)
+                              <span class="label label-warning">首页</span>
+                          @else
+                              <span class="label label-success">新闻</span>
+                          @endif
+                      </td>
+                      <td><img src="{{$g->picture}}" alt="" style="width: 100px;height: 100px;"></td>
+                        <td>{{$g->open_url}}</td>
 
-                        <td>{{$g->market_price}}</td>
-                        <td>{{$g->price}}</td>
-                        <td>{{$g->num}}</td>
                         <td>
                             @if($g->status==0)
-                                <span class="label label-warning">无效</span>
+                                <span class="label label-warning">已删除</span>
                             @else
                                 <span class="label label-success">有效</span>
                             @endif
                         </td>
-                        <td>{{$g->created_at}}</td>
-                        <td>{{$g->updated_at}}</td>
-                        <td><a href="{{url('hx/admin/serviceSpecForm',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
-                        <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$g->id}}" style="cursor: pointer;margin-left: 10px;" ></a></td>
-                    </tr>
+                      <td>{{$g->created_at}}</td>
+                      <td>{{$g->updated_at}}</td>
+                    <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$g->id}}" style="margin-left: 10px; cursor: pointer;" ></a></td>
+                </tr>
                 @endforeach
                 </tbody>
               </table></div></div>
 
-            <div class="row">
-            <div class="col-sm-5"></div>
-            <div class="popup"></div>
-            <div class="datu"></div>
-        </div>
+                  <div class="row pull-right">
+                      <div class="col-sm-10 "></div>
+
+
+                  </div>
             </div>
             </div>
             <!-- /.box-body -->
@@ -117,7 +114,7 @@
     //重置密码
     $('#example2').on('click','.delSpec',function(){
         var Id = $(this).attr('data-Id');
-        var resultUrl = '/hx/admin/delSpec?id='+ Id;
+        var resultUrl = '/hx/admin/delBanner?id='+ Id;
         if(confirm('确定要删除吗?')){
             $.get(resultUrl,function(res){
                 if(res['code']){

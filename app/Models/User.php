@@ -70,4 +70,11 @@ class User extends Model
     {
         return self::whereRaw($where)->first();
     }
+    /**
+     * 后台查询
+     */
+    public static function getList($where = ''){
+        $user =  Self::whereRaw('id >= 1 '.$where)->orderBy('id','desc')->paginate(20);
+        return $user;
+    }
 }

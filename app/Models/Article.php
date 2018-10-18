@@ -64,7 +64,7 @@ class Article  extends Model{
         }
 
         $goods->title = $object->title;
-        $goods->article_cate_id = $object->cate_id;
+        $goods->article_cate_id = $object->cate_two;
         $goods->picture = $object->first_img;
         $goods->tag = $object->tag;
         $goods->keywords = $object->keywords;
