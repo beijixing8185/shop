@@ -50,6 +50,7 @@ class GoodsCate extends Model{
         $cate->name = $data['name'];
         $cate->pid = $data['pid'];
         $cate->level = $data['level'];
+        $cate->description = $data['description'];
         return $cate->save();
     }
 

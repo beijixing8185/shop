@@ -1,12 +1,37 @@
 @extends('admin.common.index')
+<link rel="stylesheet" href="{{ asset('kindeditor/themes/default/default.css') }}" />
+<link rel="stylesheet" href="{{ asset('kindeditor/plugins/code/prettify.css') }}" />
 
-
+<style type="text/css">
+#uploader2 ul{
+  overflow: hidden;
+  padding-left: 0;
+}
+   #uploader2 ul li{
+    list-style: none;
+    float: left;
+    margin-right: 5px;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+  #uploader2 ul li>img{
+    width: 100%;
+      height:100%;
+  }
+.up span{
+    position: relative;
+    z-index:20;
+    margin-left:5px;
+    cursor: pointer;
+    }
+</style>
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        添加规格
+        banner操作
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -28,68 +53,57 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{url('hx/admin/serviceSpecForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{url('hx/admin/addBanner')}}" method="post"  class="form-horizontal" enctype="multipart/form-data"  onsubmit="return checkSubmit();">
         {!!csrf_field()!!}
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">服务名称:</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">分类:</label>
+
                     <div class="col-sm-5">
-                        <select name="spu_id" class="spu_id" id="spu_id" >
-                            <option value="0">请选择服务</option>
-                            @foreach($goodsSpu as $g)
-                                <option value="{{$g->id}}" @if($g->id ==$goods->spu_id ) selected @endif>{{$g->spu_name}}</option>
-                            @endforeach
+                        <select name="type" class="type" id="type" >
+                            <option value="0">请选择分类</option>
+                              <option value="1" @if($banner->type == 1 ) selected @endif>首页</option>
+                              <option value="2" @if($banner->type == 2 ) selected @endif>新闻</option>
                         </select>
                         <span class="cate" style="color:red"></span>
                     </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">规格名称:</label>
-
-                  <div class="col-sm-3">
-                    <input type="text" class="form-control" placeholder="请填写服务名称" name="spec_name"  id="title" value="{{$goods->spec_name}}">
-                    <span class="title" style="color:red"></span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="inputPassword3" class="col-sm-2 control-label">市场价格:</label>
-                    <div class="col-sm-2">
-                        <input type="number" placeholder="市场价格(元)" class="form-control" name="market_price" id="price" value="{{$goods->market_price}}" >
-                        <span class="price" style="color:red"></span>
+                    <label for="inputPassword3" class="col-sm-2 control-label">图片:</label>
+                    <div class="col-sm-10">
+                        <input type="hidden" name="first_img" id="first_img" class="first_img" readonly="readonly" value="{{$banner->picture}}" />
+                        <span class="tpxs">
+                            @if($banner->picture)
+                                <img src="{{ $banner->picture }}" class="images lf" style="height:100px; width:100px;">
+                            @endif
+                    </span>
+                        <input type="button" id="browse" value="上传图片"/>
+                        <span class="first_img" style="color:red"></span>
                     </div>
                 </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">零售价格:</label>
-                  <div class="col-sm-2">
-                    <input type="text" placeholder="商品价格(元)" class="form-control" name="price" id="price" value="{{$goods->price}}" >
-                    <span class="price" style="color:red"></span>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-2 control-label">库存:</label>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">图片链接:</label>
 
-                  <div class="col-sm-2">
-                    <input type="number" class="form-control" name="num" id="num" min="0" value="{{$goods->num}}" >
-                    <span class="num" style="color:red"></span>
-                  </div>
-              </div>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="请填写链接地址" name="open_url"  id="open_url" value="{{$banner->open_url}}" required>
+                        <span class="title" style="color:red"></span>
+                    </div>
+                </div>
 
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">状态:</label>
                 <div class="col-sm-10">
                     <select name="status" id="status">
-
-                    <option value="0">失效</option>
-                    <option value="1">有效</option>
+                    <option value="1" @if($banner->type == 1 ) selected @endif>有效</option>
+                    <option value="0" @if($banner->type == 0 ) selected @endif>无效</option>
                 </select>
                 </div>
                 </div>
 
               <div class="box-footer" style="padding-left: 600px;">
-                <input type="hidden" name="id" id="id" value="{{$goods->id}}">
-                  <a href="" class="btn btn-default">取消</a>
-                  <input type="submit" class="btn btn-info" value="提交">
+                <input type="hidden" name="id" id="id" value="{{$banner->id}}">
+                        <a href="" class="btn btn-default">取消</a>
+                        <input type="submit" class="btn btn-info" value="提交">
               </div>
 
             </form>
@@ -113,7 +127,7 @@
         var editor = K.editor({
             allowFileManager : true,
             imageTabIndex : 1,
-            extraFileUploadParams : {path:'goods'},
+            extraFileUploadParams : {path:'banners'},
             basePath : '/kindeditor/',
             uploadJson : '{{config('app.APP_URL')}}/upload'
         });
@@ -132,49 +146,17 @@
         });
     });
 
-    //二级分类
-    $('.cate_one').change(function(){
-        $(".cate_two").children().remove();
-        $(".cate_id").children().remove();
-        var value=this.value;
-        $.ajax({
-            url:'/goods/cate',
-            type:'get',
-            data:{
-                '_token':'{{csrf_token()}}',
-                'value':value
-            },
-            success:function (data) {
-                console.log(data);
-                var result = data['data'];
-                $(".cate_two").append("<option value='0'>请选择二级分类</option>");
-                for(var i = 0; i < result.length; i++){
-                    /*循环添加所有城市列表*/
-                    $(".cate_two").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
-                }
-            }
-        });
-    });
-    //三级分类
-    $(document).on('change', '.cate_two', function (){
-        $(".cate_id").children().remove();
-        var value=this.value;
-        $.ajax({
-            url:'/goods/cate',
-            type:'get',
-            data:{
-                '_token':'{{csrf_token()}}',
-                'value':value
-            },
-            success:function (data) {
-                var result = data['data'];
-                $(".cate_id").append("<option value='0'>请选择三级分类</option>");
-                for(var i = 0; i < result.length; i++){
-                    $(".cate_id").append("<option value='"+result[i].id+"'>"+result[i].name+"</option>");
-                }
-            }
-        });
-    });
+    // 表单提交
+    function  checkSubmit()
+    {
+        //分类名称
+        if($('#cate_two').val()==0) {
+            $('.cate').html('二级分类名称不能为空');
+            return false;
+        }
+        return true;
+    }
+
 </script>
 <script>
     var options = {

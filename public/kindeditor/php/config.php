@@ -13,10 +13,10 @@ header ( "Content-type: text/html; charset=utf-8" );
 //window
 //文件保存目录路径
 //$save_path = DIRECTORY_SEPARATOR.DIRECTORY_SEPARATOR.'192.168.0.116'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR;
-$save_path = 'E:'.DIRECTORY_SEPARATOR.'wamp'.DIRECTORY_SEPARATOR.'www'.DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR;
+$save_path = 'http://shop.com/upload';
 //文件保存目录URL
 //$save_url = 'http://192.168.0.116/';
-$save_url = 'http://www.images.com:8080/';
+$save_url = 'http://shop.com/upload/';
 
 //文件保存目录URL
 //$save_url = 'http://192.168.0.116/';

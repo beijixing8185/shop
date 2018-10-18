@@ -133,8 +133,11 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
         Route::get('/index', 'IndexController@index');       // 后台首页
         Route::get('orderList', 'IndexController@platOrderList');       // 平台订单
         Route::get('getAdminUserList', 'AuthController@getAdminUserList');    // 后台用户
+        Route::get('getUserList', 'AuthController@getUserList');    // 前台用户
+        Route::get('delUser', 'AuthController@delUser');    // 前台用户
 
     });
+
     Route::get('serviceList', 'ServiceController@serviceList');    // 服务列表
     Route::get('addService/{id?}', 'ServiceController@addService');    // 添加编辑服务
     Route::post('serviceForm', 'ServiceController@postAddService');    // 提交服务
@@ -156,9 +159,22 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::post('articleForm', 'ArticleController@postArticleForm');    // 提交文章
     Route::get('delArticle', 'ArticleController@delArticle');    // 删除文章
 
+    Route::get('articles/cate', 'ArticleController@getArticlesCate');
+    Route::get('addArticleCates', 'ArticleController@addArticleCates');    //添加文章分类
+    Route::get('cateArticleList', 'ArticleController@cateArticleList');    //分类列表
+    Route::post('addArticleCates', 'ArticleController@postAddArticleCates');    //提交分类
+    Route::post('updateArticleCate', 'ArticleController@updateArticleCate');    //修改分类
+    Route::get('delArticleCate', 'ArticleController@delArticlelCate');    //删除分类
+
+    Route::get('addBanner/{id?}', 'BannerController@addBanner');    //添加banner
+    Route::get('bannerList', 'BannerController@bannerList');    //列表
+    Route::post('addBanner', 'BannerController@postAddBanner');    //提交
+    Route::post('updateBanner', 'BannerController@updateBanner');    //修改
+    Route::get('delBanner', 'BannerController@delBanner');    //删除banner
+
 
 
 
 
 });
-Route::post('/upload', 'Common\UploadController@uploadImage');    // 上传图片
+Route::any('/upload', 'Common\UploadController@uploadImage');    // 上传图片

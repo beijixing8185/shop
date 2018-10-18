@@ -13,7 +13,7 @@ $(function() {
     	that.next().nextAll().remove()
         var data_id = $(this).attr('data-id')
         $.ajax({
-            url:'/goods/cate',
+            url:'/hx/admin/articles/cate',
             type:'get',
             data:{
                 'value':data_id
@@ -21,11 +21,11 @@ $(function() {
             success:function (data) {
 
                 var result = data['data'];
-
+                console.log(result)
                 var str = '<ul class="d-firstDrop s-firstDrop">';
                 $.each(result,function(n,value) {
                     str += ' <li> <div class="d-secondNav s-secondNav" data-v="'+ value.id +'">';
-                    str += ' <i class="fa fa-minus-square-o"></i> <span><a href="#" class="mdspan" data-ids="'+value.id+'">'+value.name + '</a></span>'
+                    str += ' <i class="fa fa-minus-square-o"></i> <span><a href="#" class="mdspan" data-ids="'+value.id+'">'+value.cate_name + '</a></span>'
                     str += '<i class="fa fa-caret-right fr"></i></div> <ul class="d-secondDrop s-secondDrop"> <li class="s-thirdItem"><a href="#"></a> </li> </ul> </li> ';
 
                 });
@@ -37,26 +37,7 @@ $(function() {
         e.stopPropagation();
     })
 	$('.first').on('click','.d-secondNav',function(e){
-       /* var that = $(this);
-        var data_v = $(this).attr('data-v')
-        that.next().nextAll().remove()
-        $.ajax({
-            url:'/goods/cate',
-            type:'get',
-            data:{
-                'value':data_v
-            },
-            success:function (data) {
-                var result = data['data'];
 
-                var str = '<ul class="d-secondDrop s-secondDrop">';
-                $.each(result,function(n,value) {
-                    str += '<li class="s-thirdItem"><a href="#" class="mdspan" data-ids="'+value.id+'">'+value.name+'</a></li>';
-                });
-                str+='</ul>';
-                that.after(str)
-            }
-        });*/
         dropSwift($(this), '.d-secondDrop');
         e.stopPropagation();
 	})
@@ -76,7 +57,7 @@ $(function() {
         var cate_id = $('#cate_id').val()
 
         $.ajax({
-            url:'/hx/admin/updateCate',
+            url:'/hx/admin/updateArticleCate',
             type:'post',
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -107,7 +88,7 @@ $(function() {
         var cate_id = $('#cate_id').val()
         if(confirm('删除该栏目的同时会删除栏目下所有的子级,请谨慎删除!!!')){
             $.ajax({
-                url:'/hx/admin/delCate',
+                url:'/hx/admin/delArticleCate',
                 type:'get',
                 data:{
                     'cate_id':cate_id,

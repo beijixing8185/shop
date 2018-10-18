@@ -54,13 +54,22 @@
                         所属分类
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        描述
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        是否热销
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        是否推荐
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
                         状态
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
-                        注册时间
+                        添加时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        更新时间
+                        修改时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
                         编辑
@@ -80,6 +89,21 @@
                         <td>{{$g->market_price}}</td>
                         <td>{{$g->price}}</td>
                         <td>{{$g->gc_name}}</td>
+                        <td style="width:200px">{{$g->description}}</td>
+                        <td>
+                            @if($g->is_hot==0)
+                                <span class="label label-warning">否</span>
+                            @else
+                                <span class="label label-success">是</span>
+                            @endif
+                        </td>
+                        <td>
+                            @if($g->is_commend==0)
+                                <span class="label label-warning">否</span>
+                            @else
+                                <span class="label label-success">是</span>
+                            @endif
+                        </td>
                         <td>
                             @if($g->status==0)
                                 <span class="label label-warning">待上架</span>
@@ -98,11 +122,11 @@
                 </tbody>
               </table></div></div>
 
-            <div class="row">
-            <div class="col-sm-5"></div>
-            <div class="popup"></div>
-            <div class="datu"></div>
-        </div>
+                  <div class="row pull-right">
+                      <div class="col-sm-10 "></div>
+                      {{$goods->links()}}
+
+                  </div>
             </div>
             </div>
             <!-- /.box-body -->

@@ -7,7 +7,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        规格列表
+        用户列表
+        <small>用户基本信息</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -23,7 +24,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">
-              <a href="{{url('hx/admin/serviceSpecForm')}}" class="label label-primary">添加</a>
+
               </h3>
 
 
@@ -36,22 +37,16 @@
             <thead>
                 <tr role="row">
                     <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
-                        标识id
+                        用户id
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        规格名称
+                        用户昵称
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        服务名称
+                        手机号
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        市场价格
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        零售价格
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
-                        库存
+                        邮箱
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
                         状态
@@ -60,48 +55,37 @@
                         注册时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        更新时间
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        编辑
-                    </th>
-                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
-                        删除
+                        操作
                     </th>
                 </tr>
             </thead>
 
                 <tbody>
-                @foreach($goods as $g)
-                    <tr role="row" class="odd">
-                        <td class="sorting_1">{{$g->id}}</td>
-                        <td>{{$g->spec_name}}</td>
-                        <td>{{$g->sku_name}}</td>
+                @foreach($user as $li)
+                <tr role="row" class="odd">
+                      <td class="sorting_1">{{$li->id}}</td>
+                      <td>{{$li->username}}</td>
+                      <td>{{$li->mobile}}</td>
+                      <td>{{$li->email}}</td>
+                      <td>
+                          @if($li->status==0)
+                              <span class="label label-warning">已冻结</span>
+                          @else
+                              <span class="label label-success">有效</span>
+                          @endif
+                      </td>
+                      <td>{{$li->created_at}}</td>
+                    <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$li->id}}" style="margin-left: 10px; cursor: pointer;" ></a></td>
 
-                        <td>{{$g->market_price}}</td>
-                        <td>{{$g->price}}</td>
-                        <td>{{$g->num}}</td>
-                        <td>
-                            @if($g->status==0)
-                                <span class="label label-warning">无效</span>
-                            @else
-                                <span class="label label-success">有效</span>
-                            @endif
-                        </td>
-                        <td>{{$g->created_at}}</td>
-                        <td>{{$g->updated_at}}</td>
-                        <td><a href="{{url('hx/admin/serviceSpecForm',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
-                        <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$g->id}}" style="cursor: pointer;margin-left: 10px;" ></a></td>
-                    </tr>
+                </tr>
                 @endforeach
                 </tbody>
               </table></div></div>
 
-                  <div class="row pull-right">
-                      <div class="col-sm-10 "></div>
-                      {{$goods->links()}}
-
-                  </div>
+            <div class="row">
+            <div class="col-sm-5"></div>
+            {{$user->links()}}
+        </div>
             </div>
             </div>
             <!-- /.box-body -->
@@ -117,13 +101,13 @@
     //重置密码
     $('#example2').on('click','.delSpec',function(){
         var Id = $(this).attr('data-Id');
-        var resultUrl = '/hx/admin/delSpec?id='+ Id;
-        if(confirm('确定要删除吗?')){
+        var resultUrl = '/hx/admin/delUser?id='+ Id;
+        if(confirm('确定要冻结用户吗?')){
             $.get(resultUrl,function(res){
                 if(res['code']){
-                    alert('删除失败')
+                    alert('冻结失败')
                 }else{
-                    alert('删除成功')
+                    alert('冻结失败')
                     window.location.href=''
                 }
             })

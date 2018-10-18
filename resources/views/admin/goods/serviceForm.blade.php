@@ -34,7 +34,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        服务操作
+        商品服务操作
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -56,7 +56,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{url('hx/admin/serviceForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{url('hx/admin/serviceForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data"  onsubmit="return checkSubmit();">
         {!!csrf_field()!!}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">服务分类:</label>
@@ -65,7 +65,7 @@
                         <select name="cate_one" class="cate_one" id="cate_one" >
                             <option value="0">请选择一级分类</option>
                             @foreach($cate as $c)
-                                <option value="{{$c->id}}">{{$c->name}}</option>
+                                <option value="{{$c->id}}" @if($c->id == $goods->gc_id_1)  selected @endif>{{$c->name}}</option>
                             @endforeach
                         </select>
 
@@ -73,19 +73,19 @@
                             <option value="0">请选择二级分类</option>
                             @if($cate_two)
                                 @foreach($cate_two as $k)
-                                    <option value="{{$k->id}}" > {{ $k->name }}</option>
+                                    <option value="{{$k->id}}" @if($k->id == $goods->gc_id_2)  selected @endif> {{ $k->name }}</option>
                                 @endforeach
                             @endif
                         </select>
 
-                        <select name="cate_id" class="cate_id" id="cate_id" >
+                        {{--<select name="cate_id" class="cate_id" id="cate_id" >
                             <option value="0">请选择三级分类</option>
                             @if($cate_three)
                                 @foreach($cate_three as $k)
                                     <option value="{{$k->id}}" > {{ $k->name }}</option>
                                 @endforeach
                             @endif
-                        </select>
+                        </select>--}}
 
                         <span class="cate" style="color:red"></span>
                     </div>
@@ -131,14 +131,39 @@
                   <label for="inputPassword3" class="col-sm-2 control-label">服务库存:</label>
 
                   <div class="col-sm-2">
-                    <input type="number" class="form-control" name="num" id="num" min="0" value="" >
+                    <input type="number" class="form-control" name="num" id="num" min="0" value="{{$goods->num}}" >
                     <span class="num" style="color:red"></span>
                   </div>
               </div>
                 <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">描述:</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="description" id="description" min="0" value="{{$goods->description}}" >
+                        <span class="num" style="color:red"></span>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">服务详情:</label>
                     <div class="col-sm-5">
-                        <script id="editor" style="width: 668px;height: 600px;"></script>
+                        <script id="editor" style="width: 650px;height: 600px;">{!! $goods->content !!}</script>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">热销:</label>
+                    <div class="col-sm-10">
+                        <select name="hot" id="hot">
+                        <option value="0" @if($goods->is_hot == 0) selected @endif>否</option>
+                    <option value="1" @if($goods->is_hot == 1) selected @endif>是</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">推荐:</label>
+                    <div class="col-sm-10">
+                        <select name="commend" id="commend">
+                        <option value="0" @if($goods->is_commend == 0) selected @endif>否</option>
+                    <option value="1" @if($goods->is_commend == 1) selected @endif>是</option>n>
+                    </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -154,8 +179,8 @@
 
               <div class="box-footer" style="padding-left: 600px;">
                 <input type="hidden" name="id" id="id" value="{{$goods->id}}">
-                <input type="submit" class="btn btn-info" value="提交">
-                <a href="" class="btn btn-default">取消</a>
+                        <a href="" class="btn btn-default">取消</a>
+                        <input type="submit" class="btn btn-info" value="提交">
               </div>
 
             </form>
@@ -198,10 +223,19 @@
         });
     });
 
+    // 表单提交
+    function  checkSubmit()
+    {
+        //分类名称
+        if($('#cate_two').val()==0) {
+            $('.cate').html('二级分类名称不能为空');
+            return false;
+        }
+        return true;
+    }
     //二级分类
     $('.cate_one').change(function(){
         $(".cate_two").children().remove();
-        $(".cate_id").children().remove();
         var value=this.value;
         $.ajax({
             url:'/goods/cate',
@@ -221,7 +255,7 @@
             }
         });
     });
-    //三级分类
+    /*//三级分类
     $(document).on('change', '.cate_two', function (){
         $(".cate_id").children().remove();
         var value=this.value;
@@ -240,7 +274,7 @@
                 }
             }
         });
-    });
+    });*/
 </script>
 <script>
     var options = {

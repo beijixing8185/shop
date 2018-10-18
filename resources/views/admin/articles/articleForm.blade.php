@@ -56,17 +56,25 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form action="{{url('hx/admin/articleForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data">
+            <form action="{{url('hx/admin/articleForm')}}" method="post"  class="form-horizontal" enctype="multipart/form-data" onsubmit="return checkSubmit();">
         {!!csrf_field()!!}
                 <div class="form-group">
                     <label for="inputEmail3" class="col-sm-2 control-label">分类:</label>
 
                     <div class="col-sm-5">
-                        <select name="cate_id" class="cate_id" id="cate_id" >
+                        <select name="cate_one" class="cate_one" id="cate_one" >
                             <option value="0">请选择分类</option>
                             @foreach($cate as $c)
-                                <option value="{{$c->id}}" @if($article->article_cate_id ==$c->id ) selected @endif>{{$c->name}}</option>
+                                <option value="{{$c->id}}">{{$c->cate_name}}</option>
                             @endforeach
+                        </select>
+                        <select name="cate_two" class="cate_two" id="cate_two" >
+                            <option value="0">请选择二级分类</option>
+                            @if($cate_two)
+                                @foreach($cate_two as $k)
+                                    <option value="{{$k->id}}" @if($article->article_cate_id == $k->id )  selected @endif> {{ $k->cate_name }}</option>
+                                @endforeach
+                            @endif
                         </select>
 
                         <span class="cate" style="color:red"></span>
@@ -179,6 +187,40 @@
 <script charset="utf-8" src="{{ asset('kindeditor/lang/zh_CN.js') }}"></script>
 <script charset="utf-8" src="{{ asset('kindeditor/plugins/code/prettify.js') }}"></script>
 <script>
+    // 表单提交
+    function  checkSubmit()
+    {
+        //分类名称
+        if($('#cate_two').val()==0) {
+            $('.cate').html('二级分类名称不能为空');
+            return false;
+        }
+        return true;
+    }
+
+    //二级分类
+    $('.cate_one').change(function(){
+        $(".cate_two").children().remove();
+        var value=this.value;
+        $.ajax({
+            url:'/hx/admin/articles/cate',
+            type:'get',
+            data:{
+                'value':value
+            },
+            success:function (data) {
+                console.log(data);
+                var result = data['data'];
+                $(".cate_two").append("<option value='0'>请选择二级分类</option>");
+                for(var i = 0; i < result.length; i++){
+                    /*循环添加所有城市列表*/
+                    $(".cate_two").append("<option value='"+result[i].id+"'>"+result[i].cate_name+"</option>");
+                }
+            }
+        });
+    });
+</script>
+<script>
     //上传列表图
     KindEditor.ready(function(K) {
         var editor = K.editor({
@@ -210,6 +252,7 @@
         filterMode : true
     };
     var editor = K.create('textarea[name="content"]', options);
+
 </script>
 <script type="text/javascript">
 

@@ -27,9 +27,26 @@ class Banner extends Model
             $where .= ' and type = '.$type;
         }
         if(!empty($limit)){
-            return self::whereRaw($where)->orderByRaw('sort ASC') ->limit($limit)->get();
+            return self::whereRaw($where)->orderByRaw('id desc') ->limit($limit)->get();
         }
-        return self::whereRaw($where)->orderByRaw('sort ASC')->get();
+        return self::whereRaw($where)->orderByRaw('id desc')->get();
 
+    }
+    /**
+     * 添加
+     */
+    public static function add($object){
+        if($object->id){
+            $goods = Self::find($object->id);
+        }else{
+            $goods = new Self;
+        }
+
+        $goods->type = $object->type;
+        $goods->picture = $object->first_img;
+        $goods->open_url = $object->open_url;
+        $goods->status = $object->status;
+
+        return $goods->save();
     }
 }

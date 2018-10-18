@@ -29,4 +29,20 @@ class ArticleCate extends Model{
         }
     }
 
+    /**
+     * 添加栏目
+     */
+    public static function  addCate(array $data){
+
+        $cate = Self::where('level',$data['level'])->where('cate_name',$data['name'])->first();
+        if($cate) return false;
+
+        $cate = new Self;
+        $cate->cate_name = $data['name'];
+        $cate->description = $data['description'];
+        $cate->pid = $data['pid'];
+        $cate->level = $data['level'];
+        return $cate->save();
+    }
+
 }
