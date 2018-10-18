@@ -1,7 +1,7 @@
 ﻿
 @extends('welcome')
 
-@section('title','爆品专区')
+@section('title','营销攻略')
 
 @section('css')
 	<link rel="stylesheet" href="{{asset('css/page.css')}}">

@@ -12,9 +12,24 @@ class GoodsSpu extends Model
     /**
      * 查询列表
      */
-    public static function list($where = ''){
-       $goods = Self::whereRaw('id >= 1'.$where)->orderBy('id','desc')->paginate(10);
-       return $goods;
+
+    public static function getlist($where = '')
+    {
+        $goods = Self::whereRaw('id >= 1' . $where)->orderBy('id', 'desc')->paginate(10);
+        return $goods;
+    }
+
+    /**
+     * @param string $where
+     * @param string $limit
+     * @return mixed
+     */
+    public static function list($where = '',$limit=''){
+        if(!empty($limit)){
+            return Self::whereRaw('id >= 1'.$where)->limit($limit)->get();
+        }
+       return Self::whereRaw('id >= 1'.$where)->get();
+
     }
 
     /**

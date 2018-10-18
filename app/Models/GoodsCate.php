@@ -20,9 +20,9 @@ class GoodsCate extends Model{
     {
         $wheres = 'id > 0'.$where;
         if(!empty($status)){
-            return self::whereRaw($wheres.' and status = '.$status) ->get();
+            return self::whereRaw($wheres.' and status = '.$status)->orderByRaw('sort ASC') ->get();
         }else{
-            return self::whereRaw($wheres) ->get();
+            return self::whereRaw($wheres)->orderByRaw('sort ASC') ->get();
         }
     }
 

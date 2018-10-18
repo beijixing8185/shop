@@ -25,7 +25,7 @@ class ServiceController extends Controller
      * 服务列表
      */
     public function serviceList(){
-        $goods = GoodsSpu::list();
+        $goods = GoodsSpu::getlist();
         return view('admin.goods.serviceList',compact('goods'));
     }
 

@@ -1144,3 +1144,21 @@ sup {top:-2px;}
     margin-left: 18px;
     padding-right: 10px;
 }
+#showtype12 .container .hotb-list-back-1 li:nth-child(1){
+    background:url('../picture/tui-1.png') no-repeat center center;background-size: 276px 186px;
+}
+#showtype12 .container .hotb-list-back-1 li:nth-child(2){
+    background:url('../picture/tui-2.png') no-repeat center center;background-size: 276px 186px;
+}
+#showtype12 .container .hotb-list-back-1 li:nth-child(3){
+    background:url('../picture/tui-3.png') no-repeat center center;background-size: 276px 186px;
+}
+#showtype12 .container .hotb-list-back-1 li:nth-child(4){
+    background:url('../picture/tui-4.png') no-repeat center center;background-size: 276px 186px;
+}
+#showtype12 .container .hotb-list li a div {
+    background-image: url();
+}
+#showtap03 .container .hotb-list li a div {
+     background-image: url();
+}

@@ -14,6 +14,8 @@ use App\Models\Article;
 use App\Models\ArticleCate;
 use App\Models\Banner;
 use App\Models\Customer;
+use App\Models\GoodsCate;
+use App\Models\GoodsSpu;
 
 class IndexController extends Controller
 {
@@ -35,7 +37,13 @@ class IndexController extends Controller
         foreach ($newSite as $val){
             $val->child = Article::getList($val['id'],1,'',3)->toArray();
         }
-        return view('index.index',compact('banner','customer','newCategory','newSite'));
+
+        //首页的商品展示模块【4块】
+        $goods = GoodsCate::getList(' and pid = 0 ',1);
+        foreach ($goods as $val){
+            $val->child = GoodsSpu::list(' and gc_id_1 = '.$val['id'].' and status = 1 ',4)->toArray();
+        }
+        return view('index.index',compact('banner','customer','newCategory','newSite','goods'));
     }
 
 }
