@@ -28,9 +28,9 @@
 @include('./common/nav')
 @include('./common/search')
 @include('./common/right')
-@include('./common/poper')
 
 
+@if(!empty($goods))
         <div class="sp-xq juzhong">
             <div class="container prodetarls-top">
                 <div>
@@ -51,14 +51,18 @@
                     <div class="fan-message">
                         <div class="pro-title">
                             <h1>
-                                微信公众号代运营托管服务/微信代运营
+                                {{$goods['spu_name']}}
                             </h1>
                         </div>
 
                         <p class="pro-produce"></p>
                         <ul class="pro-funct-tag">
-                            <li>严选师推荐</li>
-                            <li>热卖爆品</li>
+                            @if($goods['is_commend'] ==1)
+                                <li>严选师推荐</li>
+                            @endif
+                            @if($goods['is_hot'] ==1)
+                            <li>热卖商品</li>
+                            @endif
                         </ul>
                         <div class="dw-box">
 
@@ -67,11 +71,12 @@
 
                             <ul class="zb_ul">
                                 <li class="fwjj">
-                                    <div class="dw-left">镖狮价格<span id="packagePrice"><i style="font-size: 16px;">&yen;</i>2499.00
-																					<strong>[市场价：<b>&yen;5000.00</b>]</strong>
+                                    <div class="dw-left">商品价格
+                                        <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>{{$goods['market_price']}}
+									        <strong>[市场价：<b>&yen;{{$goods['price']}}</b>]</strong>
 										</span>
                                     </div>
-                                    <div class="dw-right dw-right-good"><span>成交量</span><p>498</p></div>
+                                    <div class="dw-right dw-right-good"><span>成交量</span><p>{{$goods['salen_num']}}</p></div>
                                     <div class="dw-right dw-right-well caClass" id="_evaluate_btn02" traceflag="content_tab_评分" onclick="scrollToEva()"><span>评分</span><p style="color: #ff4400 !important">4.8</p></div>
                                 </li>
                                 <li class="dw-span">
@@ -100,17 +105,11 @@
                                         <li isusable="1" packageId="132" marketPrice="8000.00" packagePrice="4999.00" packageType="3" class="caClass" id="package132" traceflag="content_select_微信代运营经济版	">微信代运营经济版	<b><img src="/picture/tcselected.png" alt=""/></b>
                                             <p class="tradefilter xz-num" style="display:block" data-id="0000"><span>46%</span>选择</p>
                                         </li>
-                                        <li isusable="1" packageId="133" marketPrice="18000.00" packagePrice="9999.00" packageType="3" class="caClass" id="package133" traceflag="content_select_微信代运营品质版	">微信代运营品质版	<b><img src="/picture/tcselected.png" alt=""/></b>
-                                            <p class="tradefilter xz-num" style="display:block" data-id="0000"><span>11%</span>选择</p>
-                                        </li>
-                                        <li isusable="1" packageId="208" marketPrice="" packagePrice="" packageType="3" class="caClass" id="package208" traceflag="content_select_微信代运营定制版">微信代运营定制版<b><img src="/picture/tcselected.png" alt=""/></b>
-                                            <p class="tradefilter xz-num" style="display:block" data-id="0000"><span>18%</span>选择</p>
-                                        </li>
+
                                     </ul>
                                 </li>
 
                                 <!--  -->
-
                             </ul>
 
                             <div class="cnzc">
@@ -177,8 +176,8 @@
                                 <div class="zixun caClass" traceflag="content_tab_套餐对比" id="tcdb1"><a class="dzh-btn" data-id="tcCompare">套餐对比</a></div>
                                 <div class="zixun" id="immediatelySubmitOrder1" >
                                     <!--非标品-->
-                                    <a id="buynow" onclick="immediatelySubmitOrder()" class="selected caClass" traceflag="content_pop_立即下单" style="display:none">立即下单</a>
-                                    <a id="recommsp" onclick="customizationConsult()" class="selected recommspShow caClass" traceflag="content_pop_推荐服务商" >推荐服务商</a>
+                                    <a id="buynow" onclick="immediatelySubmitOrder()" class="selected caClass" traceflag="content_pop_立即下单" >立即下单</a>
+                                    {{--<a id="recommsp" onclick="customizationConsult()" class="selected recommspShow caClass" traceflag="content_pop_推荐服务商" >推荐服务商</a>--}}
                                     <!-- <p style="display:none" id="recomminform" class="zixun-ab"><b><img src="/picture/icon03.png" /></b>系统将推荐该套餐1-3家最适合您的服务商与您取得联系，详细沟通您的需求，此过程无需支付任何费用<span><img src="/picture/free_close.png" /></span> </p> -->
                                 </div>
                                 <!--标品-->
@@ -202,136 +201,23 @@
                         <div style="border: 1px solid #e5e5e5;">
                             <p>推荐宝贝</p>
                             <ul>
+                                @if(!empty($commend))
+                                    @foreach($commend as $val)
                                 <li>
-                                    <a href="/product/428.htm" target="_blank">
+                                    <a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">
                                         <dl class="tjbb">
                                             <dt>
-                                                <img src="/picture/loadimage.htm" alt="微信朋友圈广告／广告投放">
+                                                <img src="{{$val['main_image']}}" alt="{{$val['spu_name']}}">
                                             </dt>
                                             <dd>
-                                                <p><a href="/product/428.htm" target="_blank">微信朋友圈广告／广告投放</a></p>
-                                                <span>5000元起</span>
+                                                <p><a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a></p>
+                                                <span>{{$val['price']}}</span>
                                             </dd>
                                         </dl>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="/product/430.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="广点通广告／广告投放">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/430.htm" target="_blank">广点通广告／广告投放</a></p>
-                                                <span>5000元起</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/367.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="软文写作/新媒体文章/营销软文/新闻稿写作（标准版）">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/367.htm" target="_blank">软文写作/新媒体文章/营销软文/新闻稿写作（标准版）</a></p>
-                                                <span>280元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/375.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="微信公众号注册认证、开通支付／公众号搭建">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/375.htm" target="_blank">微信公众号注册认证、开通支付／公众号搭建</a></p>
-                                                <span>399元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/392.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="推广软文/产品软文/微博软文/原创文章（套餐版）">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/392.htm" target="_blank">推广软文/产品软文/微博软文/原创文章（套餐版）</a></p>
-                                                <span>300元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/399.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="微信公众号粉丝增长／公众号粉丝快速增加／粉丝数量">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/399.htm" target="_blank">微信公众号粉丝增长／公众号粉丝快速增加／粉丝数量</a></p>
-                                                <span>15元起</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/400.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="微信文章阅读量/文章阅读量增长/文章点赞/文章转发">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/400.htm" target="_blank">微信文章阅读量/文章阅读量增长/文章点赞/文章转发</a></p>
-                                                <span>38.8元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/402.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="朋友圈真人转发／限公众号图文[微信后台统计数据]">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/402.htm" target="_blank">朋友圈真人转发／限公众号图文[微信后台统计数据]</a></p>
-                                                <span>56元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/431.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="WIFI吸粉/真实吸粉/真人粉丝/精准粉丝">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/431.htm" target="_blank">WIFI吸粉/真实吸粉/真人粉丝/精准粉丝</a></p>
-                                                <span>3000元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="/product/433.htm" target="_blank">
-                                        <dl class="tjbb">
-                                            <dt>
-                                                <img src="/picture/loadimage.htm" alt="微信公众号流量主开通【包通过】">
-                                            </dt>
-                                            <dd>
-                                                <p><a href="/product/433.htm" target="_blank">微信公众号流量主开通【包通过】</a></p>
-                                                <span>680元</span>
-                                            </dd>
-                                        </dl>
-                                    </a>
-                                </li>
+                                    @endforeach
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -347,22 +233,17 @@
                                     </a></li>
                                 <li id="_service_ensure_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a></li>
                                 <li id="customizationConsult2" class="fix-a-btn pull-right lj-fix-btn curopt" style="height: 44px;"><a id="recommsp2" style="padding: 0 20px;" onclick="customizationConsult()" class="recommspShow caClass" traceflag="fixbar_pop_推荐服务商">推荐服务商</a></li>
-                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;"><a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:openBDBridge();">在线咨询</a></li>
+                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;"><a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a></li>
                             </ul>
                         </div>
                         <div id="_service_eva" class="service-items">
                             <div id="_prod_desc" class="ss_inner">
-                                <p>
-                                    <img alt="微信公众号代运营托管服务/微信代运营" src="/picture/20180903201205_361.png" alt="" width="100%" /><img alt="微信公众号代运营托管服务/微信代运营" src="/picture/20180903201205_564.png" alt="" width="100%" />
-                                </p>
-                                <p>
-                                    <img alt="微信公众号代运营托管服务/微信代运营" src="/picture/20180925162707_583.png" width="100%" alt="" /><img alt="微信公众号代运营托管服务/微信代运营" src="/picture/20180903201206_109.png" alt="" width="100%" />
-                                </p>
+                                {{$goods['content']}}
                             </div>
                         </div>
                         <div id="_serqdan" class="serqdan">
                             <div class="pj-number">
-                                <div>套餐明细</div>
+                                <div>项目明细</div>
                             </div>
                             <div class="qd-con">
                                 <p class="com-img"> <img src="/picture/loadimage.htm"/></p>
@@ -374,36 +255,26 @@
                                     <div>案例</div>
                                 </div>
                                 <div>
+                                    @if(!empty($customer))
+                                    @foreach($customer as $val)
                                     <dl>
                                         <dt >
-                                            <a href="/spcase/1303.htm" target="_blank">
-                                                <img src="/picture/loadimage.htm" >
-                                                <div class="case_swaper">小鱼定制微信公众号代运营案例，包含：菜单栏设计、原创图文、排版设计、活动策划</div>
+                                            <a href="/customer/detail/{{$val['id']}}" target="_blank">
+                                                <img src="{{$val['picture']}}" >
+                                                <div class="case_swaper">{{$val['description']}}</div>
                                             </a>
                                         </dt>
                                         <dd>
-                                            <a class="case-a-btn" href="/spcase/1303.htm" target="_blank">
-                                                小鱼定制微信公众号代运营
+                                            <a class="case-a-btn" href="/customer/detail/{{$val['id']}}" target="_blank">
+                                                {{$val['title']}}
                                             </a>
                                             <ul class="case-tags">
-                                                <li>休闲娱乐</li>					<li>专注微信内容</li>				</ul>
+                                                <li>{{$val['customer']}}</li>
+                                            </ul>
                                         </dd>
                                     </dl>
-                                    <dl>
-                                        <dt >
-                                            <a href="/spcase/1297.htm" target="_blank">
-                                                <img src="/picture/loadimage.htm" >
-                                                <div class="case_swaper">张一元公众号代运营案例</div>
-                                            </a>
-                                        </dt>
-                                        <dd>
-                                            <a class="case-a-btn" href="/spcase/1297.htm" target="_blank">
-                                                张一元公众号代运营案例
-                                            </a>
-                                            <ul class="case-tags">
-                                                <li>食品餐饮</li>					<li>微信代运营</li>				</ul>
-                                        </dd>
-                                    </dl>
+                                    @endforeach
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -618,7 +489,8 @@
                 </div>
             </div>
         </div>
-        <div class="wrap_zhezhao" id="successNote" style=" display:none;z-index: 999;">
+        @endif
+  {{--      <div class="wrap_zhezhao" id="successNote" style=" display:none;z-index: 999;">
             <input type="hidden" id="_spId" value="">
             <div class="free-bounced small">
                 <div class="fb_inner ">
@@ -671,7 +543,7 @@
 
                 </div>
             </div>
-        </div>
+        </div>--}}
 
 @endsection
 

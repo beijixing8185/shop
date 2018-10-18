@@ -1,5 +1,5 @@
 var timer;
-function changePwd(){
+function changePwds(){
 	var newPwd = $("#newPwd").val();
 	var newPwd2 = $("#newPwd2").val();
 	$("#mobileTip").hide();
@@ -28,31 +28,19 @@ function changePwd(){
 		$("#mobileTip2").show();
 		return false;
 	}
-	
 	$.ajax({
-			url: "/updatepwd/updatePwd.json",
-			dataType : 'json',
-			type: "post",  
-			async : false,
-			data: {newPwd:newPwd},
-		    success: function(result){
-			   var status = result.status;
-			   if(status == "0"){
-				   $("#change-submit-form").hide();
-				   $("#pwdSuccess").show();
-				   var num = 5;
-				   timer = setInterval(countDown,1000)
-				    function countDown(){
-				        num--;
-				        $("#countNum").html(num);
-				        console.log(num < 0);
-				        if(num <= 0){
-				        	toHome();
-				            clearInterval(timer);
-				            timer = null;
-				        }
-				    };
-			   }
+			url: "/member/updateMemberPwd",
+			type: "post",
+			data: {password:newPwd},
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+		    success: function(data){
+                if(data==1){
+                    alert("修改成功！");
+                }else{
+                    alert("修改失败！");
+                }
 		   }
 		});
 	
@@ -132,22 +120,10 @@ function changeName(dom) {
 	$(dom).prev().focus();
 }
 //修改用户信息
-function updateUser(){
-	var userImage = $('#_imgPath1').val();
-	var nickName = $("input[name='nickName']").val();
-	var name = $("input[name='name']").val();
-	var qq = $("input[name='qq']").val();
-	var weChat = $("input[name='weChat']").val();
-	var email = $("input[name='email']").val(); 
-	
-	if(qq!=""){
-		var qqreg = /[1-9][0-9]{4,}/;
-		if(!qqreg.test(qq)){
-			alert("请输入正确的QQ号！");
-			$("input[name='qq']").focus();
-			return;
-		}
-	}
+function updateUserInfo(){
+	var userImage = $('#_imgPath1').val();	//图片
+	var nickName = $("input[name='nickName']").val();//昵称
+	var email = $("input[name='email']").val();		//邮箱
 	
 	if(email!=""){
 		var emailreg = /[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
@@ -159,20 +135,18 @@ function updateUser(){
 	}
 	
 	$.ajax({
-	   url: "/useraccount/updateuser.json",
+	   url: "/member/updateMemberInfo",
 	   type : "post",
 	   data:{
-		   userImage:userImage,
-		   nickName:nickName,
-		   name:name,
-		   qq:qq,
-		   weChat:weChat,
+		   picture:userImage,
+		   username:nickName,
 		   email:email
 	   },
-	   dataType:"json",
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
 	   success: function(data){
-		   var status = data.status;
-		   if(status=="success"){
+		   if(data==1){
 			   alert("修改成功！");
 		   }else{
 			   alert("系统出错了！");

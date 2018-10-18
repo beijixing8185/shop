@@ -586,7 +586,7 @@
 			<ul class="al-list" id="caseitem1" >
                 @if(!empty($customer))
                     @foreach($customer as $val)
-                        @if($val['cid'] ==1)
+                        @if($val['gc_id'] ==1)
                             <li onclick="window.open('/customer/detail/{{$val->id}}');">
                                 <div class="cgalNew">
                                     <p class="cgantit">{{$val['title']}}</p>
@@ -610,7 +610,7 @@
 			<ul class="al-list" id="caseitem2" style="display:none">
                 @if(!empty($customer))
                     @foreach($customer as $val)
-                        @if($val['cid'] ==2)
+                        @if($val['gc_id'] ==2)
                             <li onclick="window.open('/customer/detail/{{$val->id}}');">
                                 <div class="cgalNew">
                                     <p class="cgantit">{{$val['title']}}</p>
@@ -634,7 +634,7 @@
 			<ul class="al-list" id="caseitem3" style="display:none">
                 @if(!empty($customer))
                     @foreach($customer as $val)
-                        @if($val['cid'] ==3)
+                        @if($val['gc_id'] ==3)
                             <li onclick="window.open('/customer/detail/{{$val->id}}');">
                                 <div class="cgalNew">
                                     <p class="cgantit">{{$val['title']}}</p>

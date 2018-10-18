@@ -68,6 +68,6 @@ class User extends Model
      */
     public static function getWhere($where)
     {
-        return self::whereRaw($where)->first();
+        return self::whereRaw('status = 1 and '.$where)->first();
     }
 }

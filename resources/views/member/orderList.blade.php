@@ -1,6 +1,4 @@
-﻿
-
-@extends('welcome')
+﻿@extends('welcome')
 
 @section('title','会员订单')
 
@@ -39,8 +37,13 @@
 				<dt>
 					<img src="/picture/rwu.png" alt=""/>
 				</dt>
-				<dd> <p>15010321498</p>
-					<a class="publish-header publish-header-icon user-hed pull-left color-theme"  href="/useraccount/userInfoEdit.htm" target="_blank" >账号设置<i></i></a>
+				<dd>
+					@if(!empty(Cache('phone')))
+					<p>{{Cache('phone')}}</p>
+					@else
+						<p>您未登陆</p>
+					@endif
+					<a class="publish-header publish-header-icon user-hed pull-left color-theme"  href="/member/getMember" target="_blank" >账号设置<i></i></a>
 				</dd>
 			</dl>
 			<div class="my-order">
@@ -54,17 +57,7 @@
 					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(2);" id="evali1" litxt="待评价">待评价</li>
 					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(3);" id="evali2" litxt="已评价">已评价</li>
 				</ul>
-				<p><img src="/picture/icon03.png" alt="交易中心">资金管理</p>
-				<ul class="storeList or-mold" id="storeList1">
-					<!--<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(4);" id="evali1" litxt="我的镖狮币">我的镖狮币</li>-->
-					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(5);" id="evali2" litxt="我的镖狮币">我的镖狮币</li>
-				</ul>
 
-				<p><img src="/picture/icon04.png" alt="交易中心">推荐有好礼</p>
-				<ul class="storeList or-mold" id="storeList1">
-					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(6);" id="evali1" litxt="代发需求">代发需求<i>有礼</i></li>
-					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(7);" id="evali2" litxt="代发记录">代发记录</li>
-				</ul>
 			</div>
 		</div>
 		<div class="em-right pull-right">
@@ -143,35 +136,6 @@
 				</div>
 				<!--订单信息 end-->
 			</div>            </div>
-	</div>
-</div>
-<style>
-
-</style>
-<div id="tsShadow" class="tsShadow" style="display: none">
-	<input type="hidden" id="orderNo" value=""/>
-	<input type="hidden" id="orderId" value=""/>
-	<div class="tsInner">
-		<p>投诉
-			<b data-toggle="closed"><img src="/picture/des-closed.png" alt=""/></b>
-		</p>
-		<div class="ts-list" id="spwork">
-			<h6><i style="color:#ff4400;">*</i>您要投诉的对象是？</h6>
-			<p id="spworkTap"><span>服务商</span><span>镖狮网</span></p>
-			<ul id="showQuestion">
-			</ul>
-		</div>
-
-		<div class="tsArea">
-			<h6><i style="color:#ff4400;">*</i>您要投诉的内容是？</h6>
-			<textarea cols="30" rows="4" id="complain" placeholder="我想投诉，因为......"></textarea>
-		</div>
-
-		<div class="tsAn">
-			<a style="background-color: #ffda44;border-color:#ffda44;" href="javascript:complain();" class="caClass" traceflag="pop_submit_确认投诉" id="confirmComplain">确认</a>
-			<a style="background-color: #fff;border-color:#eee;" class="quxiao caClass" traceflag="pop_close_取消投诉" id="cancleComplain">取消</a>
-		</div>
-		<div class="tsSm">您的投诉我们很重视，镖狮工作人员将在24小时内与您联系</div>
 	</div>
 </div>
 <div class="maskAlert maskAlertKnow" style="/* display: none; */">

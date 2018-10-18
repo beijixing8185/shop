@@ -1,3 +1,4 @@
+{{--
 
 <script>
     $('#goTop').click(function(){
@@ -562,4 +563,4 @@
         <p>如有疑问，请联系客服4000-581-581</p>
         <a data-dismiss="modal">确定</a>
     </div>
-</div>
+</div>--}}

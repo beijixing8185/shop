@@ -1,5 +1,4 @@
-﻿
-@extends('welcome')
+﻿@extends('welcome')
 
 @section('title','密码修改')
 
@@ -33,10 +32,9 @@
 </div>
 <div id="userCenter" class="container order-detalis">
     <div id="order_l02">
-    	
     	<div class="container changepwd-div">
     		<ul class="changepwd-left">
-    			<li data-id="changeInfo" onclick="window.open('/useraccount/userInfoEdit.htm','_self')"><b></b>个人资料</li>
+    			<li data-id="changeInfo" onclick="window.open('/member/getMember')"><b></b>个人资料</li>
     			<li data-id="changePwd" class="lib"><b></b>修改密码</li>
     		</ul>
     		<div class="changepwd-right">
@@ -69,12 +67,10 @@
     									</div>
     							</div>
     					</div>
-    					<a onclick="changePwd();" class="change-submit caClass" traceflag="content_submit_修改密码提交" id="changePwdBtn">提交</a>
+    					<a onclick="changePwds();" class="change-submit caClass">提交</a>
     				</form>
     			</div>
-    				
     		</div>
-    		
     	</div>
     		<div id="pwdSuccess" class="pwd-success" style="display:none;">
     			<div class="suc-img">
@@ -85,7 +81,6 @@
     				<button class="success_button" type="button" onclick="toHome();">返回首页（<span id="countNum">5</span>s） </button>
     			</div>
     		</div>
-    	
     </div>
 </div>
 @endsection

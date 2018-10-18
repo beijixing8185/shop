@@ -17,7 +17,6 @@ class AboutController extends Controller{
     public function index($id)
     {
         $about = About::getFind($id);
-
         return view('about.index',compact('about','id'));
     }
 }

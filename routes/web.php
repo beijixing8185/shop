@@ -62,7 +62,12 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
         Route::get('member_pwd', 'MemberController@memberPwd');  //会员密码修改
 
-        Route::get('orderList', 'MemberController@orderList');  //会员订单
+        Route::get('order', 'MemberController@orderList');  //会员订单
+
+        Route::post('updateMemberInfo', 'MemberController@updateMemberInfo');  //修改会员信息逻辑
+        Route::post('updateMemberPwd', 'MemberController@updateMemberPwd');  //修改会员密码逻辑
+
+
     });
 
 
@@ -107,16 +112,17 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
     });
 
 
+//商品
+    Route::group(['namespace' =>'Goods','prefix' => 'goods'], function () {
+
+        Route::get('goodsDetail/{id}', 'GoodsController@goodsDetail');
+
+        Route::get('/index', 'GoodsController@index');
+        Route::get('/cate', 'GoodsController@getGoodsCate');
+    });
+
 });
 
-
-Route::group(['namespace' =>'Goods','prefix' => 'goods'], function () {
-
-    Route::get('goodsDetail', 'GoodsController@goodsDetail');
-
-    Route::get('/index', 'GoodsController@index');
-    Route::get('/cate', 'GoodsController@getGoodsCate');
-});
 
 Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('login', 'AuthController@login');       // 登录

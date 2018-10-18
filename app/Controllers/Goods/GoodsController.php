@@ -10,7 +10,9 @@ namespace app\Controllers\Goods;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\Customer;
 use App\Models\GoodsCate;
+use App\Models\GoodsSpu;
 use Illuminate\Http\Request;
 
 
@@ -22,9 +24,19 @@ class GoodsController extends Controller
 
     }
 
-    public function goodsDetail()
+    public function goodsDetail($id)
     {
-        return view('goods.goodsDetail');
+        $goods = GoodsSpu::goodsDetail($id,' and status = 1'); //商品详情
+        //dd($result);
+
+        $customer = '';     //关于这个商品的成交案例
+        if(!empty($goods)){
+            $customer = Customer::getList(' and gc_id = '.$goods['gc_id_2'],1,3);
+        }
+
+        $commend = GoodsSpu::list(' and is_commend = 1 and status = 1',5);  //推荐商品 is_commend
+
+        return view('goods.goodsDetail',compact('goods','customer','commend'));
     }
 
     /**

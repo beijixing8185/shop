@@ -28,4 +28,5 @@ class ArticleCate extends Model{
             return self::whereRaw($wheres) ->get();
         }
     }
+
 }

@@ -21,7 +21,7 @@ class FunctionsController extends Controller{
      */
     public function childs($category,$parent_id=0,$level=0)
     {
-        $arr=array();
+        $arr=[];
         foreach($category as $k=>$v){
             if($v['pid']==$parent_id){
                 $v['level']=$level;

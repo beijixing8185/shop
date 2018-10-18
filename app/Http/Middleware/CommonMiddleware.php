@@ -3,6 +3,8 @@
 namespace App\Http\Middleware;
 
 use App\Models\About;
+use App\Models\ArticleCate;
+use App\Models\GoodsCate;
 use App\Models\GoodsSpu;
 use App\Models\Link;
 use App\Controllers\Common\BaseController;
@@ -20,6 +22,7 @@ class CommonMiddleware
      */
     public function handle($request, Closure $next)
     {
+        //Cache::forget('getColumn');
         //Cache::forget('goods_list');
         $minutes = 2592000; //一个月的秒数
 
@@ -44,9 +47,22 @@ class CommonMiddleware
 
         //底部萤火虫服务   hot
         if(!Cache::get('goods_list')){
-            $goods_list = GoodsSpu::list(' and hot = 1 and status = 1')->toArray();
+            $goods_list = GoodsSpu::list(' and is_hot = 1 and status = 1')->toArray();
             Cache::put('goods_list', $goods_list, $minutes);
         }
+
+        /*//顶部导航栏目
+        if(!Cache::get('getColumn')){
+            $getColumn = GoodsCate::getColumn();
+            Cache::put('getColumn', $getColumn, $minutes);
+        }*/
+
+
+            if(!empty(Cache('getColumn'))){
+                $getColumn = GoodsCate::getColumn();
+                Cache::put('getColumn',$getColumn,$minutes);
+            }
+        //dd(Cache('getColumn'));
         return $next($request);
     }
 }
