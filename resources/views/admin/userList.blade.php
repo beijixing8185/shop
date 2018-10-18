@@ -69,7 +69,7 @@
                       <td>{{$li->email}}</td>
                       <td>
                           @if($li->status==0)
-                              <span class="label label-warning">已删除</span>
+                              <span class="label label-warning">已冻结</span>
                           @else
                               <span class="label label-success">有效</span>
                           @endif
@@ -102,12 +102,12 @@
     $('#example2').on('click','.delSpec',function(){
         var Id = $(this).attr('data-Id');
         var resultUrl = '/hx/admin/delUser?id='+ Id;
-        if(confirm('确定要删除吗?')){
+        if(confirm('确定要冻结用户吗?')){
             $.get(resultUrl,function(res){
                 if(res['code']){
-                    alert('删除失败')
+                    alert('冻结失败')
                 }else{
-                    alert('删除成功')
+                    alert('冻结失败')
                     window.location.href=''
                 }
             })
