@@ -89,31 +89,31 @@
 	height: 38px;
 }
 .common-box-until li#releaseRequirements a span b{
-	background: url('static/images/iconfont02_2.png') no-repeat center;
+	background: url('/images/iconfont02_2.png') no-repeat center;
 }
 .common-box-until li#releaseRequirements:hover a span b{
-	background: url('static/images/iconfont020_2.png') no-repeat center;
+	background: url('/images/iconfont020_2.png') no-repeat center;
 }
 .common-box-until li#supervisionOfSecurity a span b{
-	background: url('static/images/iconfont03_2.png') no-repeat center;
+	background: url('/images/iconfont03_2.png') no-repeat center;
 }
 .common-box-until li#supervisionOfSecurity:hover a span b{
-	background: url('static/images/iconfont030_2.png') no-repeat center;
+	background: url('/images/iconfont030_2.png') no-repeat center;
 }
 .common-box-until li#suggestComplaints a span b{
-	background: url('static/images/iconfont07_2.png') no-repeat center;
+	background: url('/images/iconfont07_2.png') no-repeat center;
 }
 .common-box-until li#suggestComplaints:hover a span b{
-	background: url('static/images/iconfont070_2.png') no-repeat center;
+	background: url('/images/iconfont070_2.png') no-repeat center;
 }
 .common-box-until li#goTop a span b{
-	background: url('static/images/iconfont06_2.png') no-repeat center;
+	background: url('/images/iconfont06_2.png') no-repeat center;
 }
 .common-box-until li#goTop:hover a span b{
-	background: url('static/images/iconfont060_2.png') no-repeat center;
+	background: url('../images/iconfont060_2.png') no-repeat center;
 }
 .common-box-until li#onlineConsulting a span b{
-	background: url('static/images/iconfont01_2.png') no-repeat center;
+	background: url('/images/iconfont01_2.png') no-repeat center;
 }
 .common-box-until li#onlineConsulting:hover a span b{
 	background: url('static/images/iconfont010_2.png') no-repeat center;
@@ -126,7 +126,7 @@
 	opacity: 1;
 }
 .common-box-until li#onlineConsulting.anaimal-bridge a span b{
-	background: url('static/images/iconfont010_2.png') no-repeat center;
+	background: url('/images/iconfont010_2.png') no-repeat center;
 }
 .common-box-until li#onlineConsulting.anaimal-bridge a i{
 	color: #f5a540;
@@ -370,7 +370,7 @@
 	-moz-appearance: none;
 	width: 16px;
 	height: 16px;
-	background: url(static/images/radio-default@2x_2.png) no-repeat center;
+	background: url(/images/radio-default@2x_2.png) no-repeat center;
 	background-size: 14px 14px;
 	border: 1px solid transparent;
 	position: relative;
@@ -378,7 +378,7 @@
 	outline: none;
 }
 .questionnaireMask .publistRequest ul li input[type="radio"]:checked{
-	background: url(static/images/radio-dselected_2.png) no-repeat center;
+	background: url(/images/radio-dselected_2.png) no-repeat center;
 	background-size: 14px 14px;
 }
 .questionnaireMask .publistRequest ul li input[type="text"]{

@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\ArticleCate;
 use App\Models\Banner;
+use app\Models\GoodsCate;
 use app\Models\GoodsSpu;
 
 class NewsController extends Controller
@@ -36,11 +37,20 @@ class NewsController extends Controller
 
 
     /**
-     * 资讯栏目列表页
+     * 商品列表页
      */
     public function newsList()
     {
-        return view('news.newsList');
+        //全部二级栏目商品
+        $goodsCategory = GoodsCate::getList(' and level = 2 ',1);
+        foreach ($goodsCategory as $val){
+            $val->child = GoodsSpu::list(' and gc_id_2 = '.$val['id'].' and status = 1 ')->toArray();
+        }
+
+        //新闻banner图
+        $banner = Banner::getList(1,2,1);
+        //dd($goodsCategory);
+        return view('news.newsList',compact('goodsCategory','banner'));
     }
 
     /**

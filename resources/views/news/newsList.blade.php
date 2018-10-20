@@ -28,14 +28,14 @@
 				@include('./common/demand')
 
 
-
-
 		<div id="showtype08">
 			<div class="swiper-container showtype08" id="swipper5441375">
 				<div class="swiper-wrapper">
-					<a class="swiper-slide swiper-noslide swiper-img"  >
-						<img src="/picture/newsBanner.png" alt="">
+						@foreach($banner as $val)
+					<a class="swiper-slide swiper-noslide swiper-img" style="width:100%" href="{{$val['open_url']}}" >
+						<img src="{{$val['picture']}}" alt="">
 					</a>
+						@endforeach
 				</div>
 				<!-- 如果需要分页器 -->
 				<div class="swiper-pagination"></div>
@@ -59,51 +59,37 @@
                 });
             })(window);
 		</script>
-
+				@if(!empty($goodsCategory))
+					@foreach($goodsCategory as $val)
+						@if(!empty($val->child))
 		<div id="showtype11" class="showtype11_group group01 container">
-			<p class="title">栏目名称</p>
+			<p class="title">{{$val['name']}}</p>
 			<div class="groupMain">
 				<ul>
-					<li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 376px 186px;">
-						<a href="http://www.51biaoshi.com/product/452.htm?_pb=jhsrxph1" target="_blank">
+					@foreach($val->child as $goods)
+						@if(!empty($goods['main_image']))
+					<li style="background:url({{$goods['main_image']}}) no-repeat center center;background-size: 376px 186px;">
+						@else
+					<li style="background:url('/picture/goods_img.png') no-repeat center center;background-size: 376px 186px;">
+						@endif
+						<a href="/goods/goodsDetail/{{$goods['id']}}" target="_blank">
 							<div class="listGroup">
-								<p>微信原创文章撰写</p>
-								<p>专业文案，快速抓住用户</p>
+								<p>{{$goods['spu_name']}}</p>
+								<p>{{$goods['description']}}</p>
 							</div>
 							<div class="bottomPrice">
-								<span>￥</span>399起
-								<span>¥500起</span>
+								<span>￥</span>{{$goods['price']}}
+								<span>{{$goods['market_price']}}</span>
 							</div>
 						</a>
 					</li>
-					<li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 376px 186px;">
-						<a href="http://www.51biaoshi.com/product/434.htm?_pb=jhsrxph2" target="_blank">
-							<div class="listGroup">
-								<p>抖音网红打造</p>
-								<p>作品快速吸粉，视频数据提升</p>
-							</div>
-							<div class="bottomPrice">
-								<span>￥</span>58起
-								<span>¥100起</span>
-							</div>
-						</a>
-					</li>
-					<li style="background:url('/images/loadimage.htm') no-repeat center center;background-size: 376px 186px;">
-						<a href="http://www.51biaoshi.com/product/428.htm?_pb=jhsrxph3" target="_blank">
-							<div class="listGroup">
-								<p>朋友圈广告</p>
-								<p>精准触达，系统投放</p>
-							</div>
-							<div class="bottomPrice">
-								<span>￥</span>5000起
-								<span>¥7000起</span>
-							</div>
-						</a>
-					</li>
-
+					@endforeach
 				</ul>
 			</div>
 		</div>
+						@endif
+				@endforeach
+				@endif
 				@include('./common/search')
 			</div>
 		</div>

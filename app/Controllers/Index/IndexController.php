@@ -42,13 +42,27 @@ class IndexController extends Controller
         }
 
 
-        $goods = GoodsCate::getList(' and pid = 0 ',1);//首页的商品展示模块【4块】
+        $goods = GoodsCate::getList(' and pid = 0 ',1);//首页的商品展示模块上【2块】,推荐
         foreach ($goods as $val){
-            $val->child = GoodsSpu::list(' and gc_id_1 = '.$val['id'].' and status = 1 ',4)->toArray();
-        }
-        //dd($goods);
+            $val->child = GoodsSpu::list(' and gc_id_1 = '.$val['id'].' and status = 1 and is_commend = 1',4)->toArray();
 
-        return view('index.index',compact('banner','customer','newCategory','newSite','goods'));
+        }
+
+
+        /*$goods_catrgory = GoodsCate::getList(' and level = 2 ',6);//首页的商品展示模块下【2块】，暂时屏蔽
+        foreach ($goods_catrgory as $val){
+            $val->child = GoodsSpu::list(' and gc_id_2 = '.$val['id'].' and status = 1 ',4)->toArray();
+        }*/
+        //首页搜索用到
+        $search_json = [];
+        $search_arr = GoodsSpu::list(' and status = 1 and is_commend = 1',4);
+        foreach ($search_arr as $key=>$val){
+            $search_json[$key]['searchName'] = $val['gc_name'];
+            $search_json[$key]['url'] = '/goods/goodsDetail/'.$val['id'];
+        }
+        $json = json_encode($search_json);
+
+        return view('index.index',compact('banner','customer','newCategory','newSite','goods','json'));
     }
 
 }

@@ -3,7 +3,7 @@
     height: 92px;
     margin:0 auto;
     text-align: center;
-    font-size: 50px;
+    font-size: 40px;
     /*background: url(/images/title@2x.png) no-repeat center center;*/
     -webkit-background-size: 331px 92px;
     background-size: 331px 92px;
@@ -12,7 +12,7 @@
     margin-bottom: 33px;
 }
 .showtype11_group .groupMain{
-    background-color: #ffe1dc;
+    /*background-color: #ffe1dc;*/
     padding: 10px;
     padding-bottom: 0;
     margin-bottom: 15px;

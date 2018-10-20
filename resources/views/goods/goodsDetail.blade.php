@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{asset('css/common-footer.css')}}">
     <link rel="stylesheet" href="{{asset('css/publish.css')}}">
     <script type="text/javascript" src="{{asset('js/jquery.jcarousel.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/jcarousel.connected-carousels.js')}}"></script>
+    {{--<script type="text/javascript" src="{{asset('js/jcarousel.connected-carousels.js')}}"></script>--}}
     <script type="text/javascript" src="{{asset('js/product_slider.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/product_details.js')}}"></script>
     <script src="{{asset('js/popup.js')}}"></script>
@@ -20,15 +20,13 @@
     <script src="{{asset('js/goodsDetail.js')}}"></script>
     <script src="{{asset('js/common-right.js')}}"></script>
 
+
 @endsection
-
-
 @section('content')
 @include('./common/demand')
 @include('./common/nav')
 @include('./common/search')
 @include('./common/right')
-
 
 @if(!empty($goods))
         <div class="sp-xq juzhong">
@@ -36,17 +34,8 @@
                 <div>
                     <a class="fans-pic" id="head_pic" href="javascript:void(0);">
 					<span>
-						         					<img src="/picture/loadimage.htm" alt="微信代运营托管公众号服务号订阅号内容代运营_找微信代运营，就选择镖狮网">
-        										</span>
-                        <div class="head_pic_imgList">
-                            <ul>
-                                <li class="active caClass" id="effpic1" traceflag="content_tab_详情图片切换1"><img src="/picture/loadimage.htm" alt="" /></li>
-                                <li class="caClass" id="effpic2" traceflag="content_tab_详情图片切换2"><img src="/picture/loadimage.htm" alt="" /></li>
-                                <li class="caClass" id="effpic3" traceflag="content_tab_详情图片切换3"><img src="/picture/loadimage.htm" alt="" /></li>
-                                <li class="caClass" id="effpic4" traceflag="content_tab_详情图片切换4"><img src="/picture/loadimage.htm" alt="" /></li>
-                                <li class="caClass" id="effpic5" traceflag="content_tab_详情图片切换5"><img src="/picture/loadimage.htm" alt="" /></li>
-                            </ul>
-                        </div>
+                        <img src="{{$goods['main_image']}}" alt="{{$goods['spu_name']}}">
+        			</span>
                     </a>
                     <div class="fan-message">
                         <div class="pro-title">
@@ -80,16 +69,9 @@
                                     <div class="dw-right dw-right-well caClass" id="_evaluate_btn02" traceflag="content_tab_评分" onclick="scrollToEva()"><span>评分</span><p style="color: #ff4400 !important">4.8</p></div>
                                 </li>
                                 <li class="dw-span">
-                                    <div class="fwbx">行业推荐</div>
+                                    <div class="fwbx">适用于</div>
                                     <div class="taoc-sele">
-
-                                        <p id="userRequestSelect"><span>全部行业</span><b></b></p>
-                                        <input type="hidden" id="tradeinfo" value="">
-                                        <ul class="sele" id="sele">
-                                            <li id="trade1" class="choosetrade caClass" tradecode="0000" traceflag="content_select_行业推荐_">全部行业</li>
-                                        </ul>
-
-                                        <div style="display:none" class="taoc-sele-ab">看看同行选哪个套餐<i><img src="/picture/icon02.png" /></i><span><img src="/picture/free_close.png" id="closeseesame"/></span></div>
+                                        <p id=""><span>{{$goods['gc_name']}}</span><b></b></p>
                                     </div>
                                     <input id="tradeName" type="hidden" value="" />
                                 </li>
@@ -115,31 +97,28 @@
                             <div class="cnzc">
                                 <div class="ptBz">
                                     平台保障
-                                    <a href="/aboutus.htm#bzo1" target='_blank'><i>严</i>严选优质服务商</a>
-                                    <a href="/aboutus.htm#bz02" target='_blank'><i>保</i>资金担保</a>
+                                    <a href="/about/index/2" target='_blank'><i>严</i>严选优质服务商</a>
+                                    <a href="/about/index/2" target='_blank'><i>保</i>资金担保</a>
                                 </div>
                                 <div class="bzMoney">
-                                    <p class="">服务商缴纳保证金 <span>20000</span> 元，承诺以下保障：</p>
-                                    <a rel="nofollow" class="glgy" href="/aboutus.htm?tab=3" target='aboutUs'>
+                                    {{--<p class="">服务商缴纳保证金 <span>20000</span> 元，承诺以下保障：</p>--}}
+                                    <a rel="nofollow" class="glgy" href="/about/index/2" target='aboutUs'>
                                         <ul>
                                             <li>
-                                                <a style="float: left;padding: 6px 0 0 8px;"href="/aboutus.htm?tab=1#BzTitle01" target="_blank">
+                                                <a style="float: left;padding: 6px 0 0 8px;"href="/about/index/2" target="_blank">
                                                     <b>
-                                                        <!-- <img src="/picture/loadimage.htm" stylt="position:relative;top:-3px;"/> -->
                                                     </b>保证完成
                                                 </a>
                                             </li>
                                             <li>
-                                                <a style="float: left;padding: 6px 0 0 8px;"href="/aboutus.htm?tab=1#BzTitle02" target="_blank">
+                                                <a style="float: left;padding: 6px 0 0 8px;"href="/about/index/2" target="_blank">
                                                     <b>
-                                                        <!-- <img src="/picture/loadimage.htm" stylt="position:relative;top:-3px;"/> -->
                                                     </b>保证原创
                                                 </a>
                                             </li>
                                             <li>
-                                                <a style="float: left;padding: 6px 0 0 8px;"href="/aboutus.htm?tab=1#BzTitle03" target="_blank">
+                                                <a style="float: left;padding: 6px 0 0 8px;"href="/about/index/2" target="_blank">
                                                     <b>
-                                                        <!-- <img src="/picture/loadimage.htm" stylt="position:relative;top:-3px;"/> -->
                                                     </b>保证维护
                                                 </a>
                                             </li>
@@ -147,7 +126,7 @@
                                     </a>
                                 </div>
                                 <!-- 服务质保 -->
-                                <div class="serverBao caClass" id="serverBao" traceflag="content_pop_服务质保"  >
+                                {{--<div class="serverBao caClass" id="serverBao" traceflag="content_pop_服务质保"  >
                                     <div class="serverBaoHover">
                                         <label><input type="checkbox" name="serverBao" checked="checked" onclick="serverBaoFn();"/>
                                             <p class="serverBaoBox"><span>质</span> 服务质保：<b style="color: #ff4400;">¥0.00</b>
@@ -168,12 +147,11 @@
                                             <span class="cancelHover caClass" id="cancelHover"  traceflag="pop_close_服务质保弹窗取消按钮" onclick="closeServerBao(this)">取 消</span><span class="caClass" id="sureFree" traceflag="pop_submit_服务质保弹窗确定按钮" onclick="sureServerBao(this)">确 定</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div>--}}
                             </div>
                             <div class="zixun-div">
                                 <!--非标品B版-->
-                                <p class="zx-online  caClass" traceflag="content_im_在线咨询" id="zxzx1" onclick="javascript:openBDBridge();"><b></b>在线咨询</p>
-                                <div class="zixun caClass" traceflag="content_tab_套餐对比" id="tcdb1"><a class="dzh-btn" data-id="tcCompare">套餐对比</a></div>
+                                <p class="zx-online  caClass" traceflag="content_im_在线咨询" id="zxzx1" onclick="window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'"><b></b>在线咨询</p>
                                 <div class="zixun" id="immediatelySubmitOrder1" >
                                     <!--非标品-->
                                     <a id="buynow" onclick="immediatelySubmitOrder()" class="selected caClass" traceflag="content_pop_立即下单" >立即下单</a>
@@ -186,18 +164,11 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
 
             <div class="xq-major container">
                 <div class="xq-major_inner clearfix" >
                     <div class="xq-r" style="float: right;">
-
-                        <div>
-                            <img src="/picture/surrenderfb.png" alt="镖狮全程陪同"/>
-                        </div>
-
                         <div style="border: 1px solid #e5e5e5;">
                             <p>推荐宝贝</p>
                             <ul>
@@ -226,29 +197,28 @@
                         <div class="list-guide">
                             <ul>
                                 <li class="current" id="_service_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务项目页签" id="_service_a">服务项目</a></li>
-                                <li id="_serqdan_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_套餐明细页签" id="_serqdan_a">套餐明细</a></li>
+                                {{--<li id="_serqdan_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_套餐明细页签" id="_serqdan_a">套餐明细</a></li>--}}
                                 <li id="_service_flow_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a></li>
                                 <li id="_evaluate_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_用户评价页签" id="_evaluate_a">
                                         用户评价										(47)
                                     </a></li>
-                                <li id="_service_ensure_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a></li>
-                                <li id="customizationConsult2" class="fix-a-btn pull-right lj-fix-btn curopt" style="height: 44px;"><a id="recommsp2" style="padding: 0 20px;" onclick="customizationConsult()" class="recommspShow caClass" traceflag="fixbar_pop_推荐服务商">推荐服务商</a></li>
+                                <li id="_service_ensure_btn"><a href="/about/index/2" class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a></li>
                                 <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;"><a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a></li>
                             </ul>
                         </div>
                         <div id="_service_eva" class="service-items">
                             <div id="_prod_desc" class="ss_inner">
-                                {{$goods['content']}}
+                                {!!$goods['content']!!}
                             </div>
                         </div>
-                        <div id="_serqdan" class="serqdan">
+                        {{--<div id="_serqdan" class="serqdan">
                             <div class="pj-number">
                                 <div>项目明细</div>
                             </div>
                             <div class="qd-con">
                                 <p class="com-img"> <img src="/picture/loadimage.htm"/></p>
                             </div>
-                        </div>
+                        </div>--}}
                         <div id="_case_list"  class="service-items">
                             <div class="produce-case">
                                 <div class="pj-number">
@@ -281,7 +251,7 @@
                         <div class="pj-number" id="_evaluate_list">
                             <div>用户评价</div>
                         </div>
-                        <div class="pj-tit-start">
+                        {{--<div class="pj-tit-start">
                             <div class="startLeft">
                                 <ul>
                                     <li class="pj_title">用户总体打分</li>
@@ -304,38 +274,62 @@
                                     <span>态度好（14）</span>
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
 
                         <div class="lj-evaluate"  id="evalist">
                             <div class="lj_inner clearfix lj_inner_list" >
                                 <div class="lj-message">
                                     <ul class="pro-pj">
+                                        @if(!empty($goods_message))
+                                        @foreach($goods_message as $val)
                                         <li>
                                             <div class="pull-left pro-pjc">
                                                 <dl>
+                                                    @if(!empty($val->member))
                                                     <dt class="pull-left">
+                                                        @if($val->member =='')
+                                                        <img src="{{$val['member']['picture']}}" alt="">
+                                                        @else
                                                         <img src="/picture/rwu.png" alt="">
-                                                    <p>135*****106</p>
+                                                        @endif
+                                                    <p>{{ substr_replace($val['member']['mobile'],'****',3,4)}}</p>
                                                     </dt>
+                                                    @endif
                                                     <dd class="pull-left">
                                                         <div>
                                                             <div class="assess_bar sp_listbar pull-left">
-                                                                <span class="assess_full f_left"></span>
-                                                                <span class="assess_full f_left"></span>
-                                                                <span class="assess_full f_left"></span>
-                                                                <span class="assess_full f_left"></span>
-                                                                <span class="assess_full f_left"></span>
+                                                                @if(!empty($val->stars))
+                                                                    @if($val->stars ==1)
+                                                                        <span class="assess_full f_left"></span>
+                                                                        @elseif($val->stars ==2)
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                    @elseif($val->stars ==3)
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                    @elseif($val->stars ==4)
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                    @elseif($val->stars ==5)
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        <span class="assess_full f_left"></span>
+                                                                        @endif
+                                                                @endif
                                                             </div>
                                                         </div>
                                                         <div class="pj-con">
                                                             <p class="pull-left"></p>
-                                                            <div class="pull-left">
-                                                                公众号之前就是在这注册的，效率很快，代运营也做了一阵了，都很好，打算在这一条龙服务了，接下来考虑朋友圈广告了
-                                                            </div>
+                                                            <div class="pull-left">{{$val['content']}}</div>
                                                         </div>
                                                         <div class="pj-con">
                                                             <p class="pull-left"></p>
-                                                            <div class="pull-left">
+                                                            {{--<div class="pull-left">
                                                                 <ul class="yxbq">
                                                                     <li>性价比高</li>
                                                                     <li>专业度高</li>
@@ -343,9 +337,9 @@
                                                                     <li>效果好</li>
                                                                     <li>响应及时</li>
                                                                 </ul>
-                                                            </div>
+                                                            </div>--}}
                                                             <div>
-                                                                <p class="pull-left pro-tm">2018-09-11 10:30</p>
+                                                                <p class="pull-left pro-tm">{{$val['created_at']}}</p>
                                                             </div>
                                                         </div>
                                                         <div>
@@ -375,27 +369,17 @@
                                                 </dl>
                                             </div>
                                         </li>
-
-
+                                        @endforeach
+                                            @endif
 
                                     </ul>
                                 </div>
-                                <div class="pagination distanse">
-                                    <ul>
-                                        <li class="caClass" traceflag="content_load_评价分页第1页" id="evapage1"><a href="javascript:void(0);" onclick="javascript:goToPage('1','376','10','null','');" class="cur" >1</a></li>
-                                        <li class="caClass" traceflag="content_load_评价分页第2页" id="evapage2"><a href="javascript:void(0);" onclick="javascript:goToPage('2','376','10','null','');"  >2</a></li>
-                                        <li class="caClass" traceflag="content_load_评价分页第3页" id="evapage3"><a href="javascript:void(0);" onclick="javascript:goToPage('3','376','10','null','');"  >3</a></li>
-                                        <li class="caClass" traceflag="content_load_评价分页第4页" id="evapage4"><a href="javascript:void(0);" onclick="javascript:goToPage('4','376','10','null','');"  >4</a></li>
-                                        <li class="caClass" traceflag="content_load_评价分页第5页" id="evapage5"><a href="javascript:void(0);" onclick="javascript:goToPage('5','376','10','null','');"  >5</a></li>
-                                        <!--
-			 <li><span>第1/5页 &nbsp;</span></li>
-			 -->
-                                    </ul>
+                                <div class="distanse">
+                                    {{ $goods_message->links() }}
                                 </div>
                             </div>
-                        </div>					                    <style>
-
-                        </style>
+                        </div>
+                        <style></style>
                         <div id="_service_ensure" class="lj-evaluate">
                             <div class="lj_inner clearfix">
                                 <div class="lj-message">
@@ -548,10 +532,6 @@
 @endsection
 
 @section('js')
-    <!-- 调查问卷END -->
-    <script src="/js/prodpublish.js"></script>
-    <script src="/js/prodpublishlogin.js"></script>
-    <script type="text/javascript" src="/js/monitor.js"></script>
     <script>
         var swiperPublish = new Swiper('.swiper-container-publish', {
             autoHeight: true, //高度随内容变化
@@ -564,28 +544,6 @@
     </script>
 
     <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
-    </body>
-
-    <script>
-        //分享到qq
-        var qqShareUrl="http://connect.qq.com/widget/shareqq/index.html?summary=&title=微信公众号代运营托管服务/微信代运营&pics=http://www.51biaoshi.com/product/loadImage.htm?imagepath=prod/pc/a964c5b0-6386-4725-9bd0-6a32b4d81a31_cubead.jpg&site=镖狮网&url="+location.href;
-        $(".qqShare").attr("href",qqShareUrl);
-        //分享到微信好友
-        var sinaShareUrl="http://v.t.sina.com.cn/share/share.php?title=微信公众号代运营托管服务/微信代运营——&&source=镖狮网&sourceUrl=http://51biaoshi.com&url="+location.href;
-        $(".sinaShare").attr("href",sinaShareUrl);
         var num = 0,length=$('#compList li').length,liWidth = 195;
         $('#compList').css('width',length*195 + 'px');
         if(length <= 4){

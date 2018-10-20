@@ -47,17 +47,14 @@
                 <div class="p-public">
                     <a onclick="javascript:tofb('','');" class="caClass" traceflag="floatbar_pop_发布需求" id="headerFlowDemand">发布需求</a>
                 </div>
-                <div class="watch-xqgl">
-                    <a rel="nofollow" href="/aboutus.htm">查看需求攻略</a>
-                </div>
             </div>
         </div>
         <div class="pull-right res-input">
             <input type="text" id="searchFile" name="searchFile" placeholder=""/>
             <div class="glyphicon glyphicon-search" id="searchBtn"></div>
-            <input type="hidden" id="searchStr" value='[{"searchName":"微信代运营","url":"http://www.51biaoshi.com/product/376.htm?_pb=search"},{"searchName":"朋友圈广告","url":"http://www.51biaoshi.com/product/428.htm?_pb=search"},{"searchName":"百度百科","url":"http://www.51biaoshi.com/product/427.htm?_pb=search"},{"searchName":"开发建站","url":"http://www.51biaoshi.com/product/370.htm?_pb=search"},{"searchName":"小程序定制","url":"http://www.51biaoshi.com/product/438.htm?_pb=search"},{"searchName":"整合营销","url":"http://www.51biaoshi.com/product/432.htm?_pb=search"}]'>
+            <input type="hidden" id="searchStr" value='{{$json}}'>
             <ul class="find-example" id="findExample">
-                <li><a href="/search/index/媒体发稿" target="_blank">媒体发稿</a></li>
+                <li><a href="/" target="_blank">网站开发</a></li>
             </ul>
         </div>
     </div>

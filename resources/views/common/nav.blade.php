@@ -38,7 +38,14 @@
                                                 <ul class="pull-left pro-list">
                                                     @if(!empty($item['goods']))
                                                         @foreach($item['goods'] as $goods)
-                                                            <li class="hotProd"><p><a href="/goods/goodsDetail/{{$goods["id"]}}" target="_blank">{{$goods["spu_name"]}}</a><b><img src="/picture/new.gif" alt=""/></b></p></li>
+                                                            <li class="hotProd">
+                                                                <p>
+                                                                    <a href="/goods/goodsDetail/{{$goods["id"]}}" target="_blank">{{$goods["spu_name"]}}</a>
+                                                                    @if($goods['is_commend'] ==1)
+                                                                    <b><img src="/picture/new.gif" alt=""/></b>
+                                                                        @endif
+                                                                </p>
+                                                            </li>
                                                         @endforeach
                                                     @endif
                                                 </ul>
