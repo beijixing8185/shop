@@ -13,6 +13,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\ArticleCate;
 use App\Models\Banner;
+use app\Models\GoodsCate;
+use app\Models\GoodsSpu;
 
 class NewsController extends Controller
 {
@@ -35,11 +37,20 @@ class NewsController extends Controller
 
 
     /**
-     * 资讯栏目列表页
+     * 商品列表页
      */
     public function newsList()
     {
-        return view('news.newsList');
+        //全部二级栏目商品
+        $goodsCategory = GoodsCate::getList(' and level = 2 ',1);
+        foreach ($goodsCategory as $val){
+            $val->child = GoodsSpu::list(' and gc_id_2 = '.$val['id'].' and status = 1 ')->toArray();
+        }
+
+        //新闻banner图
+        $banner = Banner::getList(1,2,1);
+        //dd($goodsCategory);
+        return view('news.newsList',compact('goodsCategory','banner'));
     }
 
     /**
@@ -62,9 +73,13 @@ class NewsController extends Controller
         //获取推荐hot
         $hot = Article::getList($pid='',1,1,5);
         //获取标签模糊查询link
-        $tag = Article::getList($pid='',1,$hots='',5,$getdetail['tag']);
+        $tag = Article::getList($pid='',1,$hots='',8,$getdetail['tag']);
+        //dd($tag);
         //栏目下的其他文章
         $news = Article::getList($getdetail['article_cate_id'],1,'',5);
-        return view('news.newsDetail',compact('getdetail','hot','tag','news'));
+        //dd($news);
+
+        $goods = GoodsSpu::list(' and status = 1 and is_commend = 1',5);    //可能需要的服务
+        return view('news.newsDetail',compact('getdetail','hot','tag','news','goods'));
     }
 }

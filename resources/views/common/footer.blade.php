@@ -502,7 +502,7 @@
         </div>
         <div class="fbLoginBtn">
             <span id="commfbsubmit" class="caClass" traceflag="pop_fb_登录并提交" onclick="LoginWithSubmitCommon(this)">登录并提交</span>
-            <p>咨询电话：4000-581-581</p>
+            <p>咨询电话：010-53526642</p>
         </div>
     </div>
 </div>
@@ -516,10 +516,10 @@
             需求发布成功！
         </div>
         <div class="time"><span id="sucinform"></span></br>
-            镖狮网保障您的服务效果，保护您的信息隐私安全，如有疑问请致电4000-581-581</div>
-        <p class="about-btn"><a rel="nofollow" href="/aboutus.htm" target="_about" >了解平台保障细节</a></p>
+            平台会保障您的服务效果，保护您的信息隐私安全，如有疑问请致电010-53526642</div>
+        <p class="about-btn"><a rel="nofollow" href="/about/index/2" target="_about" >了解平台保障细节</a></p>
         <div class="anniu">
-            <a href="/ordermanager/orderList.htm">查看咨询单</a>
+            <a href="http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415">在线咨询</a>
             <a class="rindex" href="/">返回首页</a>
         </div>
     </div>
@@ -533,7 +533,7 @@
             <b><img src="/picture/error.png" alt=""/></b>
             需求发布失败！
         </div>
-        <div class="time">您的需求发布失败，请选择重新发布或致电4000-581-581联系我们。</div>
+        <div class="time">您的需求发布失败，请选择重新发布或致电010-53526642联系我们。</div>
         <p class="about-btn"><a href="">了解平台保障细节</a></p>
         <div class="anniu">
             <a href="/">重新发布</a>
@@ -578,7 +578,7 @@
         <div class="submitQuestionnaire">
             <span class="caClass" id="submitCancel" traceflag="pop_submit_问卷调查提交" onclick="cancelSubmit()">提交</span>
             <div id="commonFbError">请选择取消原因</div>
-            <p>咨询电话：4000-581-581</p>
+            <p>咨询电话：010-53526642</p>
         </div>
     </div>
 </div>
@@ -603,7 +603,7 @@
                 <p><img src="/picture/yellow-check@2x.png" alt="">业务案例展示</p>
             </div>
         </div>
-        <p class="fbTips">请注意010-8992开头的电话，保持联系电话畅通。</p>
+        <p class="fbTips">请保持联系电话畅通。</p>
     </div>
 </div>
 <div id="fbError" class="fbMask">
@@ -615,10 +615,10 @@
         <p class="fbBar"></p>
         <div class="fbTitle">
             <img src="/picture/close-circle-fill@2x.png" alt="">提交失败！
-            <p>您的需求发布失败，请检查网络后重新发布或致电4000-581-581联系我们</p>
+            <p>您的需求发布失败，请检查网络后重新发布或致电010-53526642联系我们</p>
         </div>
         <div class="fbCodeBox">
-            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注镖狮公众号</span></p>
+            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注萤火虫公众号</span></p>
             <div class="fbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>

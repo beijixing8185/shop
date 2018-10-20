@@ -9,18 +9,24 @@
 namespace app\Models;
 
 
+use App\Controllers\Functions\FunctionsController;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\GoodsSpu;
 
 class GoodsCate extends Model{
 
     /**
      * 根据状态查询
      */
-    public static function getList($where='',$status='')
+    public static function getList($where='',$status='',$limit='')
     {
+
         $wheres = 'id > 0'.$where;
         if(!empty($status)){
-            return self::whereRaw($wheres.' and status = '.$status)->orderByRaw('sort ASC') ->get();
+            $wheres .= ' and status = '.$status;
+        }
+        if(!empty($limit)){
+            return self::whereRaw($wheres)->orderByRaw('sort ASC')->limit($limit) ->get();
         }else{
             return self::whereRaw($wheres)->orderByRaw('sort ASC') ->get();
         }
@@ -52,6 +58,24 @@ class GoodsCate extends Model{
         return $cate->save();
     }
 
-
+    /**
+     * 导航栏目
+     */
+    public static function getColumn()
+    {
+        $where = 'status = 1 ';
+        $result = self::whereRaw($where) -> get();
+        $getFun = new FunctionsController();
+        $getTree = $getFun -> childs($result);
+        foreach ($getTree as $val){
+            if(!empty($val->child)){
+                foreach ($val->child as $items){
+                    $items['goods'] = GoodsSpu::list(' and status = 1 and gc_id_2 = '.$items['id']);
+                }
+            }
+            $val['hot'] = GoodsSpu::list(' and status = 1 and is_hot = 1 and gc_id_1 = '.$val['id'],4);
+        }
+        return $getTree;
+    }
 
 }

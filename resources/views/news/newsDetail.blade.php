@@ -81,17 +81,17 @@
 				<div class="strategyinfoArticalTitleList">
 					<ul>
                         @foreach($hot as $val)
-						<li><a href="{{url('news/detail',['id'=>$val['id']])}}">{{$val['article_title']}}</a></li>
+						<li><a href="{{url('news/detail',['id'=>$val['id']])}}">{{$val['title']}}</a></li>
 						@endforeach
 					</ul>
 				</div>
-				<div class="strategyinfoArticalTitleList">
+				{{--<div class="strategyinfoArticalTitleList">
 					<ul>
                         @foreach($hot as $val)
-                            <li><a href="{{url('news/detail',['id'=>$val['id']])}}">{{$val['article_title']}}</a></li>
+                            <li><a href="{{url('news/detail',['id'=>$val['id']])}}">{{$val['title']}}</a></li>
                         @endforeach
 					</ul>
-				</div>
+				</div>--}}
 			</div>
 		</div>
         @endif
@@ -105,19 +105,21 @@
 				相关文章    <a href="{{$getdetail['article_cate_id']}}" target="_blank">更多></a>
 			</div>
 			<ul class="newProList">
+				@if(!empty($news))
                 @foreach($news as $val)
 				<li>
 					<a href="{{url('news/detail',['id'=>$val['id']])}}" target="_blank">
-						<p class="textInfo">{{$val['article_title']}}</p>
+						<p class="textInfo">{{$val['title']}}</p>
 						<div>
 							<img src="{{$val['picture']}}">
 							<div class="textImg">
-                                {{$val['article_title']}}
+                                {{$val['title']}}
 							</div>
 						</div>
 					</a>
 				</li>
             @endforeach
+					@endif
 			</ul>
 		</div>
 		<div id="myScrollspy" class="myScrollspyM">
@@ -125,28 +127,23 @@
 				您可能需要的服务
 			</div>
 			<ul>
+				@if(!empty($goods))
+					@foreach($goods as $val)
 				<li>
-					<a href="/product/370.htm" target="_blank">
-						<img src="/picture/hot.gif"/>                            <div class="smallTitle"><i>01</i>网站定制开发 </div>
+					<a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">
+						@if($val['is_hot'] ==1)
+							<img src="/picture/hot.gif"/>
+						@endif
+						<div class="smallTitle"><i></i>{{$val['spu_name']}}</div>
 						<div class="spyInfo"></div>
 					</a>
 				</li>
-				<li>
-					<a href="/product/378.htm" target="_blank">
-						<div class="smallTitle"><i>02</i>SEO关键词整站优化／百度推广／网站收录 </div>
-						<div class="spyInfo"></div>
-					</a>
-				</li>
-				<li>
-					<a href="/product/450.htm" target="_blank">
-						<div class="smallTitle"><i>03</i>高端名片设计 </div>
-						<div class="spyInfo"></div>
-					</a>
-				</li>
+					@endforeach
+				@endif
 			</ul>
 			<div class="noMessage">
 				<p>没有找到我想要的:</p>
-				<a class="caClass" traceflag="rightbar_pop_我要咨询" id="cmsdetailfb" href="javascript:tofb('','');">我要咨询</a>
+				<a class="caClass" traceflag="rightbar_pop_我要咨询" id="cmsdetailfb" href="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">我要咨询</a>
 			</div>
 		</div>
 

@@ -28,6 +28,7 @@ class ArticleCate extends Model{
             return self::whereRaw($wheres) ->get();
         }
     }
+
     /**
      * 添加栏目
      */
@@ -43,4 +44,5 @@ class ArticleCate extends Model{
         $cate->level = $data['level'];
         return $cate->save();
     }
+
 }

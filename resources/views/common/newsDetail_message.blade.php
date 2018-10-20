@@ -1,5 +1,5 @@
 <div class="cmsFb">
-    <div class="cmsFbTitle">今天已有 <span>34</span> 位用户得到了专业的解答</div>
+    <div class="cmsFbTitle"></div>
     <div class="cmsFbTitleInfo">
         <img src="/picture/article-publishi-lion@2x.png" alt="">
         <div><img src="/picture/yh@2x.png" alt="">是这样的，我对营销还是有两下子的，您可以告诉我您的营销疑问，反正也不花钱，对吧<img src="/picture/yh@2x.png" alt=""></div>
@@ -7,7 +7,7 @@
     <div class="cmsFbGroup">
         <span>您的疑问<b style="color: #999;">（选填）</b>：</span>
         <div>
-            <textarea  style="height: 180px;"  id="cmsFbQuestion" name="cmsFbQuestion" placeholder="微信代运营？朋友圈广告？定制开发？无论什么，镖哥通通帮你搞定！！多说点吧，让镖哥更了解您的疑问优先为您服务"></textarea>
+            <textarea  style="height: 180px;"  id="cmsFbQuestion" name="cmsFbQuestion" placeholder="微信代运营？朋友圈广告？定制开发？无论什么，通通帮你搞定！！多说点吧，让镖哥更了解您的疑问优先为您服务"></textarea>
         </div>
         <p class="cmsContent">信息不能为空</p>
     </div>
