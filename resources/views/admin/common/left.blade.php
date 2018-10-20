@@ -14,6 +14,12 @@
               ['title' => '添加分类', 'url' => '/hx/admin/addCates', 'icon' => 'fa-circle-o'],
           ],
       ];
+      $menu[] = ['title' => '商品案例', 'icon' => 'fa-dashboard',
+          'child' => [
+              ['title' => '查看案例', 'url' => '/hx/admin/caseList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加案例', 'url' => '/hx/admin/addCase', 'icon' => 'fa-circle-o'],
+          ],
+      ];
       $menu[] = ['title' => '发布文章', 'icon' => 'fa-dashboard',
           'child' => [
               ['title' => '分类列表', 'url' => '/hx/admin/cateArticleList', 'icon' => 'fa-circle-o'],
@@ -22,6 +28,18 @@
               ['title' => '添加文章', 'url' => '/hx/admin/addArticle', 'icon' => 'fa-circle-o'],
           ],
       ];
+      $menu[] = ['title' => '关于我们', 'icon' => 'fa-dashboard',
+          'child' => [
+              ['title' => '查看列表', 'url' => '/hx/admin/aboutList', 'icon' => 'fa-circle-o'],
+              ['title' => '添加关于', 'url' => '/hx/admin/addAbout', 'icon' => 'fa-circle-o'],
+          ],
+      ];
+  $menu[] = ['title' => '关于链接', 'icon' => 'fa-dashboard',
+      'child' => [
+          ['title' => '查看列表', 'url' => '/hx/admin/linkList', 'icon' => 'fa-circle-o'],
+          ['title' => '添加链接', 'url' => '/hx/admin/addLink', 'icon' => 'fa-circle-o'],
+      ],
+  ];
       $menu[] = ['title' => 'banner图', 'icon' => 'fa-dashboard',
           'child' => [
               ['title' => '图库列表', 'url' => '/hx/admin/bannerList', 'icon' => 'fa-circle-o'],

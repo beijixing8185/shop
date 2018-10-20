@@ -42,5 +42,38 @@ class Customer extends Model
         return self::where('id',$id) -> first();
     }
 
+    /**
+     * 添加商品
+     */
+    public static function add($object){
+        if($object->id){
+            $goods = Self::find($object->id);
+        }else{
+            $goods = new Self;
+        }
+
+        $goods->gc_id = $object->cate_one;
+        $goods->spu_id = $object->cate_two;
+        $goods->picture = $object->first_img;
+        $goods->title = $object->title;
+        $goods->keywords = $object->keywords;
+        $goods->money = $object->money;
+        $goods->day = $object->day;
+
+        $goods->content = $object->editorValue;
+        $goods->description = $object->description;
+        $goods->customer = $object->customer;
+        $goods->status = $object->status;
+
+        return $goods->save();
+    }
+
+    /**
+     * 根据状态查询
+     */
+    public static function getCaseList($where='')
+    {
+        return self::whereRaw('id >= 1'.$where)->orderBy('id','desc')->paginate(10);
+    }
 
 }

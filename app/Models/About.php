@@ -31,4 +31,33 @@ class About extends Model{
     {
         return self::select(['id','category'])->get();
     }
+    /**
+     * 添加商品
+     */
+    public static function add($object){
+        if($object->id){
+            $goods = Self::find($object->id);
+        }else{
+            $goods = new Self;
+        }
+        $category_type = config('constants.category_type');
+        $goods->category = $category_type[$object->cate_one];
+        $goods->picture = $object->first_img;
+        $goods->title = $object->title;
+        $goods->keywords = $object->keywords;
+
+        $goods->content = $object->editorValue;
+        $goods->description = $object->description;
+        $goods->status = $object->status;
+
+        return $goods->save();
+    }
+
+    /**
+     * 根据状态查询
+     */
+    public static function getAboutList($where='')
+    {
+        return self::whereRaw('id >= 1'.$where)->orderBy('id','desc')->paginate(10);
+    }
 }
