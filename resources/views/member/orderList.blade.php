@@ -74,26 +74,27 @@
 				</p>
 				<!--订单信息 begin-->
 				<!--订单基础信息,map-->
+				@foreach($order as $v)
 				<div class="order-all onlyassess">
 					<ul class="common-top">
-						<li class="pull-left cmt-list">2018-10-08 12:01:57</li>
-						<li class="pull-left cmt-list">订单号: O201810081201574884445</li>
-						<li class="pull-right tousu"><b class="caClass" traceflag="content_pop_订单投诉" id="zxzxO201810081201574884445" onclick="javascript:toComplain('O201810081201574884445','29865');">投诉</b></li>
+						<li class="pull-left cmt-list">{{$v->created_at}}</li>
+						<li class="pull-left cmt-list">订单号: {{$v->order_sn}}</li>
+						<li class="pull-right tousu"><b class="caClass" traceflag="content_pop_订单投诉" id="{{$v->id}}" onclick="javascript:toComplain('O201810081201574884445','29865');"></b></li>
 					</ul>
 					<div class="common-con">
 						<ul >
 							<li class="pull-left cm-list ">
 								<dl class="cm-list-prodl">
-									<a href="/product/387.htm" target="论坛推广/贴吧推广/贴吧营销/手工发帖"><dt class="pull-left"><img alt="" src="/picture/loadimage.htm"></dt>
+									<a href="/product/387.htm" target="论坛推广/贴吧推广/贴吧营销/手工发帖"><dt class="pull-left"><img alt="" src="{{$v->main_image}}"></dt>
 										<dd class="pull-left"><p>
-												论坛推广/贴吧推广/贴吧营销/手工发帖
+												{{$v->spu_name}}
 											</p></dd></a>
 								</dl>
 							</li>
-							<li class="pull-left order-secmid"><span>文案+渠道执行版</span></li>
+							<li class="pull-left order-secmid"><span>{{$v->gc_name}}</span></li>
 							<li class="pull-left order-secmid">
 									<span>
-																			    										价格：400元
+																			    										价格：{{$v->order_amounts}}元
     																											</span>
 							</li>
 							<li class="pull-right order-seclast">
@@ -111,22 +112,22 @@
 					<div class="order-bottom-prd">
 						<b></b>
 						<ul>
-							<li>
-								<i></i>
+							<li  @if($v->plat_order_state==1) style="color:red;" @endif>
+								<i ></i>
 								资金待托管
 								<span></span>
 							</li>
-							<li>
+							<li @if($v->plat_order_state==2) style="color:red;" @endif>
 								<i></i>
 								服务商工作
 								<span></span>
 							</li>
-							<li>
+							<li @if($v->plat_order_state==3) style="color:red;" @endif>
 								<i></i>
 								服务验收
 								<span></span>
 							</li>
-							<li>
+							<li @if($v->plat_order_state==4) style="color:red;" @endif>
 								<i></i>
 								服务评价
 								<span></span>
@@ -134,6 +135,11 @@
 						</ul>
 					</div>
 				</div>
+			@endforeach
+				<div style="width: 938px;text-align:right;">
+					{{$order->links()}}
+				</div>
+
 				<!--订单信息 end-->
 			</div>            </div>
 	</div>

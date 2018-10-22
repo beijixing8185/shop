@@ -54,10 +54,8 @@
                             @endif
                         </ul>
                         <div class="dw-box">
-
+                            <input type="hidden" id="spuId" value="{{$goods['gid']}}">
                             <input id="productId" type="hidden" value="376" />
-
-
                             <ul class="zb_ul">
                                 <li class="fwjj">
                                     <div class="dw-left">商品价格
@@ -81,12 +79,14 @@
                                     <input type="hidden" id="isStdProduct" value="0">
                                     <ul class="taoc-right" id="taocanList">
                                         <input id="packageId" type="hidden" value="131" />
-                                        <li isusable="1" packageId="131" marketPrice="5000.00" packagePrice="2499.00" packageType="3" class="selectedLi caClass" id="package131" traceflag="content_select_微信代运营基础版">微信代运营基础版<b><img src="/picture/tcselected.png" alt=""/></b>
-                                            <p class="tradefilter xz-num" style="display:block" data-id="0000"><span>25%</span>选择</p>
+                                        @foreach($goodsSku as $g)
+                                        <li isusable="1" packageId="{{$g->id}}" marketPrice="{{$g->market_price}}" packagePrice="{{$g->price}}" packageType="3" class=" caClass" id="package131" traceflag="content_select_微信代运营基础版">{{$g->spec_name}}<b><img src="/picture/tcselected.png" alt=""/></b>
+                                            <p class="tradefilter xz-num" style="display:block" data-id="0000"><span></span></p>
                                         </li>
-                                        <li isusable="1" packageId="132" marketPrice="8000.00" packagePrice="4999.00" packageType="3" class="caClass" id="package132" traceflag="content_select_微信代运营经济版	">微信代运营经济版	<b><img src="/picture/tcselected.png" alt=""/></b>
+                                        @endforeach
+                                        {{--<li isusable="1" packageId="132" marketPrice="8000.00" packagePrice="4999.00" packageType="3" class="caClass" id="package132" traceflag="content_select_微信代运营经济版	">微信代运营经济版	<b><img src="/picture/tcselected.png" alt=""/></b>
                                             <p class="tradefilter xz-num" style="display:block" data-id="0000"><span>46%</span>选择</p>
-                                        </li>
+                                        </li>--}}
 
                                     </ul>
                                 </li>
@@ -154,7 +154,7 @@
                                 <p class="zx-online  caClass" traceflag="content_im_在线咨询" id="zxzx1" onclick="window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'"><b></b>在线咨询</p>
                                 <div class="zixun" id="immediatelySubmitOrder1" >
                                     <!--非标品-->
-                                    <a id="buynow" onclick="immediatelySubmitOrder()" class="selected caClass" traceflag="content_pop_立即下单" >立即下单</a>
+                                    <a id="buynow"  class="selected caClass" traceflag="content_pop_立即下单" >立即下单</a>
                                     {{--<a id="recommsp" onclick="customizationConsult()" class="selected recommspShow caClass" traceflag="content_pop_推荐服务商" >推荐服务商</a>--}}
                                     <!-- <p style="display:none" id="recomminform" class="zixun-ab"><b><img src="/picture/icon03.png" /></b>系统将推荐该套餐1-3家最适合您的服务商与您取得联系，详细沟通您的需求，此过程无需支付任何费用<span><img src="/picture/free_close.png" /></span> </p> -->
                                 </div>
@@ -639,5 +639,21 @@
                 clockHover = false;
             }
         })
+        $('#buynow').click(function(){
+            var spuId = $('#spuId').val()
+            var packageid = $('.selectedLi').attr('packageid')
+            window.location.href="/member/showOrder?spuId=4&skuId=1"
+            //var url = '/member/addOrder?spuId='+spuId + '&skuId='+packageid;
+            /*var url = '/member/addOrder?spuId=4&skuId=1';
+            $.get(url, function(result){
+                if(result['code']){
+                    alert('下单失败,商品数据有误,请重新选择');
+                }else{
+                    alert('下单成功,请立即支付');
+                    window.location.href="/member/showOrder";
+                }
+            });*/
+
+        });
     </script>
 @endsection

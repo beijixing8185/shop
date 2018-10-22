@@ -10,6 +10,9 @@ namespace app\Controllers\Member;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\GoodsSku;
+use App\Models\GoodsSpu;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -51,6 +54,78 @@ class MemberController extends Controller
     {
         return view('member.member_pwd');
     }
+    /**
+     * 生成预订单
+     */
+    public function showOrder(Request $request){
+        $this->validate($request,[
+            'spuId'=>'required|integer',
+            'skuId'=>'required|integer',
+        ]);
+
+        $goods = GoodsSku::leftJoin('goods_spus','goods_skus.spu_id','goods_spus.id')
+            ->select('goods_spus.id as gid','goods_skus.id as gkid','spu_name','gc_name','main_image','goods_skus.price')
+            ->where('goods_skus.id',$request->skuId)
+            ->first();
+
+        return view('pay.index',compact('goods'));
+    }
+
+    /**
+     * 生成总订单编号
+     *
+     */
+    public static  function orderSn()
+    {
+        return date('Ymd').substr(implode(NULL, array_map('ord', str_split(substr(uniqid(), 7, 13), 1))), 0, 8);
+    }
+
+    /**
+     * 会员下单
+     */
+    public function addOrder(Request $request)
+    {
+
+        $this->validate($request,[
+            'spuId'=>'required|integer',
+            'skuId'=>'required|integer',
+            'num'=>'required|integer'
+        ]);
+
+        $order_sn = $this::orderSn();
+
+
+        $goods = GoodsSku::leftJoin('goods_spus','goods_skus.spu_id','goods_spus.id')
+            ->select('goods_spus.id as gid','goods_skus.id as gkid','spu_name','gc_name','main_image','goods_skus.price')
+            ->where('goods_skus.id',$request->skuId)
+            ->where('goods_skus.status',1)
+            ->first();
+        if(!$goods) return response()->json(['code'=>1,'msg'=>'商品数据有误','data'=>'']);
+
+        $user = User::select('id','mobile')->whereId($this->member_id)->first();
+
+        $result = Order::add($goods,$user,$order_sn,$request->num);
+
+        if(!empty($result)){
+            return redirect()->action('Member\MemberController@payOrder', $result);
+        }
+
+    }
+    /**
+     * 会员下单
+     */
+    public function payOrder(Request $request)
+    {
+        $params = [
+            'name' =>$request->name,
+            'sn' =>$request->orderSn,
+            'price' =>$request->price,
+        ];
+
+        return view('pay.pay',['params'=>$params]);
+
+
+    }
 
 
 
@@ -59,7 +134,9 @@ class MemberController extends Controller
      */
     public function orderList()
     {
-        return view('member.orderList');
+        $order =  Order::getList($this ->member_id);
+
+        return view('member.orderList',compact('order'));
     }
 
     /**
