@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Customer;
 use App\Models\GoodsCate;
 use App\Models\GoodsEvaluate;
+use App\Models\GoodsSku;
 use App\Models\GoodsSpu;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class GoodsController extends Controller
     public function goodsDetail($id)
     {
         $goods = GoodsSpu::goodsDetail($id); //商品详情
-        //dd($result);
+        //dd($goods);
 
         $customer = '';     //关于这个商品的成交案例
         if(!empty($goods)){
@@ -42,7 +43,11 @@ class GoodsController extends Controller
         foreach ($goods_message as $val){
             $val->member = User::getMember($val->uid);
         }
-        return view('goods.goodsDetail',compact('goods','customer','commend','goods_message'));
+
+        //获取规格
+        $goodsSku = GoodsSku::select('id','market_price','spec_name','price')->where('spu_id',$id)->where('status',1)->get();//2018-10-22
+
+        return view('goods.goodsDetail',compact('goods','customer','commend','goods_message','goodsSku'));
     }
 
     /**

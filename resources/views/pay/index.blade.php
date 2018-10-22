@@ -34,7 +34,7 @@
 		<ul class="nav nav-tabs buy-tab" role="tablist" id="buyTap" >
             <li class="active"><a href="#perfet" role="tab" data-toggle="tab"><b>1</b>订单结算</a><i></i></li>
             <li><a href="#orderPay" role="tab" data-toggle="tab"><b>2</b>订单支付</a><i></i></li>
-            <li><a href="#successp" role="tab" data-toggle="tab"><b>3</b>分配服务商</a><i></i></li>
+            <li><a href="#successp" role="tab" data-toggle="tab"><b>3</b>支付</a><i></i></li>
         </ul>
 
         <!-- Tab panes -->
@@ -54,17 +54,17 @@
                         <li class="baob-list-border">
                             <dl class="pull-left baob-list-left">
                                 <dt class="pull-left">
-																			<img src="/picture/loadimage.htm" />
+																			<img src="{{$goods->main_image}}" />
 																	</dt>
                                 <dd class="pull-left">
-                                    <p>微信公众号注册认证、开通支付／公众号搭建</p>
-                                    套餐类型：微信公众号注册认证、开通支付／公众号搭建
-                                    <input type="hidden" id="productId" value="375">
-                                    <input type="hidden" id="packageId" value="164">
+                                    <p>{{$goods->spu_name}}</p>
+                                    所选类型：{{$goods->gc_name}}
+                                    <input type="hidden" id="productId" value="{{$goods->gid}}">
+                                    <input type="hidden" id="packageId" value="{{$goods->gkid}}">
                                 </dd>
                             </dl>
                             <div class="pull-left baob-list-right">
-                                <p id="totalPrice" class="pull-right baob-list-price price-yen">&yen;399.0</p>
+                                <p id="totalPrice" class="pull-right baob-list-price price-yen">&yen;{{$goods->price}}</p>
                                 <div class="pull-right baob-list-num ">
                                     <div class="buy-btn">
 										<input type="hidden" id="specProdId" value="" >
@@ -75,7 +75,7 @@
                                 </div>
 								<input id="packagePrice" type="text" value="399.0" style="display:none" />
                                 <p class="pull-right baob-list-dj price-yen-dj">
-																			&yen;399.0
+																			&yen;{{$goods->price}}
 																	</p>
                             </div>
                         </li>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
                 <div class="buy-second">
-                    <a href="javascript:void(0)" data-id="orderPay" class="caClass"  onclick="suresubmitorder()" traceflag="content_tab_订单结算下一步">下一步</a>
+                    <a href="javascript:void(0)" data-id="orderPay" class="caClass"  id="addOrder" traceflag="content_tab_订单结算下一步">下一步</a>
                     <span>在镖狮找营销服务商，能享受到高质量服务，比其他渠道便宜20%以上</span>
                 </div>
             </div>
@@ -418,5 +418,26 @@
 	            $("#swaper").hide();
 	        });
         });
+
+        $('#addOrder').click(function(){
+            var spuId = $('#productId').val()
+            var packageid = $('#packageId').val()
+            var num = $('#buyNum').val()
+            window.location.href= '/member/addOrder?spuId='+spuId + '&skuId='+packageid + '&num=' + num;
+
+           /* window.location.href="/member/showOrder?spuId=4&skuId=1"
+           var url = '/member/addOrder?spuId=4&skuId=1';
+            $.get(url, function(result){
+                if(result['code']){
+                    alert('下单失败,商品数据有误,请重新选择');
+                }else{
+                    alert('下单成功,请立即支付');
+                    window.location.href="/member/showOrder";
+                }
+            });
+            alert(111)*/
+        })
+
+
     </script>
 @endsection

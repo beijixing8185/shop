@@ -42,7 +42,7 @@
                       <label for="inputPassword3" class="col-sm-2 control-label">链接地址:</label>
                       <div class="col-sm-5">
                           <input type="text" class="form-control" name="url" id="url"  value="{{$link->link}}" >
-                          <span class="num" style="color:red"></span>
+                          <span class="url" style="color:red"></span>
                       </div>
                   </div>
 
@@ -87,8 +87,8 @@
           return false;
       }
       if($('#url').val() == ''){
-          $('.name').html('链接地址不能为空');
-          $('#name').focus();
+          $('.url').html('链接地址不能为空');
+          $('#url').focus();
           return false;
       }
       return true;

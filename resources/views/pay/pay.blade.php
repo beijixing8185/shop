@@ -35,7 +35,7 @@
 		<ul class="nav nav-tabs buy-tab" role="tablist" id="buyTap" >
             <li class="active"><a href="#perfet" role="tab" data-toggle="tab"><b>1</b>订单结算</a><i></i></li>
             <li><a href="#orderPay" role="tab" data-toggle="tab"><b>2</b>订单支付</a><i></i></li>
-            <li><a href="#successp" role="tab" data-toggle="tab"><b>3</b>分配服务商</a><i></i></li>
+            <li><a href="#successp" role="tab" data-toggle="tab"><b>3</b>支付</a><i></i></li>
         </ul>
 
         <!-- Tab panes -->
@@ -221,11 +221,10 @@
                 	<input type="hidden" id="orderId" value="29918">
                 	<input type="hidden" id="payId" value="34849">
                     <div class="pay-infor">
-                        <p>宝贝名称：微信公众号注册认证、开通支付／公众号搭建
-                        	                        		-微信公众号注册认证、开通支付／公众号搭建
+                        <p>宝贝名称：{{$params['name']}}
                         	                        </p>
-                        <p>订单编号：O201810101004543825443</p>
-                        <div>应付金额：<span>&yen;399</span></div>
+                        <p>订单编号：{{$params['sn']}}</p>
+                        <div>应付金额：<span>&yen;{{$params['price']}}</span></div>
                     </div>
                     <div class="pay-way">
                         <p>请选择支付方式：</p>

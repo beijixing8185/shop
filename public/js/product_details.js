@@ -99,7 +99,7 @@ $(document).ready(function(){
 			
 		}else{
 			$(".buy-num").hide();
-			$('#buynow').hide();
+
 			$("#recommsp").show();
 			
 			if(recomm!="1"){

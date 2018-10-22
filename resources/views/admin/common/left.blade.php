@@ -2,7 +2,7 @@
 
     $menu[] = ['title' => '订单', 'icon' => 'fa-dashboard',
         'child' => [
-                ['title' => '查看订单', 'url' => '/hx/admin/m86OrderList', 'icon' => 'fa-circle-o'],
+                ['title' => '查看订单', 'url' => '/hx/admin/orderList', 'icon' => 'fa-circle-o'],
         ],
     ];
       $menu[] = ['title' => '商品服务', 'icon' => 'fa-dashboard',

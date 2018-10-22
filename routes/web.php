@@ -63,6 +63,9 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('member_pwd', 'MemberController@memberPwd');  //会员密码修改
 
         Route::get('order', 'MemberController@orderList');  //会员订单
+        Route::get('showOrder', 'MemberController@showOrder');  //预支付下单
+        Route::get('addOrder', 'MemberController@addOrder');  //会员下单
+        Route::get('payOrder/{orderSn}/{price}/{name}', 'MemberController@payOrder');  //会员下单
 
         Route::post('updateMemberInfo', 'MemberController@updateMemberInfo');  //修改会员信息逻辑
         Route::post('updateMemberPwd', 'MemberController@updateMemberPwd');  //修改会员密码逻辑
@@ -188,6 +191,8 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('linkList', 'AboutController@linkList');
     Route::post('addLink', 'AboutController@postAddlink');
     Route::post('updateLink', 'AboutController@updateLink');
+
+    Route::get('orderList', 'OrderController@orderList'); //订单
 
 
 
