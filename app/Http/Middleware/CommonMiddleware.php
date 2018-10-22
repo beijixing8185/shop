@@ -51,18 +51,11 @@ class CommonMiddleware
             Cache::put('goods_list', $goods_list, $minutes);
         }
 
-        /*//顶部导航栏目
-        if(!Cache::get('getColumn')){
+        //顶部导航栏目
+        if(!empty(Cache('getColumn'))){
             $getColumn = GoodsCate::getColumn();
-            Cache::put('getColumn', $getColumn, $minutes);
-        }*/
-
-
-            if(!empty(Cache('getColumn'))){
-                $getColumn = GoodsCate::getColumn();
-                Cache::put('getColumn',$getColumn,$minutes);
-            }
-        //dd(Cache('getColumn'));
+            Cache::put('getColumn',$getColumn,$minutes);
+        }
         return $next($request);
     }
 }

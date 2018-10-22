@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Admin\AdminUser;
+use Illuminate\Support\Facades\Cache;
 
 
 class AuthController extends Controller
@@ -94,6 +95,19 @@ class AuthController extends Controller
             return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
         else
             return response()->json(['code'=>1,'msg'=>'删除失败','data'=>'']);
+    }
+
+
+    /**
+     * 清除缓存【主要清除前台生成的Cache】
+     */
+    public function cacheOut()
+    {
+        Cache::forget('link');  //超链接
+        Cache::forget('category');//栏目，暂时不用
+        Cache::forget('about_list');    //关于我们栏目
+        Cache::forget('goods_list');    //商品
+        Cache::forget('getColumn');     //总栏目列表
     }
 
 

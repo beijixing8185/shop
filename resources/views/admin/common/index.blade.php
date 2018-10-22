@@ -92,6 +92,18 @@
 <script src="/adminLTE/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="/adminLTE/dist/js/adminlte.min.js"></script>
+<script>
+  $('#cacheOut').click(function () {
+      $.ajax({
+          type : "get",
+          url : "/hx/admin/cacheOut",
+          data : '',
+          success : function(data){
+              alert('清除缓存成功');
+          }
+      });
+  })
+</script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <!-- <script src="/adminLTE/dist/js/pages/dashboard.js"></script> -->
 </body>

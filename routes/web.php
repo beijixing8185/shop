@@ -109,6 +109,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('index', 'PayController@index');        //支付首页
 
         Route::get('pay', 'PayController@pay');        //支付选择
+
     });
 
 
@@ -128,6 +129,7 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::get('login', 'AuthController@login');       // 登录
     Route::post('login', 'AuthController@postLogin');       //登录
     Route::get('logout', 'AuthController@logout');       //退出登录
+    Route::get('cacheOut', 'AuthController@cacheOut');   //清除前台缓存
 
     Route::group(['middleware' => 'App\Http\Middleware\AdminMiddleware'], function () {
         Route::get('/index', 'IndexController@index');       // 后台首页

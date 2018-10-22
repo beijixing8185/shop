@@ -30,4 +30,6 @@ class PayController extends Controller
     {
         return view('pay.pay');
     }
+
+
 }
