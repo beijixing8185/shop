@@ -172,6 +172,23 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
     Route::post('updateBanner', 'BannerController@updateBanner');    //修改
     Route::get('delBanner', 'BannerController@delBanner');    //删除banner
 
+    Route::get('addCase/{id?}', 'CaseController@addCase');    //添加案例
+    Route::get('caseList', 'CaseController@caseList');    //案例列表
+    Route::post('addCase', 'CaseController@postAddCase');    //提交
+    Route::post('updateCase', 'CaseController@updateCase');    //修改
+    Route::get('delCase', 'CaseController@delCase');    //删除案例
+
+    Route::get('addAbout/{id?}', 'AboutController@addAbout');    //关于我们
+    Route::get('aboutList', 'AboutController@aboutList');
+    Route::post('addAbout', 'AboutController@postAddAbout');
+    Route::post('updateAbout', 'AboutController@updateAbout');
+    Route::get('delAbout', 'AboutController@delAbout');
+
+    Route::get('addLink/{id?}', 'AboutController@addLink');    //链接
+    Route::get('linkList', 'AboutController@linkList');
+    Route::post('addLink', 'AboutController@postAddlink');
+    Route::post('updateLink', 'AboutController@updateLink');
+
 
 
 

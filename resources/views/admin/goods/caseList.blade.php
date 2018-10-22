@@ -1,0 +1,145 @@
+@extends('admin.common.index')
+
+@section('content')
+
+<link rel="stylesheet" href="{{ asset('adminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+       案例列表
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">
+              <a href="{{url('hx/admin/addCase')}}" class="label label-primary">添加</a>
+              </h3>
+
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body  no-padding">
+
+              <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap"><div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row"><div class="col-sm-12"><table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+
+            <thead>
+                <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        标识id
+                    </th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        分类
+                    </th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        服务名称
+                    </th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        价格
+                    </th>
+                    <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">
+                        项目周期
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        标题
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        关键词
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        图片
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        描述
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">
+                        状态
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
+                        添加时间
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                        编辑
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">
+                        删除
+                    </th>
+                </tr>
+            </thead>
+
+                <tbody>
+                @foreach($case as $g)
+                <tr role="row" class="odd">
+                      <td class="sorting_1">{{$g->id}}</td>
+                      <td>{{$case_type[$g->gc_id]}}</td>
+                      <td>{{$cates[$g->spu_id] or '未知'}}</td>
+                        <td >{{$g->money}}</td>
+                        <td >{{$g->day}}</td>
+                        <td style="width: 200px;">{{$g->title}}</td>
+                        <td style="width: 200px;">{{$g->keywords}}</td>
+                        <td><img src="{{$g->picture}}" alt="" style="width: 100px;height: 100px;"></td>
+                        <td style="width: 200px;">{{$g->description}}</td>
+                        <td>
+                        @if($g->status==0)
+                            <span class="label label-warning">无效</span>
+                        @else
+                            <span class="label label-success">有效</span>
+                        @endif
+                        </td>
+                      <td>{{$g->created_at}}</td>
+
+                      <td><a href="{{url('hx/admin/addCase',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
+                      <td><a  class="fa fa-trash delSpec" title="删除" data-Id="{{$g->id}}" style="margin-left: 10px; cursor: pointer;" ></a></td>
+                </tr>
+                @endforeach
+                </tbody>
+              </table></div></div>
+
+            <div class="row pull-right">
+            <div class="col-sm-10 "></div>
+                {{$case->links()}}
+
+            </div>
+            </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+<script>
+    //删除
+    $('#example2').on('click','.delSpec',function(){
+        var Id = $(this).attr('data-Id');
+        var resultUrl = '/hx/admin/delCase?id='+ Id;
+        if(confirm('确定要删除案例吗?')){
+            $.get(resultUrl,function(res){
+                if(res['code']){
+                    alert('删除失败')
+                }else{
+                    alert('删除成功')
+                    window.location.href=''
+                }
+            })
+        }
+    });
+</script>
+
+  @stop
+
+
+
