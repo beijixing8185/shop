@@ -465,7 +465,8 @@
             <!-- Add Arrows -->
         </div>
     </div>
-</div>	<script src="/js/commonfb.js"></script>
+</div>
+
 
 <div class="fbLogin" id="fbLogin">
     <div class="fbLoginMian">

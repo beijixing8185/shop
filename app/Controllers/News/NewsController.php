@@ -13,8 +13,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Article;
 use App\Models\ArticleCate;
 use App\Models\Banner;
-use app\Models\GoodsCate;
-use app\Models\GoodsSpu;
+use App\Models\GoodsCate;
+use App\Models\GoodsSpu;
 
 class NewsController extends Controller
 {
