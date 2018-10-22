@@ -136,7 +136,7 @@
                                             </p> <span style="position: relative;top: 2px">服务不满意，投诉可<b style="font-weight: 600;">退款</b></span></label>
                                         <div class="tipsBox">
                                             <div>百万赔偿计划</div>
-                                            <p>1.服务过程中您有任何不满意，均可拨打镖狮官方电话<b style="font-weight: 600;">4000-581-581</b>进行投诉；</p>
+                                            <p>1.服务过程中您有任何不满意，均可拨打镖狮官方电话<b style="font-weight: 600;">010-53526642</b>进行投诉；</p>
                                             <p>2.收到投诉后，镖狮将在24小时内核实投诉情况，若投诉有效，即可退款；</p>
                                             <p>3.请确保所有沟通在镖狮平台的工作人员陪同下，以保障您的利益。</p>
                                         </div>
@@ -198,12 +198,18 @@
                             <ul>
                                 <li class="current" id="_service_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务项目页签" id="_service_a">服务项目</a></li>
                                 {{--<li id="_serqdan_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_套餐明细页签" id="_serqdan_a">套餐明细</a></li>--}}
-                                <li id="_service_flow_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a></li>
-                                <li id="_evaluate_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_用户评价页签" id="_evaluate_a">
-                                        用户评价										(47)
-                                    </a></li>
-                                <li id="_service_ensure_btn"><a href="/about/index/2" class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a></li>
-                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;"><a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a></li>
+                                <li id="_service_flow_btn">
+                                    <a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a>
+                                </li>
+                                <li id="_evaluate_btn">
+                                    <a href="javascript:void(0);" class="caClass" traceflag="content_tab_用户评价页签" id="_evaluate_a">用户评价	({{$count_message}})</a>
+                                </li>
+                                <li id="_service_ensure_btn">
+                                    <a class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a>
+                                </li>
+                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;">
+                                    <a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="_service_eva" class="service-items">
@@ -463,7 +469,7 @@
                                     </div>
                                     <div class="promise">
                                         <p class="title">平台承诺</p>
-                                        <div class="d1">1.直接拨打4000-581-581按3进行反馈投诉</div>
+                                        <div class="d1">1.直接拨打010-53526642进行反馈</div>
                                         <div class="d1">2.点击页面【在线咨询】按钮，将问题进行详细描述反馈</div>
                                     </div>
                                 </div>
@@ -522,7 +528,7 @@
                     <a href="javascript:void(0);" class="xq-release caClass" traceflag="pop_fb_发布需求" id="_btn_productDetails_require">发布需求</a>
                     <div class="xq-describe">
                         <p>本次电话咨询完全免费，我们将对您的号码严格保密，请放心使用</p>
-                        <p> 您还可以直接拨打进行咨询：<span>4000-581-581</span></p>
+                        <p> 您还可以直接拨打进行咨询：<span>010-53526642</span></p>
                     </div>
 
                 </div>

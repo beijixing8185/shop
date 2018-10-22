@@ -1,13 +1,9 @@
 
-<script src="{{asset('js/xslider.js')}}"></script>
 <!--  发镖弹层 begin -->
-<link rel="stylesheet" href="/css/swiper.min.css">
-<link rel="stylesheet" href="/css/pop.css">
 <link rel="stylesheet" href="/css/fbwindowsuccess.css">
 <link rel="stylesheet" href="/css/fbwindow.css">
-<script src="/js/swiper.min.js"></script>
-<script src="/js/common.js"></script>
-<script src="/js/pop.js"></script>
+<script src="/js/commonfb.js"></script>
+{{--<script src="/js/pop.js"></script>--}}
 
 
 <div class="container-fluid footer">
@@ -208,7 +204,7 @@
                     <div class="swiper-slide2-header">您所在的行业</div>
                     <div class="swiper-list">
                         <ul>
-                            <li class="qNo2" value="A1037">
+                            <li class="qNo2" value="A1037" data-tip="医疗卫生">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -218,7 +214,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1017">
+                            <li class="qNo2" value="A1017" data-tip="教育培训">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -228,7 +224,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1000">
+                            <li class="qNo2" value="A1000" data-tip="招商加盟">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -238,7 +234,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1021">
+                            <li class="qNo2" value="A1021" data-tip="机械设备">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -248,7 +244,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1009">
+                            <li class="qNo2" value="A1009" data-tip="商务服务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -258,7 +254,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1012">
+                            <li class="qNo2" value="A1012" data-tip="旅游及票务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -268,7 +264,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1005">
+                            <li class="qNo2" value="A1005" data-tip="网络服务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -278,7 +274,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1024">
+                            <li class="qNo2" value="A1024" data-tip="广告及包装">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -288,7 +284,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1015">
+                            <li class="qNo2" value="A1015" data-tip="金融服务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -303,7 +299,7 @@
                     </div>
                     <div class="swiper-list">
                         <ul>
-                            <li class="qNo2" value="A1028">
+                            <li class="qNo2" value="法律服务" data-tip="法律服务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -313,7 +309,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1035">
+                            <li class="qNo2" value="生活服务" data-tip="生活服务">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -323,7 +319,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1019">
+                            <li class="qNo2" value="建筑及装修" data-tip="建筑及装修">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -333,7 +329,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1001">
+                            <li class="qNo2" value="孕婴用品" data-tip="孕婴用品">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -343,7 +339,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1003">
+                            <li class="qNo2" value="A1003" data-tip="休闲娱乐">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -353,7 +349,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1016">
+                            <li class="qNo2" value="A1016" data-tip="节能环保">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -363,7 +359,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1007">
+                            <li class="qNo2" value="A1007" data-tip="食品餐饮">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -373,7 +369,7 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="qNo2" value="A1036">
+                            <li class="qNo2" value="其他" data-tip="其他">
                                 <dl>
                                     <dt>
                                         <img src="/picture/loadimage.htm" alt="">
@@ -394,56 +390,43 @@
                     </div>
                 </div>
                 <div quesNo="3" class="swiper-slide swiper-slide3 swiper-no-swiping qNo3">
-                    <div class="swiper-slide3-header">请放心，镖狮会保护您的所有信息</div>
+                    <div class="swiper-slide3-header">请放心，我们会保护您的所有信息</div>
                     <div class="swiper-slide3-box">
                         <div class="swiper-slide3-main">
-                            <div class="request">
-                                <p id="VA_allowArea" class="swiper-slide3-title">本地服务商：</p>
-                                <div class="group">
-                                    <label><input tabIndex="-1" type="radio" name="issame" value="1">是</label>
-                                    <label><input tabIndex="-1" type="radio" name="issame" value="0">否</label>
-                                    <p id="VA_issameTip" style="display:none">选择本地服务商，会减少您匹配到更多优质的异地服务商</p>
-                                </div>
-                            </div>
-                            <div id="VA_locationinfo" class="request" style="display:none">
+
+                            <div id="VA_locationinfo" class="request" style="display:block">
                                 <p class="swiper-slide3-title">您的所在地：</p>
                                 <div class="group">
                                     <div class="selectBox">
                                         <select class="form-control" id="VA_proinfo">
-                                            <option value="110000" selected="selected">北京市</option>
-                                            <option value="120000">天津市</option>
-                                            <option value="130000">河北省</option>
-                                            <option value="140000">山西省</option>
-                                            <option value="150000">内蒙古自治区</option>
-                                            <option value="210000">辽宁省</option>
-                                            <option value="220000">吉林省</option>
-                                            <option value="230000">黑龙江省</option>
-                                            <option value="310000">上海市</option>
-                                            <option value="320000">江苏省</option>
-                                            <option value="330000">浙江省</option>
-                                            <option value="340000">安徽省</option>
-                                            <option value="350000">福建省</option>
-                                            <option value="360000">江西省</option>
-                                            <option value="370000">山东省</option>
-                                            <option value="410000">河南省</option>
-                                            <option value="420000">湖北省</option>
-                                            <option value="430000">湖南省</option>
-                                            <option value="440000">广东省</option>
-                                            <option value="450000">广西壮族自治区</option>
-                                            <option value="460000">海南省</option>
-                                            <option value="500000">重庆市</option>
-                                            <option value="510000">四川省</option>
-                                            <option value="520000">贵州省</option>
-                                            <option value="530000">云南省</option>
-                                            <option value="540000">西藏自治区</option>
-                                            <option value="610000">陕西省</option>
-                                            <option value="620000">甘肃省</option>
-                                            <option value="630000">青海省</option>
-                                            <option value="640000">宁夏回族自治区</option>
-                                            <option value="650000">新疆维吾尔自治区</option>
-                                            <option value="710000">台湾省</option>
-                                            <option value="810000">香港特别行政区</option>
-                                            <option value="820000">澳门特别行政区</option>
+                                            <option value="北京市" selected="selected">北京市</option>
+                                            <option value="天津市">天津市</option>
+                                            <option value="河北省">河北省</option>
+                                            <option value="山西省">山西省</option>
+                                            <option value="内蒙古自治区">内蒙古自治区</option>
+                                            <option value="辽宁省">辽宁省</option>
+                                            <option value="吉林省">吉林省</option>
+                                            <option value="黑龙江省">黑龙江省</option>
+                                            <option value="上海市">上海市</option>
+                                            <option value="江苏省">江苏省</option>
+                                            <option value="浙江省">浙江省</option>
+                                            <option value="安徽省">安徽省</option>
+                                            <option value="福建省">福建省</option>
+                                            <option value="江西省">江西省</option>
+                                            <option value="山东省">山东省</option>
+                                            <option value="河南省">河南省</option>
+                                            <option value="湖北省">湖北省</option>
+                                            <option value="湖南省">湖南省</option>
+                                            <option value="广东省">广东省</option>
+                                            <option value="广西壮族自治区">广西壮族自治区</option>
+                                            <option value="海南省">海南省</option>
+                                            <option value="重庆市">重庆市</option>
+                                            <option value="四川省">四川省</option>
+                                            <option value="贵州省">贵州省</option>
+                                            <option value="云南省">云南省</option>
+                                            <option value="西藏自治区">西藏自治区</option>
+                                            <option value="陕西省">陕西省</option>
+                                            <option value="甘肃省">甘肃省</option>
                                             <option value="999999">其他</option>
                                         </select>
                                         <!-- <b><img src="/picture/zx_sq.png" alt=""></b> -->
@@ -455,6 +438,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <input type="hidden" id="content_auth" value=""/>
                             <div class="request" style="margin-bottom: 0;">
                                 <p class="swiper-slide3-title">您可能还想补充点<span style="color: #999;font-size: 12px;font-weight: normal;">（选填）</span>：</p>
                                 <div class="group">
@@ -468,7 +452,7 @@
                     </div>
                     <div class="buttoGroup">
                         <span onclick="prevVAPage(this)" class="caClass" traceflag="pop_tab_上一步_3" id="VA_buttoprev3">上一步</span>
-                        <span onclick="submitVALeads(this,'')" class="caClass" traceflag="pop_fb_公共A提交需求" id="VA_buttoNext3">提交需求</span>
+                        <span class="caClass" traceflag="公共A提交需求" id="VA_buttoNext3">提交需求</span>
                     </div>
                     <div class="errtip">
                         您有选项没有完成，请让我们更了解您
@@ -487,21 +471,23 @@
     <div class="fbLoginMian">
         <div class="fbLoginTitle">
             <img src="/picture/logo02.png" alt="">
-            <img id="closeCommonFbLogin" class="closeFBlogin caClass" traceflag="pop_close_通用发镖登录并提交弹窗关闭" src="/picture/close@2x.png" alt="">
+            <img id="closeCommonFbLogin" class="closeFBlogin caClass" traceflag="pop_close_登录并提交弹窗关闭" src="/picture/close@2x.png" alt="">
         </div>
         <div class="fbLoginContent">
             <div>
-                <img src="/picture/log-phone@2x.png" alt=""><input type="text" name="fbLoginPhone" id="fbLoginPhone" placeholder="请输入11位手机号码" maxlength="11">
+                <img src="/picture/log-phone@2x.png" alt="">
+                <input type="text" name="fbLoginPhone" id="fbLoginPhone" placeholder="请输入11位手机号码" maxlength="11">
             </div>
+            <input id="phone_session" type="hidden" value="{{session('phone')}}"/>
             <p class="phoneError">请输入正确的手机号码</p>
-            <div class="fbLoginCode">
+{{--            <div class="fbLoginCode">
                 <img src="/picture/log-message@2x.png" alt=""><input type="text" name="fbLoginCode" id="fbLoginCode" placeholder="请输入验证码">
-                <span id="fbLogin_authCode" class="caClass" traceflag="pop_vcode_通用发镖获取验证码">获取验证码</span>
+                <span id="fbLogin_authCode" class="caClass" traceflag="pop_vcode_获取验证码">获取验证码</span>
             </div>
-            <p class="codeError" style="position: absolute;">验证码与手机号不匹配</p>
+            <p class="codeError" style="position: absolute;">验证码与手机号不匹配</p>--}}
         </div>
         <div class="fbLoginBtn">
-            <span id="commfbsubmit" class="caClass" traceflag="pop_fb_登录并提交" onclick="LoginWithSubmitCommon(this)">登录并提交</span>
+            <span id="commfbsubmit" class="caClass" traceflag="pop_fb_登录并提交">登录并提交</span>
             <p>咨询电话：010-53526642</p>
         </div>
     </div>
@@ -543,7 +529,7 @@
 </div>
 <!--  发镖失败end -->
 <!-- 调查问卷 -->
-<div id="questionnaire" class="questionnaireMask">
+{{--<div id="questionnaire" class="questionnaireMask">
     <div class="questionnaireMain">
         <div class="closeBtn caClass" id="closeQuestionaire" traceflag="pop_close_关闭问卷调查弹窗" id="questionnaireMask_close"><img src="/picture/close@2x.png" alt=""></div>
         <div class="publishHeader">
@@ -581,7 +567,7 @@
             <p>咨询电话：010-53526642</p>
         </div>
     </div>
-</div>
+</div>--}}
 <!-- 调查问卷END -->
 <div id="fbSuccess" class="fbMask">
     <div class="fbContent">

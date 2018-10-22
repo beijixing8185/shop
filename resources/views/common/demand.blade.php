@@ -42,10 +42,6 @@
                 <div class="p-public">
                     <a onclick="javascript:tofb('','');" class="caClass" traceflag="floatbar_pop_发布需求" id="headerFlowDemand">发布需求</a>
                 </div>
-                <div class="watch-xqgl">
-                    <a rel="nofollow" href="/aboutus.htm">查看需求攻略</a>
-                </div>
-
             </div>
         </div>
         <div class="research pull-right">

@@ -25,13 +25,13 @@
 @include('./common/search')
 @include('./common/right')
 <div>
-        <ul class="nav-tabs container tab-list" role="tablist" id="mytab">
+        <ul class="nav-tabs container tab-list" role="tablist" id="">
 			@if(!empty(Cache('about_list')))
 			@foreach(Cache('about_list') as $val)
 				@if($val['id'] == $id)
-            <li class="active"><a class="caClass"  href="/about/index/{{$val['id']}}" role="tab" data-toggle="tab" id="procedure_tab">{{$val['category']}}</a></li>
+            <li class="active"><a class="caClass" onclick="funcAbout({{$val['id']}})" href="/about/index/{{$val['id']}}" role="tab" data-toggle="tab" id="procedure_tab">{{$val['category']}}</a></li>
 				@else
-            <li><a class="caClass"  href="/about/index/{{$val['id']}}" role="tab" data-toggle="tab" id="procedure_tab">{{$val['category']}}</a></li>
+            <li><a onclick="funcAbout({{$val['id']}})" href="/about/index/{{$val['id']}}" class="caClass" role="tab" data-toggle="tab" id="procedure_tab">{{$val['category']}}</a></li>
 				@endif
 			@endforeach
 				@endif
@@ -48,7 +48,7 @@
 								{{$about->category}}
                             </p>
                             <div style="text-align: left;">
-								{{$about->content}}<br/>
+								{!! $about->content !!}<br/>
                             </div>
                         </div>
                     </div>
@@ -66,6 +66,10 @@
         </div>
     </div>
 <script type="text/javascript">
+    function funcAbout(id) {
+        window.location.href='/about/index/'+id;
+    }
+
     //创建和初始化地图函数：
     function initMap(){
         createMap();//创建地图

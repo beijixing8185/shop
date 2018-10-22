@@ -39,15 +39,19 @@ class GoodsController extends Controller
 
         $commend = GoodsSpu::list(' and is_commend = 1 and status = 1',5);  //推荐商品 is_commend
 
-        $goods_message = GoodsEvaluate::getList($goods['id'],1);//商品评论
+        $count_message = GoodsEvaluate::count_message($goods['id'],1);    //商品评论总数
+
+        $goods_message = GoodsEvaluate::getList($goods['id'],1);    //商品评论
         foreach ($goods_message as $val){
             $val->member = User::getMember($val->uid);
         }
 
+
         //获取规格
         $goodsSku = GoodsSku::select('id','market_price','spec_name','price')->where('spu_id',$id)->where('status',1)->get();//2018-10-22
 
-        return view('goods.goodsDetail',compact('goods','customer','commend','goods_message','goodsSku'));
+        return view('goods.goodsDetail',compact('goods','customer','commend','goods_message','count_message','goodsSku'));
+
     }
 
     /**

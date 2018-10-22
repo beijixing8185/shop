@@ -28,4 +28,16 @@ class GoodsEvaluate extends Model{
         }
         return self::whereRaw($where)->orderByRaw('id DESC')->paginate(3);
     }
+
+    public static function count_message()
+    {
+        $where = 'id > 0';
+        if(!empty($spu_id)){
+            $where .= ' and spu_id = '.$spu_id;
+        }
+        if(!empty($status)){
+            $where .= ' and status = '.$status;
+        }
+        return self::whereRaw($where)->orderByRaw('id DESC')->count();
+    }
 }
