@@ -198,12 +198,18 @@
                             <ul>
                                 <li class="current" id="_service_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务项目页签" id="_service_a">服务项目</a></li>
                                 {{--<li id="_serqdan_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_套餐明细页签" id="_serqdan_a">套餐明细</a></li>--}}
-                                <li id="_service_flow_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a></li>
-                                <li id="_evaluate_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_用户评价页签" id="_evaluate_a">
-                                        用户评价										(47)
-                                    </a></li>
-                                <li id="_service_ensure_btn"><a href="/about/index/2" class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a></li>
-                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;"><a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a></li>
+                                <li id="_service_flow_btn">
+                                    <a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a>
+                                </li>
+                                <li id="_evaluate_btn">
+                                    <a href="javascript:void(0);" class="caClass" traceflag="content_tab_用户评价页签" id="_evaluate_a">用户评价	({{$count_message}})</a>
+                                </li>
+                                <li id="_service_ensure_btn">
+                                    <a class="caClass" traceflag="content_tab_服务保障页签" id="_service_ensure_a">服务保障</a>
+                                </li>
+                                <li class="fix-a-btn pull-right other-fix-btn" style="height: 44px;">
+                                    <a id="zxzx3" class="caClass" traceflag="fixbar_im_在线咨询" onclick="javascript:window.location.href='http://p.qiao.baidu.com/cps/chat?siteId=12314605&userId=25925415'">在线咨询</a>
+                                </li>
                             </ul>
                         </div>
                         <div id="_service_eva" class="service-items">

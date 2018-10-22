@@ -116,7 +116,7 @@
 	background: url('/images/iconfont01_2.png') no-repeat center;
 }
 .common-box-until li#onlineConsulting:hover a span b{
-	background: url('static/images/iconfont010_2.png') no-repeat center;
+	background: url('/images/iconfont010_2.png') no-repeat center;
 }
 .common-box-until li:hover a i{
 	color: #f5a540;

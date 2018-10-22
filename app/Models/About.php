@@ -27,8 +27,13 @@ class About extends Model{
     /**
      * 查询栏目和id
      */
-    public static function getList()
+    public static function getList($where='')
     {
-        return self::select(['id','category'])->get();
+        if($where ==''){
+            return self::select(['id','category'])->get();
+        }else{
+            return self::select(['id','category'])->whereRaw($where)->get();
+        }
+
     }
 }

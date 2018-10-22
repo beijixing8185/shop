@@ -64,11 +64,13 @@ $(function(){
 	//关闭通用发镖弹窗A
 	$('#VA_closeBtn_fb').click(function() {
 		//关闭时打开调查问卷
-		$('#questionnaire').show();
+		/*$('#questionnaire').show();*///在这里做了修改，不让再继续弹窗
+        $('body').css('overflow','visible');
+        $('.faAMask').css('display','none');
 	});
 	
 	//切换是否本地服务商隐藏后面下拉框
-	$('.faAMask input[name="issame"]').click(function(){
+	/*$('.faAMask input[name="issame"]').click(function(){
 		var isSame = $('.faAMask input:radio[name="issame"]:checked').val();
 		if(isSame==0){
 			$('#VA_locationinfo').hide();
@@ -78,10 +80,10 @@ $(function(){
 			$('#VA_issameTip').show();
 		}
 		fabiaoAswiper.update();
-	});
+	});*/
 
 	//地域省市联动
-	$("#VA_proinfo").change(function(){
+/*	$("#VA_proinfo").change(function(){
 		var procode=$("#VA_proinfo option:selected").val();
 		$.ajax({
 			url: "/sp/subarea_"+procode+".json",
@@ -108,8 +110,10 @@ $(function(){
 				pop.error("获取市级列表失败！");
 			}
 		});
-	});
-	
+	});*/
+    //地域省市联动
+
+
 	// SECTION3
 	//监控文本框字数
 	$("#VA_userrequest").keyup(function () {
@@ -136,12 +140,20 @@ $('body').on('click','.swiper-list ul li',function(){
 	var leftWidth = $(this).find('span').offset().left;
 	
 	var spanWidth = $(this).find('span').width();
-	console.log(spanWidth)
+
 	$(this).parents('.swiper-list').find('.moveBlock').css('width',spanWidth + 'px');
 	$(this).parents('.swiper-list').find('.moveBlock').animate({"left":leftWidth-boxLeft+'px'},400);
 	$(this).addClass('active').siblings('li').removeClass('active');
 
 	var dataTips = $(this).attr('data-tip');
+    //console.log(dataTips);
+    var content_auth = $('#content_auth').val();
+    if(content_auth ==''){
+        $('#content_auth').val(dataTips);
+	}else {
+        $('#content_auth').val(content_auth+'。客户选择的行业为：+'+dataTips);
+	}
+
 	windowDataTip = dataTips;
 	$('.swiper-info').css('visibility','visible').text(dataTips);
 });
@@ -216,11 +228,11 @@ function nextVAPage(el){
 		if (quesNo == 1) {
 			showStr = "您所在的行业";
 		}else if(quesNo == 2){
-			showStr = "请放心，镖狮会保护您的所有信息";
+			showStr = "请放心，我们会保护您的所有信息";
 		}
 		var nextNo = parseInt(quesNo)+1;
 		if (nextNo > arrivedVAStep) {
-			arrivedVAStep = nextNo;///发镖到达的最远一步
+			arrivedVAStep = nextNo;
 			arrivedVAStepProblem = showStr;
 		}
 		$('.faAMask .errtip').css('visibility','hidden');
@@ -283,13 +295,105 @@ function clearVAinput(){
 	arrivedVAStepProblem = "我们能为您做什么？";
 	
 }
-
+function isMobilePhoneNos(phone) {
+    var patt = /^1(3|4|5|7|8)\d{9}$/;
+    if(phone ==''){
+        return false;
+	}
+    if(!patt.test(phone)){
+        return false;
+    }else {
+    	return true;
+	}
+}
 var isVASend = 0;
+
+//关闭按钮
+function closeSuccess() {
+	$('#_submit_success').css('display','none');
+}
+
+$(document).on('click','#closeCommonFbLogin',function () {
+	$('body').css('overflow','visible');
+	$('#questionnaire').hide();
+	$('#fbLogin').css('display','none');
+});
+
+
+//有电话的提交，
+$(document).on('click','#commfbsubmit',function () {
+
+    var patt = /^1(3|4|5|7|8)\d{9}$/;	//正则电话
+    var content1 = $('#content_auth').val();
+    var city = $('#VA_proinfo').val();
+    var content2 = $('#VA_userrequest').val();	//补充的条数据
+    var contents = '客户需要的服务为：'+content1+' 。 '+	content2+'。客户所再城市为：'+city;//组装总数据
+	var phone_text = $('#fbLoginPhone').val();
+    if(!patt.test(phone_text)){
+        $('.phoneError').css('display','block');
+        return false;
+    }else{
+        $.ajax({
+            url:'/message/index',
+            type:'post',
+            data:{phone:phone_text,content:contents},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function (res) {
+                if(res==1){
+                    $('#_submit_success').css('display','block');
+                    $('body').css('overflow','visible');
+                    $('#fbLogin').css('display','none');
+                }
+            }
+        });
+	}
+});
+
+//不输入电话直接提交的
+$('#VA_buttoNext3').click(function () {
+    var content1 = $('#content_auth').val();
+    if(content1 ==''){
+        $('.faAMask .errtip').css('visibility','visible');
+        return false;
+    }
+    var city = $('#VA_proinfo').val();
+    var content2 = $('#VA_userrequest').val();	//补充的条数据
+    var contents = '客户需要的服务为：'+content1+' 。 '+	content2+'。客户所再城市为：'+city;//组装总数据
+
+    //校验是否登录
+    var phone_session = $('#phone_session').val();
+    if(phone_session ==''){
+        //未登录显示登录提交tab
+        $('.faAMask').hide();
+        $('#fbLogin').show();
+        arrivedVAStep = 4;
+        arrivedVAStepProblem = "通用登录提交页";
+    }else{
+        $.ajax({
+            url:'/message/index',
+            type:'post',
+            data:{phone:phone_session,content:contents},
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function (res) {
+                if(res==1){
+                    $('#_submit_success').css('display','block');
+                    $('body').css('overflow','visible');
+                    $('#fbLogin').css('display','none');
+                }
+            }
+        });
+	}
+});
+
+
 function submitVALeads(el,userPhone){
 	if (isVASend == 1) {
 		return;
 	}
-	
 	$('#VA_allowArea').css('color',"");
 	$('#VA_phonetitle').css('color',"");
 	$('.faAMask .mobile_box_error').hide();
@@ -309,18 +413,11 @@ function submitVALeads(el,userPhone){
 	}
 	
 	var quesNo = $(el).parent().parent().attr("quesNo");
-	//是否本地服务商
-	var issameArea=$('.faAMask input:radio[name="issame"]:checked').val();
-	if(issameArea==""||issameArea==null){
-		$('#VA_allowArea').css('color',"#ff4400");
-		$('.faAMask .errtip').css('visibility','visible');
-		return;
-	}
+
 	
 	//所在地域
 	var procode=$("#VA_proinfo option:selected").val();
 	var citycode=$("#VA_cityinfo option:selected").val();
-	
 	//校验是否登录
 	var phonereg = isMobilePhoneNo(userPhone.trim());
 	if (!phonereg) {
