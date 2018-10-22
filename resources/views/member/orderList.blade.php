@@ -138,6 +138,7 @@
 			</div>            </div>
 	</div>
 </div>
+	<!--	下线通知---弹窗	-->
 <div class="maskAlert maskAlertKnow" style="/* display: none; */">
 	<div class="maskAlertMain">
 		<img onclick="closeMask()" class="closeMask" src="/picture/closed-gray.png" alt="">
@@ -145,7 +146,7 @@
 			提示
 		</div>
 		<div class="tips">
-			非常抱歉，您所购买的产品已下线，详情<br/>请咨询4000-581-581
+			非常抱歉，您所购买的产品已下线，详情<br/>请咨询010-53526642
 		</div>
 		<div class="buttonGroup">
 			<span id="Ikown" onclick="closeMask()">知道了</span>
