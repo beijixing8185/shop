@@ -399,7 +399,7 @@ $(function(){
 	},function(){
 		findExampTime = setInterval(function(){
 	 		randomNum++;
-	 		if(randomNum > 5){
+	 		if(randomNum > 4){
 	 			randomNum = 0;
 	 		}
 	 		$('#findExample').find('a').text(searchList[randomNum].searchName);
@@ -413,7 +413,7 @@ $(function(){
  	$('#findExample').find('a').attr('href',searchList[randomNum].url);
  	findExampTime = setInterval(function(){
  		randomNum++;
- 		if(randomNum > 5){
+ 		if(randomNum > 4){
  			randomNum = 0;
  		}
  		$('#findExample').find('a').text(searchList[randomNum].searchName);

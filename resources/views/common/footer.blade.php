@@ -17,11 +17,11 @@
                 <div class="TABbox TABbox0">
                     <ul>
                         @if(!empty(Cache('link')))
-                        @foreach(Cache('link') as $val)
-                        <li>
-                            <a href="{{$val['link']}}" target="_blank">{{$val['name']}}</a>
-                        </li>
-                        @endforeach
+                            @foreach(Cache('link') as $val)
+                                <li>
+                                    <a href="{{$val['link']}}" target="_blank">{{$val['name']}}</a>
+                                </li>
+                            @endforeach
                         @endif
                     </ul>
                 </div>
@@ -29,11 +29,11 @@
                 <div class="TABbox TABbox1">
                     <ul>
                         @if(!empty(Cache('goods_list')))
-                        @foreach(Cache('goods_list') as $val)
-                            <li>
-                                <a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a>
-                            </li>
-                        @endforeach
+                            @foreach(Cache('goods_list') as $val)
+                                <li>
+                                    <a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a>
+                                </li>
+                            @endforeach
                         @endif
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
                     <ul>
                         @if(!empty(Cache('about_list')))
                             @foreach(Cache('about_list') as $val)
-                        <li><a rel="nofollow" href="/about/index/{{$val['id']}}" target="_blank">{{$val['category']}}</a><i></i></li>
+                                <li><a rel="nofollow" href="/about/index/{{$val['id']}}" target="_blank">{{$val['category']}}</a><i></i></li>
                             @endforeach
                         @endif
                     </ul>
@@ -461,17 +461,16 @@
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
-            <div id="VA_closeBtn_fb" class="closeBtn caClass" traceflag="pop_close_ 关闭通用发镖A"><img src="/picture/closed-gray.png" alt=""></div>
+            <div id="VA_closeBtn_fb" class="closeBtn caClass" traceflag="pop_close_ 关闭通用"><img src="/picture/closed-gray.png" alt=""></div>
             <!-- Add Arrows -->
         </div>
     </div>
-</div>
-
+</div>	<script src="/js/commonfb.js"></script>
 
 <div class="fbLogin" id="fbLogin">
     <div class="fbLoginMian">
         <div class="fbLoginTitle">
-            <img src="/picture/logo02.png" alt="">
+            <img src="/images/logo02.png" alt="">
             <img id="closeCommonFbLogin" class="closeFBlogin caClass" traceflag="pop_close_登录并提交弹窗关闭" src="/picture/close@2x.png" alt="">
         </div>
         <div class="fbLoginContent">
@@ -481,11 +480,11 @@
             </div>
             <input id="phone_session" type="hidden" value="{{session('phone')}}"/>
             <p class="phoneError">请输入正确的手机号码</p>
-{{--            <div class="fbLoginCode">
-                <img src="/picture/log-message@2x.png" alt=""><input type="text" name="fbLoginCode" id="fbLoginCode" placeholder="请输入验证码">
-                <span id="fbLogin_authCode" class="caClass" traceflag="pop_vcode_获取验证码">获取验证码</span>
-            </div>
-            <p class="codeError" style="position: absolute;">验证码与手机号不匹配</p>--}}
+            {{--            <div class="fbLoginCode">
+                            <img src="/picture/log-message@2x.png" alt=""><input type="text" name="fbLoginCode" id="fbLoginCode" placeholder="请输入验证码">
+                            <span id="fbLogin_authCode" class="caClass" traceflag="pop_vcode_获取验证码">获取验证码</span>
+                        </div>
+                        <p class="codeError" style="position: absolute;">验证码与手机号不匹配</p>--}}
         </div>
         <div class="fbLoginBtn">
             <span id="commfbsubmit" class="caClass" traceflag="pop_fb_登录并提交">登录并提交</span>
@@ -579,10 +578,10 @@
         <p class="fbBar"></p>
         <div class="fbTitle">
             <img src="/picture/check-circle-fill@2x.png" alt="">提交成功！
-            <p>严选师正在根据您的需求挑选优质服务商...</p>
+            <p>我们会马上与您联系...</p>
         </div>
         <div class="fbCodeBox">
-            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注镖狮公众号</span></p>
+            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注萤火虫公众号</span></p>
             <div class="fbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>

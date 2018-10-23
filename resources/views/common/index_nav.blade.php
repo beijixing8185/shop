@@ -32,9 +32,9 @@
                                                         <li class="hotProd">
                                                             <p>
                                                                 <a href="/goods/goodsDetail/{{$goods["id"]}}" target="_blank">{{$goods["spu_name"]}}</a>
-                                                                <b>
-                                                                    <img src="/picture/new.gif" alt=""/>
-                                                                </b>
+                                                                @if($goods['is_commend'] ==1)
+                                                                <b><img src="/picture/new.gif" alt=""/></b>
+                                                                @endif
                                                             </p>
                                                         </li>
                                                     @endforeach
@@ -45,10 +45,7 @@
                                 @endforeach
                             @endif
                         </div>
-
                     @endforeach
-
-
                 </div>
             </div>
         @endif

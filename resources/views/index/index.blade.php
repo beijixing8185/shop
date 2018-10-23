@@ -19,74 +19,55 @@
 
 <div id="showtap01" class="container-fluid">
     <ul class="showtap-inner container">
+		@if(!empty($new_hot))
+			@foreach($new_hot as $hot)
     	    		<li>
-	            <a href="http://www.51biaoshi.com/cms/cl82-cm56498-at668.htm" target="view_window">
-	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮获央视关注，多次报道"></p>
-	                <div class="media-title" >镖狮获央视关注，多次报道</div>
+	            <a href="/news/detail/{{$hot['id']}}" target="view_window">
+	                <p class="media-img"><img src="{{$hot['picture']}}" alt="{{$hot['title']}}"></p>
+	                <div class="media-title" >{{$hot['title']}}</div>
 	            </a>
 	        </li>
-    	    		<li>
-	            <a href="http://www.51biaoshi.com/cms/cl82-cm56494-at664.htm" target="view_window">
-	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网助力大学生创业"></p>
-	                <div class="media-title">镖狮网助力大学生创业</div>
-	            </a>
-	        </li>
-    	    		<li>
-	            <a href="http://www.51biaoshi.com/cms/cl82-cm56496-at666.htm" target="view_window">
-	                <p class="media-img"><img src="/picture/loadimage.htm" alt="中国互联网大会开幕，镖狮网获关注"></p>
-	                <div class="media-title">中国互联网大会开幕，镖狮网获关注</div>
-	            </a>
-	        </li>
-    	    		<li>
-	            <a href="http://www.51biaoshi.com/cms/cl82-cm56495-at665.htm" target="view_window">
-	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网受邀参加世界互联网大会"></p>
-	                <div class="media-title">镖狮网受邀参加世界互联网大会</div>
-	            </a>
-	        </li>
-    	    		<li>
-	            <a href="http://www.51biaoshi.com/cms/cl82-cm56497-at667.htm" target="view_window">
-	                <p class="media-img"><img src="/picture/loadimage.htm" alt="镖狮网的创业成功之路"></p>
-	                <div class="media-title">镖狮网的创业成功之路</div>
-	            </a>
-	        </li>
+			@endforeach
+		@endif
+
     	    </ul>
 </div>
 <!--保障 -->
 <div id="showtap02" class="container-fluid">
     <div class="container">
         <ul class=" ensure">
-        		    		<li>
-	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="严选服务商">
-	                <div class="bz-con" style="color:">
-	                    <p style="color:">严选服务商</p>
-			            录取率16%，100%缴纳保证金，5年服务经验
+        		  <li>
+	                <img src="/picture/index_back.png" alt="严选服务商">
+	                <div class="bz-con">
+	                    <p>服务体系全面</p>
+			            一对一服务，一对一指导,后期服务保证
 	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="效果数据监理">
-	                <div class="bz-con" style="color:">
-	                    <p style="color:">效果数据监理</p>
+	                <img src="/picture/index_back.png" alt="效果数据监理">
+	                <div class="bz-con">
+	                    <p>效果数据监理</p>
 			            真实数据跟踪，效果数据监理，24小时快速维权
 	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="资金担保">
-	                <div class="bz-con" style="color:">
-	                    <p style="color:">资金担保</p>
+	                <img src="/picture/index_back.png" alt="资金担保">
+	                <div class="bz-con">
+	                    <p>资金担保</p>
 			            交易资金平台托管，像淘宝一样，服务满意再付款
 	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="专注营销10年">
-	                <div class="bz-con" style="color:">
-	                    <p style="color:">专注营销10年</p>
+	                <img src="/picture/index_back.png" alt="专注营销10年">
+	                <div class="bz-con" >
+	                    <p>专注营销10年</p>
 			            专业团队，服务20万+企业，拥有丰富的成功案例
 	                </div>
 	            </li>
 	    		    		<li>
-	                <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=showtype/778286c4-0f86-4e2a-b6e8-7d970d727530_cubead.jpg" alt="量身定制营销方案">
-	                <div class="bz-con" style="color:">
-	                    <p style="color:">量身定制营销方案</p>
+	                <img src="/picture/index_back.png" alt="量身定制营销方案">
+	                <div class="bz-con">
+	                    <p>量身定制营销方案</p>
 			            智能问诊系统，快速定位营销问题，量身定制解决方案
 	                </div>
 	            </li>

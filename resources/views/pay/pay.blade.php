@@ -409,7 +409,7 @@
                 $('#orderNextPrompt').hide();
             });
             
-                        $('#ordernext').click(function(){
+            $('#ordernext').click(function(){
             	            	checkInvoice();
             });
             

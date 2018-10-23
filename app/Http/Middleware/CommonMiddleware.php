@@ -22,7 +22,7 @@ class CommonMiddleware
      */
     public function handle($request, Closure $next)
     {
-        //Cache::forget('getColumn');
+        Cache::forget('getColumn');
         //Cache::forget('goods_list');
         $minutes = 2592000; //一个月的秒数
 

@@ -24,11 +24,12 @@ class IndexController extends Controller
     {
         $banner = Banner::getList(1,1,4); //状态为1的，并且type值为1的。   //banner图
 
+        $new_hot = Article::getList('',1,1,5)->toArray();   //banner图下的最新推荐 新闻
 
         $customer = Customer::getList('',1);//dd($customer);//客户案例
 
-
-        $newCategory = ArticleCate::getList(' and pid = 20',1,3);   //关于萤火虫新闻栏目
+        //关于萤火虫新闻栏目
+        $newCategory = ArticleCate::getList(' and pid = 20',1,3);
         foreach ($newCategory as $val){
             $val->child = Article::getList($val['id'],1,'',4)->toArray();
         }
@@ -36,13 +37,13 @@ class IndexController extends Controller
 
 
         //站点新闻
-        $newSite = ArticleCate::getList(' and pid = 1',1,6);   //关于萤火虫新闻栏目
+        $newSite = ArticleCate::getList(' and pid = 1',1,6);
         foreach ($newSite as $val){
             $val->child = Article::getList($val['id'],1,'',3)->toArray();
         }
 
-
-        $goods = GoodsCate::getList(' and pid = 0 ',1);//首页的商品展示模块上【2块】,推荐
+        //首页的商品展示模块上【2块】,推荐
+        $goods = GoodsCate::getList(' and pid = 0 ',1);
         foreach ($goods as $val){
             $val->child = GoodsSpu::list(' and gc_id_1 = '.$val['id'].' and status = 1 and is_commend = 1',4)->toArray();
 
@@ -62,7 +63,7 @@ class IndexController extends Controller
         }
         $json = json_encode($search_json);
 
-        return view('index.index',compact('banner','customer','newCategory','newSite','goods','json'));
+        return view('index.index',compact('banner','customer','newCategory','newSite','goods','json','new_hot'));
     }
 
 }
