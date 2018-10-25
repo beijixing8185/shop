@@ -43,7 +43,7 @@
 					@else
 						<p>您未登陆</p>
 					@endif
-					<a class="publish-header publish-header-icon user-hed pull-left color-theme"  href="/member/getMember" target="_blank" >账号设置<i></i></a>
+					<a class="publish-header publish-header-icon user-hed pull-left color-theme" style="margin-left: 25px;"  href="/member/getMember" target="_blank" >&nbsp;&nbsp;&nbsp;&nbsp;账号设置<i></i></a>
 				</dd>
 			</dl>
 			<div class="my-order">

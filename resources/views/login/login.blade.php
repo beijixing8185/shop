@@ -32,7 +32,7 @@
 	<div id="login_wrapper">
 		<div class="container">
 			<div class="linkMask">
-				<a href="/activity/110.htm" target="_blank"></a>
+				<a href=""></a>
 			</div>
 			<div class="login_contains">
 

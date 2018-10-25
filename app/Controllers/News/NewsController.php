@@ -42,9 +42,9 @@ class NewsController extends Controller
     public function newsList()
     {
         //全部二级栏目商品
-        $goodsCategory = GoodsCate::getList(' and level = 2 ',1);
+        $goodsCategory = GoodsCate::getList(' and level = 1 ',1);
         foreach ($goodsCategory as $val){
-            $val->child = GoodsSpu::list(' and gc_id_2 = '.$val['id'].' and status = 1 ')->toArray();
+            $val->child = GoodsSpu::list(' and gc_id_1 = '.$val['id'].' and status = 1 ')->toArray();
         }
 
         //新闻banner图

@@ -47,6 +47,7 @@
     					<p class="confirm-pwd"><span style="display:inline-block;width:79px;text-align:right;">个人资料</span></p>
     				</div>
     				<div class="change-list">
+
     						<div>
     							<p class="ger-left">当前头像：</p>
     							<div class="ger-right">
@@ -56,7 +57,11 @@
 										@else
 											<img id="upload1_img" style="width:100%" src="/picture/rwu.png">
 										@endif
-											<p>修改头像<input onchange="prepareupload(this)" type="file" class="displaynone-input need_set"name="spLicenceImg1" id="_spLicence" accept="image/*" fn="spLicenceImg1" ft="1" fe="upload1_fail_desc" fu="upload1_img" fbu="''"></p>
+											<p>修改头像
+												<input multiple="multiple" {{--onchange="prepareupload(this)"--}} type="file" class="displaynone-input need_set"name="spLicenceImg1" id="inputfile">
+											</p>
+									</div>
+									<div id="feedback">
 									</div>
 									<input type="hidden" name="userImage"  id="_imgPath1" value=""/>
 									<span class="photo-ts">图片格式JPEG，png，建议尺寸200*200，不大于4M</span>

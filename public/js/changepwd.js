@@ -48,13 +48,40 @@ function changePwds(){
 }
 //修改头像按钮点击
 function prepareupload(option){
-   var fn = $(option).attr("fn");
-   var ft = $(option).attr("ft");
-   var fe = $(option).attr("fe");
-   var fu = $(option).attr("fu");
-   var fbu = $(option).attr("fbu");
-   uploadImg(fn, ft, fe, fu, fbu);
+
 }
+
+$(document).ready(function() {
+    //响应文件添加成功事件
+    var feedback = $("#feedback");
+    $("#inputfile").change(function () {
+
+       var formData = new FormData();
+        formData.append("imgFile",$('#inputfile')[0].files[0]);
+        formData.append("path",'member');
+        //发送数据
+        $.ajax({
+            url: '/upload', /*去过那个php文件*/
+            type: 'POST', /*提交方式*/
+            data: formData,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            cache: false,
+            contentType: false, /*不可缺*/
+            processData: false, /*不可缺*/
+            success: function (data) {
+            	$('#_imgPath1').val(data.url);
+            	$('#upload1_img').attr('src',data.url);
+            	alert('头像上传成功');
+            },
+            error: function () {
+                alert('上传出错');
+            }
+        });
+    });
+
+});
 
 //上传图片
 function uploadImg(inputName,type,errorId,img1Id,baseUrl,imgSourceId){
