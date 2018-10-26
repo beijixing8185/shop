@@ -45,4 +45,9 @@ class ArticleCate extends Model{
         return $cate->save();
     }
 
+    public static function getFindInfo($id)
+    {
+        return self::whereId($id)->first();
+    }
+
 }

@@ -569,6 +569,7 @@
     </div>
 </div>--}}
 <!-- 调查问卷END -->
+{{--
 <div id="fbSuccess" class="fbMask">
     <div class="fbContent">
         <div class="logoLine">
@@ -614,4 +615,4 @@
         </div>
         <p class="fbTips"><a href="/">重新发布</a><a href="/">返回首页</a></p>
     </div>
-</div>
+</div>--}}

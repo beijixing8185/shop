@@ -69,7 +69,11 @@ class NewsController extends Controller
     {
         //新闻详情
         $getdetail = Article::getFind($id)->toArray();
-        $getdetail['tags'] = explode('，',$getdetail['tag']);
+        if(!empty($getdetail)){
+            $getdetail['tags'] = explode('，',$getdetail['tag']);
+            $getdetail['article_cate'] =  ArticleCate::getFindInfo($getdetail['article_cate_id'])->toArray();
+        }
+        //dd($getdetail);
         //获取推荐hot
         $hot = Article::getList($pid='',1,1,5);
         //获取标签模糊查询link

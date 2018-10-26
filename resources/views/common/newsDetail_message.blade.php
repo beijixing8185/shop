@@ -9,7 +9,7 @@
         <div>
             <textarea  style="height: 180px;"  id="cmsFbQuestion" name="cmsFbQuestion" placeholder="微信代运营？朋友圈广告？定制开发？无论什么，通通帮你搞定！！多说点吧，让镖哥更了解您的疑问优先为您服务"></textarea>
         </div>
-        <p class="cmsContent">信息不能为空</p>
+        <p class="cmsContent" style="display: none">信息不能为空</p>
     </div>
     <div class="cmsFbGroup cmsPhoneBox" id="cms_Phoneshow"  style="" >
         <span>您的电话：</span>

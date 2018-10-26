@@ -30,9 +30,11 @@
 	<ul>
 		<li><a href="/">首页</a></li>
 		<li><a href="javascript:void(0);">></a></li>
-		<li><a href="/cmslist/cl0-pg1.htm">营销攻略</a></li>
+		<li><a href="/news/index">营销攻略</a></li>
 		<li><a href="javascript:void(0);">></a></li>
-		<li><a href="/cmslist/cl78-pg1.htm">SEO优化</a></li>
+		@if(!empty($getdetail['article_cate']))
+		<li><a href="/news/index/{{$getdetail['article_cate']['id']}}">{{$getdetail['article_cate']['cate_name']}}</a></li>
+		@endif
 	</ul>
 </div>
 <!-- 内容 -->
@@ -46,7 +48,7 @@
 			<h1>{{$getdetail['title']}}</h1>
 			<div class="wxCodeMsg">
 				分享到 <img class="wxicon" onclick="generateCode('78','58427','2500','sharecode1','<?php echo url()->full();?>')" src="/picture/wxicon.png" alt="微信二维码">
-				<span><i class="closeCode"><img src='/picture/codeboxx.png'/></i><strong id="sharecode1"></strong></span>
+				<span><i class="closeCode"><img src='/picture/codeBoxX.png'/></i><strong id="sharecode1"></strong></span>
 			</div>
 		</div>
 		<div class="strategyinfoDate">
