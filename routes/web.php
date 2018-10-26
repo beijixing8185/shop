@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::get('/test', 'TestController@index');    //测试
 
+Route::any('pay/notify', 'Pay\PayController@notify');        //支付选择
+
 //快捷功能
 Route::group(['namespace' =>'Common','prefix' => 'common'], function () {
 
@@ -112,6 +114,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::get('index', 'PayController@index');        //支付首页
 
         Route::get('pay', 'PayController@pay');        //支付选择
+
 
     });
 
