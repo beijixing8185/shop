@@ -54,12 +54,28 @@ class AuthController extends Controller
         }
 
     }
+    /**
+     * 修改密码
+     */
+    public function updatePass(Request $req){
+        $user  = AdminUser::find($req->id);
+        return view('admin.modifyPassword',compact('user'));
+    }
 
     /**
-     * 后台为用户生成密码
+     * 修改密码
      */
-    public function makePassword(){
-        dd(password_hash('hx',PASSWORD_DEFAULT));
+    public function postUpdatePass(Request $req){
+        $user  = AdminUser::find($req->id);
+        if (password_verify ( $req->old_pass , $user->password)) {
+            $user->username = $req->username;
+            $user->password = password_hash($req->new_pass,PASSWORD_DEFAULT);
+            if($user->save()){
+                echo '<script>alert("密码修改成功");window.location.href="/hx/admin/logout";</script>';
+                return;
+            }
+
+        }
     }
 
     /**

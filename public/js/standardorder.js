@@ -179,11 +179,11 @@ function getOrderState() {
     $.ajax({
         url: "/pay/wxPaySuccess",
         type : "get",
-        data:{"orderId":orderId},
+        data:{"orderSn":orderId},
         success:function (res) {
-            if(res.trade_state=="SUCCESS"){
+            if(res.code == 0){
                 clearInterval(myIntval);
-                window.location.href="/personal/index/2";
+                window.location.href="/member/order";
             }
         }
     });
@@ -192,15 +192,16 @@ function getOrderState() {
 //获取二维码，【微信】
 function getImg(){
     var orderId=$("#orderId").val();
+    $("#swaper").show();
 	$.ajax({
 			  url: "/pay/wxpay",
 			  type : "get",
-			  data:{"orderId":orderId},
+			  data:{"orderSn":orderId},
 			  //async:false,
 			  success: function(data){
 			  	if(data.code ==0){
-                    $("#_wx_qr").attr("src", "/" + data.url);
-                    $("#swaper").show();
+                    $("#_wx_qr").attr("src", data.data.url);
+                    $('#or_amounts').html(data.data.amounts)
 				}
 			  }
 	});

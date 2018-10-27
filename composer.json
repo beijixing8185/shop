@@ -10,7 +10,8 @@
         "gregwar/captcha": "1.*",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "yansongda/laravel-pay":"2.0.1"
+        "yansongda/laravel-pay":"2.0.1",
+        "endroid/qr-code": "^3.2"
     },
     "require-dev": {
         "filp/whoops": "^2.0",

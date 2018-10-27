@@ -104,38 +104,25 @@
 									<!--未关闭订单-->
 									<!--判断是否标品 begin-->
 									<!--标品 begin-->
-									<a  style="width:135px"  class="btn-a" href="javascript:checkOrderProd(29865,387)">支付（服务资金托管）</a>
+									<a  style="width:135px"  class="btn-a" href="@if($v->plat_order_state==1) /member/payOrder/{{$v->order_sn}}/{{$v->order_amounts}}/{{$v->spu_name}} @else javascript:checkOrderProd(29865,387) @endif">
+
+										@if($v->plat_order_state==1)
+											待支付
+										@elseif($v->plat_order_state==2)
+												已支付，待发货
+										@elseif($v->plat_order_state==3)
+											已发货，待签收
+										@esle
+											已完成
+										@endif
+										</a>
 									<!--标品 end-->
 									<!--判断是否标品 end-->
 								</div>
 							</li>
 						</ul>
 					</div>
-					<div class="order-bottom-prd">
-						<b></b>
-						<ul>
-							<li  @if($v->plat_order_state==1) style="color:red;" @endif>
-								<i ></i>
-								资金待托管
-								<span></span>
-							</li>
-							<li @if($v->plat_order_state==2) style="color:red;" @endif>
-								<i></i>
-								服务商工作
-								<span></span>
-							</li>
-							<li @if($v->plat_order_state==3) style="color:red;" @endif>
-								<i></i>
-								服务验收
-								<span></span>
-							</li>
-							<li @if($v->plat_order_state==4) style="color:red;" @endif>
-								<i></i>
-								服务评价
-								<span></span>
-							</li>
-						</ul>
-					</div>
+
 				</div>
 			@endforeach
 				<div style="width: 938px;text-align:right;">
