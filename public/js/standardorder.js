@@ -207,48 +207,76 @@ function getImg(){
 }
 
 //错误信息提示
-function showErrorPrompt(errorTitle, errorDesc, sureCallback, closeCallback) {
-	$("#errorTitle").html(errorTitle);
-	$("#errorDesc").html(errorDesc);
-
-	if (null == sureCallback) {
-		$("#errorSure").click(function() {
-			dismissErrorPrompt();
-		});
-	} else {
-		$("#errorSure").click(sureCallback);
-	}
-
-	if (null == closeCallback) {
-		$("#errorClose").click(function() {
-			dismissErrorPrompt();
-		});
-	} else {
-		$("#errorClose").click(closeCallback);
-	}
-
+function showErrorPrompt() {
 	$("#errorPromptDiv").show();
 }
 
+$(document).on('click','#error_none',function () {
+    dismissErrorPrompt();
+})
 //关闭错误信息提示
 function dismissErrorPrompt() {
 	$("#errorPromptDiv").hide();
 }
 
-//检查用户填写信息
-function checkInvoice(){	
+//检查用户填写信息【验证普通发票】
+function checkInvoice_a(){
+
 	//联系人电话
-	//var contactPhone=$('#contactPhone').val();
-	//var isPhone=isMobilePhoneNo(contactPhone);
-	//if(!isPhone){
-		//showErrorPrompt("提示", "请填写正确的联系人手机号！", null, null);
-		//return;
-	//}
-	//显示弹窗
-	isSubmit=true;
-	suresubmitorder();
-	//$('#orderNextPrompt').show();
+	var putPhone=$('#putPhone').val();
+	//收件人
+	var putReceiver = $('#putReceiver').val();
+	//发票抬头
+    var putTitle = $('#putTitle').val();
+    //收件地址
+    var putAddress = $('#putAddress').val();
+    //纳税人识别号
+    var putIdentifyNo = $('#putIdentifyNo').val();
+
+	var isPhone=isMobilePhoneNo(putPhone);
+	if(!isPhone || putPhone =='' || putReceiver =='' || putTitle =='' || putAddress =='' || putIdentifyNo ==''){
+		showErrorPrompt();
+		return false;
+	}else{
+        return true;
+	}
+
+
 }
+
+//检查用户填写信息
+function checkInvoice_b(){
+    //发票抬头
+    var zhuanTitle = $('#zhuanTitle').val();
+    //纳税人识别号
+    var zhuanIdentifyNo = $('#zhuanIdentifyNo').val();
+    //注册地址
+    var zhuanRegAddr = $('#zhuanRegAddr').val();
+    //注册电话
+    var zhuanRegPhone = $('#zhuanRegPhone').val();
+    //开户银行
+    var zhuanBank = $('#zhuanBank').val();
+    //银行账户
+    var zhuanAccount = $('#zhuanAccount').val();
+
+    //联系人电话
+    var zhuanPhone=$('#zhuanPhone').val();
+    //收件人
+    var zhuanReceiver = $('#zhuanReceiver').val();
+    //收件地址
+    var zhuanAddress = $('#zhuanAddress').val();
+
+    var isPhone=isMobilePhoneNo(zhuanPhone);
+
+    if(!isPhone || zhuanTitle =='' || zhuanIdentifyNo=='' || zhuanRegAddr=='' || zhuanRegPhone=='' || zhuanBank=='' || zhuanAccount=='' || zhuanPhone=='' || zhuanReceiver=='' || zhuanAddress==''){
+        showErrorPrompt();
+        return false;
+    }else{
+    	return true;
+	}
+}
+
+
 
 //生成助力url
 function assistUrl(){

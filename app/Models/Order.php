@@ -24,7 +24,7 @@ class Order extends Model
     /**
      * 添加
      */
-    public static function add($goods,$user,$order_sn,$number=1){
+    public static function add($goods,$user,$order_sn,$number=1,$invo_id=''){
         $orders = new Self;
 
         $orders->order_sn = $order_sn;
@@ -40,6 +40,7 @@ class Order extends Model
         $orders->goods_amounts = $goods->price;
         $orders->order_amounts = $order_amouts;
         $orders->plat_order_state = 1;
+        $orders->invo_id = $invo_id;
 
 
         if($orders->save()){

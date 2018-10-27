@@ -216,19 +216,16 @@
             </div>
         </div>
     </div>
-
-
-		
-	<div id="errorPromptDiv" class="buySureShadow" style="display:none">
+    <div id="errorPromptDiv" class="buySureShadow" style="display:none">
         <div class="inner">
             <b id="errorClose" class="suc-closed"><img src="/picture/des-closed.png" alt=""/></b>
-            <div class="buySure-title"><b><img src="/picture/jgicon.png" /></b><span id="errorTitle">抱歉，您访问的页面异常！</span></div>
-            <p id="errorDesc" class="workTime">您访问的页面出现了问题，请稍后再试。</p>
-            <div id="errorSure" class="errorSure">
-                <a>确定</a>
+            <div class="buySure-title"><b><img src="/picture/jgicon.png" /></b><span id="errorTitle">抱歉，请填入需要的信息！</span></div>
+            <p id="errorDesc" class="workTime">您的信息添加有误，请确认。</p>
+            <div id="" class="errorSure">
+                <a id="error_none">确定</a>
             </div>
         </div>
-	</div>
+    </div>
         
 	<script src="/js/xslider.js"></script>
 
@@ -241,15 +238,15 @@
                 $("#"+$(this).attr("data-toggle")).show().siblings().hide();
             });
 
-			            $('[data-toggle="buycont"]').click(function(){
+			$('[data-toggle="buycont"]').click(function(){
                 $(this).parent().parent().hide();
             });
 			$('#backModify').click(function(){
                 $('#orderNextPrompt').hide();
             });
             
-                        $('#ordernext').click(function(){
-            	            	checkInvoice();
+            $('#ordernext').click(function(){
+            	checkInvoice();
             });
             
             $('#paynext').click(function(){
@@ -262,10 +259,86 @@
         });
 
         $('#addOrder').click(function(){
-            var spuId = $('#productId').val()
-            var packageid = $('#packageId').val()
-            var num = $('#buyNum').val()
-            window.location.href= '/member/addOrder?spuId='+spuId + '&skuId='+packageid + '&num=' + num;
+            var spuId = $('#productId').val();
+            var packageid = $('#packageId').val();
+            var num = $('#buyNum').val();
+            //提交发票
+            var fap = $('#invoiceType').val();
+            if(fap ==1){
+                var status_a = checkInvoice_a();
+                if(status_a ==true){
+                    //checkInvoice_a();//验证发票
+                    var putTitle = $('#putTitle').val();    //发票抬头
+                    var putIdentifyNo = $('#putIdentifyNo').val();//识别号
+                    var putReceiver = $('#putReceiver').val();  //收件人
+                    var putPhone = $('#putPhone').val();    //手机号
+                    var putAddress = $('#putAddress').val();    //收件地址
+                    var data_a = {
+                        putTitle:putTitle,
+                        putIdentifyNo:putIdentifyNo,
+                        putReceiver:putReceiver,
+                        putPhone:putPhone,
+                        putAddress:putAddress
+                    };
+                    $.ajax({
+                        url: "/member/invoice_a",
+                        type: "post",
+                        data: data_a,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data){
+                            console.log(data);
+                            if(data > 0){
+                                window.location.href= '/member/addOrder?spuId='+spuId + '&skuId='+packageid + '&num=' + num + '&invo_id=' + data;
+                            }
+                        }
+                    });
+                }
+
+
+            }else if(fap ==2){
+                var status_b = checkInvoice_b();
+                if(status_b ==true){
+                    //checkInvoice_b();//验证增值税发票
+                    var zhuanTitle = $('#zhuanTitle').val();    //发票抬头
+                    var zhuanIdentifyNo = $('#zhuanIdentifyNo').val();//识别号
+                    var zhuanRegAddr = $('#zhuanRegAddr').val();  //注册地址
+                    var zhuanRegPhone = $('#zhuanRegPhone').val();    //注册电话
+                    var zhuanBank = $('#zhuanBank').val();    //开户银行
+                    var zhuanAccount = $('#zhuanAccount').val();    //银行账户
+                    var zhuanReceiver = $('#zhuanReceiver').val();  //收件人
+                    var zhuanPhone = $('#zhuanPhone').val();    //手机号
+                    var zhuanAddress = $('#zhuanAddress').val();    //收件地址
+                    var data_b = {
+                        zhuanTitle:zhuanTitle,
+                        zhuanIdentifyNo:zhuanIdentifyNo,
+                        zhuanRegAddr:zhuanRegAddr,
+                        zhuanRegPhone:zhuanRegPhone,
+                        zhuanBank:zhuanBank,
+                        zhuanAccount:zhuanAccount,
+                        zhuanReceiver:zhuanReceiver,
+                        zhuanPhone:zhuanPhone,
+                        zhuanAddress:zhuanAddress,
+                    }
+                    $.ajax({
+                        url: "/member/invoice_b",
+                        type: "post",
+                        data: data_b,
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        success: function(data){
+                            console.log(data);
+                            if(data > 0){
+                                window.location.href= '/member/addOrder?spuId='+spuId + '&skuId='+packageid + '&num=' + num + '&invo_id=' + data;
+                            }
+                        }
+                    });
+                }
+            }else{
+                window.location.href= '/member/addOrder?spuId='+spuId + '&skuId='+packageid + '&num=' + num;
+            }
 
            /* window.location.href="/member/showOrder?spuId=4&skuId=1"
            var url = '/member/addOrder?spuId=4&skuId=1';

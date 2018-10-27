@@ -72,6 +72,10 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::post('updateMemberInfo', 'MemberController@updateMemberInfo');  //修改会员信息逻辑
         Route::post('updateMemberPwd', 'MemberController@updateMemberPwd');  //修改会员密码逻辑
 
+        Route::post('invoice_a', 'MemberController@invoice_a');  //普通发票提交
+        Route::post('invoice_b', 'MemberController@invoice_b');  //增值税发票提交
+
+
 
     });
 
