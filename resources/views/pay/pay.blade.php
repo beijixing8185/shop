@@ -201,7 +201,7 @@
 	            <img src="/images/qrcoding.png" alt="" id="_wx_qr" style="width: 175px;height: 175px;"/>
 	        </div>
 	        <div class="describe">
-	            <p class="des-money">实付金额：<span id="or_amounts">399</span>元</p>
+	            <p class="des-money">实付金额：<span id="or_amounts">0</span>元</p>
 	            <p>请使用微信扫描二维码 <br/>以完成支付</p>
 	        </div>
 	    </div>
