@@ -389,6 +389,22 @@ $('#VA_buttoNext3').click(function () {
 	}
 });
 
+/**
+ *
+ * 解决新闻详情页没有hover效果的问题
+ */
+$('#headerDemand').hover(function () {
+	$('.p-list').css('display','block');
+});
+$('.appIcon').hover(
+    function() {
+        $('.app-erm').css('display','block');
+    }, function() {
+        $('.app-erm').css('display','none');
+    }
+);
+
+
 
 function submitVALeads(el,userPhone){
 	if (isVASend == 1) {

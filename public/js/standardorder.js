@@ -1,5 +1,6 @@
-var orderId=null;
-var payId=null;
+var orderId=$("#orderId").val();
+
+var myIntval = null;
 /**
  * 定时器
  */
@@ -58,7 +59,7 @@ function changeInvoiceType(type){
 	$("#invoiceType").val(type);
 }
 
-//标品购买确认提交订单
+/*//标品购买确认提交订单
 function suresubmitorder(){
 	$('#orderNextPrompt').hide();
 //	if(isSubmit==false){
@@ -132,18 +133,18 @@ function suresubmitorder(){
 	    success: function(result){
 		   if(result.status == "success"){
 				var orderMap = result.orderMap;
-				location.href = '/topayorder/od' + orderMap.orderId + '-pyd' + orderMap.payId + '.htm';
+				location.href = '/topayorder/od' + orderMap.orderId + '-pyd' + '.htm';
 		   }else{
 			   showErrorPrompt("下单失败", "服务器开小差了，请稍后重试！", null, null);
 		   }
 	   }
 	});	
-}
+}*/
 
 //标品支付处理
 function payorder(){
 	var payway=$('input:radio[name="inlineRadioOptions"]:checked').val();
-	console.log("当前支付方式:"+payway);
+	//console.log("当前支付方式:"+payway);
 	if(payway=="alipay"){
 		//支付宝
 		alipay();
@@ -156,84 +157,53 @@ function payorder(){
 	}
 }
 
-//微信支付
-function wxpay(){
-	orderId=$("#orderId").val();
-	payId=$("#payId").val();
-	var paystate = getOrderState();
-	if(4 == paystate){
-		showErrorPrompt("提示", "该支付单已支付完成！", null, null);
-	}else{
-		if (null != orderId) {
-			$("#swaper").show();
-			if(null == orderStateTimer){
-				orderStateTimer = setInterval("checkOrderState()", 3*1000);//每三秒检查一次
-			}
-			$("#_wx_qr").attr("src","/pay/wxPayQrCode.htm?orderId="+orderId+"&payId="+payId+"&t="+new Date().getTime());
-		}
-	}
-}
+
 
 //支付宝支付
 function alipay(){
-	 orderId=$("#orderId").val();
-	 payId=$("#payId").val();	 
-	 var paystate = getOrderState();
-	 var isStdProd = $('#isStdProduct').val();
-	 if(4 == paystate){
-		 showErrorPrompt("提示", "该支付单已支付完成！", null, null);
-	 }else{
-		 if (1 == isStdProd) {
-			 location.href = "/pay/jumpAlipay.htm?returnType=newpay&orderId="+orderId+"&payId="+payId+"&t="+new Date().getTime();
-		 } else {
-			 location.href = "/pay/jumpAlipay.htm?orderId="+orderId+"&payId="+payId+"&t="+new Date().getTime();
-		 }
-	 }
-	
+    var orderId=$("#orderId").val();
+	 window.location.href="/pay/alipay/"+orderId;
 }
 
-//检查订单状态
-function checkOrderState(){
-	if(null != orderId && null != payId){
-		$.ajax({
-			   url: "/ordermanager/orderStatus.json",
-			   type : "get",
-			   data:{"orderId":orderId,"payId":payId},
-			   dataType:"json",
-			   success: function(data){
-				  if (data.payState == 0) {
-					  showErrorPrompt("提示", "支付失败，订单信息异常！！", null, null);
-				  }else if (data.payState == 4){
-					  	if(null != orderStateTimer){
-				    		window.clearInterval(orderStateTimer);
-				    		orderStateTimer=null;
-				    	}
-					  	//微信支付完成回调
-					  	var isStdProd = $('#isStdProduct').val();
-					  	if (1 == isStdProd) {
-					  		location.href="/afterpayorder/od" + orderId + "-pyd" + payId + ".htm?payOffline=0"; 
-					  	} else {
-					  		location.href="/ordermanager/payOver.htm?orderId="+orderId+"&payId="+payId;
-					  	}
-				  }
-			   }
-			});
-	}
+
+//微信支付
+function wxpay(){
+    getImg();
+    myIntval = setInterval(function () {getOrderState()}, 5000);//执行方法，轮询
+
 }
 
-//获取订单状态
-function getOrderState(){
+//轮询做订单查询
+function getOrderState() {
+    var orderId=$("#orderId").val();
+    $.ajax({
+        url: "/pay/wxPaySuccess",
+        type : "get",
+        data:{"orderId":orderId},
+        success:function (res) {
+            if(res.trade_state=="SUCCESS"){
+                clearInterval(myIntval);
+                window.location.href="/personal/index/2";
+            }
+        }
+    });
+}
+
+//获取二维码，【微信】
+function getImg(){
+    var orderId=$("#orderId").val();
 	$.ajax({
-			  url: "/ordermanager/orderStatus.json",
+			  url: "/pay/wxpay",
 			  type : "get",
-			  data:{"orderId":orderId,"payId":payId},
-			  dataType:"json",
-			  async:false,
+			  data:{"orderId":orderId},
+			  //async:false,
 			  success: function(data){
-				  payState = data.payState;
+			  	if(data.code ==0){
+                    $("#_wx_qr").attr("src", "/" + data.url);
+                    $("#swaper").show();
+				}
 			  }
 	});
-	return payState;
 }
 
 //错误信息提示

@@ -49,4 +49,13 @@ class Order extends Model
         }
     }
 
+
+    /**
+     * 查询单个订单
+     */
+    public static function getInfo($order_sn)
+    {
+        return self::where('order_sn',$order_sn)->first();
+    }
+
 }

@@ -1,7 +1,6 @@
 
 var script=document.createElement("script");
 script.setAttribute("type","text/javascript");
-script.setAttribute("src","http://51biaoshi.com/js/ba.js?ver=1.0");
 script.async = 1;
 script.onload = script.onreadystatechange = function () {
   if ((!this.readyState) || (this.readyState == "loaded") || (this.readyState == "complete")) {
@@ -94,26 +93,6 @@ function _ba_log(url) {
     d.src = url;
 };
 
-//百度统计
-var _hmt = _hmt || [];
-(function() {
-	var hm = document.createElement("script");
-	hm.src = "//hm.baidu.com/hm.js?415b134ffdb6ae5eb5f13a82577a3e56";
-	var s = document.getElementsByTagName("script")[0]; 
-	s.parentNode.insertBefore(hm, s);
-})();
-
-//谷歌统计
-(function(i, s, o, g, r, a, m) {
-	i['GoogleAnalyticsObject'] = r;
-	i[r] = i[r] || function() {
-		(i[r].q = i[r].q || []).push(arguments)
-	}, i[r].l = 1 * new Date();
-	a = s.createElement(o), m = s.getElementsByTagName(o)[0];
-	a.async = 1;
-	a.src = g;
-	m.parentNode.insertBefore(a, m)
-})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
 ga('create', 'UA-105326831-1', 'auto');
 ga('send', 'pageview');

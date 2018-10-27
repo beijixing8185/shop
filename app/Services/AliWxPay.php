@@ -19,8 +19,9 @@ class AliWxPay
     /**
      * 支付宝支付
      */
-    public function index(){
-        $orderInfo = Order::find(20);
+    public function index($order_sn){
+
+        $orderInfo = Order::getInfo($order_sn);
         $order = [
             'out_trade_no' => $orderInfo->order_sn,
             'total_amount' => '0.01',

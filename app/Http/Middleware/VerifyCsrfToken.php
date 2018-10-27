@@ -14,6 +14,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         '/upload',
         '/hx/admin/updateCate',
-        '/pay/notify'
+        '/pay/notify',
+        'pay/*',
+        'wx/*',
     ];
 }

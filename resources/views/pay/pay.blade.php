@@ -40,186 +40,11 @@
 
         <!-- Tab panes -->
         <div class="tab-content">
-            <div class="tab-pane active" id="perfet">
-                <div class="baob-infor">
-                    <p class="baob-title">宝贝信息</p>
-                    <ul class="baob-list">
-                        <li class="baob-list-bg">
-                            <p class="pull-left baob-list-left">宝贝名称</p>
-                            <div class="pull-left baob-list-right">
-                                <p class="pull-right baob-list-price">总价</p>
-                                <p class="pull-right baob-list-num">宝贝数量</p>
-                                <p class="pull-right baob-list-dj">宝贝单价</p>
-                            </div>
-                        </li>
-                        <li class="baob-list-border">
-                            <dl class="pull-left baob-list-left">
-                                <dt class="pull-left">
-																			<img src="/picture/default-big.png" />
-																	</dt>
-                                <dd class="pull-left">
-                                    <p></p>
-                                    套餐类型：
-                                    <input type="hidden" id="productId" value="">
-                                    <input type="hidden" id="packageId" value="">
-                                </dd>
-                            </dl>
-                            <div class="pull-left baob-list-right">
-                                <p id="totalPrice" class="pull-right baob-list-price price-yen">&yen;</p>
-                                <div class="pull-right baob-list-num ">
-                                    <div class="buy-btn">
-										<input type="hidden" id="specProdId" value="" >
-																					<button onclick="subBuyNum()"><img src="/picture/minus.png" /></button>
-                                            <input id="buyNum" type="text" value="" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'0')}else{this.value=this.value.replace(/\D/g,'')}" />
-                                            <button onclick="addBuyNum()"><img src="/picture/add.png" /></button>
-										                                    </div>
-                                </div>
-								<input id="packagePrice" type="text" value="" style="display:none" />
-                                <p class="pull-right baob-list-dj price-yen-dj">
-																			&yen;
-																	</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- <div class="buy-form">
-                    <p class="baob-title">联系人信息</p>
-                    <div class="pull-left buy-name"><input id="contactName" value="" type="text" placeholder="您的姓名（选填）"></div>
-                    <div class="pull-left buy-phone">
-                        <input id="contactPhone" value="" type="text" placeholder="请输入手机号（必填）">
-                    </div>
-                </div> -->
-                <div class="fap-infor">
-                    <p class="baob-title">发票信息</p>
-                    <ul class="fap-list" id="fapList">
-                        <li onclick="changeInvoiceType(0)" class="select" data-toggle="nofap">暂不开具<b><img src="/picture/tcselected.png" alt=""></b></li>
-                        <li onclick="changeInvoiceType(1)" data-toggle="putfap">普通发票<b><img src="/picture/tcselected.png" alt=""></b></li>
-                        <li onclick="changeInvoiceType(2)" data-toggle="zhuanyfap">增值税专用发票<b><img src="/picture/tcselected.png" alt=""></b></li>
-                    	<input type="hidden" id="invoiceType" value="0">
-                    </ul>
-                    <div class="fap-totent">
-                        <div id="nofap"></div>
-                        <div id="putfap">
-                            <div class="fap-div">
-                                <p>发票票面信息</p>
-                                <div class="fap-list">
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">发票抬头</label>
-                                        <div class="col-sm-6">
-                                            <input id="putTitle" value="" type="text" class="form-control"  placeholder="填写发票抬头">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">纳税人识别号</label>
-                                        <div class="col-sm-6">
-                                            <input id="putIdentifyNo" value="" type="text" class="form-control"  placeholder="填写纳税人识别号">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fap-div">
-                                <p>收件人信息</p>
-                                <div class="fap-list">
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">收件人</label>
-                                        <div class="col-sm-6">
-                                            <input id="putReceiver" value="" type="text" class="form-control"  placeholder="填写收件人">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">手机号</label>
-                                        <div class="col-sm-6">
-                                            <input id="putPhone" value="" type="text" class="form-control"  placeholder="填写手机号">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">收件地址</label>
-                                        <div class="col-sm-6">
-                                            <input id="putAddress" value="" type="text" class="form-control"  placeholder="填写收件地址">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="zhuanyfap">
-                            <div class="fap-div">
-                                <p>发票票面信息</p>
-                                <div class="fap-list">
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">发票抬头</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanTitle" value="" type="text" class="form-control"  placeholder="填写发票抬头">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">纳税人识别号</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanIdentifyNo" value="" type="text" class="form-control"  placeholder="填写纳税人识别号">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">注册地址</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanRegAddr" value="" type="text" class="form-control"  placeholder="填写注册地址">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">注册电话</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanRegPhone" value="" type="text" class="form-control"  placeholder="填写注册电话">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">开户银行</label>
-                                        <div class="col-sm-6 form-rela">
-                                            <input type="text" value="" id="zhuanBank" class="form-control"  placeholder="填写开户银行">
-                                            <span>例：中国农业银行股份有限公司南京两路支行</span>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">银行账户</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanAccount" value="" type="text" class="form-control"  placeholder="填写银行账户">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="fap-div">
-                                <p>收件人信息</p>
-                                <div class="fap-list">
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">收件人</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanReceiver" value="" type="text" class="form-control"  placeholder="填写收件人">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">手机号</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanPhone" value="" type="text" class="form-control"  placeholder="填写手机号">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label  class="col-sm-2 control-label">收件地址</label>
-                                        <div class="col-sm-6">
-                                            <input id="zhuanAddress" value="" type="text" class="form-control"  placeholder="填写收件地址">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="buy-second">
-                    <a href="javascript:void(0)" data-id="orderPay" class="caClass"  onclick="suresubmitorder()" traceflag="content_tab_订单结算下一步">下一步</a>
-                    <span>在镖狮找营销服务商，能享受到高质量服务，比其他渠道便宜20%以上</span>
-                </div>
-            </div>
             <div class="tab-pane" id="orderPay">
                 <div class="container">
 					<input type="hidden" id="isStdProduct" value="1">
-                	<input type="hidden" id="orderId" value="29918">
-                	<input type="hidden" id="payId" value="34849">
+                	<input type="hidden" id="orderId" value="{{$params['sn']}}">
+
                     <div class="pay-infor">
                         <p>宝贝名称：{{$params['name']}}
                         	                        </p>
@@ -230,7 +55,7 @@
                         <p>请选择支付方式：</p>
                         <div>
                             <label class="radio-inline">
-                                <input type="radio" checked="checked" name="inlineRadioOptions" id="inlineRadio1" value="alipay"> 
+                                <input type="radio" checked="checked" name="inlineRadioOptions" id="inlineRadio1" value="alipay">
                                 <b><img src="/picture/zhi-pai.png" alt=""></b>
                             </label>
                             <label class="radio-inline">
@@ -414,6 +239,7 @@
             });
             
             $('#paynext').click(function(){
+                //var val=$('input:radio[name="inlineRadioOptions"]:checked').val();
             	payorder();
             });
             

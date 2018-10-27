@@ -6,7 +6,9 @@
 	<link rel="stylesheet" href="{{asset('css/orderlist.css')}}">
 	<link rel="stylesheet" href="{{asset('css/common-header.css')}}">
 	<link rel="stylesheet" href="{{asset('css/common-footer.css')}}">
+	<link rel="stylesheet" href="{{asset('css/swiper.min.css')}}"/>
 	<script src="{{asset('js/popup.js')}}"></script>
+	<script src="{{asset('js/swiper-4.2.6.min.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/changepwd.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.form.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/member_pwd.js')}}"></script>

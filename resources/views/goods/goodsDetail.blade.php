@@ -64,7 +64,7 @@
 										</span>
                                     </div>
                                     <div class="dw-right dw-right-good"><span>成交量</span><p>{{$goods['salen_num']}}</p></div>
-                                    <div class="dw-right dw-right-well caClass" id="_evaluate_btn02" traceflag="content_tab_评分" onclick="scrollToEva()"><span>评分</span><p style="color: #ff4400 !important">4.8</p></div>
+                                    {{--<div class="dw-right dw-right-well caClass" id="_evaluate_btn02" traceflag="content_tab_评分" onclick="scrollToEva()"><span>评分</span><p style="color: #ff4400 !important">4.8</p></div>--}}
                                 </li>
                                 <li class="dw-span">
                                     <div class="fwbx">适用于</div>

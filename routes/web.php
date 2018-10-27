@@ -115,6 +115,12 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
         Route::get('pay', 'PayController@pay');        //支付选择
 
+        Route::get('wxpay/{order_sn}', 'PayController@wxPay');        //微信支付
+
+        Route::get('wxPaySuccess/{order_sn}', 'PayController@wxPaySuccess');        //微信支付轮询
+
+        Route::get('alipay/{order_sn}', 'PayController@aliPay');        //支付宝支付
+
 
     });
 

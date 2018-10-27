@@ -25,16 +25,60 @@ class PayController extends Controller
 {
 
     /**
-     * 支付首页
+     * 支付首页，暂时不用
      */
-    public function index(Request $request)
+    public function index()
     {
-        dd($request->all());
-        $pay = new AliWxPay();
+        ///dd($request->all());
+        /*$pay = new AliWxPay();
         $result = $pay->index();
-        return $result;
+        return $result;*/
     }
 
+    //微信支付
+    public function wxPay($order_sn)
+    {
+        //$param = $request -> all();
+        $orders = Order::getInfo($order_sn);
+        $order = [
+            'out_trade_no' => time(),
+            'total_fee' => '1', // **单位：分**
+            'body' => 'test body - 测试',
+            'openid' => 'onkVf1FjWS5SBIixxxxxxx',
+        ];
+        $pay = Pay::wechat(config('wechat'))->mp($order);//应该是返回二维码地址
+        dd($pay);
+        $url = '';
+        return ['code'=>0,'url'=>$url];
+    }
+
+
+    /**
+     * 扫码支付的回调请求【做轮询处理，忽略高并发，】
+     * @param Request $request
+     * @return string
+     */
+    public function wxPaySuccess($order_sn)//订单号
+    {
+        $pay = Pay::wechat(config('wechat'));
+        try{
+            $data = $pay->verify(); // 是的，验签就这么简单！
+
+            Log::debug('Wechat notify', $data->all());
+        } catch (\Exception $e) {
+            // $e->getMessage();
+        }
+
+        return $pay->success()->send();// laravel 框架中请直接 `return $pay->success()`
+    }
+
+    //支付宝支付
+    public function aliPay($order_sn)
+    {
+        $pay = new AliWxPay();
+        $result = $pay->index($order_sn);
+        return $result;
+    }
 
     public function notify()
     {
@@ -74,6 +118,7 @@ class PayController extends Controller
 
         return $alipay->success();
     }
+
 
 
 }
