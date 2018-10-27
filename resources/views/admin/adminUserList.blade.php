@@ -24,7 +24,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title">
-              <a href="{{url('zs/admin/addAdminUser')}}" class="label label-primary">添加</a>
+              <a href="" class="label label-primary"></a>
               </h3>
 
 
@@ -69,7 +69,7 @@
                       <td><img src="{{$li->avatar}}" alt="" style="width: 100px;height: 100px;"></td>
                       <td>{{$li->created_at}}</td>
                       <td>{{$li->updated_at}}</td>
-                      <td><a href="{{url('/zs/admin/modifyPassword',['userId'=>$li->id])}}" class="fa fa-credit-card" title="修改密码"></a><a href="{{url('/zs/admin/modifyPersonData',['id'=>$li->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
+                      <td><a href="{{url('hx/admin/updatePass',['id'=>$li->id])}}" class="fa fa-credit-card" title="修改密码"></a></td>
                 </tr>
                 @endforeach
                 </tbody>

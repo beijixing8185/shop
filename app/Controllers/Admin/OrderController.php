@@ -30,6 +30,25 @@ class OrderController extends Controller
         return view('admin.orders.orderList',compact('order'));
     }
 
+    /**
+     * 发货
+     */
+    public function sendOrder($id){
+
+    $order = Order::find($id);
+    return view('admin.orders.sendOrder',compact('order'));
+    }
+
+    /**
+     * @param
+     * 修改状态
+     */
+    public function updateOrder(Request $request){
+        $res = Order::whereId($request->id)->update(['plat_order_state'=>$request->status]);
+        if($res)
+            return redirect('/hx/admin/orderList');
+    }
+
 
 
 

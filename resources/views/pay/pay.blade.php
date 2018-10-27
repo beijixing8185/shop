@@ -63,12 +63,7 @@
                                 <b><img src="/picture/weix-pay.png" alt=""></b>
                             </label>
                         </div>
-                        <div>
-                            <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="bankpay">
-                                <b><img src="/picture/bank-pay.png" alt=""></b>
-                            </label>
-                        </div>
+
                     </div>
                     <div class="pay-btn">
                         <a class="btn-yellow caClass" href="javascript:void(0)" data-id="successp" id="paynext" data-toggle="nextTab" traceflag="content_tab_订单支付下一步">下一步</a>
@@ -203,10 +198,10 @@
 	        <b id="pay-close"><img src="/picture/pay-close.png" alt=""/></b>
 	        <p><img src="/picture/payway05.png" alt=""/></p>
 	        <div class="erweima">
-	            <img src="" alt="" id="_wx_qr"/>
+	            <img src="/images/qrcoding.png" alt="" id="_wx_qr" style="width: 175px;height: 175px;"/>
 	        </div>
 	        <div class="describe">
-	            <p class="des-money">实付金额：<span>399元</span></p>
+	            <p class="des-money">实付金额：<span id="or_amounts">399</span>元</p>
 	            <p>请使用微信扫描二维码 <br/>以完成支付</p>
 	        </div>
 	    </div>

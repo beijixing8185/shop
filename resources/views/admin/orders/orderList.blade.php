@@ -68,6 +68,9 @@
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
                         下单时间
                     </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
+                        操作
+                    </th>
 
                 </tr>
             </thead>
@@ -83,7 +86,9 @@
                         <td>{{$g->number}}</td>
                         <td>{{$g->order_amounts}}</td>
                         <td>{{$g->payable_amount}}</td>
-                        <td >{{$g->pay_time}}</td>
+                        <td >
+                            @if($g->pay_time) {{date('Y-m-d H:i:s',1540618894)}} @endif
+                        </td>
                         <td >
                             @if($g->plat_order_state==1)
                                 <span class="label label-warning">待付款</span>
@@ -96,7 +101,7 @@
                             @endif
                         </td>
                         <td >{{$g->created_at}}</td>
-
+                    <td><a href="{{url('hx/admin/sendOrder',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
                 </tr>
                 @endforeach
                 </tbody>

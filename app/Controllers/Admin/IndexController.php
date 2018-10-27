@@ -8,17 +8,10 @@
 
 namespace App\Controllers\Admin;
 
-use App\Facades\Api;
+use App\Models\Order;
 use App\Http\Controllers\Common\ExpressController;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\Order\OrderController;
-use App\Models\Admin\AdminUser;
-use App\Models\Dct\DctArea;
-use App\Models\Dct\DctExpress;
-use App\Models\Order\M86Order;
-use App\Models\Order\Order;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
+
 
 
 class IndexController extends Controller
@@ -27,8 +20,10 @@ class IndexController extends Controller
 
     public function index(){
 
+        $wait_count = Order::where('plat_order_state',2)->count();
+        $count = Order::count();
 
-        return view('admin.index');
+        return view('admin.index',compact('wait_count','count'));
     }
 
 
