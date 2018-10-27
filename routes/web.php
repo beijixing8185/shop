@@ -60,7 +60,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
     });
 
 //会员
-    Route::group(['namespace' =>'Member','prefix' => 'member'], function () {
+    Route::group(['namespace' =>'Member','prefix' => 'member','middleware' => 'App\Http\Middleware\HomeMiddleware'], function () {
 
         Route::get('getMember', 'MemberController@getMember');  //获取会员信息
 
@@ -78,9 +78,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::post('invoice_b', 'MemberController@invoice_b');  //增值税发票提交
 
 
-
     });
-
 
 
 //资讯
@@ -115,7 +113,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
 
 //支付
-    Route::group(['namespace' =>'Pay','prefix' => 'pay'], function () {
+    Route::group(['namespace' =>'Pay','prefix' => 'pay','middleware' => 'App\Http\Middleware\HomeMiddleware'], function () {
 
         Route::get('index', 'PayController@index');        //支付首页
 
