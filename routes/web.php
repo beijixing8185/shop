@@ -12,10 +12,7 @@
 */
 
 //根目录
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'Index\IndexController@index');
 Route::get('/test', 'TestController@index');    //测试
 
 Route::any('pay/notify', 'Pay\PayController@notify');        //支付选择
@@ -45,6 +42,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
     Route::group(['namespace' =>'Index','prefix' => 'index'], function () {
 
         Route::get('/index', 'IndexController@index');
+
     });
 
 //登陆
