@@ -12,6 +12,7 @@ namespace app\Controllers\Member;
 use App\Http\Controllers\Controller;
 use App\Models\GoodsSku;
 use App\Models\GoodsSpu;
+use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -71,6 +72,44 @@ class MemberController extends Controller
         return view('pay.index',compact('goods'));
     }
 
+    //异步添加发票信息【普通发票】
+    public function invoice_a(Request $request)
+    {
+        $param = $request ->all();
+        $data = [
+            'title' =>$param['putTitle'],
+            'pay_id'=>$param['putIdentifyNo'],
+            'username'=>$param['putReceiver'],
+            'phone'=>$param['putPhone'],
+            'address'=>$param['putAddress'],
+        ];
+        $code = Invoice::addInvoice($data);
+        if($code > 0){
+            return $code;
+        }
+    }
+
+    //异步添加发票信息【增值税发票】
+    public function invoice_b(Request $request)
+    {
+        $param = $request ->all();
+        $data = [
+            'title' =>$param['zhuanTitle'],
+            'pay_id'=>$param['zhuanIdentifyNo'],
+            'reg_address'=>$param['zhuanRegAddr'],
+            'reg_phone'=>$param['zhuanRegPhone'],
+            'reg_bank'=>$param['zhuanBank'],
+            'bank_number'=>$param['zhuanAccount'],
+            'username'=>$param['zhuanReceiver'],
+            'phone'=>$param['zhuanPhone'],
+            'address'=>$param['zhuanAddress'],
+        ];
+        $code = Invoice::addInvoice($data);
+        if($code > 0){
+            return $code;
+        }
+    }
+
     /**
      * 生成总订单编号
      *
@@ -89,7 +128,8 @@ class MemberController extends Controller
         $this->validate($request,[
             'spuId'=>'required|integer',
             'skuId'=>'required|integer',
-            'num'=>'required|integer'
+            'num'=>'required|integer',
+            'invo_id'=>'integer'
         ]);
 
         $order_sn = $this::orderSn();
@@ -104,7 +144,7 @@ class MemberController extends Controller
 
         $user = User::select('id','mobile')->whereId($this->member_id)->first();
 
-        $result = Order::add($goods,$user,$order_sn,$request->num);
+        $result = Order::add($goods,$user,$order_sn,$request->num,$request->invo_id);
 
         if(!empty($result)){
             return redirect()->action('Member\MemberController@payOrder', $result);
