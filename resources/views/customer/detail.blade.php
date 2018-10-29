@@ -62,7 +62,7 @@
             <div class="jianjie"><div style="word-break: break-all;">简介：{{$getdetail['description']}}</div></div>
             <img alt='{{$getdetail['title']}}' src="{{$getdetail['picture']}}"/>
             <div>
-                {{$getdetail['content']}}
+                {!! $getdetail['content'] !!}
             </div>
         </div>
         <div class="pull-left case-mes">

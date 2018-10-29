@@ -182,4 +182,14 @@ class LoginController extends Controller
         }
     }
 
+    /** 退出登陆
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function loginout()
+    {
+        session::forget('phone');
+        session::forget('user_id');
+        return redirect('/');
+    }
+
 }
