@@ -27,7 +27,7 @@
 <div class="container-fluid">
 	<ul class="container login-top">
 		<li class="pull-left"><a href="/" id="login_logo"></a></li>
-		<!--<li class="pull-left welcome">欢迎登录</li>-->
+		{{--<li class="pull-left welcome">欢迎登录</li>--}}
 	</ul>
 	<div id="login_wrapper">
 		<div class="container">

@@ -15,7 +15,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Support\Facades\Cache;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 
 class LoginController extends Controller
