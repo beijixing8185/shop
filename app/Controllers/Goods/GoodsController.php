@@ -39,9 +39,9 @@ class GoodsController extends Controller
 
         $commend = GoodsSpu::list(' and is_commend = 1 and status = 1',5);  //推荐商品 is_commend
 
-        $count_message = GoodsEvaluate::count_message($goods['id'],1);    //商品评论总数
+        $count_message = GoodsEvaluate::count_message($id,1);    //商品评论总数
 
-        $goods_message = GoodsEvaluate::getList($goods['id'],1);    //商品评论
+        $goods_message = GoodsEvaluate::getList($id,1);    //商品评论
         foreach ($goods_message as $val){
             $val->member = User::getMember($val->uid);
         }
@@ -50,6 +50,7 @@ class GoodsController extends Controller
         //获取规格
         $goodsSku = GoodsSku::select('id','market_price','spec_name','price')->where('spu_id',$id)->where('status',1)->get();//2018-10-22
 
+        //dd($goods);
         return view('goods.goodsDetail',compact('goods','customer','commend','goods_message','count_message','goodsSku'));
 
     }
@@ -69,5 +70,19 @@ class GoodsController extends Controller
 
     }
 
+    /**
+     * 无刷新分页。
+     *
+     */
+    public function getDetailPage(Request $request)
+    {
+        $param = $request ->all();
+        $offset = $param['page'];
+        $goods_message = GoodsEvaluate::getListPage($param['spu_id'],$offset,5);    //商品评论,显示每页5条
+        foreach ($goods_message as $val){
+            $val->member = User::getMember($val->uid);
+        }
+        return response()->json(['code'=>0,'msg'=>'查询成功','data'=>$goods_message]);
+    }
 
 }

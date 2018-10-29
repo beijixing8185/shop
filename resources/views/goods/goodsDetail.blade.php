@@ -330,11 +330,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="pj-con">
-                                                            <p class="pull-left"></p>
                                                             <div class="pull-left">{{$val['content']}}</div>
                                                         </div>
                                                         <div class="pj-con">
-                                                            <p class="pull-left"></p>
                                                             {{--<div class="pull-left">
                                                                 <ul class="yxbq">
                                                                     <li>性价比高</li>
@@ -346,29 +344,6 @@
                                                             </div>--}}
                                                             <div>
                                                                 <p class="pull-left pro-tm">{{$val['created_at']}}</p>
-                                                            </div>
-                                                        </div>
-                                                        <div>
-                                                            <div id="evaluates-generic-1" class="carousel slide evaluates-generic" >
-                                                                <!-- Indicators -->
-                                                                <ol class="carousel-img carousel-indicators">
-                                                                </ol>
-
-                                                                <!-- Wrapper for slides -->
-                                                                <div class="carousel-inner" role="listbox" style="display:none">
-                                                                </div>
-
-                                                                <!-- Controls -->
-                                                                <a style="display:none" class="left carousel-control" href="#evaluates-generic-1" role="button" data-slide="prev">
-                                                                    <span class="glyphicon glyphicon-chevron-left" ></span>
-                                                                    <!--<span class="glyphicon glyphicon-chevron-left" ><img src="/picture/arrow-left.png" /></span></span>-->
-                                                                    <span class="sr-only">Previous</span>
-                                                                </a>
-                                                                <a style="display:none" class="right carousel-control" href="#evaluates-generic-1" role="button" data-slide="next">
-                                                                    <span class="glyphicon glyphicon-chevron-right" ></span>
-                                                                    <!--<span class="glyphicon glyphicon-chevron-right" ><img src="/picture/arrow-right.png" /></span>-->
-                                                                    <span class="sr-only">Next</span>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </dd>
@@ -433,7 +408,7 @@
                                                     <img style="width: 62px;height: 28px;margin: 9px 0;" src="/picture/zj02_01.png" alt="资金担保"/>
                                                 </dt>
                                                 <dd>
-                                                    <p>镖狮网</p>
+                                                    <p>萤火虫网</p>
                                                     <p>交易资金托管</p>
                                                 </dd>
                                             </dl>
@@ -654,6 +629,99 @@
                 }
             });*/
 
+
+        });
+
+        var spu_id = "{{$goods->gid}}";
+        $('.pagination li:first').html('');
+        $('.pagination li:last').html('');
+        //console.log(spu_id);
+        //解决不能点击第一页
+        $('.pagination li:eq(1)').html('<a class="page-link" href="/goods/getDetailPage?spu_id='+spu_id+'&page=1">1</a>');
+        $('.pagination li:eq(1)').css('border-left','1px solid #ddd');
+
+
+        /*
+        //第一个按钮
+        $('.pagination li:first').html('<a class="page-link" href="/goods/getDetailPage?spu_id='+spu_id+'&page=1"><</a>');
+        //最后一个按钮
+        $('.pagination li:last').html('<a class="page-link" href="/goods/getDetailPage?spu_id='+spu_id+'&page=2">></a>');*/
+
+        $('.pagination a').on('click', function (event) {
+            var page = parseInt($(this).html());  //分页，当前页
+            //console.log(page);
+            /*var pagenext =   page +1;   //+1页码
+            console.log(pagenext);
+            var pagefirst =   page -1;  // -1页码
+            if($(this).html() =='>'){
+                page = page +1;
+            }
+            if($(this).html() =='<'){
+                page = page -1;
+            }
+            //第一个按钮
+            $('.pagination li:first').html('<a class="page-link" href=""><</a>');
+            //最后一个按钮
+            $('.pagination li:last').html('<a class="page-link" href="/goods/getDetailPage?spu_id='+spu_id+'&page='+pagenext+'">></a>');*/
+
+            event.preventDefault();
+            if ( $(this).attr('href') != '#' ) {
+                var itemActive = $('.pagination').find('.active'); // 选中项
+                itemActive.removeClass('active');//移除active
+                $(this).parent().addClass('active');
+                var pagehtml = '';  //组装标签
+                $.ajax({
+                    url: '/goods/getDetailPage',
+                    type: 'get',
+                    data:{'spu_id': "{{$goods->gid}}",'page':page},
+                    success: function(data) {
+                        if(data.code ==0){
+                            $('.pro-pj').html('');
+                            $.each(data.data,function (i ,item) {
+                                var xing = '';  //星星数
+                                if(item.stars==1){xing = '<span class="assess_full f_left"></span>'}
+                                if(item.stars==2){xing = '<span class="assess_full f_left"></span><span class="assess_full f_left"></span>'}
+                                if(item.stars==3){xing = '<span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span>'}
+                                if(item.stars==4){xing = '<span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span>'}
+                                if(item.stars==5){xing = '<span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span><span class="assess_full f_left"></span>'}
+                                var member_img = '';//头像
+                                if(item.member.picture==''){
+                                    member_img = '<img src="/picture/rwu.png" alt="">';
+                                }else {
+                                    member_img = '<img src="'+ item.member.picture +'">';
+                                }
+                                var phones = item.member.mobile;
+                                var phone = phones.substring(0, 3) + "****" + phones.substring(7, 11);
+                                pagehtml += '<li>' +
+                                    '<div class="pull-left pro-pjc">' +
+                                    '<dl>' +
+                                    '<dt class="pull-left">' +
+                                        member_img +
+                                    '<p>' + phone + '</p>' +
+                                    '</dt>' +
+                                    '<dd class="pull-left">' +
+                                    '<div>' +
+                                    '<div class="assess_bar sp_listbar pull-left">' +
+                                    xing+
+                                    '</div> </div> <div class="pj-con">' +
+                                    '<div class="pull-left">' + item.content + '</div></div>' +
+                                    '<div class="pj-con"> <div>' +
+                                    '<p class="pull-left pro-tm">'+ item.created_at +'</p>' +
+                                    '</div> </div> </dd> </dl> </div> </li>';
+
+                            })
+                            //console.log(data.data);
+                            $('.pro-pj').append(pagehtml);
+                        }
+
+                        // 加载图书列表
+                        /*var html = compiled_tpl.render(data);
+                        document.getElementById('booklist').innerHTML = html;*/
+
+                    }
+
+                });
+            }
         });
     </script>
 @endsection

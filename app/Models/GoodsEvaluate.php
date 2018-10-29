@@ -26,10 +26,10 @@ class GoodsEvaluate extends Model{
         if(!empty($status)){
             $where .= ' and status = '.$status;
         }
-        return self::whereRaw($where)->orderByRaw('id DESC')->paginate(3);
+        return self::whereRaw($where)->orderByRaw('id DESC')->paginate(5);
     }
 
-    public static function count_message()
+    public static function count_message($spu_id,$status)
     {
         $where = 'id > 0';
         if(!empty($spu_id)){
@@ -39,5 +39,15 @@ class GoodsEvaluate extends Model{
             $where .= ' and status = '.$status;
         }
         return self::whereRaw($where)->orderByRaw('id DESC')->count();
+    }
+
+
+    /**
+     * 评论列表分页
+     */
+    public static function getListPage($id,$offset,$limit)
+    {
+        $offsetInt = ($offset-1)*$limit;
+        return self::whereRaw('status = 1 and spu_id = '.$id)->orderByRaw('id DESC')->offset($offsetInt)->limit($limit)->get();
     }
 }

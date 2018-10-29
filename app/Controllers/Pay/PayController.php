@@ -112,8 +112,8 @@ class PayController extends Controller
                 }
             }
 
-        } catch (Exception $e) {
-
+        } catch (\Exception $e) {
+                Log::info('支付时的错误信息：'.$e->getMessage());
         }
 
 

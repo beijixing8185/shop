@@ -136,6 +136,8 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
         Route::get('/index', 'GoodsController@index');
         Route::get('/cate', 'GoodsController@getGoodsCate');
+
+        Route::get('/getDetailPage','GoodsController@getDetailPage');   //分页
     });
 
 });
