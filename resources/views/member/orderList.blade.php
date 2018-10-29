@@ -12,11 +12,9 @@
 	<script type="text/javascript" src="{{asset('js/changepwd.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/jquery.form.js')}}"></script>
 	<script type="text/javascript" src="{{asset('js/member_pwd.js')}}"></script>
-	<script src="{{asset('js/ordermanager.js')}}"></script>
-	<script src="{{asset('js/myorder.js')}}"></script>
-	<script src="{{asset('js/isemployer.js')}}"></script>
-	<script src="{{asset('js/myevaluate.js')}}"></script>
-	<script src="{{asset('js/complain.js')}}"></script>
+
+
+
 @endsection
 
 @section('content')
@@ -85,13 +83,14 @@
 					<ul class="common-top">
 						<li class="pull-left cmt-list">{{$v->created_at}}</li>
 						<li class="pull-left cmt-list">订单号: {{$v->order_sn}}</li>
-						<li class="pull-right tousu"><b class="caClass" traceflag="content_pop_订单投诉" id="{{$v->id}}" onclick="javascript:toComplain('O201810081201574884445','29865');"></b></li>
+						<input type="hidden" id="order_sn_id" value="{{$v->id}}"/>
+						{{--<li class="pull-right tousu"><b class="caClass" traceflag="content_pop_订单投诉" id="{{$v->id}}" onclick="javascript:toComplain('O201810081201574884445','29865');"></b></li>--}}
 					</ul>
 					<div class="common-con">
 						<ul >
 							<li class="pull-left cm-list ">
 								<dl class="cm-list-prodl">
-									<a href="/product/387.htm" target="论坛推广/贴吧推广/贴吧营销/手工发帖"><dt class="pull-left"><img alt="" src="{{$v->main_image}}"></dt>
+									<a href="/"><dt class="pull-left"><img alt="" src="{{$v->main_image}}"></dt>
 										<dd class="pull-left"><p>
 												{{$v->spu_name}}
 											</p></dd></a>
@@ -99,27 +98,25 @@
 							</li>
 							<li class="pull-left order-secmid"><span>{{$v->gc_name}}</span></li>
 							<li class="pull-left order-secmid">
-									<span>
-																			    										价格：{{$v->order_amounts}}元
-    																											</span>
+									<span>价格：{{$v->order_amounts}}元</span>
 							</li>
 							<li class="pull-right order-seclast">
 								<div>
 									<!--未关闭订单-->
 									<!--判断是否标品 begin-->
-									<!--标品 begin-->
-									<a  style="width:135px"  class="btn-a" href="@if($v->plat_order_state==1) /member/payOrder/{{$v->order_sn}}/{{$v->order_amounts}}/{{$v->spu_name}} @else javascript:checkOrderProd(29865,387) @endif">
 
-										@if($v->plat_order_state==1)
-											待支付
+									<!--标品 begin-->
+									@if($v->plat_order_state==1)
+										<a  style="width:135px"  class="btn-a" href="/member/payOrder/{{$v->order_sn}}/{{$v->order_amounts}}/{{$v->spu_name}}">待支付</a>
 										@elseif($v->plat_order_state==2)
-												已支付，待发货
+										<a  style="width:135px"  class="btn-a" href="javascript:void(0)">已支付，待交付</a>
 										@elseif($v->plat_order_state==3)
-											已发货，待签收
+										<a onclick="saveStatus('{{$v->id}}',4)" style="width:135px"  class="btn-a" data-id="3" href="javascript:void(0)">已交付，待审核</a>
+										@elseif($v->plat_order_state==4)
+										<a onclick="closeMaskShow()" style="width:135px"  class="btn-a" href="javascript:void(0)">已完成，待评价</a>
 										@else
-											已完成，待评价
-										@endif
-										</a>
+										<a style="width:135px"  class="btn-a" href="javascript:void(0)">订单已完成</a>
+									@endif
 									<!--标品 end-->
 									<!--判断是否标品 end-->
 								</div>
@@ -138,22 +135,26 @@
 	</div>
 </div>
 	<!--	下线通知---弹窗	-->
-<div class="maskAlert maskAlertKnow" style="/* display: none; */">
+<div class="maskAlert maskAlertKnow" style=" display: none; ">
 	<div class="maskAlertMain">
 		<img onclick="closeMask()" class="closeMask" src="/picture/closed-gray.png" alt="">
 		<div class="maskTitle">
-			提示
+			请对此次产品满意度做出评价
 		</div>
 		<div class="tips">
-			非常抱歉，您所购买的产品已下线，详情<br/>请咨询010-53526642
+			请选择&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stars" value="1"/>1星
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stars" value="2"/>2星
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stars" value="3"/>3星
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stars" value="4" checked="checked"/>4星
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="stars" value="5"/>5星
 		</div>
-		<div class="buttonGroup">
-			<span id="Ikown" onclick="closeMask()">知道了</span>
+		<div class="tips">
+			请填写您对我们这次服务的评价：
+			<textarea id="content_ping" type="text" rows="2" placeholder="请您评论我们这次的服务，让我们更了解您的需求优先为您服务" maxlength="200"></textarea>
+			<p><span>0</span>/200字</p>
 		</div>
+		<div class="buttonGroup"><span id="Ikown">提交</span></div>
 	</div>
 </div>
-<a id="toorderdet" href="" target="" style="display:none"></a>
-
-
 
 @endsection

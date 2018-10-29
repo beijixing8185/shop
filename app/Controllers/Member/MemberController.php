@@ -10,6 +10,7 @@ namespace app\Controllers\Member;
 
 
 use App\Http\Controllers\Controller;
+use App\Models\GoodsEvaluate;
 use App\Models\GoodsSku;
 use App\Models\GoodsSpu;
 use App\Models\Invoice;
@@ -231,5 +232,38 @@ class MemberController extends Controller
         }
     }
 
+    /**
+     * 会员评论
+     *
+     */
+    public function memberAddEval(Request $request)
+    {
+        $param = $request ->all();
+        $data = [
+            'spu_id'=> $param['spu_id'],
+            'content'=> $param['content'],
+            'stars'=> $param['stars'],
+        ];
+        $result = GoodsEvaluate::addEval($data);
+        $order = Order::find($param['spu_id']);
+        $order -> plat_order_state = 9;
+        $order ->save();
+        return 1;
+    }
+
+    /**
+     * 修改状态
+     * @param Request $request
+     * @return int
+     */
+    public function saveStatus(Request $request)
+    {
+        $param = $request ->all();
+        $status = $param['status'];
+        $order = Order::find($param['spu_id']);
+        $order -> plat_order_state = $status;
+        $order ->save();
+        return 1;
+    }
 
 }

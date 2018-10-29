@@ -50,4 +50,12 @@ class GoodsEvaluate extends Model{
         $offsetInt = ($offset-1)*$limit;
         return self::whereRaw('status = 1 and spu_id = '.$id)->orderByRaw('id DESC')->offset($offsetInt)->limit($limit)->get();
     }
+
+    /**
+     * 添加评论
+     */
+    public static function addEval($data)
+    {
+        return self::insert($data);
+    }
 }

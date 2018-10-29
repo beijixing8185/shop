@@ -55,7 +55,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::post('login_pwd', 'LoginController@login_pwd');   //密码登陆逻辑
         Route::get('register', 'LoginController@register');     //注册
         Route::post('register_login', 'LoginController@register_login');     //注册逻辑
-        Route::post('loginout', 'LoginController@loginout');     //注册逻辑
+        Route::get('loginout', 'LoginController@loginout');     //注册逻辑
 
     });
 
@@ -76,6 +76,10 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
         Route::post('invoice_a', 'MemberController@invoice_a');  //普通发票提交
         Route::post('invoice_b', 'MemberController@invoice_b');  //增值税发票提交
+
+        Route::post('memberAddEval', 'MemberController@memberAddEval');  //商品评论
+
+        Route::post('saveStatus', 'MemberController@saveStatus');  //修改商品状态
 
 
     });

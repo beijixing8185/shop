@@ -181,3 +181,67 @@ function updateUserInfo(){
 	   }
 	});
 }
+
+$(document).on('click','#Ikown',function () {
+   var stars = $("input[type='radio']:checked").val();
+   var content = $('#content_ping').val();
+   var spu_id = $('#order_sn_id').val();
+    $.ajax({
+        url: "/member/memberAddEval",
+        type : "post",
+        data:{
+            spu_id:spu_id,
+            content:content,
+            stars:stars
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data){
+        	if(data==1){
+                closeMask();
+                window.location.reload();
+			}
+            /*if(data==1){
+                alert("感谢您的评论");
+            }else{
+                alert("系统出错了！");
+            }*/
+        }
+    });
+});
+/**
+ * 隐藏
+ */
+function closeMask() {
+	$('.maskAlertKnow').hide();
+}
+/**
+ * 显示
+ */
+function closeMaskShow() {
+    $('.maskAlertKnow').show();
+}
+/**
+ *修改状态
+ */
+function saveStatus(spu_id,status) {
+    $.ajax({
+        url: "/member/saveStatus",
+        type : "post",
+        data:{
+            spu_id:spu_id,
+            status:status
+        },
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function(data){
+        	if(data ==1){
+                alert('提交成功');
+                window.location.reload();
+			}
+
+        }
+    });
+}

@@ -187,8 +187,8 @@ class LoginController extends Controller
      */
     public function loginout()
     {
-        session::forget('phone');
-        session::forget('user_id');
+        Session::forget('phone');
+        Session::forget('user_id');
         return redirect('/');
     }
 

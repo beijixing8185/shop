@@ -59,4 +59,6 @@ class Order extends Model
         return self::where('order_sn',$order_sn)->first();
     }
 
+
+
 }
