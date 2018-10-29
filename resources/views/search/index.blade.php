@@ -52,11 +52,11 @@
 									<a class="title" href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a>
 									<ul class="spList">
 										<li><p class="pull-left">产品分类：</p>{{$val['gc_name']}}</li>
-										{{--<li><p class="pull-left">服务周期：</p>3个月~1年</li>--}}
 										<li><p class="pull-left">销售量：</p>{{$val['salen_num']}}</li>
 										<li><p class="pull-left">市场价：</p>{{$val['market_price']}}</li>
+										<li><p class="pull-left">零售价：</p>{{$val['price']}}</li>
 									</ul>
-									<p class="produce"></p>
+									<p class="produce">{{$val['description']}}</p>
 								</dd>
 							</dl>
 							<div class="an-right pull-right">
