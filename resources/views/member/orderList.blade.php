@@ -116,8 +116,8 @@
 												已支付，待发货
 										@elseif($v->plat_order_state==3)
 											已发货，待签收
-										@esle
-											已完成
+										@else
+											已完成，待评价
 										@endif
 										</a>
 									<!--标品 end-->
