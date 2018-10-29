@@ -10,7 +10,8 @@
         </ul>
         <ul class="pull-right top-list">
             @if(!empty(session('user_id')))
-                <li class="login-nav"> <a class="login" href="#" rel="nofollow">欢迎您：{{session('phone')}}</a></li>
+                <li class="login-nav"> <a class="login" href="/member/getMember" rel="nofollow">欢迎您：{{session('phone')}}</a></li>
+                <li class="login-nav"> <a class="login" href="/login/loginout" rel="nofollow">退出</a></li>
                 @else
             <li class="login-nav"> <a class="login" href="{{url('login/index')}}" rel="nofollow">登录</a></li>
             <li class="regist-nav"><a class="register" href="{{url('login/register')}}" rel="nofollow">注册</a></li>

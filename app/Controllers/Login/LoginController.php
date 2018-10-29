@@ -15,7 +15,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Gregwar\Captcha\CaptchaBuilder;
 use Illuminate\Support\Facades\Cache;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 
 class LoginController extends Controller
@@ -92,7 +92,7 @@ class LoginController extends Controller
         //生成验证码图片的Builder对象，配置相应属性
         $builder = new CaptchaBuilder(2);
         //可以设置图片宽高及字体
-        $builder->build($width = 100, $height = 40, $font = null);
+        $builder->build($width = 70, $height = 32, $font = null);
         //获取验证码的内容
         $phrase = $builder->getPhrase();
 
@@ -180,6 +180,16 @@ class LoginController extends Controller
         }else{
             return -1;
         }
+    }
+
+    /** 退出登陆
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function loginout()
+    {
+        session::forget('phone');
+        session::forget('user_id');
+        return redirect('/');
     }
 
 }

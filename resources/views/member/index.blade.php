@@ -69,13 +69,13 @@
 
     							</div>
     							<div style="margin-bottom: 10px;">
-    								<p class="ger-left">用户名：</p>
+    								<p class="ger-left">手机号：</p>
     								<div class="ger-right">
     										<p class="padding-jl">{{$getMember['mobile']}}</p>
     								</div>
     							</div>
     							<div>
-    								<p class="ger-left">昵称：</p>
+    								<p class="ger-left">用户名：</p>
     								<div class="ger-right form-list">
     									<input type="text" tabindex=""  name="nickName" value="{{$getMember['username']}}">
     								</div>

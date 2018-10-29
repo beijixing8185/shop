@@ -37,11 +37,15 @@
 
 			<dl>
 				<dt>
-					<img src="/picture/rwu.png" alt=""/>
+					@if(!empty($member_img))
+						<img src="{{$member_img}}" alt=""/>
+					@else
+						<img src="/picture/rwu.png" alt=""/>
+					@endif
 				</dt>
 				<dd>
-					@if(!empty(Cache('phone')))
-					<p>{{Cache('phone')}}</p>
+					@if(!empty(Session('phone')))
+					<p>{{Session('phone')}}</p>
 					@else
 						<p>您未登陆</p>
 					@endif

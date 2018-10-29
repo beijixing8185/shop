@@ -35,7 +35,7 @@ class Article  extends Model{
             $where .= ' and hot =  '.$hot;
         }
         if(!empty($link)){
-            $where .= ' and tag like  "%'.$link.'%"';
+            $where .= ' and title like  "%'.$link.'%"';
         }
         if(!empty($limit)){
             return self::whereRaw($where)->orderBy('id','desc')->limit($limit)->get();

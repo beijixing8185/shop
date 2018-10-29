@@ -27,7 +27,7 @@
 <div class="container-fluid">
 	<ul class="container login-top">
 		<li class="pull-left"><a href="/" id="login_logo"></a></li>
-		<!--<li class="pull-left welcome">欢迎登录</li>-->
+		{{--<li class="pull-left welcome">欢迎登录</li>--}}
 	</ul>
 	<div id="login_wrapper">
 		<div class="container">
@@ -54,7 +54,7 @@
 							</div>
 							<div id="o-authcode">
 								<input type="text" name="graphAuthCode" class="shuju" placeholder="请输入图形验证码">
-								<img src="{{ URL('login/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="0">
+								<img src="{{ URL('login/captcha/1') }}"  alt="验证码" title="刷新图片" width="80" height="40" id="c2c98f0de5a04167a9e427d883690ff6" border="0">
 								<a href="javascript:void(0)" onclick="javascript:re_captcha();"></a>
 								<div class="clearfix"></div>
 								<span class="prompt" id="graphAuthCodeTip">请输入图形验证码</span>

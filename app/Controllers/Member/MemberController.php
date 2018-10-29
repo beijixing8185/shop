@@ -16,6 +16,7 @@ use App\Models\Invoice;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 
 class MemberController extends Controller
@@ -175,8 +176,14 @@ class MemberController extends Controller
     public function orderList()
     {
         $order =  Order::getList($this ->member_id);
+        $member_img = '';
+        if(!empty(Session::get('phone'))){
+            $member = User::getMobile(Session::get('phone'));
+            $member_img = $member ->picture;
+        }
 
-        return view('member.orderList',compact('order'));
+
+        return view('member.orderList',compact('order','member_img'));
     }
 
     /**

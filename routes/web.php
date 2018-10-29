@@ -55,6 +55,8 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
         Route::post('login_pwd', 'LoginController@login_pwd');   //密码登陆逻辑
         Route::get('register', 'LoginController@register');     //注册
         Route::post('register_login', 'LoginController@register_login');     //注册逻辑
+        Route::post('loginout', 'LoginController@loginout');     //注册逻辑
+
     });
 
 //会员

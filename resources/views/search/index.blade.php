@@ -29,39 +29,43 @@
             };
         });
 	</script>
-@if($customer->isNotEmpty())
+@if($customer->isNotEmpty() || $article->isNotEmpty())
 	<div class="session container">
 		<div class="aside-left pull-left">
 			<div class="tab-content">
 				<div id="pro" class="pro">
 					<ul class="commen-ul">
+						@if(!empty($article))
+							@foreach($article as $val)
 						<li>
 							<b><img src="/picture/cp-l.png" alt=""/></b>
 							<dl class="pull-left">
 								<dt class="pull-left">
 								<div class="cursom" >
-									<a href="/product/378.htm"  target="_blank" >
-										<img src="static/picture/loadimage_1.htm" alt=""/>
+									<a href="/goods/goodsDetail/{{$val['id']}}"  target="_blank" >
+										<img src="{{$val['main_image']}}" alt=""/>
 									</a>
 								</div>
 
 								</dt>
 								<dd class="pull-left">
-									<a class="title" href="/product/378.htm" target="_blank">SEO关键词整站优化／百度推广</a>
+									<a class="title" href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a>
 									<ul class="spList">
-										<li><p class="pull-left">场景：</p>有网站没流量</li>
-										<li><p class="pull-left">服务周期：</p>3个月~1年</li>
-										<li><p class="pull-left">特点：</p>自然流量</li>
-										<li><p class="pull-left">适合用户：</p>想推广网站的用户</li>
+										<li><p class="pull-left">产品分类：</p>{{$val['gc_name']}}</li>
+										<li><p class="pull-left">销售量：</p>{{$val['salen_num']}}</li>
+										<li><p class="pull-left">市场价：</p>{{$val['market_price']}}</li>
+										<li><p class="pull-left">零售价：</p>{{$val['price']}}</li>
 									</ul>
-									<p class="produce"></p>
+									<p class="produce">{{$val['description']}}</p>
 								</dd>
 							</dl>
 							<div class="an-right pull-right">
-								<span>¥ 10000元 </span>
-								<a class="an-pro" href="/product/378.htm" target="_blank">查看详情</a>
+								<span>¥ {{$val['price']}} </span>
+								<a class="an-pro" href="/goods/goodsDetail/{{$val['id']}}" target="_blank">查看详情</a>
 							</div>
 						</li>
+						@endforeach
+						@endif
 						@if(!empty($customer))
 						@foreach($customer as $val)
 						<li class="caseInfo">
