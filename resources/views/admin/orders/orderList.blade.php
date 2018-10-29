@@ -69,6 +69,9 @@
                         下单时间
                     </th>
                     <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
+                        发票信息
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">
                         操作
                     </th>
 
@@ -101,6 +104,8 @@
                             @endif
                         </td>
                         <td >{{$g->created_at}}</td>
+                        <td ><a href="{{url('hx/admin/invo',['id'=>$g->invo_id])}}">查看{{$g->invo_id}}</a></td>
+
                     <td><a href="{{url('hx/admin/sendOrder',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
                 </tr>
                 @endforeach
