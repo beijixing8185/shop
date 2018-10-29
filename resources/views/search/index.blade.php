@@ -29,7 +29,7 @@
             };
         });
 	</script>
-@if($customer->isNotEmpty())
+@if($customer->isNotEmpty() || $article->isNotEmpty())
 	<div class="session container">
 		<div class="aside-left pull-left">
 			<div class="tab-content">

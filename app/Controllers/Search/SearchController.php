@@ -23,7 +23,7 @@ class SearchController extends Controller
             $customer = Customer::getList('',1,'',$search); //案例搜索
             $article = GoodsSpu::list(' and status = 1 and spu_name like  "%'.$search.'%"');//产品搜索
         }
-
+        dd($article);
         return view('search.index',compact('article','customer','search'));
     }
 
