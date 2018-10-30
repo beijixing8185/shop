@@ -12,7 +12,7 @@
             <div class="zbBottomTop contentBox">
                 <p class="tabspan">
                     <span class="current caClass" id="showfriendlink" traceflag="footer_tab_友情链接">友情链接</span>
-                    <span class="caClass" id="showbsservice" traceflag="footer_tab_镖狮服务">萤火虫服务</span>
+                    <span class="caClass" id="showbsservice" traceflag="营火虫服务">营火虫服务</span>
                 </p>
                 <div class="TABbox TABbox0">
                     <ul>
@@ -54,7 +54,7 @@
                         <img src="/picture/phone01.png" alt="phone">010-53526642 <span>工作时间 9:30-18:30</span>
                     </p>
                     <div>
-                        © 2018 欢迎访问上海好歆信息科技有限公司萤火虫网 沪ICP备15050787号-16
+                        © 2018 欢迎访问上海好歆信息科技有限公司营火虫网 沪ICP备15050787号-16
                     </div>
                 </div>
                 <div class="qcodeBTM">
@@ -582,7 +582,7 @@
             <p>我们会马上与您联系...</p>
         </div>
         <div class="fbCodeBox">
-            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注萤火虫公众号</span></p>
+            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注营火虫公众号</span></p>
             <div class="fbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>
@@ -605,7 +605,7 @@
             <p>您的需求发布失败，请检查网络后重新发布或致电010-53526642联系我们</p>
         </div>
         <div class="fbCodeBox">
-            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注萤火虫公众号</span></p>
+            <p class="codeP"><img src="/picture/qr-code@2x.png" alt=""><br/><span>关注营火虫公众号</span></p>
             <div class="fbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>

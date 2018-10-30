@@ -4,7 +4,7 @@
     <div class="zbBottom">
         <div class="zbBottomContent">
             <div class="zbBottomTop contentBox">
-                <p class="tabspan"><span class="current">萤火虫服务</span></p>
+                <p class="tabspan"><span class="current">营火虫服务</span></p>
                 <div class="TABbox TABbox0">
                     <ul>
                         @if(!empty(Cache('goods_list')))
@@ -33,7 +33,7 @@
                         <img src="/picture/phone01.png" alt="phone">010-53526642 <span>工作时间 9:30-18:30</span>
                     </p>
                     <div>
-                        © 2018 欢迎访问上海好歆信息科技有限公司萤火虫网 沪ICP备15050787号-16
+                        © 2018 欢迎访问上海好歆信息科技有限公司营火虫网 沪ICP备15050787号-16
                     </div>
                 </div>
                 <div class="qcodeBTM">

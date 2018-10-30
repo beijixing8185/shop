@@ -45,7 +45,7 @@ class CommonMiddleware
             Cache::put('about_list', $about_list, $minutes);
         }
 
-        //底部萤火虫服务   hot
+        //底部营火虫服务   hot
         if(!Cache::get('goods_list')){
             $goods_list = GoodsSpu::list(' and is_hot = 1 and status = 1')->toArray();
             Cache::put('goods_list', $goods_list, $minutes);

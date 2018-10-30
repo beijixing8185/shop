@@ -34,7 +34,7 @@
             <p>稍后严选师将致电您，为您提供免费营销咨询服务</p>
         </div>
         <div class="CmsFbCodeBox">
-            <p class="CmsFbcodeP"><img src="/picture/lion-weixin-new.png" alt=""><br/><span>关注萤火虫网</span></p>
+            <p class="CmsFbcodeP"><img src="/picture/lion-weixin-new.png" alt=""><br/><span>关注营火虫网</span></p>
             <div class="CmsFbfbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>
@@ -52,7 +52,7 @@
             <p>您的需求发布失败，请致电010-53526642联系我们</p>
         </div>
         <div class="CmsFbCodeBox">
-            <p class="CmsFbcodeP"><img src="/picture/lion-weixin-new.png" alt=""><br/><span>关注萤火虫网</span></p>
+            <p class="CmsFbcodeP"><img src="/picture/lion-weixin-new.png" alt=""><br/><span>关注营火虫网</span></p>
             <div class="CmsFbfbList">
                 <p><img src="/picture/yellow-check@2x.png" alt="">免费营销课程</p>
                 <p><img src="/picture/yellow-check@2x.png" alt="">海量营销攻略</p>

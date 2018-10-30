@@ -129,11 +129,240 @@
     </div>
 </div>
 	@endif
+
+
+
+	<!--	新加模块				-->
+
+	<div class="zbj-grid">
+		<div class="hot-bb">
+			<div><div class="title-warp"><p class="title-inner"><b>咨询顾问</b></p></div></div>
+			<span>100+专业顾问，免费在线解答您的困惑</span>
+		</div>
+		<div class="consultant-box ">
+			<div class="consultant-list-data">
+				<ul class="consultant-info">
+
+					<li class="consultant-info-item" data-id="20133560">
+
+						<a class="detail-link" href="/detail/20133560" target="_blank">
+
+							<div class="clearfix">
+								<div class="fl head-infos">
+									<p class="consultant-info-title">
+										<span class="info-tit pad text-overflow" title="荣华">荣华</span>
+										<span class="info-record-industry text-overflow" title="重庆重庆">
+重庆 重庆
+</span>
+									</p>
+									<p class="consultant-info-experience pad">
+										<span class="text-overflow exprience" title="猪八戒网游戏项目经理">猪八戒网游戏项目经理</span>
+										<span class="consultant-info-record text-overflow">
+/ 10年工作经验
+</span>
+									</p>
+									<p class="consultant-info-data pad">
+<span class="info-data-exponential">
+推荐指数<i class="num">3.3</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-satify">
+满意度<i class="num">99%</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-ask">
+咨询量<i class="num text-overflow contact-num" title="咨询量2987">
+2987</i>
+</span>
+									</p>
+								</div>
+								<span class="consultant-info-portrait">
+
+<img class="lazyload" src="/resource/redirect?key=homesite/task/1898804f-aee1-4d95-99c6-137830241da0.jpg/origine/7f85c298-72fc-4e19-97f5-c8597a63a34a&amp;operate=imageMogr2/auto-orient/crop/!344.0x344.0a0.0a0.0|imageView2/2/w/200/h/200" data-original="/resource/redirect?key=homesite/task/1898804f-aee1-4d95-99c6-137830241da0.jpg/origine/7f85c298-72fc-4e19-97f5-c8597a63a34a&amp;operate=imageMogr2/auto-orient/crop/!344.0x344.0a0.0a0.0|imageView2/2/w/200/h/200" width="78" height="78" onerror="this.onerror=null;this.src='//t4.zbjimg.com/r/p/task/48.gif'" style="display: inline;">
+
+</span>
+							</div>
+							<ul class="consultant-info-label pad">
+
+
+
+
+								<li title="互动营销游戏" class="">互动营销游戏</li>
+
+
+
+								<li title="小程序棋牌游戏" class="">小程序棋牌游戏</li>
+
+
+
+								<li title="游戏原画设计" class="">游戏原画设计</li>
+
+
+
+							</ul>
+
+						</a><a class="consultant-info-status content-phone contact j-phone" href="javascript:;">
+							电话咨询
+						</a>
+						<a class="consultant-info-status contact j-contact online" href="javascript:;">
+							在线咨询
+						</a>
+
+
+					</li>
+
+					<li class="consultant-info-item" data-id="15675148">
+
+						<a class="detail-link" href="/detail/15675148" target="_blank">
+
+							<div class="clearfix">
+								<div class="fl head-infos">
+									<p class="consultant-info-title">
+										<span class="info-tit pad text-overflow" title="林晶晶">林晶晶</span>
+										<span class="info-record-industry text-overflow" title="广东广州">
+广东 广州
+</span>
+									</p>
+									<p class="consultant-info-experience pad">
+										<span class="text-overflow exprience" title="林经理">林经理</span>
+										<span class="consultant-info-record text-overflow">
+/ 8年工作经验
+</span>
+									</p>
+									<p class="consultant-info-data pad">
+<span class="info-data-exponential">
+推荐指数<i class="num">4.2</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-satify">
+满意度<i class="num">100%</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-ask">
+咨询量<i class="num text-overflow contact-num" title="咨询量1369">
+1369</i>
+</span>
+									</p>
+								</div>
+								<span class="consultant-info-portrait">
+
+<img class="lazyload" src="//rms.zbj.com/resource/redirect?key=homesite/task/未标题-1.jpg/origine/0717d02c-1631-495f-9ebb-bba85fe75e04" data-original="//rms.zbj.com/resource/redirect?key=homesite/task/未标题-1.jpg/origine/0717d02c-1631-495f-9ebb-bba85fe75e04" width="78" height="78" onerror="this.onerror=null;this.src='//t4.zbjimg.com/r/p/task/48.gif'" style="display: inline;">
+
+</span>
+							</div>
+							<ul class="consultant-info-label pad">
+
+
+
+
+								<li title="办公空间设计" class="">办公空间设计</li>
+
+
+
+								<li title="别墅" class="">别墅</li>
+
+
+
+								<li title="鸟瞰图" class="">鸟瞰图</li>
+
+
+
+							</ul>
+
+						</a><a class="consultant-info-status content-phone contact j-phone" href="javascript:;">
+							电话咨询
+						</a>
+						<a class="consultant-info-status contact j-contact online" href="javascript:;">
+							在线咨询
+						</a>
+
+
+					</li>
+
+					<li class="consultant-info-item" data-id="7757957">
+
+						<a class="detail-link" href="/detail/7757957" target="_blank">
+
+							<div class="clearfix">
+								<div class="fl head-infos">
+									<p class="consultant-info-title">
+										<span class="info-tit pad text-overflow" title="李学龙">李学龙</span>
+										<span class="info-record-industry text-overflow" title="陕西西安">
+陕西 西安
+</span>
+									</p>
+									<p class="consultant-info-experience pad">
+										<span class="text-overflow exprience" title="冰雪网络资深网站策划 运营总监">冰雪网络资深网站策划 运营总监</span>
+										<span class="consultant-info-record text-overflow">
+/ 5年工作经验
+</span>
+									</p>
+									<p class="consultant-info-data pad">
+<span class="info-data-exponential">
+推荐指数<i class="num">4.7</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-satify">
+满意度<i class="num">99%</i>
+</span>
+										<span class="hr"></span>
+										<span class="info-data-ask">
+咨询量<i class="num text-overflow contact-num" title="咨询量3256">
+3256</i>
+</span>
+									</p>
+								</div>
+								<span class="consultant-info-portrait">
+
+<img class="lazyload" src="//rms.zbj.com/resource/redirect?key=homesite/task/200.jpg/origine/54226587-4ceb-4be3-892d-881cc930cb46" data-original="//rms.zbj.com/resource/redirect?key=homesite/task/200.jpg/origine/54226587-4ceb-4be3-892d-881cc930cb46" width="78" height="78" onerror="this.onerror=null;this.src='//t4.zbjimg.com/r/p/task/48.gif'" style="display: inline;">
+
+</span>
+							</div>
+							<ul class="consultant-info-label pad">
+
+
+
+
+								<li title="网站UI设计" class="">网站UI设计</li>
+
+
+
+								<li title="企业网站" class="">企业网站</li>
+
+
+
+								<li title="网站定制开发" class="">网站定制开发</li>
+
+
+
+							</ul>
+
+						</a><a class="consultant-info-status content-phone contact j-phone" href="javascript:;">
+							电话咨询
+						</a>
+						<a class="consultant-info-status contact j-contact online" href="javascript:;">
+							在线咨询
+						</a>
+
+
+					</li>
+
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<!--	新加模块结束			-->
+
+
+
+
 <!--服务流程-->
 <div id="showtap04" class="container-fluid">
     <div class="container">
         <div class="service">
-            <div><div class="title-warp"><p class="title-inner"><b style="color:">服务流程</b></p></div></div>
+            <div><div class="title-warp"><p class="title-inner"><b>服务流程</b></p></div></div>
         </div>
         <div class="lc-list">
         	        		<dl>
@@ -310,7 +539,7 @@
 	<!--了解镖狮网 begin-->
     <div class="about-index">
     	<div class="about-index-title">
-    		<div><div class="title-warp"><p class="title-inner"><b>了解萤火虫网</b></p></div></div>
+    		<div><div class="title-warp"><p class="title-inner"><b>了解营火虫网</b></p></div></div>
     	</div>
 
     	<div class="container cards-wrap">

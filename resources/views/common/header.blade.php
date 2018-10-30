@@ -2,7 +2,7 @@
     <div class="container ">
         <ul class="pull-left ">
             <li class="appIcon">
-                <b><img src="/picture/index-header-wechat@2x.png"/>关注萤火虫网</b>
+                <b><img src="/picture/index-header-wechat@2x.png"/>关注营火虫网</b>
                 <div class="app-erm" style="display: none">
                     <img src="/picture/lion-weixin-new.jpg" alt=""/>
                 </div>

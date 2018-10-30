@@ -28,7 +28,7 @@ class IndexController extends Controller
 
         $customer = Customer::getList('',1);//dd($customer);//客户案例
 
-        //关于萤火虫新闻栏目
+        //关于营火虫新闻栏目
         $newCategory = ArticleCate::getList(' and pid = 20',1,3);
         foreach ($newCategory as $val){
             $val->child = Article::getList($val['id'],1,'',4)->toArray();

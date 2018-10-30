@@ -80,7 +80,7 @@
                     <span>服务商已收到您的订单，
                                         	将在工作日(9:30-18:30)使用170开头电话与您联系，请保持手机畅通。
                                         </br>
-                                                           萤火虫保障您的服务效果，保护您的信息隐私安全，如有疑问请致电010-53526642。
+                                                           营火虫保障您的服务效果，保护您的信息隐私安全，如有疑问请致电010-53526642。
 					<a class="dingdan" href="/member/order/1">查看订单</a>
                 </span>
 													<div class="lc-img">
@@ -140,7 +140,7 @@
 	            <dd class="pull-left">
 	                <p class="red-wining"><span>汇款识别码</span>3825443</p>
 	                <p><span>银&nbsp;行&nbsp;账&nbsp;号</span>110919349310301</p>
-	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名</span>北京萤火虫有限公司</p>
+	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名</span>北京营火虫有限公司</p>
 	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;行</span>招商银行北京东直门支行（基本户）</p>
 	            </dd>
 	        </dl>

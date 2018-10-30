@@ -1,7 +1,7 @@
 ﻿
 @extends('welcome')
 
-@section('title','萤火虫搜索')
+@section('title','营火虫搜索')
 
 @section('css')
 	<link rel="stylesheet" href="{{asset('css/result.css')}}">
@@ -129,7 +129,7 @@
 			</div>
 
 			<div class="yxwz">
-				<p>萤火虫服务，比任何渠道便宜20%以上；资金托管，服务监理，高于行业标准。</p>
+				<p>营火虫服务，比任何渠道便宜20%以上；资金托管，服务监理，高于行业标准。</p>
 				<dl>
 					<dt class="pull-left"><img src="/picture/ser-icon01.png" alt=""/></dt>
 					<dd class="pull-right">

@@ -407,7 +407,7 @@
                                                     <img style="width: 62px;height: 28px;margin: 9px 0;" src="/picture/zj02_01.png" alt="资金担保"/>
                                                 </dt>
                                                 <dd>
-                                                    <p>萤火虫网</p>
+                                                    <p>营火虫网</p>
                                                     <p>交易资金托管</p>
                                                 </dd>
                                             </dl>

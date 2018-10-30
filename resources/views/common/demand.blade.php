@@ -1,7 +1,7 @@
 <div class="container-fluid header-d" style="background:#fff;min-width:1170px;">
     <div class="header-res container">
         <div class="pull-left"><a href="/" class="logo">
-                <img src="/picture/logo03.png" alt="萤火虫网" title="萤火虫网" style="width:236px;height:44px;margin:10px 0;"/></a>
+                <img src="/picture/logo03.png" alt="营火虫网" title="营火虫网" style="width:236px;height:44px;margin:10px 0;"/></a>
         </div>
     {{--   <p class="pull-left logoTitle">严选营销服务，保障营销效果</p>--}}
         <div id="publish-hover" class="publish-hover pull-right">

@@ -17,7 +17,8 @@
     font-size: 16px;
 }
 .res-input > input{
-    width: 225px;
+    width: 330px;
+    height:42px;
 }
 #goTop{
     display: none;
