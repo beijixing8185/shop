@@ -183,8 +183,15 @@ function getOrderState() {
         success:function (res) {
             if(res.code == 0){
                 clearInterval(myIntval);
-                window.location.href="/member/order";
-            }
+                $('#swaper').hide();
+                $('.pay-btn').hide();
+                $('#successp').show();
+                //window.location.href="/member/order";
+            }else{
+                $('#swaper').hide();
+                $('.pay-btn').hide();
+            	$('#errorPromptDiv').show()
+			}
         }
     });
 }

@@ -66,7 +66,7 @@ Route::group(['middleware' => 'App\Http\Middleware\CommonMiddleware'], function 
 
         Route::get('member_pwd', 'MemberController@memberPwd');  //会员密码修改
 
-        Route::get('order', 'MemberController@orderList');  //会员订单
+        Route::get('order/{status?}', 'MemberController@orderList');  //会员订单
         Route::get('showOrder', 'MemberController@showOrder');  //预支付下单
         Route::get('addOrder', 'MemberController@addOrder');  //会员下单
         Route::get('payOrder/{orderSn}/{price}/{name}', 'MemberController@payOrder');  //会员下单

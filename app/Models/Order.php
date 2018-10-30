@@ -14,7 +14,7 @@ class Order extends Model
      */
     public static function getList($uid='',$where=''){
         if($uid){
-            $order = Self::where('uid',$uid)->orderBy('id','desc')->paginate(20);
+            $order = Self::whereRaw('uid = '.$uid.$where)->orderBy('id','desc')->paginate(20);
         }else{
             $order = Self::whereRaw('id >=1'.$where)->orderBy('id','desc')->paginate(5);
         }

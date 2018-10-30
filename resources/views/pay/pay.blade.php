@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" id="successp">
+            <div class="tab-pane" id="successp" style="">
                 <div class="buy-success">
                     <div class="buy-overflow">
                         <div class="buy-success-title">
@@ -80,8 +80,8 @@
                     <span>服务商已收到您的订单，
                                         	将在工作日(9:30-18:30)使用170开头电话与您联系，请保持手机畅通。
                                         </br>
-                                                           镖狮网保障您的服务效果，保护您的信息隐私安全，如有疑问请致电4000-581-581。
-					<a class="dingdan" href="/ordermanager/details.htm?orderId=">查看订单</a>
+                                                           萤火虫保障您的服务效果，保护您的信息隐私安全，如有疑问请致电010-53526642。
+					<a class="dingdan" href="/member/order/1">查看订单</a>
                 </span>
 													<div class="lc-img">
                         <b></b>
@@ -102,38 +102,12 @@
                             <dd>服务评价</dd>
                         </dl>
                     </div>
-                    <div class="successCode">
-						<input type="hidden" id="shareurl" value="">
-	                	<p>邀请好友助力，升级我的保障服务，好友还能领现金</p>
-	                	<div class="title2" style="font-weight: bold;">
-	                		免费获得 <span>￥99</span>
-	                	</div>
-	                	<div class="box">
-	                		<dl>
-	                			<dt>
-	                				<span id="assistCode"></span>
-	                				<p>微信扫描二维码</p>
-	                			</dt>
-	                			<dd>
-	                				<div>镖狮营销管家一对一服务: </div>
-	                				<p>1.镖狮网先行赔付</p>
-	                				<p>2.营销内容干货大礼包</p>
-	                			</dd>
-	                		</dl>
-	                	</div>
-	                </div>
-                </div>
-                <p class="border-bg"></p>
-                <div class="you-like">
-                    <p class="like-title">猜你喜欢</p>
-                    <ul class="like-list">
-                                            </ul>
                 </div>
             </div>
         </div>
     </div>
 
-	    <div id="orderNextPrompt" class="buySureShadow" style="display:none;">
+{{--	    <div id="orderNextPrompt" class="buySureShadow" style="display:none;">
         <div class="inner">
             <b class="suc-closed" data-toggle="buycont"><img src="/picture/des-closed.png" alt=""/></b>
             <div class="buySure-title"><b></b>温馨提示</div>
@@ -146,9 +120,9 @@
                 <a id="suresubmitorder" class="rindex caClass" onclick="suresubmitorder()" traceflag="pop_submit_确认去支付">已确认，前往支付</a>
             </div>
         </div>
-    </div>
+    </div>--}}
         
-        <div class="bank-shadow" style="display:none">
+        {{--<div class="bank-shadow" style="display:none">
 	    <div class="bank-inner">
 	        <b id="closeOfflinePayPrompt" class="suc-closed caClass" data-toggle="buycont" traceflag="pop_close_线下支付返回"><img src="/picture/des-closed.png" alt=""/></b>
 	        <div class="bank-xuz">
@@ -166,7 +140,7 @@
 	            <dd class="pull-left">
 	                <p class="red-wining"><span>汇款识别码</span>3825443</p>
 	                <p><span>银&nbsp;行&nbsp;账&nbsp;号</span>110919349310301</p>
-	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名</span>北京发镖网络科技有限公司</p>
+	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名</span>北京萤火虫有限公司</p>
 	                <p><span>开&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;行</span>招商银行北京东直门支行（基本户）</p>
 	            </dd>
 	        </dl>
@@ -180,7 +154,7 @@
 	            
 	        </div>
 	    </div>
-	</div>
+	</div>--}}
 		
 	<div id="errorPromptDiv" class="buySureShadow" style="display:none">
         <div class="inner">

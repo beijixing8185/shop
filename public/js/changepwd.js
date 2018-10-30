@@ -245,3 +245,11 @@ function saveStatus(spu_id,status) {
         }
     });
 }
+
+
+/**
+ * 订单状态
+ */
+function evaliclick(status) {
+	window.location.href = '/member/order/'+status;
+}

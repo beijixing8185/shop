@@ -197,7 +197,6 @@
                         <div class="list-guide">
                             <ul>
                                 <li class="current" id="_service_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_服务项目页签" id="_service_a">服务项目</a></li>
-                                {{--<li id="_serqdan_btn"><a href="javascript:void(0);" class="caClass" traceflag="content_tab_套餐明细页签" id="_serqdan_a">套餐明细</a></li>--}}
                                 <li id="_service_flow_btn">
                                     <a href="javascript:void(0);" class="caClass" traceflag="content_tab_成功案例页签" id="_service_flow_a">成功案例</a>
                                 </li>
@@ -370,7 +369,7 @@
                                     <div class="promise">
                                         <p class="title">平台</p>
                                         <div class="d1">我们的定位是：用户的第三方“营销合伙人”。</div>
-                                        <div class="d1">镖狮平台秉持公证，公平的原则，维护用户权益，我们尽最大的努力，服务客户，保障营销效果。</div>
+                                        <div class="d1">营火虫平台秉持公证，公平的原则，维护用户权益，我们尽最大的努力，服务客户，保障营销效果。</div>
                                     </div>
                                     <div class="promise">
                                         <p class="title">效果保障</p>

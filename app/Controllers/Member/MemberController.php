@@ -174,9 +174,15 @@ class MemberController extends Controller
     /**
      * 会员订单
      */
-    public function orderList()
+    public function orderList($status = '')
     {
-        $order =  Order::getList($this ->member_id);
+        if($status==0){
+            $order =  Order::getList($this ->member_id);
+        }else{
+            $where = ' and plat_order_state = '.$status;
+            $order =  Order::getList($this ->member_id,$where);
+        }
+
         $member_img = '';
         if(!empty(Session::get('phone'))){
             $member = User::getMobile(Session::get('phone'));

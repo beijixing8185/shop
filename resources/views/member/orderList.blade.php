@@ -53,13 +53,16 @@
 			<div class="my-order">
 				<p><img src="/picture/icon01.png" alt="交易中心"/>交易中心</p>
 				<ul id="or-mold" class="or-mold">
-					<li  class="or-mold  active"  onclick="javascript:evaliclick(1);">我的订单</li>
+					<li  class="or-mold  active"  onclick="javascript:evaliclick(0);">我的订单</li>
+					<li  class="or-mold  active"  onclick="javascript:evaliclick(1);">待付款订单</li>
+					<li  class="or-mold  active"  onclick="javascript:evaliclick(2);">已付款订单</li>
+					<li  class="or-mold  active"  onclick="javascript:evaliclick(3);">待收货订单</li>
+					<li  class="or-mold  active"  onclick="javascript:evaliclick(9);">已完成订单</li>
 				</ul>
 
 				<p><img src="/picture/icon02.png" alt="交易中心"/>评价管理</p>
 				<ul class="storeList or-mold" id="storeList">
-					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(2);" id="evali1" litxt="待评价">待评价</li>
-					<li  onmouseover="evalimouseover(this);" onmouseout="evalimouseout(this);" onclick="javascript:evaliclick(3);" id="evali2" litxt="已评价">已评价</li>
+					<li  onclick="javascript:evaliclick(4);" id="evali1" litxt="待评价">待评价</li>
 				</ul>
 
 			</div>
