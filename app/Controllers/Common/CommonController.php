@@ -41,7 +41,7 @@ class CommonController extends Controller
         $randChar = $this ->randChar(6);
         $params = $request ->all();
         $sms = new Lsm_sms();
-        $res = $sms->send( $params['phone'],'您的验证码是'.$randChar.'，请尽快完成验证【营火虫网】');
+        $res = $sms->send( $params['phone'],'您的验证码是'.$randChar.'，请尽快完成验证【好歆网络】');
         if( isset( $res['error'] ) &&  $res['error'] == 0 ){
             Cache::put($params['phone'],$randChar,10);
             return 1;
