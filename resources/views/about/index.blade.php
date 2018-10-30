@@ -55,16 +55,25 @@
                 </div>
 				<div class="hzdt-fuilt">
 						<div class="container line-us-bottom">
-							<div><div class="title-warp"><p class="title-inner"><b>联系我们</b></p></div></div>
-                        			<ul class="hzdt">
-                                        <div style="width:1170px;height:450px;border:#ccc solid 1px;font-size:12px" id="map"></div>
-		                            </ul>
+							<div></div>
+                        			<ul class="hzdt"></ul>
 							<div style="margin-top:20px;"></div>
                         </div>
 				</div>
             </div>
         </div>
     </div>
+<div>
+    <div class="hzdt-fuilt">
+        <div class="container line-us-bottom">
+            <div><div class="title-warp"><p class="title-inner"><b>联系我们</b></p></div></div>
+            <ul class="hzdt">
+                <div style="width:1170px;height:450px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+            </ul>
+            <div style="margin-top:20px;"></div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
     function funcAbout(id) {
         window.location.href='/about/index/'+id;
