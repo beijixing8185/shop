@@ -23,13 +23,37 @@ class ArticleController extends Controller
     /**
      * 文章列表
      */
-    public function articleList(){
-        $article = Article::getList();
+    public function articleList(Request $request){
+        $param = $request ->all();
+        $cid = '';//栏目
+        $status = '';//状态
+        $name = '';
+        if(isset($param['cid'])){
+            $cid = $param['cid'];
+        }
+        if(isset($param['status'])){
+            $status = $param['status'];
+        }
+        if(isset($param['name'])){
+            $name = trim($param['name']);
+        }
+        $article = Article::getList($cid,$status,'','',$name);
         $where = ' and level = 2';
         $cate =  ArticleCate::getList($where,1);
         $cates = $cate->pluck('cate_name','id')->toArray();
 
-        return view('admin.articles.articleList',compact('article','cates'));
+        return view('admin.articles.articleList',compact('article','cates','cate','cid','status','name'));
+    }
+
+
+    /**
+     * 模糊搜索
+     */
+    public function articleSearch(Request $request)
+    {
+        $param = $request ->all();
+        $cate =  ArticleCate::getList($where,1);//分类列表
+        return view('admin.articles.searchList',compact('cate'));
     }
 
 

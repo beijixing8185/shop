@@ -24,11 +24,26 @@ class OrderController extends Controller
     /**
      * 列表
      */
-    public function orderList(){
-
-        $order = Order::getList();
-        //dd($order);
-        return view('admin.orders.orderList',compact('order'));
+    public function orderList(Request $request)
+    {
+        $param = $request ->all();
+        $status = '';//检索选项
+        $where = '';//检索条件
+        $name = '';
+        if(isset($param['status']) && isset($param['name'])){
+            $name = $param['name'];
+            if($param['status'] ==1){
+                $where = ' and mobile = "'.$name.'"';
+            }
+            if($param['status'] ==2){
+                $where = ' and order_sn = "'.$name.'"';
+            }
+            if($param['status'] ==3){
+                $where = ' and spu_name = "'.$name.'"';
+            }
+        }
+        $order = Order::getList('',$where);
+        return view('admin.orders.orderList',compact('order','status','name'));
     }
 
     /**

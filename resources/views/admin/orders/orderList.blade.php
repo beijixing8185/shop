@@ -22,9 +22,37 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">
-              <a href="" class="label label-primary"></a>
-              </h3>
+                <div class="layui-tab layui-tab-brief">
+                    <form class="layui-form layui-form-pane" method="get" action="{{url('hx/admin/orderList')}}">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">检索</label>
+                            <div class="layui-input-inline">
+                                <select name="status">
+
+                                    <option value="1" @if($status ==1) selected="selected" @endif >手机号</option>
+                                    <option value="2" @if($status ==2) selected="selected" @endif >订单号</option>
+                                    <option value="3" @if($status ==3) selected="selected" @endif >商品名称</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">关键词</label>
+                            <div class="layui-input-inline">
+                                @if(!empty($name))
+                                    <input type="text" name="name" value="{{$name}}" class="layui-input">
+                                @else
+                                    <input type="text" name="name" value="" placeholder="请输入标题/关键词" class="layui-input">
+                                @endif
+                            </div>
+                        </div>
+                        <div class="layui-inline" id="search">
+                            <button class="layui-btn">搜索</button>
+                        </div>
+                        <div class="layui-inline add_arti">
+                            <a href="{{url('hx/admin/addService')}}"><button class="layui-btn">添加</button></a>
+                        </div>
+                    </form>
+                </div>
 
 
             </div>

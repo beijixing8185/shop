@@ -4997,3 +4997,294 @@ table.text-center th {
 .input-group #status{
   float: left;
 }
+.searchs{
+  display: inline-block;
+  font-size: 18px;
+  margin: 0;
+  line-height: 1;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+.layui-inline {
+  position: relative;
+  display: inline-block;
+}
+.layui-btn, .layui-inline, img {
+  vertical-align: middle;
+}
+.layui-form-pane .layui-form-label {
+  width: 80px;
+  padding: 8px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.layui-form-label {
+  float: left;
+  display: block;
+  padding: 9px 15px;
+  width: 80px;
+  font-weight: 400;
+  text-align: right;
+}
+.layui-input-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+.layui-form-pane .layui-input-inline {
+  margin-left: -1px;
+}
+button, input, optgroup, option, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+}
+
+
+button, input, optgroup, option, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  outline: 0;
+}
+.layui-form-select {
+  position: relative;
+}
+.layui-form-pane .layui-input {
+  border-radius: 0 2px 2px 0;
+}
+.layui-form-select .layui-input {
+  padding-right: 30px;
+  cursor: pointer;
+}
+.layui-input, .layui-textarea {
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+}
+.layui-input, .layui-select, .layui-textarea {
+  height: 38px;
+  line-height: 38px;
+  line-height: 36px\9;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.layui-form-select .layui-edge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  cursor: pointer;
+  border-width: 6px;
+  border-top-color: #c2c2c2;
+  border-top-style: solid;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.layui-edge {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: dashed;
+  border-color: transparent;
+  overflow: hidden;
+}
+.layui-form-select dl {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 42px;
+  padding: 5px 0;
+  z-index: 999;
+  border: 1px solid #d2d2d2;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.layui-inline {
+  position: relative;
+  display: inline-block;
+}
+.layui-form-pane .layui-form-label {
+  width: 80px;
+  padding: 8px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.layui-form-label {
+  float: left;
+  display: block;
+  padding: 9px 15px;
+  width: 80px;
+  font-weight: 400;
+  text-align: right;
+}
+.layui-form-label, .layui-form-mid, .layui-textarea {
+  line-height: 20px;
+  position: relative;
+}
+.layui-input-block, .layui-input-inline {
+  position: relative;
+}
+.layui-input-inline {
+  display: inline-block;
+  vertical-align: middle;
+}
+.layui-form-pane .layui-input-inline {
+  margin-left: -1px;
+}
+.layui-form-select {
+  position: relative;
+}
+.layui-form-select dl {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 42px;
+  padding: 5px 0;
+  z-index: 999;
+  border: 1px solid #d2d2d2;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+.layui-form-select dl dd.layui-this {
+  background-color: #5FB878;
+  color: #fff;
+}
+.layui-form-select dl dd, .layui-form-select dl dt {
+  padding: 0 10px;
+  line-height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.layui-form-select dl dd {
+  cursor: pointer;
+}
+.layui-form-select .layui-input {
+  padding-right: 30px;
+  cursor: pointer;
+}
+.layui-input, .layui-textarea {
+  display: block;
+  width: 100%;
+  padding-left: 10px;
+}
+.layui-input, .layui-select, .layui-textarea {
+  height: 38px;
+  line-height: 38px;
+  line-height: 36px\9;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  border-radius: 2px;
+}
+.layui-form-pane .layui-input {
+  border-radius: 0 2px 2px 0;
+}
+.layui-form-select .layui-edge {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  cursor: pointer;
+  border-width: 6px;
+  border-top-color: #c2c2c2;
+  border-top-style: solid;
+  transition: all .3s;
+  -webkit-transition: all .3s;
+}
+.layui-edge {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: dashed;
+  border-color: transparent;
+  overflow: hidden;
+}
+.layui-inline {
+  position: relative;
+  display: inline-block;
+}
+.layui-tab {
+  margin: 10px 0;
+  overflow: hidden;
+  text-align: left!important;
+}
+
+.layui-form-select {
+  position: relative;
+}
+blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+.layui-input-inline select{
+  width: 200px;
+  padding: 9px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.layui-input-inline select option{
+   padding: 0 10px;
+   line-height: 36px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  display: block;
+  -webkit-margin-start: 40px;
+ }
+.layui-btn {
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  padding: 0 18px;
+  background-color: #009688;
+  color: #fff;
+  white-space: nowrap;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: .9;
+  filter: alpha(opacity=90);
+}
+.layui-inline {
+  position: relative;
+  display: inline-block;
+}
+.add_arti{
+  margin-left:20px;
+}
+#keywords input{
+  width: 300px;
+}

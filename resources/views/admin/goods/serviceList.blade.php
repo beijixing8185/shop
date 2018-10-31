@@ -22,9 +22,82 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">
-              <a href="{{url('hx/admin/addService')}}" class="label label-primary">添加</a>
-              </h3>
+                <div class="layui-tab layui-tab-brief">
+                    <form class="layui-form layui-form-pane" method="get" action="{{url('hx/admin/serviceList')}}">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">栏目分类</label>
+                            <div class="layui-input-inline">
+                                <select name="gid">
+                                    @if(!empty($gid))
+                                        <option selected="selected" value="{{$gid}}">{{$cate_name}}</option>
+                                    @endif
+                                    <option value="">全部</option>
+                                    @if(!empty($goodsCate))
+                                        @foreach($goodsCate as $val)
+                                            <option value="{{$val['id']}}">{{$val['name']}}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-inline">
+                                <select name="status">
+                                    @if(isset($status))
+                                        <option value="{{$status}}" selected="selected"></option>
+                                    @endif
+                                    <option value="" >不限</option>
+                                    <option value="1" >有效</option>
+                                    <option value="0" >无效</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">热销</label>
+                            <div class="layui-input-inline">
+                                <select name="is_hot">
+                                    @if(isset($is_hot))
+                                        <option value="{{$is_hot}}" selected="selected"></option>
+                                    @endif
+                                    <option value="" >不限</option>
+                                    <option value="1" >是</option>
+                                    <option value="0" >否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">推荐</label>
+                            <div class="layui-input-inline">
+                                <select name="is_commend">
+                                    @if(isset($is_commend))
+                                        <option value="{{$is_commend}}" selected="selected"></option>
+                                    @endif
+                                    <option value="" >不限</option>
+                                    <option value="1" >是</option>
+                                    <option value="0" >否</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-inline">
+                            <label class="layui-form-label">关键词</label>
+                            <div class="layui-input-inline">
+                                @if(!empty($name))
+                                    <input type="text" name="name" value="{{$name}}" placeholder="请输入标题/关键词" class="layui-input">
+                                @else
+                                    <input type="text" name="name" value="" placeholder="请输入标题/关键词" class="layui-input">
+                                @endif
+                            </div>
+                        </div>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                        <div class="layui-inline" id="search">
+                            <button class="layui-btn">搜索</button>
+                        </div>
+                        <div class="layui-inline add_arti">
+                            <a href="{{url('hx/admin/addService')}}"><button class="layui-btn">添加</button></a>
+                        </div>
+                    </form>
+                </div>
 
 
             </div>

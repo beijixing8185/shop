@@ -24,9 +24,41 @@ class ServiceController extends Controller
     /**
      * 服务列表
      */
-    public function serviceList(){
-        $goods = GoodsSpu::getlist();
-        return view('admin.goods.serviceList',compact('goods'));
+    public function serviceList(Request $request){
+        $param = $request ->all();
+        $gid = '';//栏目
+        $status = '';//状态
+        $name = ''; //关键词
+        $is_commend = '';//是否推荐
+        $is_hot = '';   //是否热销
+        $where = '';
+        $cate_name = '';//栏目名称
+        if(isset($param['gid'])){
+            $cate_name = GoodsCate::getNames($param['gid']);
+            $gid = $param['gid'];
+            $where .= ' and gc_id_2 = '.$gid;
+        }
+        if(isset($param['status'])){
+            $status = $param['status'];
+            $where .= ' and status = '.$status;
+        }
+        if(isset($param['is_commend'])){
+            $is_commend = $param['is_commend'];
+            $where .= ' and is_commend = '.$is_commend;
+        }
+        if(isset($param['is_hot'])){
+            $is_hot = $param['is_hot'];
+            $where .= ' and is_hot = '.$is_hot;
+        }
+        if(isset($param['name'])){
+            $name = trim($param['name']);
+            $where .= ' and spu_name like  "%'.$name.'%"';
+        }
+
+        $goods = GoodsSpu::getlist($where);
+
+        $goodsCate = GoodsCate::getList(' and level = 2','1');
+        return view('admin.goods.serviceList',compact('goods','goodsCate','gid','status','name','is_commend','is_hot','cate_name'));
     }
 
 

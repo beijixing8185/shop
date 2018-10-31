@@ -78,4 +78,14 @@ class GoodsCate extends Model{
         return $getTree;
     }
 
+    /**
+     * 根据id查询名称,返回单个值
+     * $ids string 1,2,3
+     */
+    public static function  getNames($ids){
+        $ids = explode(',',$ids);
+        $cate_name = Self::whereIn('id',$ids)->value('name');
+        return $cate_name;
+    }
+
 }
