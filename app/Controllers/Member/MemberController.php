@@ -84,6 +84,7 @@ class MemberController extends Controller
             'username'=>$param['putReceiver'],
             'phone'=>$param['putPhone'],
             'address'=>$param['putAddress'],
+            'type'=>$param['type'],
         ];
         $code = Invoice::addInvoice($data);
         if($code > 0){
@@ -105,6 +106,7 @@ class MemberController extends Controller
             'username'=>$param['zhuanReceiver'],
             'phone'=>$param['zhuanPhone'],
             'address'=>$param['zhuanAddress'],
+            'type'=>$param['type'],
         ];
         $code = Invoice::addInvoice($data);
         if($code > 0){

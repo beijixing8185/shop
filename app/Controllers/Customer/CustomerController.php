@@ -11,6 +11,7 @@ namespace app\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
 use App\Models\Customer;
+use app\Models\GoodsSpu;
 
 class CustomerController extends Controller{
 
@@ -23,7 +24,8 @@ class CustomerController extends Controller{
     {
         $getdetail = Customer::getFind($id);    //  文章详情
         $getCustomerList = Customer::getList('',1,5);//dd($getCustomerList);//客户案例列表
+        $commend = GoodsSpu::list(' and is_commend = 1 and status = 1',5);  //推荐商品 is_commend
 
-        return view('customer.detail',compact('getdetail','getCustomerList'));
+        return view('customer.detail',compact('getdetail','getCustomerList','commend'));
     }
 }

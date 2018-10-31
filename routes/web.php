@@ -220,7 +220,7 @@ Route::group(['prefix'=>'hx/admin','namespace'=>'Admin'], function () {
         Route::get('orderList', 'OrderController@orderList'); //订单
         Route::get('sendOrder/{id}', 'OrderController@sendOrder'); //
         Route::post('updateOrder', 'OrderController@updateOrder'); //修改状态
-        Route::get('invo/{id}', 'OrderController@invoInfo'); //订单发票信息
+        Route::get('invo/{id?}', 'OrderController@invoInfo'); //订单发票信息
         Route::post('postInvo', 'OrderController@postInvo'); //订单发票信息
 
     });

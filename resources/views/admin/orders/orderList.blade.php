@@ -104,7 +104,7 @@
                             @endif
                         </td>
                         <td >{{$g->created_at}}</td>
-                        <td ><a href="{{url('hx/admin/invo',['id'=>$g->invo_id])}}">查看{{$g->invo_id}}</a></td>
+                        <td ><a href="{{url('hx/admin/invo',['id'=>$g->invo_id])}}">查看</a></td>
 
                     <td><a href="{{url('hx/admin/sendOrder',['id'=>$g->id])}}" class="fa fa-edit" title="编辑"style="margin-left: 10px;" ></a></td>
                 </tr>

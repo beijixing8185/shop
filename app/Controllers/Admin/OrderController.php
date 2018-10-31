@@ -57,7 +57,7 @@ class OrderController extends Controller
      */
     public function invoInfo(Request $request){
         $order = Invoice::find($request->id);
-
+       // dd($order);
         return view('admin.orders.invoOrder',compact('order'));
     }
     /**

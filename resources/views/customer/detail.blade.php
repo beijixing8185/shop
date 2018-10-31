@@ -24,19 +24,13 @@
         body{background: #f5f5f5;min-width: 1170px;}
     </style>
 @endsection
-
-
 @section('content')
-
-
-	@include('./common/demand')
-	@include('./common/nav')
+@include('./common/demand')
+@include('./common/nav')
 @include('./common/search')
 @include('./common/right')
 @include('./common/poper')
 <!-- 面包屑 -->
-
-
     <div class="bread container">
         <ul class="bread-list">
             <li><a href="/">首页</a></li>
@@ -55,7 +49,6 @@
                 <span>服务周期：<strong>{{$getdetail['day']}} </strong></span>
             </div>
         </div>
-
     </div>
     <div class="case-session container">
         <div class="pull-left case-con">
@@ -66,36 +59,25 @@
             </div>
         </div>
         <div class="pull-left case-mes">
-
             <div class="other-ser affix-top" id="myScrollspy" style="position: relative;">
                 <p class="other-ser-t">推荐宝贝</p>
+                @if(!empty($commend))
+                    @foreach($commend as $val)
                 <dl>
                     <dt class="custom">
                         <a href="/product/428.htm" target="_blank">
-                            <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=prod/pc/c533ea4a-263f-4ce2-bedc-3907d96b1b24_cubead.jpg" alt="微信朋友圈广告／广告投放">
+                            <img src="{{$val['main_image']}}" alt="{{$val['spu_name']}}">
                         </a>
                     </dt>
                     <dd>
-                        <p><a href="/product/428.htm" target="_blank">微信朋友圈广告／广告投放</a></p>
-                        <span>5000元起</span>
+                        <p><a href="/goods/goodsDetail/{{$val['id']}}" target="_blank">{{$val['spu_name']}}</a></p>
+                        <span>{{$val['price']}}</span>
                     </dd>
                 </dl>
-                <dl>
-                    <dt class="custom">
-                        <a href="/product/430.htm" target="_blank">
-                            <img src="http://www.51biaoshi.com/product/loadImage.htm?imagepath=prod/pc/c533ea4a-263f-4ce2-bedc-3907d96b1b24_cubead.jpg" alt="广点通广告／广告投放">
-                        </a>
-                    </dt>
-                    <dd>
-                        <p><a href="/product/430.htm" target="_blank">广点通广告／广告投放</a></p>
-                        <span>5000元起</span>
-                    </dd>
-                </dl>
-
-
+                    @endforeach
+                @endif
             </div>
         </div>
-
     </div>
     <div class="more-case container">
         <p><b></b>宝贝更多案例</p>
@@ -109,8 +91,6 @@
             </dl>
             @endforeach
         </div>
-
     </div>
-
 @endsection
 

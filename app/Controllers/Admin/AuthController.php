@@ -41,7 +41,7 @@ class AuthController extends Controller
         $userInfo = AdminUser::where('username',$username)->first();
 
         if (!$userInfo) {
-            echo '<script>alert("账户不存在");window.location.href="/zs/admin/login";</script>';
+            echo '<script>alert("账户不存在");window.location.href="/hx/admin/login";</script>';
             return ;
         }
         if (password_verify ( $password , $userInfo->password)) {

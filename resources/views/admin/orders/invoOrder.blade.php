@@ -26,11 +26,17 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+              @if(!empty($order))
             <form action="{{url('hx/admin/postInvo')}}" method="post"  class="form-horizontal" enctype="multipart/form-data" onsubmit="return checkSubmit();">
           {!!csrf_field()!!}
 
               <div class="box-body">
                <div class="form-group">
+                   @if($order->type == 1)
+                   <h3 style="width:800px;margin: 0 auto;padding-bottom: 5px;">普通发票</h3>
+                   @elseif($order->type == 2)
+                   <h3 style="width:800px;margin: 0 auto;padding-bottom: 5px;">增值税发票</h3>
+                   @endif
                    <label for="inputPassword3" class="col-sm-2 control-label">发票抬头:</label>
 
                    <div class="col-sm-5">
@@ -45,6 +51,7 @@
                       <span class="name" style="color:red"></span>
                     </div>
                   </div>
+                  @if($order->type == 2)
                   <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">注册地址:</label>
 
@@ -75,6 +82,7 @@
                           <span class="name" style="color:red"></span>
                       </div>
                   </div>
+                  @endif
                   <div class="form-group">
                       <label for="inputPassword3" class="col-sm-2 control-label">收件人:</label>
 
@@ -130,6 +138,9 @@
               </div>
               <!-- /.box-footer -->
             </form>
+                  @else
+                  <h2>暂无发票信息。。。</h2>
+                  @endif
           </div>
             <!-- /.box-body -->
           </div>

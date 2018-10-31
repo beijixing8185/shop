@@ -278,7 +278,8 @@
                         putIdentifyNo:putIdentifyNo,
                         putReceiver:putReceiver,
                         putPhone:putPhone,
-                        putAddress:putAddress
+                        putAddress:putAddress,
+                        type:1  //普通发票
                     };
                     $.ajax({
                         url: "/member/invoice_a",
@@ -320,6 +321,7 @@
                         zhuanReceiver:zhuanReceiver,
                         zhuanPhone:zhuanPhone,
                         zhuanAddress:zhuanAddress,
+                        type:2  //增值税发票
                     }
                     $.ajax({
                         url: "/member/invoice_b",
