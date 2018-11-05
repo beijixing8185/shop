@@ -49,6 +49,8 @@ class GoodsSpu extends Model
         $goods->main_image = $object->first_img;
         $goods->market_price = $object->market_price;
         $goods->price = $object->price;
+        $goods->comp = $object->comp;
+        $goods->salen_num = $object->salen_num;
 
         $ids = $object->cate_one.','.$object->cate_two;
         $gc_name = GoodsCate::getNameById($ids);
@@ -60,6 +62,7 @@ class GoodsSpu extends Model
         $goods->is_commend = $object->commend;
         $goods->status = $object->status;
 
+
         return $goods->save();
     }
 
@@ -68,7 +71,7 @@ class GoodsSpu extends Model
      */
     public static function goodsDetail($id){
         return Self::leftJoin('goods_skus','goods_spus.id','goods_skus.spu_id')
-            ->select('goods_spus.id as gid','spu_name','gc_id_1','gc_id_2','gc_name','description','main_image','content','goods_spus.market_price','goods_spus.price','goods_spus.num','goods_spus.status','salen_num','evaluate_num','star','is_hot','is_commend','sku_spec','spec_name')
+            ->select('goods_spus.id as gid','spu_name','gc_id_1','gc_id_2','gc_name','description','main_image','content','goods_spus.market_price','goods_spus.price','goods_spus.num','goods_spus.comp','goods_spus.status','goods_spus.salen_num','evaluate_num','star','is_hot','is_commend','sku_spec','spec_name')
             ->where('goods_spus.id',$id)
             ->first();
     }

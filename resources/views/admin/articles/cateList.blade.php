@@ -35,7 +35,6 @@
 
 
               <div class="box-body">
-
                   <div class="form-group">
                       <ul>
                           @foreach($cate as $c)

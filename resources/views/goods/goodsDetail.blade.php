@@ -60,7 +60,8 @@
                                 <li class="fwjj">
                                     <div class="dw-left">商品价格
                                         <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>{{$goods['market_price']}}
-									        <strong>[市场价：<b>&yen;{{$goods['price']}}</b>]</strong>
+                                            <small >{{$goods['comp']}}</small>
+									        <strong>[市场价：<b>&yen;{{$goods['price']}}<small>{{$goods['comp']}}</small></b>]</strong>
 										</span>
                                     </div>
                                     <div class="dw-right dw-right-good"><span>成交量</span><p>{{$goods['salen_num']}}</p></div>

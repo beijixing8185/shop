@@ -655,3 +655,6 @@
 	text-align: center;
 	color: #999;
 }
+#packagePrice small{
+	font-size:14px
+}

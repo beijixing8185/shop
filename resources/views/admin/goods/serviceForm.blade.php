@@ -127,6 +127,14 @@
                     <span class="price" style="color:red"></span>
                   </div>
               </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">商品单位:</label>
+
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" placeholder="/个  /篇 /份" name="comp"  id="comp" value="{{$goods->comp}}">
+                        <span class="comp" style="color:red"></span>
+                    </div>
+                </div>
               <div class="form-group">
                   <label for="inputPassword3" class="col-sm-2 control-label">服务库存:</label>
 
@@ -135,6 +143,13 @@
                     <span class="num" style="color:red"></span>
                   </div>
               </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-2 control-label">销售量:</label>
+                    <div class="col-sm-2">
+                        <input type="number" class="form-control" name="salen_num" id="salen_num" min="0" value="{{$goods->salen_num}}" >
+                        <span class="salen_num" style="color:red"></span>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">描述:</label>
                     <div class="col-sm-5">
