@@ -133,7 +133,7 @@
 #showtype12 .title-inner > b {background-color: #ffffff;display: block;position:relative;top:-20px;padding:0 15px;font-size:28px;color:#333;}
 #showtype12 .hotb-list li{
     width: 276px;
-    height: 186px;
+    height:276px;
     background: url(/images/jhs-01.png) no-repeat center center;
     background-size: 276px 186px;
     cursor: pointer;
@@ -159,7 +159,7 @@
     transform: translate3d(0,-2px,0);
     border-radius: 2px;
     border-color: transparent;}
-#showtap03 .hotb-list li .list-img {width:278px;height:190px;overflow: hidden;}
+#showtap03 .hotb-list li .list-img {width:278px/*;height:190px*/;overflow: hidden;}
 #showtap03 .hotb-list li .list-img img{   -webkit-transition: all .7s;
     -moz-transition: all .7s;
     -ms-transition: all .7s;

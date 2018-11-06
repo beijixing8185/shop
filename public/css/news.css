@@ -23,8 +23,8 @@
     clear: both;
 }
 .showtype11_group .groupMain ul li{
-    width: 376px;
-    height: 186px;
+    width: 275px;
+    height: 275px;
     float: left;
     margin-right: 11px;
     margin-bottom: 10px;
@@ -43,7 +43,7 @@
     transform: translateY(-2px);
     border-radius: 2px;
 }
-.showtype11_group .groupMain ul li:nth-child(3n){
+.showtype11_group .groupMain ul li:nth-child(4n){
     margin-right: 0;
 }
 .showtype11_group .groupMain ul li a{

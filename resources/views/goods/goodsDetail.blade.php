@@ -616,7 +616,7 @@
         })
         $('#buynow').click(function(){
             var spuId = $('#spuId').val()
-            var packageid = $('.selectedLi').attr('packageid')
+            var packageid = $('.selectedLi').attr('packageid');
             window.location.href="/member/showOrder?spuId=4&skuId=1"
             //var url = '/member/addOrder?spuId='+spuId + '&skuId='+packageid;
             /*var url = '/member/addOrder?spuId=4&skuId=1';

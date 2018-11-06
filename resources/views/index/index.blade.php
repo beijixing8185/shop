@@ -86,7 +86,7 @@
         <ul class="hotb-list hotb-list-back-1">
 			@if(!empty($goods[0]['child']))
 				@foreach($goods[0]['child'] as $val)
-        	<li @if($val['main_image'] =='') style="background:url('/picture/index_default.png') no-repeat center center;background-size: 276px 186px;" @else style="background:url({{$val['main_image']}}) no-repeat center center;background-size: 276px 186px;" @endif >
+        	<li @if($val['main_image'] =='') style="background:url('/picture/index_default.png') no-repeat center center;background-size: 276px 276px;" @else style="background:url({{$val['main_image']}}) no-repeat center center;background-size: 276px 276px;" @endif >
                 <a href="/goods/goodsDetail/{{$val['id']}}"  target="_blank">
                 	<div class="topText">
                         <p>{{$val['spu_name']}}</p>

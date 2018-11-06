@@ -68,15 +68,15 @@
 				<ul>
 					@foreach($val->child as $goods)
 						@if(!empty($goods['main_image']))
-					<li style="background:url({{$goods['main_image']}}) no-repeat center center;background-size: 376px 186px;">
+					<li style="background:url({{$goods['main_image']}}) no-repeat center center;background-size: 376px 376px">
 						@else
-					<li style="background:url('/picture/goods_img.png') no-repeat center center;background-size: 376px 186px;">
+					<li style="background:url('/picture/goods_img.png') no-repeat center center;background-size: 376px 376px;">
 						@endif
 						<a href="/goods/goodsDetail/{{$goods['id']}}" target="_blank">
-							<div class="listGroup">
+							{{--<div class="listGroup">
 								<p>{{$goods['spu_name']}}</p>
 								<p>{{$goods['description']}}</p>
-							</div>
+							</div>--}}
 							<div class="bottomPrice">
 								<span>￥</span>{{$goods['price']}}
 								<span>{{$goods['market_price']}}</span>
