@@ -12,8 +12,7 @@
 	<link rel="stylesheet" href="{{asset('css/common-footer.css')}}">
 	<link rel="stylesheet" href="{{asset('css/publish.css')}}">
 	<script src="{{asset('js/about.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/jquery.jcarousel.min.js')}}"></script>
-	<script type="text/javascript" src="{{asset('js/jcarousel.connected-carousels.js')}}"></script>
+
 	<script src="{{asset('js/popup.js')}}"></script>
 	<script src="{{asset('js/iconfont.js')}}"></script>
 	<script src="{{asset('js/common-right.js')}}"></script>
@@ -74,6 +73,16 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $("#publish-hover").hover(function(){
+            $(".p-list").show();
+        },function(){
+            $(".p-list").hide();
+        })
+    })
+</script>
+
 <script type="text/javascript">
     function funcAbout(id) {
         window.location.href='/about/index/'+id;
