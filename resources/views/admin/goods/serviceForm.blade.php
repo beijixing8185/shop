@@ -160,7 +160,7 @@
                 <div class="form-group">
                     <label for="inputPassword3" class="col-sm-2 control-label">服务详情:</label>
                     <div class="col-sm-5">
-                        <script id="editor" style="width: 650px;height: 600px;">{!! $goods->content !!}</script>
+                        <script id="editor" style="width:850px;height: 600px;">{!! $goods->content !!}</script>
                     </div>
                 </div>
                 <div class="form-group">

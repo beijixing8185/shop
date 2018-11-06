@@ -94,7 +94,7 @@
                             <button class="layui-btn">搜索</button>
                         </div>
                         <div class="layui-inline add_arti">
-                            <a href="{{url('hx/admin/addService')}}"><button class="layui-btn">添加</button></a>
+                            <a class="layui-btn" href="{{url('hx/admin/addService')}}">添加</a>
                         </div>
                     </form>
                 </div>
