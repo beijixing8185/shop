@@ -101,7 +101,7 @@ class ServiceController extends Controller
      */
     public function delService(Request $request){
 
-        $res = GoodsSpu::whereId($request->id)->update(['status'=>2]);
+        $res = GoodsSpu::whereId($request->id)->update(['status'=>-1]);
         if($res)
             return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
         else
