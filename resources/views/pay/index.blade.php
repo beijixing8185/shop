@@ -73,7 +73,7 @@
                                             <button onclick="addBuyNum()"><img src="/picture/add.png" /></button>
 										                                    </div>
                                 </div>
-								<input id="packagePrice" type="text" value="399.0" style="display:none" />
+								<input id="packagePrice" type="text" value="{{$goods->price}}" style="display:none" />
                                 <p class="pull-right baob-list-dj price-yen-dj">
 																			&yen;{{$goods->price}}
 																	</p>

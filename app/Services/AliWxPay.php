@@ -24,7 +24,7 @@ class AliWxPay
         $orderInfo = Order::getInfo($order_sn);
         $order = [
             'out_trade_no' => $orderInfo->order_sn,
-            'total_amount' => '0.01',
+            'total_amount' => $orderInfo->order_amounts,
             'subject' => $orderInfo->spu_name,
         ];
         $config = config('alipay');

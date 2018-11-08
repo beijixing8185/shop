@@ -15,7 +15,7 @@ class GoodsSpu extends Model
 
     public static function getlist($where = '')
     {
-        $goods = Self::whereRaw('id >= 1' . $where)->orderBy('id', 'desc')->paginate(10);
+        $goods = Self::whereRaw('status > 0 ' . $where)->orderBy('id', 'desc')->paginate(10);
         return $goods;
     }
 

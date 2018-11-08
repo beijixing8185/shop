@@ -45,7 +45,7 @@ class PayController extends Controller
         $orders = Order::getInfo($request->orderSn);
         $order = [
             'out_trade_no' => $orders->order_sn,
-            'total_fee' => '1', // **单位：分**
+            'total_fee' => $orders->order_amounts * 100, // **单位：分**
             'body' => $orders->spu_name,
         ];
         $pay = Pay::wechat($config)->scan($order);//应该是返回二维码地址
