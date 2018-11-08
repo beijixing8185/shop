@@ -59,9 +59,9 @@
                             <ul class="zb_ul">
                                 <li class="fwjj">
                                     <div class="dw-left">商品价格
-                                        <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>{{$goods['market_price']}}
+                                        <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>{{$goods['price']}}
                                             <small >{{$goods['comp']}}</small>
-									        <strong>[市场价：<b>&yen;{{$goods['price']}}<small>{{$goods['comp']}}</small></b>]</strong>
+									        <strong>[市场价：<b>&yen;{{$goods['market_price']}}<small>{{$goods['comp']}}</small></b>]</strong>
 										</span>
                                     </div>
                                     <div class="dw-right dw-right-good"><span>成交量</span><p>{{$goods['salen_num']}}</p></div>
@@ -77,11 +77,11 @@
 
                                 <li >
                                     <p class="dw-left" style="position:relative;">套餐类型</p>
-                                    <input type="hidden" id="isStdProduct" value="0">
+                                    <input type="hidden" id="isStdProduct" value="1">
                                     <ul class="taoc-right" id="taocanList">
                                         <input id="packageId" type="hidden" value="131" />
                                         @foreach($goodsSku as $g)
-                                        <li isusable="1" packageId="{{$g->id}}" marketPrice="{{$g->market_price}}" packagePrice="{{$g->price}}" packageType="3" class=" caClass" id="package131" traceflag="content_select_微信代运营基础版">{{$g->spec_name}}<b><img src="/picture/tcselected.png" alt=""/></b>
+                                        <li isusable="1" packageId="{{$g->id}}" marketPrice="{{$g->market_price}}" packagePrice="{{$g->price}}" packageType="3" class=" caClass @if($loop->first) selectedLi @endif" id="package{{$g->id}}" traceflag="content_select_微信代运营基础版">{{$g->spec_name}}<b><img src="/picture/tcselected.png" alt=""/></b>
                                             <p class="tradefilter xz-num" style="display:block" data-id="0000"><span></span></p>
                                         </li>
                                         @endforeach
@@ -514,6 +514,7 @@
 
 @section('js')
     <script>
+
         var swiperPublish = new Swiper('.swiper-container-publish', {
             autoHeight: true, //高度随内容变化
             pagination: {
@@ -522,6 +523,14 @@
                 noSwiping : true
             }
         });
+            $(function(){
+                $("#publish-hover").hover(function(){
+                    $(".p-list").show();
+                },function(){
+                    $(".p-list").hide();
+                })
+            })
+
     </script>
 
     <script>
