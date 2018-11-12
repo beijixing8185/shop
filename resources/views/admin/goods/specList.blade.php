@@ -21,13 +21,61 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">
-              <a href="{{url('hx/admin/serviceSpecForm')}}" class="label label-primary">添加</a>
-              </h3>
 
 
-            </div>
+              <div class="box-header">
+                  <div class="layui-tab layui-tab-brief">
+                      <form class="layui-form layui-form-pane" method="get" action="{{url('hx/admin/specList')}}">
+                          <div class="layui-inline">
+                              <label class="layui-form-label">栏目分类</label>
+                              <div class="layui-input-inline">
+                                  <select name="spu_id">
+                                      <option value="">全部</option>
+                                      @if(!empty($goodsSpu))
+                                              @foreach($goodsSpu as $val)
+                                              <option value="{{$val['id']}}" @if($val->id ==$spu_id ) selected @endif>{{$val['spu_name']}}</option>
+                                          @endforeach
+                                      @endif
+                                  </select>
+                              </div>
+                          </div>
+                          <div class="layui-inline">
+                              <label class="layui-form-label">状态</label>
+                              <div class="layui-input-inline">
+                                  <select name="status">
+                                      @if(isset($status))
+                                          <option value="{{$status}} " selected="selected"></option>
+                                      @endif
+                                      <option value="" @if($status =='' ) selected @endif>不限</option>
+                                      <option value="1" @if($status =='1' ) selected @endif >有效</option>
+                                      <option value="0" @if($status =='0' ) selected @endif>无效</option>
+                                  </select>
+                              </div>
+                          </div>
+{{--
+                          <div class="layui-inline">
+                              <label class="layui-form-label">关键词</label>
+                              <div class="layui-input-inline">
+                                  @if(!empty($name))
+                                      <input type="text" name="name" value="{{$name}}" placeholder="请输入标题/关键词" class="layui-input">
+                                  @else
+                                      <input type="text" name="name" value="" placeholder="请输入标题/关键词" class="layui-input">
+                                  @endif
+                              </div>
+                          </div>--}}
+                          {{--<input type="hidden" name="_token" value="{{ csrf_token() }}" />--}}
+                          <div class="layui-inline" id="search">
+                              <button class="layui-btn">搜索</button>
+                          </div>
+                          <div class="layui-inline add_arti">
+                              <a class="layui-btn" href="{{url('hx/admin/serviceSpecForm')}}">添加</a>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+
+
+
             <!-- /.box-header -->
             <div class="box-body  no-padding">
 
