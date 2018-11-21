@@ -69,7 +69,7 @@
                             <button class="layui-btn">搜索</button>
                         </div>
                         <div class="layui-inline add_arti">
-                            <a href="{{url('hx/admin/addArticle')}}"><button class="layui-btn">添加</button></a>
+                            <a href="{{url('hx/admin/addArticle')}}"><div class="layui-btn">添加</div></a>
                         </div>
                     </form>
                 </div>

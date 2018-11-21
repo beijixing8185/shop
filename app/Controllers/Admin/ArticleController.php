@@ -40,6 +40,7 @@ class ArticleController extends Controller
         $article = Article::getList($cid,$status,'','',$name);
         $where = ' and level = 2';
         $cate =  ArticleCate::getList($where,1);
+        //dd($cate);
         $cates = $cate->pluck('cate_name','id')->toArray();
 
         return view('admin.articles.articleList',compact('article','cates','cate','cid','status','name'));
@@ -93,7 +94,7 @@ class ArticleController extends Controller
      * 删除服务
      */
     public function delArticle(Request $request){
-        $res = Article::whereId($request->id)->update(['status'=>0]);
+        $res = Article::destroy($request->id);
         if($res)
             return response()->json(['code'=>0,'msg'=>'删除成功','data'=>'']);
         else
