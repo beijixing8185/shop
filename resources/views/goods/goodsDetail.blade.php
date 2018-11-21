@@ -59,9 +59,14 @@
                             <ul class="zb_ul">
                                 <li class="fwjj">
                                     <div class="dw-left">商品价格
-                                        <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>{{$goods['market_price']}}
+                                        <span id="packagePrice"><i style="font-size: 16px;">&yen;</i>
+                                            @if(!empty($goodsSku))
+                                            {{$goodsSku[0]['price']}}
+                                            @endif
                                             <small >{{$goods['comp']}}</small>
-									        <strong>[市场价：<b>&yen;{{$goods['price']}}<small>{{$goods['comp']}}</small></b>]</strong>
+                                            @if(!empty($goodsSku))
+									        <strong>[市场价：<b>&yen;{{$goodsSku[0]['market_price']}}<small>{{$goods['comp']}}</small></b>]</strong>
+                                                @endif
 										</span>
                                     </div>
                                     <div class="dw-right dw-right-good"><span>成交量</span><p>{{$goods['salen_num']}}</p></div>
@@ -77,11 +82,11 @@
 
                                 <li >
                                     <p class="dw-left" style="position:relative;">套餐类型</p>
-                                    <input type="hidden" id="isStdProduct" value="0">
+                                    <input type="hidden" id="isStdProduct" value="1">
                                     <ul class="taoc-right" id="taocanList">
                                         <input id="packageId" type="hidden" value="131" />
                                         @foreach($goodsSku as $g)
-                                        <li isusable="1" packageId="{{$g->id}}" marketPrice="{{$g->market_price}}" packagePrice="{{$g->price}}" packageType="3" class=" caClass" id="package131" traceflag="content_select_微信代运营基础版">{{$g->spec_name}}<b><img src="/picture/tcselected.png" alt=""/></b>
+                                        <li isusable="1" packageId="{{$g->id}}" marketPrice="{{$g->market_price}}" packagePrice="{{$g->price}}" packageType="3" class=" caClass @if($loop->first) selectedLi @endif" id="package{{$g->id}}" traceflag="content_select_微信代运营基础版">{{$g->spec_name}}<b><img src="/picture/tcselected.png" alt=""/></b>
                                             <p class="tradefilter xz-num" style="display:block" data-id="0000"><span></span></p>
                                         </li>
                                         @endforeach
@@ -455,65 +460,11 @@
             </div>
         </div>
         @endif
-  {{--      <div class="wrap_zhezhao" id="successNote" style=" display:none;z-index: 999;">
-            <input type="hidden" id="_spId" value="">
-            <div class="free-bounced small">
-                <div class="fb_inner ">
-                    <div class="lj-menu">
-                        <h6>免费专家咨询【<span>微信公众号代运营托管服务/微信代运营</span>】</h6>
-
-                        <img class="f_close guanbi" src="/picture/free_close.png" alt="">
-                    </div>
-
-                    <div class="xq-content">
-                        <div class="content_inner ded">
-                            <form action="">
-                                <div class="xq-description">
-                                    <ul>
-                                        <li class="pull-left">
-                                            <dl>
-                                                <dt class="hover">1</dt>
-                                                <dd>输入手机号</dd>
-                                            </dl>
-                                        </li>
-                                        <li class="second-li pull-left">
-                                            <dl>
-                                                <dt>2</dt>
-                                                <dd>您接听来电</dd>
-                                            </dl>
-                                        </li>
-                                        <li class="pull-left">
-                                            <dl>
-                                                <dt>3</dt>
-                                                <dd>专家为您解惑</dd>
-                                            </dl>
-                                        </li>
-                                    </ul>
-                                    <div class="company-mes">
-                                        <p id="_orgName"></p>
-                                    </div>
-                                    <textarea id="_userRequest" class="description-word" rows="4" placeholder="请输入您的需求"></textarea>
-                                </div>
-                                <div class="xq_tel">
-                                    <input type="text" id="_telephone" class="xq_telp" placeholder="请输入您的手机号"><span class="error_tip" style="display:none;color:red;">手机号码格式不正确</span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <a href="javascript:void(0);" class="xq-release caClass" traceflag="pop_fb_发布需求" id="_btn_productDetails_require">发布需求</a>
-                    <div class="xq-describe">
-                        <p>本次电话咨询完全免费，我们将对您的号码严格保密，请放心使用</p>
-                        <p> 您还可以直接拨打进行咨询：<span>010-53526642</span></p>
-                    </div>
-
-                </div>
-            </div>
-        </div>--}}
-
 @endsection
 
 @section('js')
     <script>
+
         var swiperPublish = new Swiper('.swiper-container-publish', {
             autoHeight: true, //高度随内容变化
             pagination: {
@@ -522,6 +473,14 @@
                 noSwiping : true
             }
         });
+            $(function(){
+                $("#publish-hover").hover(function(){
+                    $(".p-list").show();
+                },function(){
+                    $(".p-list").hide();
+                })
+            })
+
     </script>
 
     <script>

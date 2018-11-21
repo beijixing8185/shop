@@ -98,8 +98,6 @@
                         </div>
                     </form>
                 </div>
-
-
             </div>
             <!-- /.box-header -->
             <div class="box-body  no-padding">

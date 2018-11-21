@@ -147,9 +147,23 @@ class ServiceController extends Controller
     /**
      * 规格列表
      */
-    public function specList(){
-        $goods = GoodsSKu::list();
-        return view('admin.goods.specList',compact('goods'));
+    public function specList(Request $request){
+        $goodsSpu = GoodsSpu::where('status',1)->get();//栏目
+        $param = $request -> all();
+        $spu_id = '';//栏目id
+        $where = '';//条件
+        $status = '';
+        if(isset($param['spu_id'])){
+            $spu_id = $param['spu_id'];
+            $where .= ' and spu_id = '.$spu_id;
+        }
+        if(isset($param['status'])){
+            $status = $param['status'];
+            $where .= ' and status = '.$status;
+        }
+
+        $goods = GoodsSKu::list($where);
+        return view('admin.goods.specList',compact('goods','spu_id','status','goodsSpu'));
     }
     /**
      * 删除规格

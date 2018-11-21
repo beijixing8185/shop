@@ -5288,3 +5288,39 @@ blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, 
 #keywords input{
   width: 300px;
 }
+#cate_one{
+  width: 200px;
+  padding: 9px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#cate_two{
+  width: 200px;
+  padding: 9px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#browse{
+  width: 100px;
+  padding: 9px 15px;
+  line-height: 20px;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px 0 0 2px;
+  text-align: center;
+  background-color: #FBFBFB;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
